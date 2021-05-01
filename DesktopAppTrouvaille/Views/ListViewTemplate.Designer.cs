@@ -1,4 +1,4 @@
-﻿namespace DesktopAppTrouvaille.UserControls
+﻿namespace DesktopAppTrouvaille.Views
 {
     partial class ListViewTemplate
     {
@@ -76,7 +76,7 @@
             this.listView.TabIndex = 5;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 
-            // OrderListView
+            // ListViewTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,7 +85,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "OrderListView";
+            this.Name = "ListViewTemplate";
             this.Size = new System.Drawing.Size(747, 1057);
             this.ResumeLayout(false);
             this.PerformLayout();

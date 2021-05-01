@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopAppTrouvaille
+namespace DesktopAppTrouvaille.Views
 {
-    class MainController
+    public interface IMainView
     {
-
-        public void handleButtonClickOrders()
-        {
-
-        }
-
+        void SetTabView(IView view);
     }
 }

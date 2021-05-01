@@ -1,4 +1,4 @@
-﻿namespace DesktopAppTrouvaille.UserControls
+﻿namespace DesktopAppTrouvaille.Views
 {
     partial class OrderDetailView
     {

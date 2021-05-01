@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DesktopAppTrouvaille.UserControls
+namespace DesktopAppTrouvaille.Views
 {
-    public partial class MainMenuUC : UserControl
+    public partial class ProductView : UserControl, IView
     {
-        public MainMenuUC()
+        public ProductView()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

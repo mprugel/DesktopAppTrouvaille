@@ -1,27 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DesktopAppTrouvaille
+namespace DesktopAppTrouvaille.Views
 {
-    public partial class Form1 : Form
+    public partial class ListViewTemplate : UserControl
     {
-        public Form1()
+        public ListViewTemplate()
         {
-            
             InitializeComponent();
-        
-        }
-
-        private void mainMenuUC1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

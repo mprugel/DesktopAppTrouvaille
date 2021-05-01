@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DesktopAppTrouvaille.UserControls
+namespace DesktopAppTrouvaille.Views
 {
-    public partial class ListViewTemplate : UserControl
+    public partial class OrderDetailView : UserControl
     {
-        public ListViewTemplate()
+        public OrderDetailView()
         {
             InitializeComponent();
         }

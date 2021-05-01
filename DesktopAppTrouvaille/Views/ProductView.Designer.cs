@@ -1,6 +1,6 @@
-﻿namespace DesktopAppTrouvaille.UserControls
+﻿namespace DesktopAppTrouvaille.Views
 {
-    partial class OrderViewUC
+    partial class ProductView
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewTemplate1 = new DesktopAppTrouvaille.UserControls.ListViewTemplate();
-            this.orderDetailView1 = new DesktopAppTrouvaille.UserControls.OrderDetailView();
+            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
+            this.productDetailView1 = new DesktopAppTrouvaille.Views.ProductDetailView();
             this.SuspendLayout();
             // 
             // listViewTemplate1
             // 
-            this.listViewTemplate1.Location = new System.Drawing.Point(27, 26);
+            this.listViewTemplate1.Location = new System.Drawing.Point(14, 3);
             this.listViewTemplate1.Name = "listViewTemplate1";
             this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
             this.listViewTemplate1.TabIndex = 0;
             // 
-            // orderDetailView1
+            // productDetailView1
             // 
-            this.orderDetailView1.Location = new System.Drawing.Point(763, 26);
-            this.orderDetailView1.Name = "orderDetailView1";
-            this.orderDetailView1.Size = new System.Drawing.Size(1026, 1029);
-            this.orderDetailView1.TabIndex = 1;
+            this.productDetailView1.Location = new System.Drawing.Point(789, 30);
+            this.productDetailView1.Name = "productDetailView1";
+            this.productDetailView1.Size = new System.Drawing.Size(1771, 1135);
+            this.productDetailView1.TabIndex = 1;
             // 
-            // OrderViewUC
+            // ProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.orderDetailView1);
+            this.Controls.Add(this.productDetailView1);
             this.Controls.Add(this.listViewTemplate1);
-            this.Name = "OrderViewUC";
-            this.Size = new System.Drawing.Size(1819, 1116);
+            this.Name = "ProductView";
+            this.Size = new System.Drawing.Size(1966, 1072);
             this.ResumeLayout(false);
 
         }
@@ -61,6 +61,6 @@
         #endregion
 
         private ListViewTemplate listViewTemplate1;
-        private OrderDetailView orderDetailView1;
+        private ProductDetailView productDetailView1;
     }
 }

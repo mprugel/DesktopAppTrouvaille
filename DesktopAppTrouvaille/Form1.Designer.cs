@@ -1,4 +1,6 @@
-﻿namespace DesktopAppTrouvaille
+﻿using DesktopAppTrouvaille.Views;
+
+namespace DesktopAppTrouvaille
 {
     partial class Form1
     {
@@ -28,21 +30,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenuUC1 = new DesktopAppTrouvaille.UserControls.MainMenuUC();
+            this.mainMenuUC1 = new DesktopAppTrouvaille.Views.MainView();
             this.SuspendLayout();
             // 
             // mainMenuUC1
             // 
+            this.mainMenuUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainMenuUC1.Location = new System.Drawing.Point(8, 34);
             this.mainMenuUC1.Name = "mainMenuUC1";
-            this.mainMenuUC1.Size = new System.Drawing.Size(2204, 953);
+            this.mainMenuUC1.Size = new System.Drawing.Size(1977, 993);
             this.mainMenuUC1.TabIndex = 2;
+            this.mainMenuUC1.Load += new System.EventHandler(this.mainMenuUC1_Load);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2258, 1032);
+            this.ClientSize = new System.Drawing.Size(2042, 1081);
             this.Controls.Add(this.mainMenuUC1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -51,7 +57,7 @@
         }
 
         #endregion
-        private UserControls.MainMenuUC mainMenuUC1;
+        private MainView mainMenuUC1;
     }
 }
 

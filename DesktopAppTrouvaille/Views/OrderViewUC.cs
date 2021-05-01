@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DesktopAppTrouvaille.UserControls
+namespace DesktopAppTrouvaille.Views
 {
-    public partial class OrderViewUC : UserControl
+    public partial class OrderViewUC : UserControl, IView
     {
         public OrderViewUC()
         {
