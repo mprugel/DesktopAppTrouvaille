@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.listView = new System.Windows.Forms.ListView();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +65,7 @@
             // 
             this.panelFilter.Location = new System.Drawing.Point(26, 205);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(662, 228);
+            this.panelFilter.Size = new System.Drawing.Size(691, 228);
             this.panelFilter.TabIndex = 4;
             // 
             // listView
@@ -72,14 +73,24 @@
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(26, 479);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(662, 550);
+            this.listView.Size = new System.Drawing.Size(691, 550);
             this.listView.TabIndex = 5;
             this.listView.UseCompatibleStateImageBehavior = false;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(529, 35);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(159, 45);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "ADD <Item>";
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // ListViewTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.panelFilter);
             this.Controls.Add(this.button1);
@@ -99,5 +110,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelFilter;
         private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

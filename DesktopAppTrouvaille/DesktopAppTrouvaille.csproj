@@ -146,6 +146,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\APIconnector\APIconnector.csproj">
+      <Project>{d12d250c-deb7-4a22-ae01-2dbf44fe035f}</Project>
+      <Name>APIconnector</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
