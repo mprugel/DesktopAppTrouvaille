@@ -79,7 +79,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTabView.AutoSize = true;
-            this.panelTabView.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelTabView.BackColor = System.Drawing.SystemColors.Control;
             this.panelTabView.Location = new System.Drawing.Point(562, 23);
             this.panelTabView.Name = "panelTabView";
             this.panelTabView.Size = new System.Drawing.Size(1389, 942);

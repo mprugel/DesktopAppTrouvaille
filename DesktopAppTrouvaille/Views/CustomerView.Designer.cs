@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.SuspendLayout();
+            // 
+            // listViewTemplate1
+            // 
+            this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
+            this.listViewTemplate1.Name = "listViewTemplate1";
+            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
+            this.listViewTemplate1.TabIndex = 0;
             // 
             // CustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listViewTemplate1);
             this.Name = "CustomerView";
-            this.Size = new System.Drawing.Size(752, 1089);
+            this.Size = new System.Drawing.Size(1960, 1089);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Views.ListViewTemplate listViewTemplate1;
     }
 }

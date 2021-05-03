@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.productDetailView1 = new DesktopAppTrouvaille.Views.ProductDetailView();
+            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.SuspendLayout();
-            // 
-            // listViewTemplate1
-            // 
-            this.listViewTemplate1.Location = new System.Drawing.Point(14, 3);
-            this.listViewTemplate1.Name = "listViewTemplate1";
-            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
-            this.listViewTemplate1.TabIndex = 0;
             // 
             // productDetailView1
             // 
-            this.productDetailView1.Location = new System.Drawing.Point(789, 30);
+            this.productDetailView1.BackColor = System.Drawing.SystemColors.Control;
+            this.productDetailView1.Location = new System.Drawing.Point(767, 3);
             this.productDetailView1.Name = "productDetailView1";
             this.productDetailView1.Size = new System.Drawing.Size(1771, 1135);
             this.productDetailView1.TabIndex = 1;
+            // 
+            // listViewTemplate1
+            // 
+            this.listViewTemplate1.Location = new System.Drawing.Point(3, 3);
+            this.listViewTemplate1.Name = "listViewTemplate1";
+            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
+            this.listViewTemplate1.TabIndex = 0;
             // 
             // ProductView
             // 
@@ -53,7 +54,7 @@
             this.Controls.Add(this.productDetailView1);
             this.Controls.Add(this.listViewTemplate1);
             this.Name = "ProductView";
-            this.Size = new System.Drawing.Size(1966, 1072);
+            this.Size = new System.Drawing.Size(1966, 1207);
             this.ResumeLayout(false);
 
         }

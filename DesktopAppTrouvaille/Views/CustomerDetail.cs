@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class ProductDetailView : UserControl
+    public partial class CustomerDetail : UserControl
     {
-        public ProductDetailView()
+        public CustomerDetail()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
