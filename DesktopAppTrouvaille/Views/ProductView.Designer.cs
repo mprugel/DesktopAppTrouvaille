@@ -1,6 +1,6 @@
 ﻿namespace DesktopAppTrouvaille.Views
 {
-    partial class ProductView
+    public partial class ProductView
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,7 +42,7 @@
             // 
             // listViewTemplate1
             // 
-            this.listViewTemplate1.Location = new System.Drawing.Point(3, 3);
+            this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
             this.listViewTemplate1.Name = "listViewTemplate1";
             this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
             this.listViewTemplate1.TabIndex = 0;

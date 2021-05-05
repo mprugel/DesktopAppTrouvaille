@@ -15,6 +15,41 @@ namespace DesktopAppTrouvaille.Views
         public ListViewTemplate()
         {
             InitializeComponent();
+            listView1.View = View.Details;
+      
         }
+        public void AddSelectedItemHandler(EventHandler handler)
+        {
+            listView1.SelectedIndexChanged += handler;
+        }
+
+        public ListViewItem GetSelectedItem()
+        {
+            if(listView1.SelectedItems.Count > 0)
+            { 
+                return listView1.SelectedItems[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public void AddColumn(string colname)
+        {
+            listView1.Columns.Add(colname);
+        }
+
+        public void AddItem(ListViewItem item)
+        {
+            listView1.Items.Add(item);
+        }
+
+        public void SetTitle(string title)
+        {
+            label1.Text = title;
+        }
+
+        
     }
 }

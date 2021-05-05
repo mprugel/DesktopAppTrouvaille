@@ -43,10 +43,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(48, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 51);
+            this.label1.Size = new System.Drawing.Size(339, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bestellung Nr.";
             // 
@@ -54,7 +54,7 @@
             // 
             this.labelOrderID.AutoSize = true;
             this.labelOrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrderID.Location = new System.Drawing.Point(362, 0);
+            this.labelOrderID.Location = new System.Drawing.Point(394, 0);
             this.labelOrderID.Name = "labelOrderID";
             this.labelOrderID.Size = new System.Drawing.Size(147, 51);
             this.labelOrderID.TabIndex = 1;

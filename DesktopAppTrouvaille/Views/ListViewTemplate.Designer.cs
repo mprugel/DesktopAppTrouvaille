@@ -32,8 +32,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelFilter = new System.Windows.Forms.Panel();
-            this.listView = new System.Windows.Forms.ListView();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -65,17 +65,8 @@
             // 
             this.panelFilter.Location = new System.Drawing.Point(26, 205);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(691, 228);
+            this.panelFilter.Size = new System.Drawing.Size(691, 157);
             this.panelFilter.TabIndex = 4;
-            // 
-            // listView
-            // 
-            this.listView.HideSelection = false;
-            this.listView.Location = new System.Drawing.Point(26, 479);
-            this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(691, 550);
-            this.listView.TabIndex = 5;
-            this.listView.UseCompatibleStateImageBehavior = false;
             // 
             // buttonAdd
             // 
@@ -86,12 +77,26 @@
             this.buttonAdd.Text = "ADD <Item>";
             this.buttonAdd.UseVisualStyleBackColor = true;
             // 
+            // listView1
+            // 
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.HideSelection = false;
+            this.listView1.HoverSelection = true;
+            this.listView1.Location = new System.Drawing.Point(26, 400);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(691, 465);
+            this.listView1.TabIndex = 7;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // ListViewTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.listView);
             this.Controls.Add(this.panelFilter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -109,7 +114,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelFilter;
-        private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.ListView listView1;
     }
 }
