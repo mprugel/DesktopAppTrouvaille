@@ -18,9 +18,9 @@ namespace DesktopAppTrouvaille.Views
             listView1.View = View.Details;
       
         }
-        public void AddSelectedItemHandler(EventHandler handler)
+        public void AddClickHandler(EventHandler handler)
         {
-            listView1.SelectedIndexChanged += handler;
+            listView1.Click += handler;
         }
 
         public ListViewItem GetSelectedItem()
@@ -40,9 +40,12 @@ namespace DesktopAppTrouvaille.Views
             listView1.Columns.Add(colname);
         }
 
-        public void AddItem(ListViewItem item)
+        public void AddItems(List<ListViewItem> items)
         {
-            listView1.Items.Add(item);
+            foreach(ListViewItem itm in items)
+            {
+                listView1.Items.Add(itm);
+            }
         }
 
         public void SetTitle(string title)

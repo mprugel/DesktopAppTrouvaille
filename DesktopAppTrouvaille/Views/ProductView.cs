@@ -13,10 +13,12 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductView : UserControl, IView
     {
+        public List<Product> Products { get; set; } = new List<Product>();
         public ProductView()
         {
             InitializeComponent();
-
+            //Hide Product Detail:
+            productDetailView1.Visible = false;
             // Set the Title of the ListView Box:
             listViewTemplate1.SetTitle("Produktliste");
             // Initialize the ListView:
@@ -25,15 +27,26 @@ namespace DesktopAppTrouvaille.Views
             listViewTemplate1.AddColumn("Lagerbestand");
 
             //----------------------------------------------------
-            //Add a Test Product:
-            Product p = new Product();
-            p.Name = "Pinsel";
-            p.ProductID = 20;
-            p.InStock = 120;
-            listViewTemplate1.AddItem(CreateListViewItem(p));
+            //Add Products for Testing:
+            Product p1 = new Product();
+
+            p1.Name = "Pinsel";
+            p1.ProductID = 20;
+            p1.InStock = 120;
+            Products.Add(p1);
+
+
+            Product p2 = new Product();
+
+            p2.Name = "Acrylfarbe Kaminrot 100ml";
+            p2.ProductID = 24;
+            p2.InStock = 50;
+            Products.Add(p2);
+
+            listViewTemplate1.AddItems(CreateListViewItems(Products));
             //-----------------------------------------------------
 
-            listViewTemplate1.AddSelectedItemHandler(ItemSelected);
+            listViewTemplate1.AddClickHandler(ItemSelected);
 
        
         }
@@ -45,12 +58,26 @@ namespace DesktopAppTrouvaille.Views
             if(item != null)
             {
                 Product p = (Product)item.Tag;
-                Console.WriteLine("Item selected:" + p.Name.ToString());
+                productDetailView1.Prod = p;
+                productDetailView1.UpdateView();
+                productDetailView1.Visible = true;
+            }
+            else
+            {
+                productDetailView1.Visible = false;
             }
             
         }
 
-
+        private List<ListViewItem> CreateListViewItems(List<Product> products)
+        {
+            List<ListViewItem> list = new List<ListViewItem>();
+            foreach(Product p in products)
+            {
+                list.Add(CreateListViewItem(p));
+            }
+            return list;
+        }
         private ListViewItem CreateListViewItem(Product product)
         {
             string[] stringItems = { product.ProductID.ToString(), product.Name.ToString(), product.InStock.ToString() };

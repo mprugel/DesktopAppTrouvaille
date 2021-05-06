@@ -32,9 +32,9 @@
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelProductID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownInStock = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,8 +46,8 @@
             this.buttonDeletePicture = new System.Windows.Forms.Button();
             this.buttonUploadPicture = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,12 +90,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Produkt ID:";
             // 
-            // numericUpDown1
+            // numericUpDownInStock
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(58, 226);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 31);
-            this.numericUpDown1.TabIndex = 4;
+            this.numericUpDownInStock.Location = new System.Drawing.Point(58, 226);
+            this.numericUpDownInStock.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDownInStock.Name = "numericUpDownInStock";
+            this.numericUpDownInStock.Size = new System.Drawing.Size(120, 31);
+            this.numericUpDownInStock.TabIndex = 4;
             // 
             // label3
             // 
@@ -106,12 +111,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Lagerbestand";
             // 
-            // numericUpDown2
+            // numericUpDownPrice
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(283, 226);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 31);
-            this.numericUpDown2.TabIndex = 6;
+            this.numericUpDownPrice.Location = new System.Drawing.Point(283, 226);
+            this.numericUpDownPrice.Name = "numericUpDownPrice";
+            this.numericUpDownPrice.Size = new System.Drawing.Size(120, 31);
+            this.numericUpDownPrice.TabIndex = 6;
             // 
             // label4
             // 
@@ -229,17 +234,17 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDownPrice);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericUpDownInStock);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelProductID);
             this.Controls.Add(this.labelProductName);
             this.Controls.Add(this.label1);
             this.Name = "ProductDetailView";
             this.Size = new System.Drawing.Size(914, 1135);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -252,9 +257,9 @@
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Label labelProductID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownInStock;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDownPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
