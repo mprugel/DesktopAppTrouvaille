@@ -49,14 +49,14 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(26, 107);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(474, 31);
+            this.textBox1.Size = new System.Drawing.Size(381, 31);
             this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(529, 99);
+            this.button1.Location = new System.Drawing.Point(432, 99);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 47);
+            this.button1.Size = new System.Drawing.Size(256, 47);
             this.button1.TabIndex = 2;
             this.button1.Text = "Suchen";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(529, 35);
+            this.buttonAdd.Location = new System.Drawing.Point(432, 35);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(159, 45);
+            this.buttonAdd.Size = new System.Drawing.Size(256, 45);
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "ADD <Item>";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -83,12 +83,12 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.HoverSelection = true;
             this.listView1.Location = new System.Drawing.Point(26, 400);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(691, 465);
             this.listView1.TabIndex = 7;
+            this.listView1.TileSize = new System.Drawing.Size(100, 10);
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // ListViewTemplate

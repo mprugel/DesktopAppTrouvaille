@@ -15,6 +15,8 @@ namespace DesktopAppTrouvaille.Views
     {
         public List<Product> Products { get; set; } = new List<Product>();
 
+        private ProductController _controller = new ProductController();
+      
         public void UpdateView()
         {
             listViewTemplate1.AddItems(CreateListViewItems(Products));
@@ -25,21 +27,32 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
             //Hide Product Detail:
             productDetailView1.Visible = false;
-            // Set the Title of the ListView Box:
-            listViewTemplate1.SetTitle("Produktliste");
+
             // Initialize the ListView:
+            listViewTemplate1.SetTitle("Produktliste");
+            listViewTemplate1.SetButtonText("Neues Produkt");
+
             listViewTemplate1.AddColumn("Produkt ID");
             listViewTemplate1.AddColumn("Produktname");
             listViewTemplate1.AddColumn("Lagerbestand");
-            //-----------------------------------------------------
 
             listViewTemplate1.AddClickHandler(ItemSelected);
+            listViewTemplate1.AddButtonAddHandler(ButtonAddHandler);
 
+            // Initialize the ProductDetailView:
+
+
+        }
+        private void ButtonAddHandler(object sender, EventArgs e)
+        {
+            productDetailView1.Prod = new Product();
+            productDetailView1.UpdateView();
+            productDetailView1.Visible = true;
+            productDetailView1.SetTitle("Neues Produkt anlegen");
         }
 
         private void ItemSelected(object sender, System.EventArgs e)
         {
-            
             ListViewItem item = listViewTemplate1.GetSelectedItem();
             if(item != null)
             {
@@ -51,8 +64,7 @@ namespace DesktopAppTrouvaille.Views
             else
             {
                 productDetailView1.Visible = false;
-            }
-            
+            } 
         }
 
         private List<ListViewItem> CreateListViewItems(List<Product> products)
@@ -64,6 +76,7 @@ namespace DesktopAppTrouvaille.Views
             }
             return list;
         }
+
         private ListViewItem CreateListViewItem(Product product)
         {
             string[] stringItems = { product.ProductID.ToString(), product.Name.ToString(), product.InStock.ToString() };

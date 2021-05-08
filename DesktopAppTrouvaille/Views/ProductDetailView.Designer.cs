@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelProductName = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.labelProductID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownInStock = new System.Windows.Forms.NumericUpDown();
@@ -46,30 +45,22 @@
             this.buttonDeletePicture = new System.Windows.Forms.Button();
             this.buttonUploadPicture = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(463, 55);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Produktbearbeitung";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.AutoSize = true;
-            this.labelProductName.Location = new System.Drawing.Point(138, 121);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(155, 25);
-            this.labelProductName.TabIndex = 1;
-            this.labelProductName.Text = "Pinsel Größe 5";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(48, 0);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(463, 55);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Produktbearbeitung";
+            this.labelTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelProductID
             // 
@@ -218,11 +209,19 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Name:";
             // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(138, 118);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(265, 31);
+            this.textBoxName.TabIndex = 19;
+            // 
             // ProductDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonUploadPicture);
             this.Controls.Add(this.buttonDeletePicture);
@@ -239,8 +238,7 @@
             this.Controls.Add(this.numericUpDownInStock);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelProductID);
-            this.Controls.Add(this.labelProductName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelTitle);
             this.Name = "ProductDetailView";
             this.Size = new System.Drawing.Size(914, 1135);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).EndInit();
@@ -253,8 +251,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelProductName;
+        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelProductID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDownInStock;
@@ -271,5 +268,6 @@
         private System.Windows.Forms.Button buttonDeletePicture;
         private System.Windows.Forms.Button buttonUploadPicture;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxName;
     }
 }

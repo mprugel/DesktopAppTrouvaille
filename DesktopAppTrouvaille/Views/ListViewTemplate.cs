@@ -37,7 +37,7 @@ namespace DesktopAppTrouvaille.Views
 
         public void AddColumn(string colname)
         {
-            listView1.Columns.Add(colname);
+            listView1.Columns.Add(colname).Width = 100;
         }
 
         public void AddItems(List<ListViewItem> items)
@@ -51,7 +51,17 @@ namespace DesktopAppTrouvaille.Views
 
         public void SetTitle(string title)
         {
-            label1.Text = title;
+            label1.Text = title; 
+        }
+
+        public void SetButtonText(string name)
+        {
+            buttonAdd.Text = name;
+        }
+
+        public void AddButtonAddHandler(EventHandler handler)
+        {
+            buttonAdd.Click += handler;
         }
 
         

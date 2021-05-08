@@ -13,8 +13,6 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductDetailView : UserControl
     {
-        private Product _product;
-
         public Product Prod { get; set; }
         public ProductDetailView()
         {
@@ -23,16 +21,44 @@ namespace DesktopAppTrouvaille.Views
         public void UpdateView()
         {
             labelProductID.Text = Prod.ProductID.ToString();
-            labelProductName.Text = Prod.Name.ToString();
+            textBoxName.Text = Prod.Name.ToString();
             numericUpDownInStock.Value = Prod.InStock;
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
         }
 
+        public void SetTitle(string title)
+        {
+            labelTitle.Text = title;
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public bool CheckInputFields()
+        {
+            bool ret = false;
+            if(textBoxName.Text.Length == 0)
+            {
+                textBoxName.BackColor = Color.Red;
+                ret = false;
+            }
+
+            if(numericUpDownPrice.Value <= 0)
+            {
+                numericUpDownPrice.BackColor = Color.Red;
+                ret = false;
+            }
+
+            if(richTextBox1.Text.Length == 0)
+            {
+                richTextBox1.BackColor = Color.Red;
+                ret = false;
+            }
+
+            return ret;
         }
 
         
