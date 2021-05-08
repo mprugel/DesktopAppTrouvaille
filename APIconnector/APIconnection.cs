@@ -27,7 +27,7 @@ namespace APIconnector
         {
             // Create and config the Connection:
             _client = new HttpClient();
-            _client.BaseAddress = new Uri("http://localhost:5000");
+            _client.BaseAddress = new Uri("http://141.79.33.184:5001");
             _client.DefaultRequestHeaders.Accept.Clear();
             _client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
@@ -36,7 +36,7 @@ namespace APIconnector
         {
             List<Product> products = null;
             //DUMMY Values:
-            HttpResponseMessage res = await _client.GetAsync("products/");
+            HttpResponseMessage res = await _client.GetAsync("api/Products");
             if(res.IsSuccessStatusCode)
             {
                 string json = await res.Content.ReadAsStringAsync();
@@ -45,5 +45,6 @@ namespace APIconnector
 
             return products;
         }
+
     }
 }

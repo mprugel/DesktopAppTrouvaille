@@ -16,5 +16,10 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
         }
+
+        public void UpdateView()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

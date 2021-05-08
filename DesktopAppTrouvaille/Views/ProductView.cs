@@ -14,6 +14,12 @@ namespace DesktopAppTrouvaille.Views
     public partial class ProductView : UserControl, IView
     {
         public List<Product> Products { get; set; } = new List<Product>();
+
+        public void UpdateView()
+        {
+            listViewTemplate1.AddItems(CreateListViewItems(Products));
+        }
+
         public ProductView()
         {
             InitializeComponent();
@@ -25,30 +31,10 @@ namespace DesktopAppTrouvaille.Views
             listViewTemplate1.AddColumn("Produkt ID");
             listViewTemplate1.AddColumn("Produktname");
             listViewTemplate1.AddColumn("Lagerbestand");
-
-            //----------------------------------------------------
-            //Add Products for Testing:
-            Product p1 = new Product();
-
-            p1.Name = "Pinsel";
-            p1.ProductID = 20;
-            p1.InStock = 120;
-            Products.Add(p1);
-
-
-            Product p2 = new Product();
-
-            p2.Name = "Acrylfarbe Kaminrot 100ml";
-            p2.ProductID = 24;
-            p2.InStock = 50;
-            Products.Add(p2);
-
-            listViewTemplate1.AddItems(CreateListViewItems(Products));
             //-----------------------------------------------------
 
             listViewTemplate1.AddClickHandler(ItemSelected);
 
-       
         }
 
         private void ItemSelected(object sender, System.EventArgs e)

@@ -8,5 +8,6 @@ namespace DesktopAppTrouvaille.Views
 {
     public interface IView
     {
+        void UpdateView();
     }
 }

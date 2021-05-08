@@ -42,6 +42,7 @@ namespace DesktopAppTrouvaille.Views
 
         public void AddItems(List<ListViewItem> items)
         {
+            listView1.Items.Clear();
             foreach(ListViewItem itm in items)
             {
                 listView1.Items.Add(itm);
