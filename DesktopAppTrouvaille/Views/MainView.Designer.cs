@@ -33,6 +33,7 @@
             this.buttonShowCustomers = new System.Windows.Forms.Button();
             this.buttonShowStatistics = new System.Windows.Forms.Button();
             this.panelTabView = new System.Windows.Forms.Panel();
+            this.buttonShowCategories = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonShowProducts
@@ -63,6 +64,7 @@
             this.buttonShowCustomers.TabIndex = 2;
             this.buttonShowCustomers.Text = "Kunden";
             this.buttonShowCustomers.UseVisualStyleBackColor = true;
+            this.buttonShowCustomers.Click += new System.EventHandler(this.buttonShowCustomers_Click);
             // 
             // buttonShowStatistics
             // 
@@ -85,10 +87,21 @@
             this.panelTabView.Size = new System.Drawing.Size(1389, 942);
             this.panelTabView.TabIndex = 4;
             // 
+            // buttonShowCategories
+            // 
+            this.buttonShowCategories.Location = new System.Drawing.Point(23, 650);
+            this.buttonShowCategories.Name = "buttonShowCategories";
+            this.buttonShowCategories.Size = new System.Drawing.Size(489, 131);
+            this.buttonShowCategories.TabIndex = 5;
+            this.buttonShowCategories.Text = "Kategorien";
+            this.buttonShowCategories.UseVisualStyleBackColor = true;
+            this.buttonShowCategories.Click += new System.EventHandler(this.buttonShowCategories_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonShowCategories);
             this.Controls.Add(this.panelTabView);
             this.Controls.Add(this.buttonShowStatistics);
             this.Controls.Add(this.buttonShowCustomers);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.Button buttonShowCustomers;
         private System.Windows.Forms.Button buttonShowStatistics;
         private System.Windows.Forms.Panel panelTabView;
+        private System.Windows.Forms.Button buttonShowCategories;
     }
 }

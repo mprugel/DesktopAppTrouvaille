@@ -8,6 +8,7 @@ namespace DesktopAppTrouvaille
 {
     public interface IProductState
     {
-        IProductState SaveProduct(ProductController controller);
+        IProductState ClickSave(ProductController controller);
+        IProductState ItemSelected(ProductController controller);
     }
 }

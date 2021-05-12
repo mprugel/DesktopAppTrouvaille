@@ -7,20 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopAppTrouvaille.Views;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class CustomerView : UserControl, IView
+    public partial class NewProductView : ProductDetailView
     {
-        public CustomerView()
+        public NewProductView()
         {
             InitializeComponent();
-        }
-
-        public void UpdateView()
-        {
-            throw new NotImplementedException();
+            this.Prod = new Models.Product();
+            this.UpdateView();
+            this.DisplayDeleteButton(false);
+            this.SetTitle("Neues Produkt anlegen");
+            this.SetButtonText("Produkt anlegen");
         }
     }
 }

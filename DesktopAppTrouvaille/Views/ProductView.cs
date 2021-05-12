@@ -13,10 +13,11 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductView : UserControl, IView
     {
+        private ProductDetailView detailView;
         public List<Product> Products { get; set; } = new List<Product>();
 
-        private ProductController _controller = new ProductController();
-      
+        public ProductController Controller = new ProductController();
+        
         public void UpdateView()
         {
             listViewTemplate1.AddItems(CreateListViewItems(Products));
@@ -26,7 +27,8 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
             //Hide Product Detail:
-            productDetailView1.Visible = false;
+            panelDetailView.Visible = false;
+
 
             // Initialize the ListView:
             listViewTemplate1.SetTitle("Produktliste");
@@ -39,16 +41,14 @@ namespace DesktopAppTrouvaille.Views
             listViewTemplate1.AddClickHandler(ItemSelected);
             listViewTemplate1.AddButtonAddHandler(ButtonAddHandler);
 
-            // Initialize the ProductDetailView:
-
-
         }
         private void ButtonAddHandler(object sender, EventArgs e)
         {
-            productDetailView1.Prod = new Product();
-            productDetailView1.UpdateView();
-            productDetailView1.Visible = true;
-            productDetailView1.SetTitle("Neues Produkt anlegen");
+            panelDetailView.Controls.Clear();
+            detailView = new NewProductView();
+            panelDetailView.Controls.Add(detailView);
+            panelDetailView.Visible = true;
+     
         }
 
         private void ItemSelected(object sender, System.EventArgs e)
@@ -57,13 +57,18 @@ namespace DesktopAppTrouvaille.Views
             if(item != null)
             {
                 Product p = (Product)item.Tag;
-                productDetailView1.Prod = p;
-                productDetailView1.UpdateView();
-                productDetailView1.Visible = true;
+
+                panelDetailView.Controls.Clear();
+                detailView = new ProductDetailView();
+                panelDetailView.Controls.Add(detailView);
+
+                detailView.Prod = p;
+                detailView.UpdateView();
+                panelDetailView.Visible = true;
             }
             else
             {
-                productDetailView1.Visible = false;
+                detailView.Visible = false;
             } 
         }
 

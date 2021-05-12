@@ -7,20 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopAppTrouvaille.Views;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class CustomerView : UserControl, IView
+    public partial class CategoryDetailView : UserControl
     {
-        public CustomerView()
+        public CategoryDetailView()
         {
             InitializeComponent();
-        }
-
-        public void UpdateView()
-        {
-            throw new NotImplementedException();
         }
     }
 }

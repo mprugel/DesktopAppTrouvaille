@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.productDetailView1 = new DesktopAppTrouvaille.Views.ProductDetailView();
             this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
+            this.panelDetailView = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // productDetailView1
-            // 
-            this.productDetailView1.BackColor = System.Drawing.SystemColors.Control;
-            this.productDetailView1.Location = new System.Drawing.Point(767, 3);
-            this.productDetailView1.Name = "productDetailView1";
-            this.productDetailView1.Size = new System.Drawing.Size(1771, 1135);
-            this.productDetailView1.TabIndex = 1;
             // 
             // listViewTemplate1
             // 
@@ -47,11 +39,18 @@
             this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
             this.listViewTemplate1.TabIndex = 0;
             // 
+            // panelDetailView
+            // 
+            this.panelDetailView.Location = new System.Drawing.Point(754, 22);
+            this.panelDetailView.Name = "panelDetailView";
+            this.panelDetailView.Size = new System.Drawing.Size(1099, 1167);
+            this.panelDetailView.TabIndex = 1;
+            // 
             // ProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.productDetailView1);
+            this.Controls.Add(this.panelDetailView);
             this.Controls.Add(this.listViewTemplate1);
             this.Name = "ProductView";
             this.Size = new System.Drawing.Size(1966, 1207);
@@ -62,6 +61,6 @@
         #endregion
 
         private ListViewTemplate listViewTemplate1;
-        private ProductDetailView productDetailView1;
+        private System.Windows.Forms.Panel panelDetailView;
     }
 }

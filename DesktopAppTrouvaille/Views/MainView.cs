@@ -55,5 +55,19 @@ namespace DesktopAppTrouvaille.Views
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }
+
+        private void buttonShowCategories_Click(object sender, EventArgs e)
+        {
+            _tabView = new CategoryView();
+            panelTabView.Controls.Clear();
+            panelTabView.Controls.Add((UserControl)_tabView);
+        }
+
+        private void buttonShowCustomers_Click(object sender, EventArgs e)
+        {
+            _tabView = new CustomerView();
+            panelTabView.Controls.Clear();
+            panelTabView.Controls.Add((UserControl)_tabView);
+        }
     }
 }

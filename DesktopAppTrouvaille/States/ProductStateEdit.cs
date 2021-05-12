@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.States
 {
-    class ProductStateEdit : IProductState
+    public class ProductStateEdit : IProductState
     {
-        public IProductState SaveProduct(ProductController controller)
+        public IProductState ClickSave(ProductController controller)
         {
-            throw new NotImplementedException();
+            
+            return this;
+        }
+
+        public IProductState ItemSelected(ProductController controller)
+        {
+            return this;
         }
     }
 }

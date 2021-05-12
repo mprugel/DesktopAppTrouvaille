@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopAppTrouvaille.Views;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class CustomerView : UserControl, IView
+    public partial class CategoryView : UserControl, IView
     {
-        public CustomerView()
+        public CategoryView()
         {
             InitializeComponent();
         }
