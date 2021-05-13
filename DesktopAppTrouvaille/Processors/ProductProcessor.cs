@@ -31,6 +31,7 @@ namespace APIconnector.Processors
                 }
                 else
                 {
+                    return null;
                 }
             }
         }

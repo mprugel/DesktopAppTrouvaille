@@ -58,9 +58,13 @@
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -155,7 +159,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(58, 358);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(345, 231);
+            this.richTextBox1.Size = new System.Drawing.Size(370, 231);
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             // 
@@ -312,20 +316,6 @@
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             this.dataGridViewCheckBoxColumn5.Width = 200;
             // 
-            // categoryGridView1
-            // 
-            this.categoryGridView1.AllowUserToAddRows = false;
-            this.categoryGridView1.AllowUserToDeleteRows = false;
-            this.categoryGridView1.AllowUserToResizeColumns = false;
-            this.categoryGridView1.AllowUserToResizeRows = false;
-            this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.categoryGridView1.Location = new System.Drawing.Point(458, 358);
-            this.categoryGridView1.Name = "categoryGridView1";
-            this.categoryGridView1.RowHeadersWidth = 82;
-            this.categoryGridView1.RowTemplate.Height = 33;
-            this.categoryGridView1.Size = new System.Drawing.Size(644, 231);
-            this.categoryGridView1.TabIndex = 23;
-            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.MinimumWidth = 10;
@@ -337,6 +327,44 @@
             this.dataGridViewCheckBoxColumn6.MinimumWidth = 10;
             this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
             this.dataGridViewCheckBoxColumn6.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            this.dataGridViewCheckBoxColumn7.Width = 200;
+            // 
+            // categoryGridView1
+            // 
+            this.categoryGridView1.AllowUserToAddRows = false;
+            this.categoryGridView1.AllowUserToDeleteRows = false;
+            this.categoryGridView1.AllowUserToResizeColumns = false;
+            this.categoryGridView1.AllowUserToResizeRows = false;
+            this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoryGridView1.Location = new System.Drawing.Point(458, 358);
+            this.categoryGridView1.Name = "categoryGridView1";
+            this.categoryGridView1.RowHeadersWidth = 82;
+            this.categoryGridView1.RowTemplate.Height = 33;
+            this.categoryGridView1.Size = new System.Drawing.Size(581, 255);
+            this.categoryGridView1.TabIndex = 23;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn8
+            // 
+            this.dataGridViewCheckBoxColumn8.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
+            this.dataGridViewCheckBoxColumn8.Width = 200;
             // 
             // ProductDetailView
             // 
@@ -410,5 +438,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
     }
 }

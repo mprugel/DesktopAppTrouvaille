@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
 {
@@ -19,8 +20,11 @@ namespace DesktopAppTrouvaille.Views
         public NewProductView(ProductController controller) : base(controller)
         {
             InitializeComponent();
-            this.Prod = new Models.Product();
-            this.UpdateView();
+            Prod = new Product();
+            Prod.ProductID = 0;
+            Prod.Categories = new List<Category>();
+            UpdateView();
+            
             this.DisplayDeleteButton(false);
             this.SetTitle("Neues Produkt anlegen");
             this.SetButtonText("Produkt anlegen");
@@ -29,7 +33,10 @@ namespace DesktopAppTrouvaille.Views
 
         protected override void buttonSave_Click(object sender, EventArgs e)
         {
-            
+            if(CheckInputFields())
+            {
+                Controller.SaveProduct(Prod);
+            }
         }
     }
 }

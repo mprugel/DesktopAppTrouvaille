@@ -29,18 +29,16 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
             Controller = controller;
-
-           
-
         }
 
         public void UpdateView()
         {
             labelProductID.Text = Prod.ProductID.ToString();
-            textBoxName.Text = Prod.Name.ToString();
-            numericUpDownInStock.Value = Prod.InStock;
+            textBoxName.Text = Prod.Name;
+            numericUpDownInStock.Value = (int)Prod.InStock;
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
+            categoryGridView1.AddCategories(Prod.Categories, Controller.Categories);
         }
 
         public void SetTitle(string title)
@@ -96,6 +94,15 @@ namespace DesktopAppTrouvaille.Views
                 richTextBox1.BackColor = Color.White;
             }
 
+            if(categoryGridView1.GetCheckedCategories().Count == 0)
+            {
+                categoryGridView1.BackgroundColor = Color.Red;
+            }
+            else
+            {
+                categoryGridView1.BackgroundColor = Color.White;
+            }
+
             return ret;
         }
 
@@ -109,7 +116,9 @@ namespace DesktopAppTrouvaille.Views
                 Prod.InStock = (int)numericUpDownInStock.Value;
                 Prod.Price = (int)numericUpDownPrice.Value;
                 Prod.Description = richTextBox1.Text;
+                Prod.Categories = categoryGridView1.GetCheckedCategories();
                 labelMessage.Text = String.Empty;
+
                 Controller.SaveProduct(Prod);
             }
             else

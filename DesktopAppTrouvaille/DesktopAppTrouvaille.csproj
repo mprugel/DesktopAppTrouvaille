@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="IAPIconnection.cs" />
     <Compile Include="IMainView.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />

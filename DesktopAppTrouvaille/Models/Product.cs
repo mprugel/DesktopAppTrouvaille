@@ -17,6 +17,7 @@ namespace DesktopAppTrouvaille.Models
         public int InStock { get; set; }
         public int MinStock { get; set; }
         public string Manufacturer { get; set; }
+        public List<Category> Categories { get; set; }
 
     }
 }
