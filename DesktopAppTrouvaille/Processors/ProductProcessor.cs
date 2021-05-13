@@ -9,12 +9,9 @@ namespace APIconnector.Processors
 {
     public class ProductProcessor
     {
-        public Product LoadProduct(string productID = "3fa85f64-5717-4562-b3fc-2c963f66afa6")
+        public Product LoadProduct(Guid productID)
         {
-            Console.WriteLine("Call API: ");
-            string url = "";
-            
-                url = "Products/a97d0975-2c03-418a-b780-065cf775ddb0";
+            string url = "Products/" + productID.ToString();
             HttpResponseMessage response;
             try
             {
@@ -36,11 +33,7 @@ namespace APIconnector.Processors
             {
                 Console.WriteLine(e.InnerException);
             }
-            return null;
-           
-            
-                
-            
+            return null;  
         }
     }
 }

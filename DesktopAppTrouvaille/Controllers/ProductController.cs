@@ -54,7 +54,7 @@ namespace DesktopAppTrouvaille
             Products.Add(p2);
             //---------------------------------------
             //TEST
-            Product p = prossesor.LoadProduct();
+            Product p = prossesor.LoadProduct(new Guid("a97d0975-2c03-418a-b780-065cf775ddb0"));
             Console.WriteLine("Loaded Product");
             Products.Add(p);
         }
