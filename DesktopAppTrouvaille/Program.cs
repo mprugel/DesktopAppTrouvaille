@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APIconnector;
 
 namespace DesktopAppTrouvaille
 {
@@ -14,9 +15,11 @@ namespace DesktopAppTrouvaille
         [STAThread]
         static void Main()
         {
+            APIconnection.InitializeClient();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            
         }
     }
 }
