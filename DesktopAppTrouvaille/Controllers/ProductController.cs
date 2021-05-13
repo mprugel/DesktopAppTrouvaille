@@ -1,4 +1,5 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using APIconnector.Processors;
+using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace DesktopAppTrouvaille
     {
         // NoOT USED YET:
         private IProductState state;
+
+        private ProductProcessor prossesor = new ProductProcessor();
 
         public List<Category> Categories;
 
@@ -50,11 +53,15 @@ namespace DesktopAppTrouvaille
             Products.Add(p1);
             Products.Add(p2);
             //---------------------------------------
+            //TEST
+            Product p = prossesor.LoadProduct();
+            Console.WriteLine("Loaded Product");
+            Products.Add(p);
         }
 
         public void UpdateData()
         {
-            // Call API
+            
         }
 
         public bool SaveProduct(Product p)

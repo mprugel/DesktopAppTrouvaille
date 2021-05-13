@@ -7,25 +7,23 @@ using System.Threading.Tasks;
 
 namespace APIconnector.Processors
 {
-    class ProductProcessor
+    public class ProductProcessor
     {
-        public async Task<Product> LoadProduct(int productID = -1)
+        public Product LoadProduct(string productID = "3fa85f64-5717-4562-b3fc-2c963f66afa6")
         {
+            Console.WriteLine("Call API: ");
             string url = "";
-            if (productID > -1)
+            
+                url = "Products/a97d0975-2c03-418a-b780-065cf775ddb0";
+            HttpResponseMessage response;
+            try
             {
-                url = $"https://localhost:44372/api/Product/{ productID }/";
-            }
-            else
-            {
-                url = "https://localhost:44372/api/Product/";
-            }
+                response = APIconnection.ApiClient.GetAsync(url).Result;
+                Console.WriteLine("STATUS: " + response);
 
-            using (HttpResponseMessage response = await APIconnection.ApiClient.GetAsync(url))
-            {
                 if (response.IsSuccessStatusCode)
                 {
-                    Product product = await response.Content.ReadAsAsync<Product>();
+                    Product product = response.Content.ReadAsAsync<Product>().Result;
 
                     return product;
                 }
@@ -34,6 +32,15 @@ namespace APIconnector.Processors
                     return null;
                 }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.InnerException);
+            }
+            return null;
+           
+            
+                
+            
         }
     }
 }
