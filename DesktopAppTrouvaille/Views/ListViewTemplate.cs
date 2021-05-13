@@ -22,6 +22,11 @@ namespace DesktopAppTrouvaille.Views
             listView1.Click += handler;
         }
 
+        public void UpdateList()
+        {
+            listView1.Update();
+        }
+
         public ListViewItem GetSelectedItem()
         {
             if(listView1.SelectedItems.Count > 0)

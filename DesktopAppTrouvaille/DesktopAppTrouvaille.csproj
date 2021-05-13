@@ -54,8 +54,8 @@
     </Compile>
     <Compile Include="IMainView.cs" />
     <Compile Include="States\IProductState.cs" />
-    <Compile Include="MainController.cs" />
-    <Compile Include="ProductController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="States\ProductStateAdd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +65,9 @@
     </Compile>
     <Compile Include="Views\CategoryDetailView.Designer.cs">
       <DependentUpon>CategoryDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryGridView.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\CategoryView.cs">
       <SubType>UserControl</SubType>
@@ -83,6 +86,9 @@
     </Compile>
     <Compile Include="Views\CustomerView.Designer.cs">
       <DependentUpon>CustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomListView.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\IMainView.cs" />
     <Compile Include="Views\IView.cs" />

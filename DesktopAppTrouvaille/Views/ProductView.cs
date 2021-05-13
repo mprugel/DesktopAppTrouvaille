@@ -14,8 +14,6 @@ namespace DesktopAppTrouvaille.Views
     public partial class ProductView : UserControl, IView
     {
         private ProductDetailView detailView;
-
-        private ProductController _controller;
         public ProductController Controller { get; set; }
         
         public void UpdateView()
@@ -30,7 +28,6 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
             //Hide Product Detail:
             panelDetailView.Visible = false;
-
 
             // Initialize the ListView:
             listViewTemplate1.SetTitle("Produktliste");
@@ -53,7 +50,6 @@ namespace DesktopAppTrouvaille.Views
             detailView = new NewProductView(Controller);
             panelDetailView.Controls.Add(detailView);
             panelDetailView.Visible = true;
-     
         }
 
         private void ItemSelected(object sender, System.EventArgs e)

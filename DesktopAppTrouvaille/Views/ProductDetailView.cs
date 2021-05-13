@@ -22,14 +22,16 @@ namespace DesktopAppTrouvaille.Views
         public ProductDetailView()
         {
             InitializeComponent();
-
-            // Init the Category List:
-
         }
+
+       
         public ProductDetailView(ProductController controller)
         {
             InitializeComponent();
             Controller = controller;
+
+           
+
         }
 
         public void UpdateView()
@@ -97,9 +99,10 @@ namespace DesktopAppTrouvaille.Views
             return ret;
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        protected virtual void buttonSave_Click(object sender, EventArgs e)
         {
-            if(CheckInputFields())
+
+            if (CheckInputFields())
             {
                 // Update the Product:
                 Prod.Name = textBoxName.Text;
@@ -107,12 +110,17 @@ namespace DesktopAppTrouvaille.Views
                 Prod.Price = (int)numericUpDownPrice.Value;
                 Prod.Description = richTextBox1.Text;
                 labelMessage.Text = String.Empty;
-                Controller.SaveProduct(Prod);  
+                Controller.SaveProduct(Prod);
             }
             else
             {
                 labelMessage.Text = "Bitte füllen Sie alle Felder aus!";
             }
+        }
+
+        private void dataGridViewCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

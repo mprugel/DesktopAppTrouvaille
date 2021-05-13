@@ -45,11 +45,14 @@ namespace DesktopAppTrouvaille
         public void SaveProduct(Product p)
         {
             // Call API
+            //...
            
             // Check Result from API Call:
+            //...
 
             // Update GUI If No Error Occured :
-            _view.UpdateView();
+            // Show new Item in DetailView:
+           
         }
 
         public void ItemSelected(Product p)
@@ -59,7 +62,10 @@ namespace DesktopAppTrouvaille
 
         public void UpdateProduct(Product p)
         {
-            // Call API
+            // Call API 
+            //...
+            
+            _view.UpdateView();
         }
 
        
