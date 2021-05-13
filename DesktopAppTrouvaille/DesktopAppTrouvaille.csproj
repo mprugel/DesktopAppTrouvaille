@@ -79,7 +79,9 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductGetModel.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />
     <Compile Include="States\IProductState.cs" />
     <Compile Include="Controllers\MainController.cs" />

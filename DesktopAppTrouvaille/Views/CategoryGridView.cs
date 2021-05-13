@@ -43,11 +43,14 @@ namespace DesktopAppTrouvaille.Views
 
         private bool CheckCategory(Category cat, List<Category> categories)
         {
-            foreach(Category c in categories)
+            if (categories != null)
             {
-                if(c.Equals(cat))
+                foreach (Category c in categories)
                 {
-                    return true;
+                    if (c.Equals(cat))
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
