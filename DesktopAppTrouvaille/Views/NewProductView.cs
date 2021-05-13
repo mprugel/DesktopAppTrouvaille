@@ -21,5 +21,9 @@ namespace DesktopAppTrouvaille.Views
             this.SetTitle("Neues Produkt anlegen");
             this.SetButtonText("Produkt anlegen");
         }
+        public NewProductView(ProductController controller): base(controller)
+        {
+           
+        }
     }
 }

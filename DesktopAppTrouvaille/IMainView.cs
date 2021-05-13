@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille
 {
+
+    //NOT USED YET
     public interface IMainView
     {
-
+        void UpdateView();
     }
 }

@@ -16,7 +16,6 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
             listView1.View = View.Details;
-      
         }
         public void AddClickHandler(EventHandler handler)
         {

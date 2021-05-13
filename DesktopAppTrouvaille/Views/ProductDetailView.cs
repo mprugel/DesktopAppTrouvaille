@@ -16,32 +16,22 @@ namespace DesktopAppTrouvaille.Views
         private bool newProduct = false;
 
         private Product _prod;
-        public Product Prod 
-        { get { return _prod; }
-            set
-            {
-                _prod = value;
-                labelTitle.Text = "Produkt bearbeiten";
-                buttonDelete.Visible = true;
-                buttonSave.Text = "Änderungen speichern";
-                newProduct = false;
-            } 
-        }
+        public Product Prod;
 
         public ProductController Controller;
         public ProductDetailView()
         {
             InitializeComponent();
+
+            // Init the Category List:
+
+        }
+        public ProductDetailView(ProductController controller)
+        {
+            InitializeComponent();
+            Controller = controller;
         }
 
-        public void NewProduct()
-        {
-            Prod = new Product();
-            labelTitle.Text = "Neues Produkt anlegen";
-            buttonDelete.Visible = false;
-            buttonSave.Text = "Produkt anlegen";
-            newProduct = true;
-        }
         public void UpdateView()
         {
             labelProductID.Text = Prod.ProductID.ToString();
@@ -73,7 +63,7 @@ namespace DesktopAppTrouvaille.Views
 
         public bool CheckInputFields()
         {
-            bool ret = false;
+            bool ret = true;
             if(textBoxName.Text.Length == 0)
             {
                 textBoxName.BackColor = Color.Red;
@@ -111,7 +101,13 @@ namespace DesktopAppTrouvaille.Views
         {
             if(CheckInputFields())
             {
-                Controller.ClickSave(Prod);
+                // Update the Product:
+                Prod.Name = textBoxName.Text;
+                Prod.InStock = (int)numericUpDownInStock.Value;
+                Prod.Price = (int)numericUpDownPrice.Value;
+                Prod.Description = richTextBox1.Text;
+                labelMessage.Text = String.Empty;
+                Controller.SaveProduct(Prod);  
             }
             else
             {

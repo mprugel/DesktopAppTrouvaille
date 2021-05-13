@@ -14,17 +14,19 @@ namespace DesktopAppTrouvaille.Views
     public partial class ProductView : UserControl, IView
     {
         private ProductDetailView detailView;
-        public List<Product> Products { get; set; } = new List<Product>();
 
-        public ProductController Controller = new ProductController();
+        private ProductController _controller;
+        public ProductController Controller { get; set; }
         
         public void UpdateView()
         {
-            listViewTemplate1.AddItems(CreateListViewItems(Products));
+            listViewTemplate1.AddItems(CreateListViewItems(Controller.Products));
         }
 
         public ProductView()
         {
+            Controller = new ProductController(this);
+
             InitializeComponent();
             //Hide Product Detail:
             panelDetailView.Visible = false;
@@ -41,11 +43,14 @@ namespace DesktopAppTrouvaille.Views
             listViewTemplate1.AddClickHandler(ItemSelected);
             listViewTemplate1.AddButtonAddHandler(ButtonAddHandler);
 
+            // Initially update:
+            UpdateView();
+
         }
         private void ButtonAddHandler(object sender, EventArgs e)
         {
             panelDetailView.Controls.Clear();
-            detailView = new NewProductView();
+            detailView = new NewProductView(Controller);
             panelDetailView.Controls.Add(detailView);
             panelDetailView.Visible = true;
      
@@ -59,7 +64,7 @@ namespace DesktopAppTrouvaille.Views
                 Product p = (Product)item.Tag;
 
                 panelDetailView.Controls.Clear();
-                detailView = new ProductDetailView();
+                detailView = new ProductDetailView(Controller);
                 panelDetailView.Controls.Add(detailView);
 
                 detailView.Prod = p;
