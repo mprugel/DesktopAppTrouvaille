@@ -19,6 +19,19 @@ namespace DesktopAppTrouvaille.Views
         public void UpdateView()
         {
             listViewTemplate1.AddItems(CreateListViewItems(Controller.Products));
+
+            switch(Controller.state)
+            {
+                case State.ConnectionError:
+                    labelStatus.Text = "Ein Verbindungsfehler ist aufgetreten!";
+                        break;
+                case State.OK:
+                    labelStatus.Text = String.Empty;
+                    break;
+                case State.LoadProducts:
+                    labelStatus.Text = "Lade Produkte vom Server...";
+                    break;
+            }
         }
 
         public ProductView()
@@ -41,7 +54,7 @@ namespace DesktopAppTrouvaille.Views
             listViewTemplate1.AddButtonAddHandler(ButtonAddHandler);
 
             // Initially update:
-            UpdateView();
+            Controller.UpdateData();
 
         }
         private void ButtonAddHandler(object sender, EventArgs e)
@@ -85,7 +98,7 @@ namespace DesktopAppTrouvaille.Views
 
         private ListViewItem CreateListViewItem(Product product)
         {
-            string[] stringItems = { product.ProductID.ToString(), product.Name.ToString(), product.InStock.ToString() };
+            string[] stringItems = { product.ProductId.ToString(), product.Name.ToString(), product.InStock.ToString() };
             ListViewItem item = new ListViewItem(stringItems,1);
             item.Tag = product;
             return item;

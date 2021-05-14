@@ -13,14 +13,14 @@ namespace DesktopAppTrouvaille.Models
         public string Name { get; set; }
 
         public string Description { get; set; }
-            
-        public decimal Price { get; set; }
+
+        public decimal Price { get; set; } = 0;
 
         public Guid? ManufacturerId { get; set; }
 
-        public int? InStock { get; set; }
+        public int? InStock { get; set; } = 0;
 
-        public decimal? Tax { get; set; }
+        public decimal? Tax { get; set; } = 0;
 
         public Guid? PictureId { get; set; }
 
@@ -32,9 +32,8 @@ namespace DesktopAppTrouvaille.Models
 
         public decimal? AverageRating { get; set; }
 
-        public int ProductID { get; set; }
 
-        public int MinStock { get; set; }
+        public int MinStock { get; set; } = 0;
 
         public List<Category> Categories { get; set; }
 

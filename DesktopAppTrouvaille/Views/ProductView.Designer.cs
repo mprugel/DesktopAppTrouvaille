@@ -30,31 +30,43 @@
         {
             this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.panelDetailView = new System.Windows.Forms.Panel();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listViewTemplate1
             // 
-            this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
+            this.listViewTemplate1.Location = new System.Drawing.Point(3, 69);
             this.listViewTemplate1.Name = "listViewTemplate1";
             this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
             this.listViewTemplate1.TabIndex = 0;
             // 
             // panelDetailView
             // 
-            this.panelDetailView.Location = new System.Drawing.Point(754, 22);
+            this.panelDetailView.Location = new System.Drawing.Point(756, 69);
             this.panelDetailView.Name = "panelDetailView";
             this.panelDetailView.Size = new System.Drawing.Size(1099, 1167);
             this.panelDetailView.TabIndex = 1;
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(26, 19);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(74, 25);
+            this.labelStatus.TabIndex = 2;
+            this.labelStatus.Text = "Online";
             // 
             // ProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.panelDetailView);
             this.Controls.Add(this.listViewTemplate1);
             this.Name = "ProductView";
             this.Size = new System.Drawing.Size(1966, 1207);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -62,5 +74,6 @@
 
         private ListViewTemplate listViewTemplate1;
         private System.Windows.Forms.Panel panelDetailView;
+        private System.Windows.Forms.Label labelStatus;
     }
 }

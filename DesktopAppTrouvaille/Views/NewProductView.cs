@@ -21,7 +21,6 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
             Prod = new Product();
-            Prod.ProductID = 0;
             Prod.Categories = new List<Category>();
             UpdateView();
             

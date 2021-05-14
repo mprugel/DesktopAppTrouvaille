@@ -13,9 +13,6 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductDetailView : UserControl
     {
-        private bool newProduct = false;
-
-        private Product _prod;
         public Product Prod;
 
         public ProductController Controller;
@@ -24,7 +21,6 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
         }
 
-       
         public ProductDetailView(ProductController controller)
         {
             InitializeComponent();
@@ -33,7 +29,7 @@ namespace DesktopAppTrouvaille.Views
 
         public void UpdateView()
         {
-            labelProductID.Text = Prod.ProductID.ToString();
+            labelProductID.Text = Prod.ProductId.ToString();
             textBoxName.Text = Prod.Name;
             numericUpDownInStock.Value = (int)Prod.InStock;
             numericUpDownPrice.Value = (int)Prod.Price;

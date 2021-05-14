@@ -1,4 +1,5 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -9,18 +10,18 @@ namespace APIconnector.Processors
 {
     public class ProductProcessor
     {
-        public Product LoadProduct(Guid productID)
+        public async Task<Product> LoadProduct(Guid productID)
         {
             string url = "Products/" + productID.ToString();
             HttpResponseMessage response;
             try
             {
-                response = APIconnection.ApiClient.GetAsync(url).Result;
+                response = await APIconnection.ApiClient.GetAsync(url);
                 Console.WriteLine("STATUS: " + response);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Product product = response.Content.ReadAsAsync<Product>().Result;
+                    Product product = await response.Content.ReadAsAsync<Product>();
 
                     return product;
                 }
@@ -31,9 +32,9 @@ namespace APIconnector.Processors
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.InnerException);
+                throw new GETException();  
             }
-            return null;  
+           
         }
     }
 }
