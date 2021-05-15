@@ -34,7 +34,7 @@ namespace DesktopAppTrouvaille.Views
         {
             if(CheckInputFields())
             {
-                Controller.SaveProduct(Prod);
+               // Controller.SaveProduct(Prod);
             }
         }
     }

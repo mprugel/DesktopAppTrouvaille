@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIconnection.cs" />
+    <Compile Include="Controllers\PictureController.cs" />
+    <Compile Include="Controllers\ProductIterator.cs" />
     <Compile Include="Exceptions\GETException.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -82,7 +84,10 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductGetModel.cs" />
+    <Compile Include="Processors\CategoryGETDTO.cs" />
+    <Compile Include="Processors\CategoryProcessor.cs" />
+    <Compile Include="Processors\ProductGETDTO.cs" />
+    <Compile Include="Processors\ProductPOSTDTO.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />
     <Compile Include="States\IProductState.cs" />
     <Compile Include="Controllers\MainController.cs" />

@@ -1,4 +1,5 @@
 ﻿using APIconnector.Processors;
+using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Views;
@@ -10,14 +11,16 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille
 {
-    public enum State {ConnectionError, OK, LoadProducts }
+    public enum State {ConnectionError, OK, LoadProducts , SavedProduct}
     public class ProductController
     {
         private ProductProcessor prossesor = new ProductProcessor();
 
-        public List<Category> Categories;
+        public List<Category> Categories = new List<Category>();
 
         private State _state;
+
+        private ProductIterator _iterator;
         public State state { get { return _state; } }
 
 
@@ -29,6 +32,7 @@ namespace DesktopAppTrouvaille
 
         public ProductController(IView view)
         {
+            _iterator = new ProductIterator(10);
             _state = State.OK;
             _view = view;
             //---------------------------------------
@@ -67,14 +71,11 @@ namespace DesktopAppTrouvaille
             try
             {
                 _state = State.LoadProducts;
-                Product p = await prossesor.LoadProduct(new Guid("a97d0975-2c03-418a-b780-065cf775ddb0"));
-                Console.WriteLine("Loaded Product");
-                Products.Add(p); 
+                Products = await prossesor.LoadProducts(_iterator.From, _iterator.To);
             }
             catch(GETException e)
             {
                 _state = State.ConnectionError;
-                Console.WriteLine("Verbindungsfehler!");
             }
             finally
             {
@@ -82,18 +83,34 @@ namespace DesktopAppTrouvaille
             }
         }
 
+        public void Next()
+        {
+            _iterator.Next();
+            UpdateData();
+        }
+
+        public void Previous()
+        {
+            _iterator.Previous();
+            UpdateData();
+        }
+
         public bool SaveProduct(Product p)
         {
             // Call API
-            //...
+            if(prossesor.SaveProduct(p).Result)
+            {
+                _state = State.SavedProduct;
+                _view.UpdateView();
+                return true;
+            }
+            else
+            {
+                _state = State.ConnectionError;
+                _view.UpdateView();
+                return false;
+            }
 
-            // Check Result from API Call:
-            //...
-
-            // Update GUI If No Error Occured :
-            // Show new Item in DetailView:
-            _view.UpdateView();
-            return true;
         }
 
         public void ItemSelected(Product p)

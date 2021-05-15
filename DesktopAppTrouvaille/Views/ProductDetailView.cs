@@ -8,12 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
+using System.IO;
+using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductDetailView : UserControl
     {
         public Product Prod;
+
+        private PictureController pictureController = new PictureController();
+
+        OpenFileDialog fileDialog = new OpenFileDialog();
 
         public ProductController Controller;
         public ProductDetailView()
@@ -25,6 +31,7 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
             Controller = controller;
+            fileDialog.FileOk += FileSelected;
         }
 
         public void UpdateView()
@@ -126,6 +133,39 @@ namespace DesktopAppTrouvaille.Views
         private void dataGridViewCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonUploadPicture_Click(object sender, EventArgs e)
+        { 
+            fileDialog.ShowDialog(); 
+        }
+
+        private void FileSelected(object sender, EventArgs e)
+        {
+            Stream fileStream = fileDialog.OpenFile();
+            Bitmap img = (Bitmap)Image.FromStream(fileStream);
+            pictureController.AddPicture(img);
+            pictureBox1.Image = pictureController.GetCurrentPicture();
+        }
+
+        // Button Picture Next:
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pictureController.Next();
+            pictureBox1.Image = pictureController.GetCurrentPicture();
+        }
+
+        private void buttonPicturePrevious_Click(object sender, EventArgs e)
+        {
+            pictureController.Previous();
+            pictureBox1.Image = pictureController.GetCurrentPicture();
+            pictureBox1.Refresh();
+        }
+
+        private void buttonDeletePicture_Click(object sender, EventArgs e)
+        {
+            pictureController.RemoveCurrentPicture();
+            pictureBox1.Image = pictureController.GetCurrentPicture();
         }
     }
 }

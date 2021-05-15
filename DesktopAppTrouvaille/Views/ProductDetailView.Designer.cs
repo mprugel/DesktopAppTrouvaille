@@ -38,8 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonPicturePrevious = new System.Windows.Forms.Button();
+            this.buttonPictureNext = new System.Windows.Forms.Button();
             this.buttonDeletePicture = new System.Windows.Forms.Button();
             this.buttonUploadPicture = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,9 +62,11 @@
             this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,6 +154,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(116, 650);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(435, 315);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -163,23 +166,25 @@
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             // 
-            // button1
+            // buttonPicturePrevious
             // 
-            this.button1.Location = new System.Drawing.Point(58, 650);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 315);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonPicturePrevious.Location = new System.Drawing.Point(58, 650);
+            this.buttonPicturePrevious.Name = "buttonPicturePrevious";
+            this.buttonPicturePrevious.Size = new System.Drawing.Size(34, 315);
+            this.buttonPicturePrevious.TabIndex = 14;
+            this.buttonPicturePrevious.Text = "<";
+            this.buttonPicturePrevious.UseVisualStyleBackColor = true;
+            this.buttonPicturePrevious.Click += new System.EventHandler(this.buttonPicturePrevious_Click);
             // 
-            // button2
+            // buttonPictureNext
             // 
-            this.button2.Location = new System.Drawing.Point(576, 650);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(35, 315);
-            this.button2.TabIndex = 15;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonPictureNext.Location = new System.Drawing.Point(576, 650);
+            this.buttonPictureNext.Name = "buttonPictureNext";
+            this.buttonPictureNext.Size = new System.Drawing.Size(35, 315);
+            this.buttonPictureNext.TabIndex = 15;
+            this.buttonPictureNext.Text = ">";
+            this.buttonPictureNext.UseVisualStyleBackColor = true;
+            this.buttonPictureNext.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonDeletePicture
             // 
@@ -191,6 +196,7 @@
             this.buttonDeletePicture.TabIndex = 16;
             this.buttonDeletePicture.Text = "Löschen";
             this.buttonDeletePicture.UseVisualStyleBackColor = false;
+            this.buttonDeletePicture.Click += new System.EventHandler(this.buttonDeletePicture_Click);
             // 
             // buttonUploadPicture
             // 
@@ -200,6 +206,7 @@
             this.buttonUploadPicture.TabIndex = 17;
             this.buttonUploadPicture.Text = "Hochladen";
             this.buttonUploadPicture.UseVisualStyleBackColor = true;
+            this.buttonUploadPicture.Click += new System.EventHandler(this.buttonUploadPicture_Click);
             // 
             // label6
             // 
@@ -340,20 +347,6 @@
             this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
             this.dataGridViewCheckBoxColumn7.Width = 200;
             // 
-            // categoryGridView1
-            // 
-            this.categoryGridView1.AllowUserToAddRows = false;
-            this.categoryGridView1.AllowUserToDeleteRows = false;
-            this.categoryGridView1.AllowUserToResizeColumns = false;
-            this.categoryGridView1.AllowUserToResizeRows = false;
-            this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.categoryGridView1.Location = new System.Drawing.Point(458, 358);
-            this.categoryGridView1.Name = "categoryGridView1";
-            this.categoryGridView1.RowHeadersWidth = 82;
-            this.categoryGridView1.RowTemplate.Height = 33;
-            this.categoryGridView1.Size = new System.Drawing.Size(581, 255);
-            this.categoryGridView1.TabIndex = 23;
-            // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.MinimumWidth = 10;
@@ -365,6 +358,35 @@
             this.dataGridViewCheckBoxColumn8.MinimumWidth = 10;
             this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
             this.dataGridViewCheckBoxColumn8.Width = 200;
+            // 
+            // categoryGridView1
+            // 
+            this.categoryGridView1.AllowUserToAddRows = false;
+            this.categoryGridView1.AllowUserToDeleteRows = false;
+            this.categoryGridView1.AllowUserToResizeColumns = false;
+            this.categoryGridView1.AllowUserToResizeRows = false;
+            this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoryGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewCheckBoxColumn9});
+            this.categoryGridView1.Location = new System.Drawing.Point(458, 358);
+            this.categoryGridView1.Name = "categoryGridView1";
+            this.categoryGridView1.RowHeadersWidth = 82;
+            this.categoryGridView1.RowTemplate.Height = 33;
+            this.categoryGridView1.Size = new System.Drawing.Size(581, 255);
+            this.categoryGridView1.TabIndex = 23;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn9
+            // 
+            this.dataGridViewCheckBoxColumn9.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
+            this.dataGridViewCheckBoxColumn9.Width = 200;
             // 
             // ProductDetailView
             // 
@@ -378,8 +400,8 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonUploadPicture);
             this.Controls.Add(this.buttonDeletePicture);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonPictureNext);
+            this.Controls.Add(this.buttonPicturePrevious);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.richTextBox1);
@@ -415,8 +437,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonPicturePrevious;
+        private System.Windows.Forms.Button buttonPictureNext;
         private System.Windows.Forms.Button buttonDeletePicture;
         private System.Windows.Forms.Button buttonUploadPicture;
         private System.Windows.Forms.Label label6;
@@ -442,5 +464,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
     }
 }
