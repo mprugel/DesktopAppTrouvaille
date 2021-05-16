@@ -47,8 +47,12 @@ namespace DesktopAppTrouvaille.Models
             dto.MinStock = MinStock;
             dto.Tax = Tax;
             dto.ManufacturerId = ManufacturerId;
-            dto.ImageTitle = Picture.ImageTitle;
-            dto.ImageData = Picture.ImageData;
+            if(Picture != null)
+            {
+                dto.ImageTitle = Picture.ImageTitle;
+                dto.ImageData = Picture.ImageData;
+            }
+           
             dto.ProductCategoryIds = ProductCategories;
 
             return dto;

@@ -39,6 +39,11 @@ namespace DesktopAppTrouvaille.Views
                     labelStatus.Text = "Produkt wurde gelöscht";
                     panelDetailView.Controls.Clear();
                     break;
+                case State.SavedProduct:
+                    
+                    panelDetailView.Controls.Clear();
+                    labelStatus.Text = "Produkt wurde gespeichert";
+                    break;
             }
         }
 

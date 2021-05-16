@@ -77,14 +77,16 @@ namespace DesktopAppTrouvaille
             // Call API
             if (await _productProssesor.SaveNewProduct(p))
             {
+                UpdateData();
                 _state = State.SavedProduct;
             }
             else
             {
                 _state = State.ConnectionError;
             }
+            
             _view.UpdateView();
-            UpdateData();
+            
         }
 
         public async void DeleteProduct(Product p)
