@@ -25,7 +25,7 @@ namespace DesktopAppTrouvaille.Models
 
         public Guid? PictureId { get; set; }
 
-        public virtual Picture Picture { get; set; }
+        public virtual Picture Picture { get; set; } = new Picture();
 
         public virtual List<Guid> ProductCategories { get; set; } = new List<Guid>();
           

@@ -34,6 +34,8 @@
             this.panelFilter = new System.Windows.Forms.Panel();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.buttonPrevious = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -91,10 +93,32 @@
             this.listView1.TileSize = new System.Drawing.Size(100, 10);
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // buttonPrevious
+            // 
+            this.buttonPrevious.Location = new System.Drawing.Point(26, 892);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(147, 45);
+            this.buttonPrevious.TabIndex = 8;
+            this.buttonPrevious.Text = "<";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Location = new System.Drawing.Point(569, 892);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(147, 45);
+            this.buttonNext.TabIndex = 9;
+            this.buttonNext.Text = ">";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
             // ListViewTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panelFilter);
@@ -116,5 +140,7 @@
         private System.Windows.Forms.Panel panelFilter;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button buttonPrevious;
+        private System.Windows.Forms.Button buttonNext;
     }
 }

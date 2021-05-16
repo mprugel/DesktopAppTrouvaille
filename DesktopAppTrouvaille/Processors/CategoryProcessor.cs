@@ -35,5 +35,29 @@ namespace DesktopAppTrouvaille.Processors
             }
 
         }
+
+        public async Task<List<Category>> LoadCategories()
+        {
+            string url = "Categories/";
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Category> cat = await response.Content.ReadAsAsync<List<Category>>();
+                    return cat;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
     }
 }

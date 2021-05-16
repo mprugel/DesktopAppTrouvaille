@@ -17,6 +17,8 @@ namespace DesktopAppTrouvaille.Views
     {
         public Product Prod;
 
+        //For Testing:
+        List<Picture> picList = new List<Picture>();
         private PictureController pictureController = new PictureController();
 
         OpenFileDialog fileDialog = new OpenFileDialog();
@@ -42,6 +44,9 @@ namespace DesktopAppTrouvaille.Views
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
             categoryGridView1.AddCategories(Prod.Categories, Controller.Categories);
+
+            picList.Add(Prod.Picture);
+            pictureController.SetPictures(picList);
         }
 
         public void SetTitle(string title)
@@ -97,36 +102,46 @@ namespace DesktopAppTrouvaille.Views
                 richTextBox1.BackColor = Color.White;
             }
 
-            if(categoryGridView1.GetCheckedCategories().Count == 0)
+            /*if(categoryGridView1.GetCheckedCategories().Count == 0)
             {
                 categoryGridView1.BackgroundColor = Color.Red;
             }
             else
             {
                 categoryGridView1.BackgroundColor = Color.White;
+            }*/
+
+            if(ret)
+            {
+                labelMessage.Text = String.Empty;
+            }
+            else
+            {
+                labelMessage.Text = "Bitte füllen Sie alle Felder aus!";
             }
 
             return ret;
         }
 
+        public Product GetProductFromInputs()
+        {
+            Product p = new Product();
+            p.ProductId = Prod.ProductId;
+            p.Name = textBoxName.Text;
+            p.InStock = (int)numericUpDownInStock.Value;
+            p.Price = (int)numericUpDownPrice.Value;
+            p.Description = richTextBox1.Text;
+            p.Categories = categoryGridView1.GetCheckedCategories();
+            p.Picture = pictureController.GetCurrentPicture();
+
+            return p;
+        }
         protected virtual void buttonSave_Click(object sender, EventArgs e)
         {
-
             if (CheckInputFields())
             {
                 // Update the Product:
-                Prod.Name = textBoxName.Text;
-                Prod.InStock = (int)numericUpDownInStock.Value;
-                Prod.Price = (int)numericUpDownPrice.Value;
-                Prod.Description = richTextBox1.Text;
-                Prod.Categories = categoryGridView1.GetCheckedCategories();
-                labelMessage.Text = String.Empty;
-
-                Controller.SaveProduct(Prod);
-            }
-            else
-            {
-                labelMessage.Text = "Bitte füllen Sie alle Felder aus!";
+                Controller.UpdateProduct(GetProductFromInputs());
             }
         }
 
@@ -144,28 +159,35 @@ namespace DesktopAppTrouvaille.Views
         {
             Stream fileStream = fileDialog.OpenFile();
             Bitmap img = (Bitmap)Image.FromStream(fileStream);
-            pictureController.AddPicture(img);
-            pictureBox1.Image = pictureController.GetCurrentPicture();
+            Picture pic = new Picture();
+            pic.SetImageData(img);
+            pictureController.AddPicture(pic);
+            pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
         }
 
         // Button Picture Next:
         private void button2_Click(object sender, EventArgs e)
         {
             pictureController.Next();
-            pictureBox1.Image = pictureController.GetCurrentPicture();
+            pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
         }
 
         private void buttonPicturePrevious_Click(object sender, EventArgs e)
         {
             pictureController.Previous();
-            pictureBox1.Image = pictureController.GetCurrentPicture();
+            pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
             pictureBox1.Refresh();
         }
 
         private void buttonDeletePicture_Click(object sender, EventArgs e)
         {
             pictureController.RemoveCurrentPicture();
-            pictureBox1.Image = pictureController.GetCurrentPicture();
+            pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            Controller.DeleteProduct(Prod);
         }
     }
 }

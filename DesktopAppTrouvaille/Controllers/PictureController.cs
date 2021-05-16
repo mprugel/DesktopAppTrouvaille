@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopAppTrouvaille.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -9,11 +10,10 @@ namespace DesktopAppTrouvaille.Controllers
 {
     public class PictureController
     {
-        private List<Bitmap> _images = new List<Bitmap>();
+        private List<Picture> _images = new List<Picture>();
 
         private int _pos = 0;
 
-        
         public void Next()
         {
             if (_pos < _images.Count - 1)
@@ -31,7 +31,7 @@ namespace DesktopAppTrouvaille.Controllers
             }
         }
 
-        public void AddPicture(Bitmap img)
+        public void AddPicture(Picture img)
         {
             _images.Add(img);
             _pos = (_images.Count - 1);
@@ -40,9 +40,10 @@ namespace DesktopAppTrouvaille.Controllers
         public void RemoveCurrentPicture()
         {
             _images.RemoveAt(_pos);
+            _pos = 0;
         }
 
-        public Bitmap GetCurrentPicture()
+        public Picture GetCurrentPicture()
         {
             if(_images.Count == 0)
             {
@@ -50,5 +51,19 @@ namespace DesktopAppTrouvaille.Controllers
             }
             return _images[_pos];
         }
+
+        public void SetPictures(List<Picture> pics)
+        {
+            foreach (Picture pic in pics)
+            {
+                if(pic.ImageData != null)
+                {
+                    _images.Add(pic);
+                }
+                
+            }
+        }
+
+       
     }
 }

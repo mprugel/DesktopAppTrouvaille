@@ -13,6 +13,7 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductView : UserControl, IView
     {
+
         private ProductDetailView detailView;
         public ProductController Controller { get; set; }
         
@@ -28,8 +29,15 @@ namespace DesktopAppTrouvaille.Views
                 case State.OK:
                     labelStatus.Text = String.Empty;
                     break;
-                case State.LoadProducts:
-                    labelStatus.Text = "Lade Produkte vom Server...";
+                case State.LoadData:
+                    labelStatus.Text = "Lade Daten vom Server...";
+                    break;
+                case State.SendingData:
+                    labelStatus.Text = "Sende Daten zum Server...";
+                    break;
+                case State.DeletedProduct:
+                    labelStatus.Text = "Produkt wurde gelöscht";
+                    panelDetailView.Controls.Clear();
                     break;
             }
         }
@@ -37,8 +45,9 @@ namespace DesktopAppTrouvaille.Views
         public ProductView()
         {
             Controller = new ProductController(this);
-
+            
             InitializeComponent();
+            listViewTemplate1.Controller = Controller;
             //Hide Product Detail:
             panelDetailView.Visible = false;
 

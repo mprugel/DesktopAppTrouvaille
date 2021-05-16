@@ -2,6 +2,7 @@
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Processors;
 using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,12 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille
 {
-    public enum State {ConnectionError, OK, LoadProducts , SavedProduct}
-    public class ProductController
+    public enum State {ConnectionError, OK, LoadData , SendingData, SavedProduct, DeletedProduct}
+    public class ProductController : IController
     {
-        private ProductProcessor prossesor = new ProductProcessor();
+        private int _productCount = 0;
+        private ProductProcessor _productProssesor = new ProductProcessor();
+        private CategoryProcessor _categoryProcessor = new CategoryProcessor();
 
         public List<Category> Categories = new List<Category>();
 
@@ -35,43 +38,16 @@ namespace DesktopAppTrouvaille
             _iterator = new ProductIterator(10);
             _state = State.OK;
             _view = view;
-            //---------------------------------------
-            // TEST CODE:
-            /*Categories = new List<Category>();
-            Category cat1 = new Category();
-            cat1.Name = "Künstlerpinsel";
-            Category cat2 = new Category();
-            cat2.Name = "Farben";
-            Categories.Add(cat1);
-            Categories.Add(cat2);
-           
-
-            Products = new List<Product>();
-            Product p1 = new Product();
-            p1.Categories = Categories;
-            p1.Name = "Pinsel Größe 5";
-            p1.Price = 2;
-            p1.ProductID = 45;
-
-            Product p2 = new Product();
-            p2.Name = "Pinsel Größe 10";
-            p2.Price = 3;
-            p2.ProductID = 51;
-            p2.Categories = Categories;
-
-            Products.Add(p1);
-            Products.Add(p2);
-            */
-            //---------------------------------------
-            //TEST
         }
 
         public async void UpdateData()
         {
             try
             {
-                _state = State.LoadProducts;
-                Products = await prossesor.LoadProducts(_iterator.From, _iterator.To);
+                _state = State.LoadData;
+                Categories = await _categoryProcessor.LoadCategories();
+                Products = await _productProssesor.LoadProducts(_iterator.From, _iterator.To);
+                _state = State.OK;
             }
             catch(GETException e)
             {
@@ -95,22 +71,36 @@ namespace DesktopAppTrouvaille
             UpdateData();
         }
 
-        public bool SaveProduct(Product p)
+        public async void SaveProduct(Product p)
         {
+            _state = State.SendingData;
             // Call API
-            if(prossesor.SaveProduct(p).Result)
+            if (await _productProssesor.SaveNewProduct(p))
             {
                 _state = State.SavedProduct;
-                _view.UpdateView();
-                return true;
             }
             else
             {
                 _state = State.ConnectionError;
-                _view.UpdateView();
-                return false;
             }
+            _view.UpdateView();
+            UpdateData();
+        }
 
+        public async void DeleteProduct(Product p)
+        {
+            _state = State.SendingData;
+            // Call API
+            if (await _productProssesor.DeleteProduct(p))
+            {
+                _state = State.DeletedProduct;
+            }
+            else
+            {
+                _state = State.ConnectionError;
+            }
+            _view.UpdateView();
+            UpdateData();
         }
 
         public void ItemSelected(Product p)
@@ -118,11 +108,19 @@ namespace DesktopAppTrouvaille
             //state = state.ItemSelected(this);
         }
 
-        public void UpdateProduct(Product p)
+        public async void UpdateProduct(Product p)
         {
-            // Call API 
-            //...
-            
+            _state = State.SendingData;
+            // Call API
+            if ( await _productProssesor.UpdateProduct(p))
+            {
+                _state = State.SavedProduct;
+            }
+            else
+            {
+                _state = State.ConnectionError;
+            }
+            UpdateData();
             _view.UpdateView();
         }
 
