@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30517.126
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopAppTrouvaille", "DesktopAppTrouvaille\DesktopAppTrouvaille.csproj", "{BAF03261-2A80-4411-B625-FE3CF928A104}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopAppTrouvaille", "DesktopAppTrouvaille.csproj", "{89FE3D14-7D86-4137-908E-B63FF596A540}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BAF03261-2A80-4411-B625-FE3CF928A104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAF03261-2A80-4411-B625-FE3CF928A104}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAF03261-2A80-4411-B625-FE3CF928A104}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAF03261-2A80-4411-B625-FE3CF928A104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FE3D14-7D86-4137-908E-B63FF596A540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FE3D14-7D86-4137-908E-B63FF596A540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FE3D14-7D86-4137-908E-B63FF596A540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FE3D14-7D86-4137-908E-B63FF596A540}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F2C3C439-44CB-4258-95CC-A08BC5D9F0D1}
+		SolutionGuid = {C6DC8448-4251-4A4F-8703-618C1FB73938}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CustomerDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CustomerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\ListViewTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\MainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\NewProductView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\OrderDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\OrderViewUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\ProductDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\ProductView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
