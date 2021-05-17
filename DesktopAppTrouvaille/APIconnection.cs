@@ -23,7 +23,7 @@ namespace APIconnector
 
             ApiClient = new HttpClient(handler);
             
-            ApiClient.BaseAddress = new Uri("https://141.79.34.188:5001/api/");  //Base-Uri
+            ApiClient.BaseAddress = new Uri("https://141.79.35.5:5001/api/");  //Base-Uri
           
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

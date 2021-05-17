@@ -66,6 +66,8 @@ namespace APIconnector.Processors
 
         }
 
+       
+
         public async Task<bool> UpdateProduct(Product product)
         {
             string url = "Products/" + product.ProductId;
@@ -145,6 +147,40 @@ namespace APIconnector.Processors
                 else
                 {
                     return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
+
+        public async Task<bool> AddCategories(Guid id, List<Category> categories)
+        {
+            string url = "Products/" + id + "/addCategory";
+            HttpResponseMessage response;
+            try
+            {
+                List<Guid> catGuidList = new List<Guid>();
+                foreach(Category cat in categories)
+                {
+                    catGuidList.Add(cat.CategoryId);
+                }
+
+                string json = JsonConvert.SerializeObject(catGuidList);
+                Console.WriteLine(json);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch (Exception e)

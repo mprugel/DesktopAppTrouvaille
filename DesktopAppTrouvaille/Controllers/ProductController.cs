@@ -73,6 +73,7 @@ namespace DesktopAppTrouvaille
 
         public async void SaveProduct(Product p)
         {
+            
             _state = State.SendingData;
             // Call API
             if (await _productProssesor.SaveNewProduct(p))
@@ -110,11 +111,15 @@ namespace DesktopAppTrouvaille
             //state = state.ItemSelected(this);
         }
 
-        public async void UpdateProduct(Product p)
+        public async void UpdateProduct(Product oldP, Product newP)
         {
+            // Get the Categories which are removed:
+           
+            await _productProssesor.AddCategories(newP.ProductId, newP.Categories);
+
             _state = State.SendingData;
             // Call API
-            if ( await _productProssesor.UpdateProduct(p))
+            if ( await _productProssesor.UpdateProduct(newP))
             {
                 _state = State.SavedProduct;
             }

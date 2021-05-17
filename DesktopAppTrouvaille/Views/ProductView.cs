@@ -40,7 +40,6 @@ namespace DesktopAppTrouvaille.Views
                     panelDetailView.Controls.Clear();
                     break;
                 case State.SavedProduct:
-                    
                     panelDetailView.Controls.Clear();
                     labelStatus.Text = "Produkt wurde gespeichert";
                     break;

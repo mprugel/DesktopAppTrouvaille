@@ -93,7 +93,7 @@
             // labelProductID
             // 
             this.labelProductID.AutoSize = true;
-            this.labelProductID.Location = new System.Drawing.Point(731, 121);
+            this.labelProductID.Location = new System.Drawing.Point(731, 96);
             this.labelProductID.Name = "labelProductID";
             this.labelProductID.Size = new System.Drawing.Size(60, 25);
             this.labelProductID.TabIndex = 2;
@@ -103,7 +103,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(597, 121);
+            this.label2.Location = new System.Drawing.Point(586, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 3;
@@ -111,7 +111,7 @@
             // 
             // numericUpDownInStock
             // 
-            this.numericUpDownInStock.Location = new System.Drawing.Point(58, 226);
+            this.numericUpDownInStock.Location = new System.Drawing.Point(58, 235);
             this.numericUpDownInStock.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -124,15 +124,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(53, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 25);
+            this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Lagerbestand";
             // 
             // numericUpDownPrice
             // 
-            this.numericUpDownPrice.Location = new System.Drawing.Point(283, 226);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(283, 235);
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(120, 31);
             this.numericUpDownPrice.TabIndex = 6;
@@ -140,23 +141,26 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(278, 195);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 25);
+            this.label4.Size = new System.Drawing.Size(66, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Preis";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(53, 304);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 25);
+            this.label5.Size = new System.Drawing.Size(156, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "Beschreibung";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(116, 650);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(435, 315);
@@ -168,7 +172,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(58, 358);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(370, 255);
+            this.richTextBox1.Size = new System.Drawing.Size(493, 255);
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "";
             // 
@@ -218,7 +222,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(53, 121);
+            this.label6.Location = new System.Drawing.Point(53, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 25);
             this.label6.TabIndex = 18;
@@ -226,7 +230,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(138, 118);
+            this.textBoxName.Location = new System.Drawing.Point(138, 90);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(265, 31);
             this.textBoxName.TabIndex = 19;
@@ -243,7 +247,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(507, 1041);
+            this.buttonSave.Location = new System.Drawing.Point(755, 1041);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(284, 48);
             this.buttonSave.TabIndex = 13;
@@ -264,9 +268,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(453, 304);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(586, 304);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 25);
+            this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.TabIndex = 22;
             this.label1.Text = "Kategorien";
             // 
@@ -423,13 +428,13 @@
             this.categoryGridView1.BackgroundColor = System.Drawing.Color.White;
             this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.categoryGridView1.Location = new System.Drawing.Point(458, 358);
+            this.categoryGridView1.Location = new System.Drawing.Point(591, 358);
             this.categoryGridView1.Name = "categoryGridView1";
             this.categoryGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.categoryGridView1.RowHeadersVisible = false;
             this.categoryGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.categoryGridView1.RowTemplate.Height = 33;
-            this.categoryGridView1.Size = new System.Drawing.Size(581, 255);
+            this.categoryGridView1.Size = new System.Drawing.Size(448, 255);
             this.categoryGridView1.TabIndex = 23;
             // 
             // ProductDetailView

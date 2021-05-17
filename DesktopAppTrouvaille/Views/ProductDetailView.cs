@@ -44,9 +44,10 @@ namespace DesktopAppTrouvaille.Views
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
             categoryGridView1.AddCategories(Prod.Categories, Controller.Categories);
-
+            
             picList.Add(Prod.Picture);
             pictureController.SetPictures(picList);
+            pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
         }
 
         public void SetTitle(string title)
@@ -134,6 +135,7 @@ namespace DesktopAppTrouvaille.Views
             p.Categories = categoryGridView1.GetCheckedCategories();
             p.Picture = pictureController.GetCurrentPicture();
 
+
             return p;
         }
         protected virtual void buttonSave_Click(object sender, EventArgs e)
@@ -141,7 +143,7 @@ namespace DesktopAppTrouvaille.Views
             if (CheckInputFields())
             {
                 // Update the Product:
-                Controller.UpdateProduct(GetProductFromInputs());
+                Controller.UpdateProduct(Prod, GetProductFromInputs());
             }
         }
 

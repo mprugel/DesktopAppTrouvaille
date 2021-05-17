@@ -47,7 +47,7 @@ namespace DesktopAppTrouvaille.Controllers
         {
             if(_images.Count == 0)
             {
-                return null;
+                return new Picture();
             }
             return _images[_pos];
         }
@@ -63,6 +63,8 @@ namespace DesktopAppTrouvaille.Controllers
                 
             }
         }
+
+       
 
        
     }

@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.panelDetailView = new System.Windows.Forms.Panel();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.SuspendLayout();
-            // 
-            // listViewTemplate1
-            // 
-            this.listViewTemplate1.Location = new System.Drawing.Point(3, 69);
-            this.listViewTemplate1.Name = "listViewTemplate1";
-            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
-            this.listViewTemplate1.TabIndex = 0;
             // 
             // panelDetailView
             // 
-            this.panelDetailView.Location = new System.Drawing.Point(756, 69);
+            this.panelDetailView.Location = new System.Drawing.Point(756, 3);
             this.panelDetailView.Name = "panelDetailView";
             this.panelDetailView.Size = new System.Drawing.Size(1099, 1167);
             this.panelDetailView.TabIndex = 1;
@@ -55,6 +48,13 @@
             this.labelStatus.Size = new System.Drawing.Size(74, 25);
             this.labelStatus.TabIndex = 2;
             this.labelStatus.Text = "Online";
+            // 
+            // listViewTemplate1
+            // 
+            this.listViewTemplate1.Location = new System.Drawing.Point(3, 69);
+            this.listViewTemplate1.Name = "listViewTemplate1";
+            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
+            this.listViewTemplate1.TabIndex = 0;
             // 
             // ProductView
             // 

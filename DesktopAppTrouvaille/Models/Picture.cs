@@ -19,11 +19,22 @@ namespace DesktopAppTrouvaille.Models
         public Bitmap ToBitmap()
         {
             Bitmap img;
-            using(MemoryStream stream= new MemoryStream(ImageData))
+            try
             {
-                img = new Bitmap(stream);
+                using (MemoryStream stream = new MemoryStream(ImageData))
+                {
+                    img = new Bitmap(stream);
+                } 
+                return img; 
             }
-            return img; 
+            catch(Exception e)
+            {
+                Bitmap bmp = new Bitmap(1024, 1024);
+                using (Graphics g = Graphics.FromImage(bmp)) { g.Clear(Color.White); }
+                return bmp;
+            }
+           
+            
         }
 
         public void SetImageData(Bitmap img)
