@@ -56,12 +56,13 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(432, 99);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(256, 47);
             this.button1.TabIndex = 2;
             this.button1.Text = "Suchen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // panelFilter
             // 
@@ -72,12 +73,13 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.BackColor = System.Drawing.Color.White;
             this.buttonAdd.Location = new System.Drawing.Point(432, 35);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(256, 45);
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "ADD <Item>";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             // 
             // listView1
             // 
@@ -95,28 +97,32 @@
             // 
             // buttonPrevious
             // 
+            this.buttonPrevious.BackColor = System.Drawing.Color.White;
             this.buttonPrevious.Location = new System.Drawing.Point(26, 892);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(147, 45);
             this.buttonPrevious.TabIndex = 8;
             this.buttonPrevious.Text = "<";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.UseVisualStyleBackColor = false;
             this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // buttonNext
             // 
+            this.buttonNext.BackColor = System.Drawing.Color.White;
             this.buttonNext.Location = new System.Drawing.Point(569, 892);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(147, 45);
             this.buttonNext.TabIndex = 9;
             this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // ListViewTemplate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.listView1);
@@ -126,7 +132,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "ListViewTemplate";
-            this.Size = new System.Drawing.Size(747, 1057);
+            this.Size = new System.Drawing.Size(747, 1003);
             this.ResumeLayout(false);
             this.PerformLayout();
 
