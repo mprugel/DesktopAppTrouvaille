@@ -34,17 +34,14 @@
             this.buttonShowStatistics = new System.Windows.Forms.Button();
             this.panelTabView = new System.Windows.Forms.Panel();
             this.buttonShowCategories = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonShowProducts
             // 
             this.buttonShowProducts.BackColor = System.Drawing.Color.White;
-            this.buttonShowProducts.Location = new System.Drawing.Point(27, 32);
+            this.buttonShowProducts.Location = new System.Drawing.Point(29, 23);
             this.buttonShowProducts.Name = "buttonShowProducts";
             this.buttonShowProducts.Size = new System.Drawing.Size(489, 109);
             this.buttonShowProducts.TabIndex = 0;
@@ -55,7 +52,7 @@
             // buttonShowOrders
             // 
             this.buttonShowOrders.BackColor = System.Drawing.Color.White;
-            this.buttonShowOrders.Location = new System.Drawing.Point(27, 193);
+            this.buttonShowOrders.Location = new System.Drawing.Point(29, 184);
             this.buttonShowOrders.Name = "buttonShowOrders";
             this.buttonShowOrders.Size = new System.Drawing.Size(489, 113);
             this.buttonShowOrders.TabIndex = 1;
@@ -66,7 +63,7 @@
             // buttonShowCustomers
             // 
             this.buttonShowCustomers.BackColor = System.Drawing.Color.White;
-            this.buttonShowCustomers.Location = new System.Drawing.Point(27, 355);
+            this.buttonShowCustomers.Location = new System.Drawing.Point(29, 346);
             this.buttonShowCustomers.Name = "buttonShowCustomers";
             this.buttonShowCustomers.Size = new System.Drawing.Size(489, 114);
             this.buttonShowCustomers.TabIndex = 2;
@@ -77,7 +74,7 @@
             // buttonShowStatistics
             // 
             this.buttonShowStatistics.BackColor = System.Drawing.Color.White;
-            this.buttonShowStatistics.Location = new System.Drawing.Point(27, 519);
+            this.buttonShowStatistics.Location = new System.Drawing.Point(29, 510);
             this.buttonShowStatistics.Name = "buttonShowStatistics";
             this.buttonShowStatistics.Size = new System.Drawing.Size(489, 119);
             this.buttonShowStatistics.TabIndex = 3;
@@ -87,17 +84,18 @@
             // panelTabView
             // 
             this.panelTabView.AutoSize = true;
-            this.panelTabView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelTabView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTabView.Location = new System.Drawing.Point(0, 0);
+            this.panelTabView.BackColor = System.Drawing.Color.White;
+            this.panelTabView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelTabView.Location = new System.Drawing.Point(548, 0);
             this.panelTabView.Name = "panelTabView";
-            this.panelTabView.Size = new System.Drawing.Size(1587, 1250);
+            this.panelTabView.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.panelTabView.Size = new System.Drawing.Size(20, 1249);
             this.panelTabView.TabIndex = 4;
             // 
             // buttonShowCategories
             // 
             this.buttonShowCategories.BackColor = System.Drawing.Color.White;
-            this.buttonShowCategories.Location = new System.Drawing.Point(27, 691);
+            this.buttonShowCategories.Location = new System.Drawing.Point(29, 682);
             this.buttonShowCategories.Name = "buttonShowCategories";
             this.buttonShowCategories.Size = new System.Drawing.Size(489, 111);
             this.buttonShowCategories.TabIndex = 5;
@@ -105,43 +103,31 @@
             this.buttonShowCategories.UseVisualStyleBackColor = false;
             this.buttonShowCategories.Click += new System.EventHandler(this.buttonShowCategories_Click);
             // 
-            // splitContainer1
+            // panel1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.buttonShowProducts);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonShowCategories);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonShowOrders);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonShowCustomers);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonShowStatistics);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.panelTabView);
-            this.splitContainer1.Size = new System.Drawing.Size(2141, 1250);
-            this.splitContainer1.SplitterDistance = 550;
-            this.splitContainer1.TabIndex = 6;
+            this.panel1.Controls.Add(this.buttonShowProducts);
+            this.panel1.Controls.Add(this.buttonShowCategories);
+            this.panel1.Controls.Add(this.buttonShowStatistics);
+            this.panel1.Controls.Add(this.buttonShowOrders);
+            this.panel1.Controls.Add(this.buttonShowCustomers);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(548, 1249);
+            this.panel1.TabIndex = 7;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.panelTabView);
+            this.Controls.Add(this.panel1);
             this.Name = "MainView";
-            this.Size = new System.Drawing.Size(2141, 1250);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(2140, 1249);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -153,6 +139,6 @@
         private System.Windows.Forms.Button buttonShowStatistics;
         private System.Windows.Forms.Panel panelTabView;
         private System.Windows.Forms.Button buttonShowCategories;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

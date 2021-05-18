@@ -167,9 +167,73 @@
             this.dataGridViewCheckBoxColumn58 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn59 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn60 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn61 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn62 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn63 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn64 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn65 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn66 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn67 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn68 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn69 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn69 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn70 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn70 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn71 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn71 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn72 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn72 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn73 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn73 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn74 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn74 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn75 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn75 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn76 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn76 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn77 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn77 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn78 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn78 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn79 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn79 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn80 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn80 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn81 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn81 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn82 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn82 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn83 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn83 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn84 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn84 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn85 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn85 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn86 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn86 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn87 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn87 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn88 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn88 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn89 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn89 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn90 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn90 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn91 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn91 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
+            this.dataGridViewTextBoxColumn92 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn92 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -191,7 +255,7 @@
             // labelProductID
             // 
             this.labelProductID.AutoSize = true;
-            this.labelProductID.Location = new System.Drawing.Point(702, 96);
+            this.labelProductID.Location = new System.Drawing.Point(759, 44);
             this.labelProductID.Name = "labelProductID";
             this.labelProductID.Size = new System.Drawing.Size(60, 25);
             this.labelProductID.TabIndex = 2;
@@ -201,7 +265,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(558, 96);
+            this.label2.Location = new System.Drawing.Point(610, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 3;
@@ -323,7 +387,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(53, 93);
+            this.label6.Location = new System.Drawing.Point(53, 115);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 25);
             this.label6.TabIndex = 18;
@@ -331,9 +395,9 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(58, 131);
+            this.textBoxName.Location = new System.Drawing.Point(148, 112);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(265, 31);
+            this.textBoxName.Size = new System.Drawing.Size(891, 31);
             this.textBoxName.TabIndex = 19;
             // 
             // buttonDelete
@@ -1102,6 +1166,390 @@
             this.dataGridViewCheckBoxColumn59.Name = "dataGridViewCheckBoxColumn59";
             this.dataGridViewCheckBoxColumn59.Width = 200;
             // 
+            // dataGridViewTextBoxColumn60
+            // 
+            this.dataGridViewTextBoxColumn60.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn60
+            // 
+            this.dataGridViewCheckBoxColumn60.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn60.Name = "dataGridViewCheckBoxColumn60";
+            this.dataGridViewCheckBoxColumn60.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn61
+            // 
+            this.dataGridViewTextBoxColumn61.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.dataGridViewTextBoxColumn61.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn61
+            // 
+            this.dataGridViewCheckBoxColumn61.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn61.Name = "dataGridViewCheckBoxColumn61";
+            this.dataGridViewCheckBoxColumn61.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dataGridViewTextBoxColumn62.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn62
+            // 
+            this.dataGridViewCheckBoxColumn62.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn62.Name = "dataGridViewCheckBoxColumn62";
+            this.dataGridViewCheckBoxColumn62.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn63
+            // 
+            this.dataGridViewTextBoxColumn63.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn63
+            // 
+            this.dataGridViewCheckBoxColumn63.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn63.Name = "dataGridViewCheckBoxColumn63";
+            this.dataGridViewCheckBoxColumn63.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn64
+            // 
+            this.dataGridViewTextBoxColumn64.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn64
+            // 
+            this.dataGridViewCheckBoxColumn64.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn64.Name = "dataGridViewCheckBoxColumn64";
+            this.dataGridViewCheckBoxColumn64.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn65
+            // 
+            this.dataGridViewTextBoxColumn65.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
+            this.dataGridViewTextBoxColumn65.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn65
+            // 
+            this.dataGridViewCheckBoxColumn65.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn65.Name = "dataGridViewCheckBoxColumn65";
+            this.dataGridViewCheckBoxColumn65.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn66
+            // 
+            this.dataGridViewTextBoxColumn66.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
+            this.dataGridViewTextBoxColumn66.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn66
+            // 
+            this.dataGridViewCheckBoxColumn66.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn66.Name = "dataGridViewCheckBoxColumn66";
+            this.dataGridViewCheckBoxColumn66.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn67
+            // 
+            this.dataGridViewTextBoxColumn67.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
+            this.dataGridViewTextBoxColumn67.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn67
+            // 
+            this.dataGridViewCheckBoxColumn67.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn67.Name = "dataGridViewCheckBoxColumn67";
+            this.dataGridViewCheckBoxColumn67.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn68
+            // 
+            this.dataGridViewTextBoxColumn68.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn68.Name = "dataGridViewTextBoxColumn68";
+            this.dataGridViewTextBoxColumn68.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn68
+            // 
+            this.dataGridViewCheckBoxColumn68.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn68.Name = "dataGridViewCheckBoxColumn68";
+            this.dataGridViewCheckBoxColumn68.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn69
+            // 
+            this.dataGridViewTextBoxColumn69.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn69.Name = "dataGridViewTextBoxColumn69";
+            this.dataGridViewTextBoxColumn69.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn69
+            // 
+            this.dataGridViewCheckBoxColumn69.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn69.Name = "dataGridViewCheckBoxColumn69";
+            this.dataGridViewCheckBoxColumn69.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn70
+            // 
+            this.dataGridViewTextBoxColumn70.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn70.Name = "dataGridViewTextBoxColumn70";
+            this.dataGridViewTextBoxColumn70.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn70
+            // 
+            this.dataGridViewCheckBoxColumn70.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn70.Name = "dataGridViewCheckBoxColumn70";
+            this.dataGridViewCheckBoxColumn70.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn71
+            // 
+            this.dataGridViewTextBoxColumn71.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn71.Name = "dataGridViewTextBoxColumn71";
+            this.dataGridViewTextBoxColumn71.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn71
+            // 
+            this.dataGridViewCheckBoxColumn71.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn71.Name = "dataGridViewCheckBoxColumn71";
+            this.dataGridViewCheckBoxColumn71.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn72
+            // 
+            this.dataGridViewTextBoxColumn72.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn72.Name = "dataGridViewTextBoxColumn72";
+            this.dataGridViewTextBoxColumn72.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn72
+            // 
+            this.dataGridViewCheckBoxColumn72.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn72.Name = "dataGridViewCheckBoxColumn72";
+            this.dataGridViewCheckBoxColumn72.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn73
+            // 
+            this.dataGridViewTextBoxColumn73.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn73.Name = "dataGridViewTextBoxColumn73";
+            this.dataGridViewTextBoxColumn73.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn73
+            // 
+            this.dataGridViewCheckBoxColumn73.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn73.Name = "dataGridViewCheckBoxColumn73";
+            this.dataGridViewCheckBoxColumn73.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn74
+            // 
+            this.dataGridViewTextBoxColumn74.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn74.Name = "dataGridViewTextBoxColumn74";
+            this.dataGridViewTextBoxColumn74.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn74
+            // 
+            this.dataGridViewCheckBoxColumn74.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn74.Name = "dataGridViewCheckBoxColumn74";
+            this.dataGridViewCheckBoxColumn74.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn75
+            // 
+            this.dataGridViewTextBoxColumn75.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn75.Name = "dataGridViewTextBoxColumn75";
+            this.dataGridViewTextBoxColumn75.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn75
+            // 
+            this.dataGridViewCheckBoxColumn75.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn75.Name = "dataGridViewCheckBoxColumn75";
+            this.dataGridViewCheckBoxColumn75.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn76
+            // 
+            this.dataGridViewTextBoxColumn76.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn76.Name = "dataGridViewTextBoxColumn76";
+            this.dataGridViewTextBoxColumn76.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn76
+            // 
+            this.dataGridViewCheckBoxColumn76.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn76.Name = "dataGridViewCheckBoxColumn76";
+            this.dataGridViewCheckBoxColumn76.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn77
+            // 
+            this.dataGridViewTextBoxColumn77.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn77.Name = "dataGridViewTextBoxColumn77";
+            this.dataGridViewTextBoxColumn77.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn77
+            // 
+            this.dataGridViewCheckBoxColumn77.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn77.Name = "dataGridViewCheckBoxColumn77";
+            this.dataGridViewCheckBoxColumn77.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn78
+            // 
+            this.dataGridViewTextBoxColumn78.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn78.Name = "dataGridViewTextBoxColumn78";
+            this.dataGridViewTextBoxColumn78.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn78
+            // 
+            this.dataGridViewCheckBoxColumn78.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn78.Name = "dataGridViewCheckBoxColumn78";
+            this.dataGridViewCheckBoxColumn78.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn79
+            // 
+            this.dataGridViewTextBoxColumn79.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn79.Name = "dataGridViewTextBoxColumn79";
+            this.dataGridViewTextBoxColumn79.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn79
+            // 
+            this.dataGridViewCheckBoxColumn79.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn79.Name = "dataGridViewCheckBoxColumn79";
+            this.dataGridViewCheckBoxColumn79.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn80
+            // 
+            this.dataGridViewTextBoxColumn80.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn80.Name = "dataGridViewTextBoxColumn80";
+            this.dataGridViewTextBoxColumn80.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn80
+            // 
+            this.dataGridViewCheckBoxColumn80.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn80.Name = "dataGridViewCheckBoxColumn80";
+            this.dataGridViewCheckBoxColumn80.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn81
+            // 
+            this.dataGridViewTextBoxColumn81.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn81.Name = "dataGridViewTextBoxColumn81";
+            this.dataGridViewTextBoxColumn81.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn81
+            // 
+            this.dataGridViewCheckBoxColumn81.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn81.Name = "dataGridViewCheckBoxColumn81";
+            this.dataGridViewCheckBoxColumn81.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn82
+            // 
+            this.dataGridViewTextBoxColumn82.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn82.Name = "dataGridViewTextBoxColumn82";
+            this.dataGridViewTextBoxColumn82.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn82
+            // 
+            this.dataGridViewCheckBoxColumn82.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn82.Name = "dataGridViewCheckBoxColumn82";
+            this.dataGridViewCheckBoxColumn82.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn83
+            // 
+            this.dataGridViewTextBoxColumn83.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn83.Name = "dataGridViewTextBoxColumn83";
+            this.dataGridViewTextBoxColumn83.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn83
+            // 
+            this.dataGridViewCheckBoxColumn83.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn83.Name = "dataGridViewCheckBoxColumn83";
+            this.dataGridViewCheckBoxColumn83.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn84
+            // 
+            this.dataGridViewTextBoxColumn84.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn84.Name = "dataGridViewTextBoxColumn84";
+            this.dataGridViewTextBoxColumn84.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn84
+            // 
+            this.dataGridViewCheckBoxColumn84.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn84.Name = "dataGridViewCheckBoxColumn84";
+            this.dataGridViewCheckBoxColumn84.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn85
+            // 
+            this.dataGridViewTextBoxColumn85.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn85.Name = "dataGridViewTextBoxColumn85";
+            this.dataGridViewTextBoxColumn85.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn85
+            // 
+            this.dataGridViewCheckBoxColumn85.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn85.Name = "dataGridViewCheckBoxColumn85";
+            this.dataGridViewCheckBoxColumn85.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn86
+            // 
+            this.dataGridViewTextBoxColumn86.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn86.Name = "dataGridViewTextBoxColumn86";
+            this.dataGridViewTextBoxColumn86.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn86
+            // 
+            this.dataGridViewCheckBoxColumn86.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn86.Name = "dataGridViewCheckBoxColumn86";
+            this.dataGridViewCheckBoxColumn86.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn87
+            // 
+            this.dataGridViewTextBoxColumn87.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn87.Name = "dataGridViewTextBoxColumn87";
+            this.dataGridViewTextBoxColumn87.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn87
+            // 
+            this.dataGridViewCheckBoxColumn87.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn87.Name = "dataGridViewCheckBoxColumn87";
+            this.dataGridViewCheckBoxColumn87.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn88
+            // 
+            this.dataGridViewTextBoxColumn88.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn88.Name = "dataGridViewTextBoxColumn88";
+            this.dataGridViewTextBoxColumn88.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn88
+            // 
+            this.dataGridViewCheckBoxColumn88.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn88.Name = "dataGridViewCheckBoxColumn88";
+            this.dataGridViewCheckBoxColumn88.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn89
+            // 
+            this.dataGridViewTextBoxColumn89.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn89.Name = "dataGridViewTextBoxColumn89";
+            this.dataGridViewTextBoxColumn89.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn89
+            // 
+            this.dataGridViewCheckBoxColumn89.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn89.Name = "dataGridViewCheckBoxColumn89";
+            this.dataGridViewCheckBoxColumn89.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn90
+            // 
+            this.dataGridViewTextBoxColumn90.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn90.Name = "dataGridViewTextBoxColumn90";
+            this.dataGridViewTextBoxColumn90.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn90
+            // 
+            this.dataGridViewCheckBoxColumn90.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn90.Name = "dataGridViewCheckBoxColumn90";
+            this.dataGridViewCheckBoxColumn90.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn91
+            // 
+            this.dataGridViewTextBoxColumn91.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn91.Name = "dataGridViewTextBoxColumn91";
+            this.dataGridViewTextBoxColumn91.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn91
+            // 
+            this.dataGridViewCheckBoxColumn91.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn91.Name = "dataGridViewCheckBoxColumn91";
+            this.dataGridViewCheckBoxColumn91.Width = 200;
+            // 
             // categoryGridView1
             // 
             this.categoryGridView1.AllowUserToAddRows = false;
@@ -1120,17 +1568,17 @@
             this.categoryGridView1.Size = new System.Drawing.Size(476, 255);
             this.categoryGridView1.TabIndex = 23;
             // 
-            // dataGridViewTextBoxColumn60
+            // dataGridViewTextBoxColumn92
             // 
-            this.dataGridViewTextBoxColumn60.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
-            this.dataGridViewTextBoxColumn60.Width = 200;
+            this.dataGridViewTextBoxColumn92.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn92.Name = "dataGridViewTextBoxColumn92";
+            this.dataGridViewTextBoxColumn92.Width = 200;
             // 
-            // dataGridViewCheckBoxColumn60
+            // dataGridViewCheckBoxColumn92
             // 
-            this.dataGridViewCheckBoxColumn60.MinimumWidth = 10;
-            this.dataGridViewCheckBoxColumn60.Name = "dataGridViewCheckBoxColumn60";
-            this.dataGridViewCheckBoxColumn60.Width = 200;
+            this.dataGridViewCheckBoxColumn92.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn92.Name = "dataGridViewCheckBoxColumn92";
+            this.dataGridViewCheckBoxColumn92.Width = 200;
             // 
             // ProductDetailView
             // 
@@ -1311,5 +1759,69 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn59;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn60;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn60;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn61;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn61;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn62;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn62;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn63;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn64;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn65;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn65;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn66;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn66;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn67;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn67;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn68;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn68;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn69;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn69;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn70;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn70;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn71;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn71;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn72;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn72;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn73;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn73;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn74;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn74;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn75;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn75;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn76;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn76;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn77;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn77;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn78;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn78;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn79;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn79;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn80;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn80;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn81;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn81;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn82;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn82;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn83;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn83;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn84;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn84;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn85;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn85;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn86;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn86;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn87;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn87;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn88;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn88;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn89;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn89;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn90;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn90;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn91;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn91;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn92;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn92;
     }
 }

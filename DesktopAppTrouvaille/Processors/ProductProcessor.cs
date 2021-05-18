@@ -129,19 +129,6 @@ namespace APIconnector.Processors
                 if (response.IsSuccessStatusCode)
                 {
                     List<Product> products = await response.Content.ReadAsAsync<List<Product>>();
-
-                    //Load the Categories for each Product:
-                    foreach(Product p in products)
-                    {
-                        if(p.ProductCategories != null)
-                        {
-                            foreach(Guid catID in p.ProductCategories)
-                            {
-                                p.Categories.Add(categoryProcessor.LoadCategoryByID(catID).Result);
-                            }
-                        }
-                        
-                    }
                     return products;
                 }
                 else
@@ -153,7 +140,6 @@ namespace APIconnector.Processors
             {
                 throw new GETException();
             }
-
         }
 
         public async Task<bool> AddCategories(Guid id, List<Category> categories)

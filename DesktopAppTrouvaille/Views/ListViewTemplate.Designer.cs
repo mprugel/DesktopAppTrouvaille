@@ -36,6 +36,9 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
+            this.labelPageCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelPageNumber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -117,12 +120,42 @@
             this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
+            // labelPageCount
+            // 
+            this.labelPageCount.AutoSize = true;
+            this.labelPageCount.Location = new System.Drawing.Point(465, 902);
+            this.labelPageCount.Name = "labelPageCount";
+            this.labelPageCount.Size = new System.Drawing.Size(36, 25);
+            this.labelPageCount.TabIndex = 12;
+            this.labelPageCount.Text = "10";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(347, 902);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "von";
+            // 
+            // labelPageNumber
+            // 
+            this.labelPageNumber.AutoSize = true;
+            this.labelPageNumber.Location = new System.Drawing.Point(237, 902);
+            this.labelPageNumber.Name = "labelPageNumber";
+            this.labelPageNumber.Size = new System.Drawing.Size(24, 25);
+            this.labelPageNumber.TabIndex = 10;
+            this.labelPageNumber.Text = "1";
+            // 
             // ListViewTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.labelPageCount);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelPageNumber);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.listView1);
@@ -148,5 +181,8 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button buttonPrevious;
         private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Label labelPageCount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelPageNumber;
     }
 }
