@@ -7,19 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
     public partial class ListViewTemplate : UserControl
     {
+        public IController Controller;
         public ListViewTemplate()
         {
+            InitializeComponent();
+            listView1.View = View.Details;
+        }
+
+        public ListViewTemplate(IController controller)
+        {
+            Controller = controller;
             InitializeComponent();
             listView1.View = View.Details;
         }
         public void AddClickHandler(EventHandler handler)
         {
             listView1.Click += handler;
+        }
+
+        public void UpdateList()
+        {
+            listView1.Update();
         }
 
         public ListViewItem GetSelectedItem()
@@ -63,6 +77,14 @@ namespace DesktopAppTrouvaille.Views
             buttonAdd.Click += handler;
         }
 
-        
+        private void buttonPrevious_Click(object sender, EventArgs e)
+        {
+            Controller.Previous();
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            Controller.Next();
+        }
     }
 }

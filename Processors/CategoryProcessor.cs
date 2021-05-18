@@ -1,41 +1,63 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using APIconnector;
+using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIconnector.Processors
+namespace DesktopAppTrouvaille.Processors
 {
     class CategoryProcessor
     {
-        //LoadCategoryAsync sends a request of the wanted order information depending on the categoryID.
-        //It returns an instance of CategoryModel if successful
-        public static async Task<CategoryModel> LoadCategoryAsync(int categoryID = -1)
+        public async Task<CategoryModel> LoadCategoryByID(Guid id)
         {
-            string url = "";
-            if (categoryID > 0)
+            string url = "Categories/" + id.ToString();
+            HttpResponseMessage response;
+            try
             {
-                url = $"https://localhost:44372/api/Category/{ categoryID }/";
-            }
-            else
-            {
-                url = "https://localhost:44372/api/Category/";
-            }
-
-            using (HttpResponseMessage response = await APIconnection.ApiClient.GetAsync(url))
-            {
+                response = await APIconnection.ApiClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
-                    CategoryModel category = await response.Content.ReadAsAsync<CategoryModel>();
-
-                    return category;
+                    CategoryModel cat = await response.Content.ReadAsAsync<CategoryModel>();
+                    return cat;
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    return null;
                 }
             }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
+
+        public async Task<List<CategoryModel>> LoadCategories()
+        {
+            string url = "Categories/";
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<CategoryModel> cat = await response.Content.ReadAsAsync<List<CategoryModel>>();
+                    return cat;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
         }
     }
 }

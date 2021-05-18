@@ -15,7 +15,7 @@ namespace DesktopAppTrouvaille.Views
     {
         private IView _tabView;
         private MainController controller;
-        private List<ProductModel> _products = new List<ProductModel>();
+        private List<Product> _products = new List<Product>();
         public MainView()
         {
             InitializeComponent();
@@ -60,6 +60,11 @@ namespace DesktopAppTrouvaille.Views
             _tabView = new CustomerView();
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

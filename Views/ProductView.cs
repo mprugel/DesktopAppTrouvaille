@@ -13,21 +13,45 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductView : UserControl, IView
     {
-        private ProductDetailView detailView;
 
-        private ProductController _controller;
+        private ProductDetailView detailView;
         public ProductController Controller { get; set; }
         
         public void UpdateView()
         {
             listViewTemplate1.AddItems(CreateListViewItems(Controller.Products));
+
+            switch(Controller.state)
+            {
+                case State.ConnectionError:
+                    labelStatus.Text = "Ein Verbindungsfehler ist aufgetreten!";
+                        break;
+                case State.OK:
+                    labelStatus.Text = String.Empty;
+                    break;
+                case State.LoadData:
+                    labelStatus.Text = "Lade Daten vom Server...";
+                    break;
+                case State.SendingData:
+                    labelStatus.Text = "Sende Daten zum Server...";
+                    break;
+                case State.DeletedProduct:
+                    labelStatus.Text = "Produkt wurde gelöscht";
+                    panelDetailView.Controls.Clear();
+                    break;
+                case State.SavedProduct:
+                    panelDetailView.Controls.Clear();
+                    labelStatus.Text = "Produkt wurde gespeichert";
+                    break;
+            }
         }
 
         public ProductView()
         {
             Controller = new ProductController(this);
-
+            
             InitializeComponent();
+            listViewTemplate1.Controller = Controller;
             //Hide Product Detail:
             panelDetailView.Visible = false;
 
@@ -44,7 +68,7 @@ namespace DesktopAppTrouvaille.Views
             listViewTemplate1.AddButtonAddHandler(ButtonAddHandler);
 
             // Initially update:
-            UpdateView();
+            Controller.UpdateData();
 
         }
         private void ButtonAddHandler(object sender, EventArgs e)
@@ -53,7 +77,6 @@ namespace DesktopAppTrouvaille.Views
             detailView = new NewProductView(Controller);
             panelDetailView.Controls.Add(detailView);
             panelDetailView.Visible = true;
-     
         }
 
         private void ItemSelected(object sender, System.EventArgs e)
@@ -61,7 +84,7 @@ namespace DesktopAppTrouvaille.Views
             ListViewItem item = listViewTemplate1.GetSelectedItem();
             if(item != null)
             {
-                ProductModel p = (ProductModel)item.Tag;
+                Product p = (Product)item.Tag;
 
                 panelDetailView.Controls.Clear();
                 detailView = new ProductDetailView(Controller);
@@ -77,17 +100,17 @@ namespace DesktopAppTrouvaille.Views
             } 
         }
 
-        private List<ListViewItem> CreateListViewItems(List<ProductModel> products)
+        private List<ListViewItem> CreateListViewItems(List<Product> products)
         {
             List<ListViewItem> list = new List<ListViewItem>();
-            foreach(ProductModel p in products)
+            foreach(Product p in products)
             {
                 list.Add(CreateListViewItem(p));
             }
             return list;
         }
 
-        private ListViewItem CreateListViewItem(ProductModel product)
+        private ListViewItem CreateListViewItem(Product product)
         {
             string[] stringItems = { product.ProductId.ToString(), product.Name.ToString(), product.InStock.ToString() };
             ListViewItem item = new ListViewItem(stringItems,1);

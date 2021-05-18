@@ -7,6 +7,9 @@
     <Compile Update="Views\CategoryDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Views\CategoryGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Views\CategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -15,6 +18,9 @@
     </Compile>
     <Compile Update="Views\CustomerView.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CustomListView.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Update="Views\ListViewTemplate.cs">
       <SubType>UserControl</SubType>

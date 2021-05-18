@@ -35,12 +35,12 @@ namespace DesktopAppTrouvaille
             // 
             // mainMenuUC1
             // 
-            this.mainMenuUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainMenuUC1.Location = new System.Drawing.Point(8, 34);
+            this.mainMenuUC1.AutoSize = true;
+            this.mainMenuUC1.BackColor = System.Drawing.Color.White;
+            this.mainMenuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainMenuUC1.Location = new System.Drawing.Point(0, 0);
             this.mainMenuUC1.Name = "mainMenuUC1";
-            this.mainMenuUC1.Size = new System.Drawing.Size(1977, 993);
+            this.mainMenuUC1.Size = new System.Drawing.Size(2974, 1429);
             this.mainMenuUC1.TabIndex = 2;
             this.mainMenuUC1.Load += new System.EventHandler(this.mainMenuUC1_Load);
             // 
@@ -48,11 +48,14 @@ namespace DesktopAppTrouvaille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2042, 1081);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(2974, 1429);
             this.Controls.Add(this.mainMenuUC1);
+            this.MinimumSize = new System.Drawing.Size(3000, 1500);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

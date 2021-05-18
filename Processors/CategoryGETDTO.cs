@@ -1,20 +1,18 @@
-﻿using DesktopAppTrouvaille.Processors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopAppTrouvaille.Models
+namespace DesktopAppTrouvaille.Processors
 {
-    public class CategoryModel
+    class CategoryGETDTO
     {
         public Guid CategoryId { get; set; }
 
         public string Name { get; set; }
 
         public int ProductCounter { get; set; }
-
-        public virtual ICollection<Guid> Products { get; set; }
+        public ICollection<Guid> ProductIds { get; set; }
     }
 }

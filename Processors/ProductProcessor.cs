@@ -1,4 +1,7 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Processors;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -7,37 +10,170 @@ using System.Threading.Tasks;
 
 namespace APIconnector.Processors
 {
-    class ProductProcessor
+    public class ProductProcessor
     {
-        //LoadProductAsync sends a request of the wanted product information depending on the productID.
-        //It returns an instance of ProductModel if successful
-        public static async Task<ProductModel> LoadProductAsync(int productID = -1)
+        private CategoryProcessor categoryProcessor = new CategoryProcessor();
+        public async Task<Product> LoadProduct(Guid productID)
         {
-            string url = "";
-            if (productID > 0)
+            string url = "Products/" + productID.ToString();
+            HttpResponseMessage response;
+            try
             {
-                url = $"https://localhost:44372/api/Product/{ productID }/";
-            }
-            else
-            {
-                url = "https://localhost:44372/api/Product/";
-            }
-
-            using (HttpResponseMessage response = await APIconnection.ApiClient.GetAsync(url))
-            {
+                response = await APIconnection.ApiClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
-                    ProductModel product = await response.Content.ReadAsAsync<ProductModel>();
+                    Product product = await response.Content.ReadAsAsync<Product>();
 
                     return product;
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    return null;
                 }
+            }
+            catch(Exception e)
+            {
+                throw new GETException();  
+            }
+           
+        }
+
+        public async Task<bool> SaveNewProduct(Product product)
+        {
+            string url = "Products/";
+            HttpResponseMessage response;
+            try
+            {
+                ProductPOSTDTO dto = product.toPOSTDTO();
+                string json = JsonConvert.SerializeObject(dto);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url,data);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
+
+       
+
+        public async Task<bool> UpdateProduct(Product product)
+        {
+            string url = "Products/" + product.ProductId;
+            HttpResponseMessage response;
+            try
+            {
+                ProductPOSTDTO dto = product.toPOSTDTO();
+                string json = JsonConvert.SerializeObject(dto);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PutAsync(url, data);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
+
+        public async Task<bool> DeleteProduct(Product p)
+        {
+            string url = "Products/" + p.ProductId;
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.DeleteAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
+
+        public async Task<List<Product>> LoadProducts(int from, int to)
+        {
+            string url = "Products/" + from.ToString() + "/" + to.ToString();
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Product> products = await response.Content.ReadAsAsync<List<Product>>();
+                    return products;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
             }
         }
 
-        //TODO set-methods (for example price)
+        public async Task<bool> AddCategories(Guid id, List<CategoryModel> categories)
+        {
+            string url = "Products/" + id + "/addCategory";
+            HttpResponseMessage response;
+            try
+            {
+                List<Guid> catGuidList = new List<Guid>();
+                foreach(CategoryModel cat in categories)
+                {
+                    catGuidList.Add(cat.CategoryId);
+                }
+
+                string json = JsonConvert.SerializeObject(catGuidList);
+                Console.WriteLine(json);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
     }
 }

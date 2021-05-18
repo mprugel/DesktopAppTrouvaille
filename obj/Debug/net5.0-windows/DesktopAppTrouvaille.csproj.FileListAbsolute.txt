@@ -1,24 +1,5 @@
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.exe
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.deps.json
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.runtimeconfig.json
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.runtimeconfig.dev.json
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.dll
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\ref\DesktopAppTrouvaille.dll
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.pdb
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\System.Net.Http.Formatting.dll
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\Newtonsoft.Json.Bson.dll
 D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Form1.resources
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.GenerateResource.cache
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.GeneratedMSBuildEditorConfig.editorconfig
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.AssemblyInfoInputs.cache
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.AssemblyInfo.cs
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.CoreCompileInputs.cache
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.CopyComplete
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.dll
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\ref\DesktopAppTrouvaille.dll
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.pdb
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.genruntimeconfig.cache
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Properties.Resources.resources
 D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.CategoryDetailView.resources
 D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.CategoryView.resources
 D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.CustomerDetail.resources
@@ -29,37 +10,23 @@ D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\Des
 D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.OrderViewUC.resources
 D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.ProductDetailView.resources
 D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.ProductView.resources
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Properties.Resources.resources
-D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csprojAssemblyReference.cache
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Form1.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Properties.Resources.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.CategoryDetailView.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.CategoryView.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.CustomerDetail.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.CustomerView.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.ListViewTemplate.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.MainView.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.OrderDetailView.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.OrderViewUC.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.ProductDetailView.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.Views.ProductView.resources
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.GenerateResource.cache
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.AssemblyInfoInputs.cache
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.AssemblyInfo.cs
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.CoreCompileInputs.cache
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.dll
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\ref\DesktopAppTrouvaille.dll
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.pdb
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.exe
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.deps.json
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.runtimeconfig.json
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.runtimeconfig.dev.json
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.dll
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\ref\DesktopAppTrouvaille.dll
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.pdb
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\System.Net.Http.Formatting.dll
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\bin\Debug\net5.0-windows\Newtonsoft.Json.Bson.dll
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.CopyComplete
-C:\Users\julia\Desktop\Merge\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.genruntimeconfig.cache
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.GenerateResource.cache
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.AssemblyInfoInputs.cache
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.AssemblyInfo.cs
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.CoreCompileInputs.cache
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.exe
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.deps.json
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.runtimeconfig.json
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.runtimeconfig.dev.json
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.dll
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\ref\DesktopAppTrouvaille.dll
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\DesktopAppTrouvaille.pdb
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\System.Net.Http.Formatting.dll
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\bin\Debug\net5.0-windows\Newtonsoft.Json.Bson.dll
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.csproj.CopyComplete
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.dll
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\ref\DesktopAppTrouvaille.dll
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.pdb
+D:\Studiumzeug\Semester\HSO_S4_SS21\Project Management\Trouvaille\DesktopApp\DesktopAppTrouvaille\obj\Debug\net5.0-windows\DesktopAppTrouvaille.genruntimeconfig.cache
