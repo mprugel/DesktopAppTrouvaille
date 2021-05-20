@@ -11,7 +11,7 @@ using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class ListViewTemplate : UserControl
+    public partial class ListViewTemplate : UserControl , IView
     {
         public IController Controller;
         public ListViewTemplate()
@@ -29,11 +29,6 @@ namespace DesktopAppTrouvaille.Views
         public void AddClickHandler(EventHandler handler)
         {
             listView1.Click += handler;
-        }
-
-        public void UpdateList()
-        {
-            listView1.Update();
         }
 
         public ListViewItem GetSelectedItem()
@@ -85,6 +80,12 @@ namespace DesktopAppTrouvaille.Views
         private void buttonNext_Click(object sender, EventArgs e)
         {
             Controller.Next();
+        }
+
+        public void UpdateView()
+        {
+            labelPageCount.Text = Controller.GetPageCount().ToString();
+            labelPageNumber.Text = Controller.GetCurrentPage().ToString();
         }
     }
 }

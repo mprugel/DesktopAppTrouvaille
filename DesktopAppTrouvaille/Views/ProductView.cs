@@ -20,7 +20,7 @@ namespace DesktopAppTrouvaille.Views
         public void UpdateView()
         {
             listViewTemplate1.AddItems(CreateListViewItems(Controller.Products));
-
+            listViewTemplate1.UpdateView();
             switch(Controller.state)
             {
                 case State.ConnectionError:
@@ -69,7 +69,6 @@ namespace DesktopAppTrouvaille.Views
 
             // Initially update:
             Controller.UpdateData();
-
         }
         private void ButtonAddHandler(object sender, EventArgs e)
         {

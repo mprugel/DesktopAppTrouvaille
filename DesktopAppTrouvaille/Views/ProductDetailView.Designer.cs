@@ -231,9 +231,21 @@
             this.dataGridViewCheckBoxColumn90 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn91 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn91 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             this.dataGridViewTextBoxColumn92 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn92 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn93 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn93 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn94 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn94 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn95 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn95 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn96 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn96 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn97 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn97 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
+            this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn98 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -255,7 +267,7 @@
             // labelProductID
             // 
             this.labelProductID.AutoSize = true;
-            this.labelProductID.Location = new System.Drawing.Point(759, 44);
+            this.labelProductID.Location = new System.Drawing.Point(206, 91);
             this.labelProductID.Name = "labelProductID";
             this.labelProductID.Size = new System.Drawing.Size(60, 25);
             this.labelProductID.TabIndex = 2;
@@ -265,7 +277,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(610, 44);
+            this.label2.Location = new System.Drawing.Point(53, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 3;
@@ -273,7 +285,7 @@
             // 
             // numericUpDownInStock
             // 
-            this.numericUpDownInStock.Location = new System.Drawing.Point(58, 235);
+            this.numericUpDownInStock.Location = new System.Drawing.Point(58, 303);
             this.numericUpDownInStock.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -287,7 +299,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 195);
+            this.label3.Location = new System.Drawing.Point(53, 263);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 5;
@@ -295,7 +307,7 @@
             // 
             // numericUpDownPrice
             // 
-            this.numericUpDownPrice.Location = new System.Drawing.Point(283, 235);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(283, 303);
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(120, 31);
             this.numericUpDownPrice.TabIndex = 6;
@@ -304,7 +316,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(278, 195);
+            this.label4.Location = new System.Drawing.Point(278, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 25);
             this.label4.TabIndex = 7;
@@ -314,7 +326,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(53, 304);
+            this.label5.Location = new System.Drawing.Point(53, 372);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(156, 25);
             this.label5.TabIndex = 9;
@@ -332,7 +344,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(58, 358);
+            this.richTextBox1.Location = new System.Drawing.Point(58, 426);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(463, 255);
             this.richTextBox1.TabIndex = 11;
@@ -387,7 +399,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(53, 115);
+            this.label6.Location = new System.Drawing.Point(53, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 25);
             this.label6.TabIndex = 18;
@@ -395,7 +407,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(148, 112);
+            this.textBoxName.Location = new System.Drawing.Point(148, 180);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(891, 31);
             this.textBoxName.TabIndex = 19;
@@ -403,7 +415,7 @@
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(58, 1062);
+            this.buttonDelete.Location = new System.Drawing.Point(58, 1130);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(139, 48);
             this.buttonDelete.TabIndex = 12;
@@ -414,7 +426,7 @@
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(755, 1062);
+            this.buttonSave.Location = new System.Drawing.Point(755, 1130);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(284, 48);
             this.buttonSave.TabIndex = 13;
@@ -427,7 +439,7 @@
             this.labelMessage.AutoSize = true;
             this.labelMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelMessage.Location = new System.Drawing.Point(62, 986);
+            this.labelMessage.Location = new System.Drawing.Point(306, 1139);
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.Size = new System.Drawing.Size(0, 29);
             this.labelMessage.TabIndex = 20;
@@ -436,7 +448,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(558, 304);
+            this.label1.Location = new System.Drawing.Point(558, 372);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 25);
             this.label1.TabIndex = 22;
@@ -595,7 +607,7 @@
             this.groupBox1.Controls.Add(this.buttonUploadPicture);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(58, 648);
+            this.groupBox1.Location = new System.Drawing.Point(58, 716);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(981, 387);
             this.groupBox1.TabIndex = 24;
@@ -1550,24 +1562,6 @@
             this.dataGridViewCheckBoxColumn91.Name = "dataGridViewCheckBoxColumn91";
             this.dataGridViewCheckBoxColumn91.Width = 200;
             // 
-            // categoryGridView1
-            // 
-            this.categoryGridView1.AllowUserToAddRows = false;
-            this.categoryGridView1.AllowUserToDeleteRows = false;
-            this.categoryGridView1.AllowUserToResizeColumns = false;
-            this.categoryGridView1.AllowUserToResizeRows = false;
-            this.categoryGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.categoryGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.categoryGridView1.Location = new System.Drawing.Point(563, 358);
-            this.categoryGridView1.Name = "categoryGridView1";
-            this.categoryGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.categoryGridView1.RowHeadersVisible = false;
-            this.categoryGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.categoryGridView1.RowTemplate.Height = 33;
-            this.categoryGridView1.Size = new System.Drawing.Size(476, 255);
-            this.categoryGridView1.TabIndex = 23;
-            // 
             // dataGridViewTextBoxColumn92
             // 
             this.dataGridViewTextBoxColumn92.MinimumWidth = 10;
@@ -1579,6 +1573,96 @@
             this.dataGridViewCheckBoxColumn92.MinimumWidth = 10;
             this.dataGridViewCheckBoxColumn92.Name = "dataGridViewCheckBoxColumn92";
             this.dataGridViewCheckBoxColumn92.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn93
+            // 
+            this.dataGridViewTextBoxColumn93.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn93.Name = "dataGridViewTextBoxColumn93";
+            this.dataGridViewTextBoxColumn93.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn93
+            // 
+            this.dataGridViewCheckBoxColumn93.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn93.Name = "dataGridViewCheckBoxColumn93";
+            this.dataGridViewCheckBoxColumn93.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn94
+            // 
+            this.dataGridViewTextBoxColumn94.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn94.Name = "dataGridViewTextBoxColumn94";
+            this.dataGridViewTextBoxColumn94.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn94
+            // 
+            this.dataGridViewCheckBoxColumn94.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn94.Name = "dataGridViewCheckBoxColumn94";
+            this.dataGridViewCheckBoxColumn94.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn95
+            // 
+            this.dataGridViewTextBoxColumn95.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn95.Name = "dataGridViewTextBoxColumn95";
+            this.dataGridViewTextBoxColumn95.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn95
+            // 
+            this.dataGridViewCheckBoxColumn95.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn95.Name = "dataGridViewCheckBoxColumn95";
+            this.dataGridViewCheckBoxColumn95.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn96
+            // 
+            this.dataGridViewTextBoxColumn96.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn96.Name = "dataGridViewTextBoxColumn96";
+            this.dataGridViewTextBoxColumn96.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn96
+            // 
+            this.dataGridViewCheckBoxColumn96.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn96.Name = "dataGridViewCheckBoxColumn96";
+            this.dataGridViewCheckBoxColumn96.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn97
+            // 
+            this.dataGridViewTextBoxColumn97.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn97.Name = "dataGridViewTextBoxColumn97";
+            this.dataGridViewTextBoxColumn97.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn97
+            // 
+            this.dataGridViewCheckBoxColumn97.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn97.Name = "dataGridViewCheckBoxColumn97";
+            this.dataGridViewCheckBoxColumn97.Width = 200;
+            // 
+            // categoryGridView1
+            // 
+            this.categoryGridView1.AllowUserToAddRows = false;
+            this.categoryGridView1.AllowUserToDeleteRows = false;
+            this.categoryGridView1.AllowUserToResizeColumns = false;
+            this.categoryGridView1.AllowUserToResizeRows = false;
+            this.categoryGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoryGridView1.GridColor = System.Drawing.SystemColors.Control;
+            this.categoryGridView1.Location = new System.Drawing.Point(563, 426);
+            this.categoryGridView1.Name = "categoryGridView1";
+            this.categoryGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.categoryGridView1.RowHeadersVisible = false;
+            this.categoryGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.categoryGridView1.RowTemplate.Height = 33;
+            this.categoryGridView1.Size = new System.Drawing.Size(476, 255);
+            this.categoryGridView1.TabIndex = 23;
+            // 
+            // dataGridViewTextBoxColumn98
+            // 
+            this.dataGridViewTextBoxColumn98.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
+            this.dataGridViewTextBoxColumn98.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn98
+            // 
+            this.dataGridViewCheckBoxColumn98.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn98.Name = "dataGridViewCheckBoxColumn98";
+            this.dataGridViewCheckBoxColumn98.Width = 200;
             // 
             // ProductDetailView
             // 
@@ -1604,7 +1688,7 @@
             this.Controls.Add(this.labelProductID);
             this.Controls.Add(this.labelTitle);
             this.Name = "ProductDetailView";
-            this.Size = new System.Drawing.Size(1245, 1135);
+            this.Size = new System.Drawing.Size(1105, 1295);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1823,5 +1907,17 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn91;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn92;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn92;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn93;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn93;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn94;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn94;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn95;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn95;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn96;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn96;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn97;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn97;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn98;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn98;
     }
 }

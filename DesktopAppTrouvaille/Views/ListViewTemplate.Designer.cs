@@ -52,17 +52,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 107);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(26, 99);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(381, 31);
+            this.textBox1.Size = new System.Drawing.Size(381, 49);
             this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(432, 99);
+            this.button1.Location = new System.Drawing.Point(433, 99);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 47);
+            this.button1.Size = new System.Drawing.Size(284, 49);
             this.button1.TabIndex = 2;
             this.button1.Text = "Suchen";
             this.button1.UseVisualStyleBackColor = false;
@@ -79,7 +80,7 @@
             this.buttonAdd.BackColor = System.Drawing.Color.White;
             this.buttonAdd.Location = new System.Drawing.Point(432, 35);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(256, 45);
+            this.buttonAdd.Size = new System.Drawing.Size(284, 46);
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "ADD <Item>";
             this.buttonAdd.UseVisualStyleBackColor = false;

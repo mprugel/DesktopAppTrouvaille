@@ -10,5 +10,11 @@ namespace DesktopAppTrouvaille.Controllers
     {
         void Next();
         void Previous();
+
+        int GetCurrentPage();
+
+        int GetPageCount();
+
+        int GetCount();
     }
 }

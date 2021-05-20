@@ -15,7 +15,6 @@ namespace DesktopAppTrouvaille
     public enum State {ConnectionError, OK, LoadData , SendingData, SavedProduct, DeletedProduct}
     public class ProductController : IController
     {
-        private int _productCount = 0;
         private ProductProcessor _productProssesor = new ProductProcessor();
         private CategoryProcessor _categoryProcessor = new CategoryProcessor();
 
@@ -23,9 +22,8 @@ namespace DesktopAppTrouvaille
 
         private State _state;
 
-        private ProductIterator _iterator;
+        private Iterator _iterator;
         public State state { get { return _state; } }
-
 
         // List of Products:
         public List<Product> Products = new List<Product>();
@@ -35,7 +33,8 @@ namespace DesktopAppTrouvaille
 
         public ProductController(IView view)
         {
-            _iterator = new ProductIterator(10);
+            _iterator = new Iterator(10);
+            _iterator.Count = 30;
             _state = State.OK;
             _view = view;
         }
@@ -59,21 +58,33 @@ namespace DesktopAppTrouvaille
             }
         }
 
+        public int GetCount()
+        {
+            // TODO -> Call API:
+            return 100;
+        }
+
+        public int GetCurrentPage()
+        {
+            return _iterator.CurrentPage ;
+        }
+
         public void Next()
         {
+            _view.UpdateView();
             _iterator.Next();
             UpdateData();
         }
 
         public void Previous()
         {
+            _view.UpdateView();
             _iterator.Previous();
             UpdateData();
         }
 
         public async void SaveProduct(Product p)
         {
-            
             _state = State.SendingData;
             // Call API
             if (await _productProssesor.SaveNewProduct(p))
@@ -131,6 +142,9 @@ namespace DesktopAppTrouvaille
             _view.UpdateView();
         }
 
-       
+        public int GetPageCount()
+        {
+            return _iterator.Count / _iterator.StepSize;
+        }
     }
 }

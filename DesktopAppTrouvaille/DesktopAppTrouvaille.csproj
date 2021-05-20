@@ -70,7 +70,7 @@
     <Compile Include="APIconnection.cs" />
     <Compile Include="Controllers\IController.cs" />
     <Compile Include="Controllers\PictureController.cs" />
-    <Compile Include="Controllers\ProductIterator.cs" />
+    <Compile Include="Controllers\Iterator.cs" />
     <Compile Include="Exceptions\GETException.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
