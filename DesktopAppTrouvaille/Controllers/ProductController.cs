@@ -71,15 +71,15 @@ namespace DesktopAppTrouvaille
 
         public void Next()
         {
-            _view.UpdateView();
             _iterator.Next();
+            _view.UpdateView();
             UpdateData();
         }
 
         public void Previous()
         {
-            _view.UpdateView();
             _iterator.Previous();
+            _view.UpdateView();
             UpdateData();
         }
 
@@ -125,7 +125,7 @@ namespace DesktopAppTrouvaille
         public async void UpdateProduct(Product oldP, Product newP)
         {
             // Get the Categories which are removed:
-           
+            
             await _productProssesor.AddCategories(newP.ProductId, newP.Categories);
 
             _state = State.SendingData;

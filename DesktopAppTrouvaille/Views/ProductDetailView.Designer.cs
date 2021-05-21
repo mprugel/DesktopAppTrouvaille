@@ -243,9 +243,9 @@
             this.dataGridViewCheckBoxColumn96 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn97 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn97 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn98 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -352,7 +352,8 @@
             // 
             // buttonPicturePrevious
             // 
-            this.buttonPicturePrevious.BackColor = System.Drawing.Color.White;
+            this.buttonPicturePrevious.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonPicturePrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPicturePrevious.Location = new System.Drawing.Point(24, 40);
             this.buttonPicturePrevious.Name = "buttonPicturePrevious";
             this.buttonPicturePrevious.Size = new System.Drawing.Size(34, 315);
@@ -363,7 +364,8 @@
             // 
             // buttonPictureNext
             // 
-            this.buttonPictureNext.BackColor = System.Drawing.Color.White;
+            this.buttonPictureNext.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonPictureNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPictureNext.Location = new System.Drawing.Point(594, 40);
             this.buttonPictureNext.Name = "buttonPictureNext";
             this.buttonPictureNext.Size = new System.Drawing.Size(35, 315);
@@ -374,6 +376,8 @@
             // 
             // buttonDeletePicture
             // 
+            this.buttonDeletePicture.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonDeletePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeletePicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeletePicture.ForeColor = System.Drawing.Color.Red;
             this.buttonDeletePicture.Location = new System.Drawing.Point(765, 30);
@@ -386,7 +390,8 @@
             // 
             // buttonUploadPicture
             // 
-            this.buttonUploadPicture.BackColor = System.Drawing.Color.White;
+            this.buttonUploadPicture.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonUploadPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUploadPicture.Location = new System.Drawing.Point(765, 131);
             this.buttonUploadPicture.Name = "buttonUploadPicture";
             this.buttonUploadPicture.Size = new System.Drawing.Size(167, 81);
@@ -414,7 +419,8 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.White;
+            this.buttonDelete.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Location = new System.Drawing.Point(58, 1130);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(139, 48);
@@ -425,7 +431,8 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.White;
+            this.buttonSave.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Location = new System.Drawing.Point(755, 1130);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(284, 48);
@@ -1634,6 +1641,18 @@
             this.dataGridViewCheckBoxColumn97.Name = "dataGridViewCheckBoxColumn97";
             this.dataGridViewCheckBoxColumn97.Width = 200;
             // 
+            // dataGridViewTextBoxColumn98
+            // 
+            this.dataGridViewTextBoxColumn98.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
+            this.dataGridViewTextBoxColumn98.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn98
+            // 
+            this.dataGridViewCheckBoxColumn98.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn98.Name = "dataGridViewCheckBoxColumn98";
+            this.dataGridViewCheckBoxColumn98.Width = 200;
+            // 
             // categoryGridView1
             // 
             this.categoryGridView1.AllowUserToAddRows = false;
@@ -1651,18 +1670,6 @@
             this.categoryGridView1.RowTemplate.Height = 33;
             this.categoryGridView1.Size = new System.Drawing.Size(476, 255);
             this.categoryGridView1.TabIndex = 23;
-            // 
-            // dataGridViewTextBoxColumn98
-            // 
-            this.dataGridViewTextBoxColumn98.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
-            this.dataGridViewTextBoxColumn98.Width = 200;
-            // 
-            // dataGridViewCheckBoxColumn98
-            // 
-            this.dataGridViewCheckBoxColumn98.MinimumWidth = 10;
-            this.dataGridViewCheckBoxColumn98.Name = "dataGridViewCheckBoxColumn98";
-            this.dataGridViewCheckBoxColumn98.Width = 200;
             // 
             // ProductDetailView
             // 

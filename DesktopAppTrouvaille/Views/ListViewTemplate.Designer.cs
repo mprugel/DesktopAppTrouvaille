@@ -60,7 +60,8 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(433, 99);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(284, 49);
@@ -77,7 +78,8 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.White;
+            this.buttonAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Location = new System.Drawing.Point(432, 35);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(284, 46);
@@ -101,7 +103,8 @@
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.BackColor = System.Drawing.Color.White;
+            this.buttonPrevious.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrevious.Location = new System.Drawing.Point(26, 892);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(147, 45);
@@ -112,7 +115,8 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.BackColor = System.Drawing.Color.White;
+            this.buttonNext.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.Location = new System.Drawing.Point(569, 892);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(147, 45);

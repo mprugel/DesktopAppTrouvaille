@@ -11,7 +11,7 @@ using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class MainView : UserControl, IMainView
+    public partial class MainView : UserControl, IView
     {
         private IView _tabView;
         private MainController controller;
@@ -19,11 +19,23 @@ namespace DesktopAppTrouvaille.Views
         public MainView()
         {
             InitializeComponent();
-            controller = new MainController();
+            controller = new MainController(this);
+            UpdateView();
         }
         public void UpdateView() 
-        { 
-         
+        {
+            if(MainController.LoggedIn)
+            {
+                panelMainMenu.Visible = true;
+                panelTabView.Controls.Clear();
+            }
+            else
+            {
+                _tabView = new LoginView(controller);
+                panelMainMenu.Visible = false;
+                panelTabView.Controls.Clear();
+                panelTabView.Controls.Add((UserControl)_tabView);
+            }
         }
         public void SetTabView(IView view)
         {
@@ -65,6 +77,11 @@ namespace DesktopAppTrouvaille.Views
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            controller.Logout();
         }
     }
 }

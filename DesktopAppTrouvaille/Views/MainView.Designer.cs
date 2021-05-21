@@ -34,13 +34,15 @@
             this.buttonShowStatistics = new System.Windows.Forms.Button();
             this.panelTabView = new System.Windows.Forms.Panel();
             this.buttonShowCategories = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.panelMainMenu = new System.Windows.Forms.Panel();
+            this.buttonLogout = new System.Windows.Forms.Button();
+            this.panelMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonShowProducts
             // 
-            this.buttonShowProducts.BackColor = System.Drawing.Color.White;
+            this.buttonShowProducts.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowProducts.Location = new System.Drawing.Point(29, 23);
             this.buttonShowProducts.Name = "buttonShowProducts";
             this.buttonShowProducts.Size = new System.Drawing.Size(489, 109);
@@ -51,7 +53,8 @@
             // 
             // buttonShowOrders
             // 
-            this.buttonShowOrders.BackColor = System.Drawing.Color.White;
+            this.buttonShowOrders.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowOrders.Location = new System.Drawing.Point(29, 184);
             this.buttonShowOrders.Name = "buttonShowOrders";
             this.buttonShowOrders.Size = new System.Drawing.Size(489, 113);
@@ -62,7 +65,8 @@
             // 
             // buttonShowCustomers
             // 
-            this.buttonShowCustomers.BackColor = System.Drawing.Color.White;
+            this.buttonShowCustomers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowCustomers.Location = new System.Drawing.Point(29, 346);
             this.buttonShowCustomers.Name = "buttonShowCustomers";
             this.buttonShowCustomers.Size = new System.Drawing.Size(489, 114);
@@ -73,7 +77,8 @@
             // 
             // buttonShowStatistics
             // 
-            this.buttonShowStatistics.BackColor = System.Drawing.Color.White;
+            this.buttonShowStatistics.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowStatistics.Location = new System.Drawing.Point(29, 510);
             this.buttonShowStatistics.Name = "buttonShowStatistics";
             this.buttonShowStatistics.Size = new System.Drawing.Size(489, 119);
@@ -94,7 +99,8 @@
             // 
             // buttonShowCategories
             // 
-            this.buttonShowCategories.BackColor = System.Drawing.Color.White;
+            this.buttonShowCategories.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowCategories.Location = new System.Drawing.Point(29, 682);
             this.buttonShowCategories.Name = "buttonShowCategories";
             this.buttonShowCategories.Size = new System.Drawing.Size(489, 111);
@@ -103,18 +109,31 @@
             this.buttonShowCategories.UseVisualStyleBackColor = false;
             this.buttonShowCategories.Click += new System.EventHandler(this.buttonShowCategories_Click);
             // 
-            // panel1
+            // panelMainMenu
             // 
-            this.panel1.Controls.Add(this.buttonShowProducts);
-            this.panel1.Controls.Add(this.buttonShowCategories);
-            this.panel1.Controls.Add(this.buttonShowStatistics);
-            this.panel1.Controls.Add(this.buttonShowOrders);
-            this.panel1.Controls.Add(this.buttonShowCustomers);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(548, 1249);
-            this.panel1.TabIndex = 7;
+            this.panelMainMenu.Controls.Add(this.buttonLogout);
+            this.panelMainMenu.Controls.Add(this.buttonShowProducts);
+            this.panelMainMenu.Controls.Add(this.buttonShowCategories);
+            this.panelMainMenu.Controls.Add(this.buttonShowStatistics);
+            this.panelMainMenu.Controls.Add(this.buttonShowOrders);
+            this.panelMainMenu.Controls.Add(this.buttonShowCustomers);
+            this.panelMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMainMenu.Name = "panelMainMenu";
+            this.panelMainMenu.Size = new System.Drawing.Size(548, 1249);
+            this.panelMainMenu.TabIndex = 7;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Location = new System.Drawing.Point(29, 1114);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(489, 104);
+            this.buttonLogout.TabIndex = 6;
+            this.buttonLogout.Text = "Ausloggen";
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // MainView
             // 
@@ -122,10 +141,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panelTabView);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelMainMenu);
             this.Name = "MainView";
             this.Size = new System.Drawing.Size(2140, 1249);
-            this.panel1.ResumeLayout(false);
+            this.panelMainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +158,7 @@
         private System.Windows.Forms.Button buttonShowStatistics;
         private System.Windows.Forms.Panel panelTabView;
         private System.Windows.Forms.Button buttonShowCategories;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelMainMenu;
+        private System.Windows.Forms.Button buttonLogout;
     }
 }
