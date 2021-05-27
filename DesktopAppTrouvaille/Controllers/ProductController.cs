@@ -11,31 +11,22 @@ using System.Linq;
 
 namespace DesktopAppTrouvaille
 {
-    public enum State {ConnectionError, OK, LoadData , SendingData, SavedProduct, DeletedProduct}
-    public class ProductController : IController
+    
+    public class ProductController : Controller
     {
         private ProductProcessor _productProssesor = new ProductProcessor();
         private CategoryProcessor _categoryProcessor = new CategoryProcessor();
 
         public List<Category> Categories = new List<Category>();
 
-        private State _state;
-
-        private Iterator _iterator;
-        public State state { get { return _state; } }
-
         // List of Products:
         public List<Product> Products = new List<Product>();
 
-        // Interface for Updating the GUI:
-        private IView _view;
-
-        public ProductController(IView view)
+        public ProductController()
         {
             _iterator = new Iterator(10);
             _iterator.Count = 30;
             _state = State.OK;
-            _view = view;
         }
 
         public async void UpdateData()
@@ -53,34 +44,16 @@ namespace DesktopAppTrouvaille
             }
             finally
             {
-                _view.UpdateView();
+                UpdateView();
             }
         }
 
-        public int GetCount()
+        public override int GetCount()
         {
             // TODO -> Call API:
             return 100;
         }
 
-        public int GetCurrentPage()
-        {
-            return _iterator.CurrentPage + 1 ;
-        }
-
-        public void Next()
-        {
-            _iterator.Next();
-            _view.UpdateView();
-            UpdateData();
-        }
-
-        public void Previous()
-        {
-            _iterator.Previous();
-            _view.UpdateView();
-            UpdateData();
-        }
 
         public async void SaveProduct(Product p)
         {
@@ -89,14 +62,14 @@ namespace DesktopAppTrouvaille
             if (await _productProssesor.SaveNewProduct(p))
             {
                 UpdateData();
-                _state = State.SavedProduct;
+                _state = State.Saved;
             }
             else
             {
                 _state = State.ConnectionError;
             }
             
-            _view.UpdateView();
+           UpdateView();
             
         }
 
@@ -106,13 +79,13 @@ namespace DesktopAppTrouvaille
             // Call API
             if (await _productProssesor.DeleteProduct(p))
             {
-                _state = State.DeletedProduct;
+                _state = State.Deleted;
             }
             else
             {
                 _state = State.ConnectionError;
             }
-            _view.UpdateView();
+            UpdateView();
             UpdateData();
         }
 
@@ -137,19 +110,15 @@ namespace DesktopAppTrouvaille
             // Call API
             if ( await _productProssesor.UpdateProduct(newP))
             {
-                _state = State.SavedProduct;
+                _state = State.Saved;
             }
             else
             {
                 _state = State.ConnectionError;
             }
             UpdateData();
-            _view.UpdateView();
+            UpdateView();
         }
 
-        public int GetPageCount()
-        {
-            return _iterator.Count / _iterator.StepSize;
-        }
     }
 }

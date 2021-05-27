@@ -245,18 +245,22 @@
             this.dataGridViewCheckBoxColumn97 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn98 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDownTax = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownMinStock = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn99 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn99 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
+            this.dataGridViewTextBoxColumn100 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn100 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -291,6 +295,8 @@
             // 
             // numericUpDownInStock
             // 
+            this.numericUpDownInStock.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownInStock.Location = new System.Drawing.Point(58, 303);
             this.numericUpDownInStock.Maximum = new decimal(new int[] {
             1000,
@@ -313,8 +319,10 @@
             // 
             // numericUpDownPrice
             // 
+            this.numericUpDownPrice.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownPrice.DecimalPlaces = 2;
-            this.numericUpDownPrice.Location = new System.Drawing.Point(283, 303);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(311, 303);
             this.numericUpDownPrice.Name = "numericUpDownPrice";
             this.numericUpDownPrice.Size = new System.Drawing.Size(120, 31);
             this.numericUpDownPrice.TabIndex = 6;
@@ -323,7 +331,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(278, 263);
+            this.label4.Location = new System.Drawing.Point(306, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 25);
             this.label4.TabIndex = 7;
@@ -351,11 +359,13 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.Location = new System.Drawing.Point(58, 426);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(463, 255);
             this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = "Geben Sie hier eine Beschreibung des Produktes ein...";
             // 
             // buttonPicturePrevious
             // 
@@ -419,9 +429,11 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(148, 180);
+            this.textBoxName.BackColor = System.Drawing.SystemColors.Info;
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxName.Location = new System.Drawing.Point(283, 180);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(891, 31);
+            this.textBoxName.Size = new System.Drawing.Size(756, 31);
             this.textBoxName.TabIndex = 19;
             // 
             // buttonDelete
@@ -1660,13 +1672,63 @@
             this.dataGridViewCheckBoxColumn98.Name = "dataGridViewCheckBoxColumn98";
             this.dataGridViewCheckBoxColumn98.Width = 200;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(512, 263);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(175, 25);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Mehrwertsteuer";
+            // 
+            // numericUpDownTax
+            // 
+            this.numericUpDownTax.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownTax.Location = new System.Drawing.Point(517, 303);
+            this.numericUpDownTax.Name = "numericUpDownTax";
+            this.numericUpDownTax.Size = new System.Drawing.Size(170, 31);
+            this.numericUpDownTax.TabIndex = 26;
+            // 
+            // numericUpDownMinStock
+            // 
+            this.numericUpDownMinStock.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownMinStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownMinStock.Location = new System.Drawing.Point(812, 303);
+            this.numericUpDownMinStock.Name = "numericUpDownMinStock";
+            this.numericUpDownMinStock.Size = new System.Drawing.Size(227, 31);
+            this.numericUpDownMinStock.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(807, 263);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(232, 25);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Mindestlagerbestand";
+            // 
+            // dataGridViewTextBoxColumn99
+            // 
+            this.dataGridViewTextBoxColumn99.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn99.Name = "dataGridViewTextBoxColumn99";
+            this.dataGridViewTextBoxColumn99.Width = 200;
+            // 
+            // dataGridViewCheckBoxColumn99
+            // 
+            this.dataGridViewCheckBoxColumn99.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn99.Name = "dataGridViewCheckBoxColumn99";
+            this.dataGridViewCheckBoxColumn99.Width = 200;
+            // 
             // categoryGridView1
             // 
             this.categoryGridView1.AllowUserToAddRows = false;
             this.categoryGridView1.AllowUserToDeleteRows = false;
             this.categoryGridView1.AllowUserToResizeColumns = false;
             this.categoryGridView1.AllowUserToResizeRows = false;
-            this.categoryGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.categoryGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
             this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.categoryGridView1.Location = new System.Drawing.Point(563, 426);
@@ -1678,39 +1740,17 @@
             this.categoryGridView1.Size = new System.Drawing.Size(476, 255);
             this.categoryGridView1.TabIndex = 23;
             // 
-            // label7
+            // dataGridViewTextBoxColumn100
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(457, 263);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 25);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Mehrwertsteuer";
+            this.dataGridViewTextBoxColumn100.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn100.Name = "dataGridViewTextBoxColumn100";
+            this.dataGridViewTextBoxColumn100.Width = 200;
             // 
-            // numericUpDownTax
+            // dataGridViewCheckBoxColumn100
             // 
-            this.numericUpDownTax.Location = new System.Drawing.Point(462, 303);
-            this.numericUpDownTax.Name = "numericUpDownTax";
-            this.numericUpDownTax.Size = new System.Drawing.Size(170, 31);
-            this.numericUpDownTax.TabIndex = 26;
-            // 
-            // numericUpDownMinStock
-            // 
-            this.numericUpDownMinStock.Location = new System.Drawing.Point(704, 303);
-            this.numericUpDownMinStock.Name = "numericUpDownMinStock";
-            this.numericUpDownMinStock.Size = new System.Drawing.Size(227, 31);
-            this.numericUpDownMinStock.TabIndex = 27;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(699, 263);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(232, 25);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Mindestlagerbestand";
+            this.dataGridViewCheckBoxColumn100.MinimumWidth = 10;
+            this.dataGridViewCheckBoxColumn100.Name = "dataGridViewCheckBoxColumn100";
+            this.dataGridViewCheckBoxColumn100.Width = 200;
             // 
             // ProductDetailView
             // 
@@ -1745,9 +1785,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.categoryGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1977,5 +2017,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDownTax;
         private System.Windows.Forms.NumericUpDown numericUpDownMinStock;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn99;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn99;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn100;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn100;
     }
 }

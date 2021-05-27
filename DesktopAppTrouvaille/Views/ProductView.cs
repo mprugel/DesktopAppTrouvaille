@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
@@ -35,11 +36,11 @@ namespace DesktopAppTrouvaille.Views
                 case State.SendingData:
                     labelStatus.Text = "Sende Daten zum Server...";
                     break;
-                case State.DeletedProduct:
+                case State.Deleted:
                     labelStatus.Text = "Produkt wurde gelöscht";
                     panelDetailView.Controls.Clear();
                     break;
-                case State.SavedProduct:
+                case State.Saved:
                     panelDetailView.Controls.Clear();
                     labelStatus.Text = "Produkt wurde gespeichert";
                     break;
@@ -48,7 +49,8 @@ namespace DesktopAppTrouvaille.Views
 
         public ProductView()
         {
-            Controller = new ProductController(this);
+            Controller = new ProductController();
+            Controller.AttachView(this);
             
             InitializeComponent();
             listViewTemplate1.Controller = Controller;

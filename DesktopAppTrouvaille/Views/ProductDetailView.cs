@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
 using System.IO;
@@ -15,13 +10,15 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class ProductDetailView : UserControl
     {
+        private Color _emptyFieldColor = Color.FromArgb(255,168,168);
         public Product Prod;
 
-        //For Testing:
+        //Only needed for testing:
         List<Picture> picList = new List<Picture>();
+
         private PictureController pictureController = new PictureController();
 
-        OpenFileDialog fileDialog = new OpenFileDialog();
+        private OpenFileDialog fileDialog = new OpenFileDialog();
 
         public ProductController Controller;
         public ProductDetailView()
@@ -33,18 +30,24 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
             Controller = controller;
+
+            // Set Eventhandler for Selecting Images:
             fileDialog.FileOk += FileSelected;
         }
 
         public void UpdateView()
         {
+            // Update the View Elemts with with the Product Data:
             labelProductID.Text = Prod.ProductId.ToString();
             textBoxName.Text = Prod.Name;
             numericUpDownInStock.Value = (int)Prod.InStock;
+            numericUpDownMinStock.Value = Prod.MinStock;
+            numericUpDownTax.Value = (int)Prod.Tax;
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
             categoryGridView1.AddCategories(Prod.Categories, Controller.Categories);
             
+            // Display the Picture in the Picture Box:
             picList.Add(Prod.Picture);
             pictureController.SetPictures(picList);
             pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
@@ -70,12 +73,13 @@ namespace DesktopAppTrouvaille.Views
 
         }
 
+        // Check the input fields on the GUI:
         public bool CheckInputFields()
         {
             bool ret = true;
             if(textBoxName.Text.Length == 0)
             {
-                textBoxName.BackColor = Color.Red;
+                textBoxName.BackColor = _emptyFieldColor;
                 ret = false;
             }
             else
@@ -85,7 +89,7 @@ namespace DesktopAppTrouvaille.Views
 
             if(numericUpDownPrice.Value <= 0)
             {
-                numericUpDownPrice.BackColor = Color.Red;
+                numericUpDownPrice.BackColor = _emptyFieldColor;
                 ret = false;
             }
             else
@@ -95,7 +99,7 @@ namespace DesktopAppTrouvaille.Views
 
             if(richTextBox1.Text.Length == 0)
             {
-                richTextBox1.BackColor = Color.Red;
+                richTextBox1.BackColor = _emptyFieldColor;
                 ret = false;
             }
             else
@@ -105,7 +109,7 @@ namespace DesktopAppTrouvaille.Views
 
             /*if(categoryGridView1.GetCheckedCategories().Count == 0)
             {
-                categoryGridView1.BackgroundColor = Color.Red;
+                categoryGridView1.BackgroundColor = _emptyFieldColor;
             }
             else
             {
@@ -126,20 +130,23 @@ namespace DesktopAppTrouvaille.Views
 
         public Product GetProductFromInputs()
         {
+            // Create new Product from the Data in the GUI, but keep ProductID:
             Product p = new Product();
             p.ProductId = Prod.ProductId;
             p.Name = textBoxName.Text;
             p.InStock = (int)numericUpDownInStock.Value;
+            p.MinStock = (int)numericUpDownMinStock.Value;
+            p.Tax = numericUpDownTax.Value;
             p.Price = (int)numericUpDownPrice.Value;
             p.Description = richTextBox1.Text;
             p.Categories = categoryGridView1.GetCheckedCategories();
             p.Picture = pictureController.GetCurrentPicture();
 
-
             return p;
         }
         protected virtual void buttonSave_Click(object sender, EventArgs e)
         {
+            // Check if all Form Fields are filled by the User:
             if (CheckInputFields())
             {
                 // Update the Product:
@@ -157,6 +164,7 @@ namespace DesktopAppTrouvaille.Views
             fileDialog.ShowDialog(); 
         }
 
+        // Called wehen User selects File in filechooser
         private void FileSelected(object sender, EventArgs e)
         {
             Stream fileStream = fileDialog.OpenFile();

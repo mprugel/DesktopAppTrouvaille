@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopAppTrouvaille.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,35 +7,62 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Controllers
 {
+    public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted }
+
     // This Controller Class contains Functions which are used by all specific Controllers.
-    class Controller : IController
+    public abstract class Controller : IController
     {
+        // Interface for Updating the GUI:
+        private List<IView> _views= new List<IView>();
+
+        protected State _state;
+
+        public State state { get { return _state; } }
+
         // Iterator:
-        private Iterator _iterator;
+        protected Iterator _iterator;
+
+        public abstract int GetCount();
 
         public int GetCurrentPage()
         {
-           return _iterator.CurrentPage;
+           return _iterator.CurrentPage + 1;
+        }
+
+        public void AttachView(IView view)
+        {
+            _views.Add(view);
+        }
+
+        public void DetachView(IView view)
+        {
+            _views.Remove(view);
+        }
+
+        protected void UpdateView()
+        {
+            foreach(IView v in _views)
+            {
+                v.UpdateView();
+            }
         }
 
         public int GetPageCount()
         {
-            return _iterator.Count;
+            return _iterator.Count / _iterator.StepSize;
         }
 
         public void Next()
         {
             _iterator.Next();
+            UpdateView();
         }
 
         public void Previous()
         {
             _iterator.Previous();
+            UpdateView();
         }
 
-        public int GetCount()
-        {
-            return 0;
-        }
     }
 }

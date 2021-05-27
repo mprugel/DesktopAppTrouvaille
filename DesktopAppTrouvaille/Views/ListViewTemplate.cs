@@ -8,12 +8,13 @@ namespace DesktopAppTrouvaille.Views
     public partial class ListViewTemplate : UserControl , IView
     {
         public IController Controller;
+
+       
         public ListViewTemplate()
         {
             InitializeComponent();
             listView1.View = View.Details;
         }
-
         public ListViewTemplate(IController controller)
         {
             Controller = controller;
@@ -50,7 +51,6 @@ namespace DesktopAppTrouvaille.Views
                 listView1.Items.Add(itm);
             }
         }
-
         public void SetTitle(string title)
         {
             label1.Text = title; 
