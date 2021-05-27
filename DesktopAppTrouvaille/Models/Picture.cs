@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DesktopAppTrouvaille.Models
 {
@@ -32,9 +29,7 @@ namespace DesktopAppTrouvaille.Models
                 Bitmap bmp = new Bitmap(1024, 1024);
                 using (Graphics g = Graphics.FromImage(bmp)) { g.Clear(Color.White); }
                 return bmp;
-            }
-           
-            
+            }  
         }
 
         public void SetImageData(Bitmap img)

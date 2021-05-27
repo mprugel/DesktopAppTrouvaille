@@ -9,6 +9,7 @@ namespace DesktopAppTrouvaille.Controllers
     public interface IController
     {
         void Next();
+
         void Previous();
 
         int GetCurrentPage();

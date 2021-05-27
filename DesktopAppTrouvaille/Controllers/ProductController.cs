@@ -7,8 +7,7 @@ using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DesktopAppTrouvaille
 {
@@ -66,7 +65,7 @@ namespace DesktopAppTrouvaille
 
         public int GetCurrentPage()
         {
-            return _iterator.CurrentPage ;
+            return _iterator.CurrentPage + 1 ;
         }
 
         public void Next()
@@ -125,8 +124,14 @@ namespace DesktopAppTrouvaille
         public async void UpdateProduct(Product oldP, Product newP)
         {
             // Get the Categories which are removed:
-            
-            await _productProssesor.AddCategories(newP.ProductId, newP.Categories);
+            List<Guid> removedCats = (List<Guid>)newP.ProductCategories.Except(oldP.ProductCategories);
+            // Get the Categories which have been added:
+            List<Guid> newCats = (List<Guid>)oldP.ProductCategories.Except(newP.ProductCategories);
+
+            // Save the newly added Categories:
+            await _productProssesor.AddCategories(newP.ProductId, newCats);
+
+            //TODO: implement DeleteCategories:
 
             _state = State.SendingData;
             // Call API

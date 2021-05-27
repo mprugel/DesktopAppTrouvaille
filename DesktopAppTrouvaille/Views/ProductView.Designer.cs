@@ -38,9 +38,9 @@
             this.panelDetailView.AutoSize = true;
             this.panelDetailView.BackColor = System.Drawing.Color.White;
             this.panelDetailView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDetailView.Location = new System.Drawing.Point(720, 0);
+            this.panelDetailView.Location = new System.Drawing.Point(770, 0);
             this.panelDetailView.Name = "panelDetailView";
-            this.panelDetailView.Size = new System.Drawing.Size(1557, 0);
+            this.panelDetailView.Size = new System.Drawing.Size(1507, 0);
             this.panelDetailView.TabIndex = 1;
             // 
             // labelStatus
@@ -63,7 +63,8 @@
             this.listViewTemplate1.ForeColor = System.Drawing.Color.Black;
             this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
             this.listViewTemplate1.Name = "listViewTemplate1";
-            this.listViewTemplate1.Size = new System.Drawing.Size(720, 1309);
+            this.listViewTemplate1.Padding = new System.Windows.Forms.Padding(0, 0, 50, 0);
+            this.listViewTemplate1.Size = new System.Drawing.Size(770, 1309);
             this.listViewTemplate1.TabIndex = 0;
             // 
             // ProductView
