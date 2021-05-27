@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.orderDetailView1 = new DesktopAppTrouvaille.Views.OrderDetailView();
+            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.SuspendLayout();
-            // 
-            // listViewTemplate1
-            // 
-            this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
-            this.listViewTemplate1.Name = "listViewTemplate1";
-            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
-            this.listViewTemplate1.TabIndex = 0;
             // 
             // orderDetailView1
             // 
+            this.orderDetailView1.BackColor = System.Drawing.Color.White;
             this.orderDetailView1.Location = new System.Drawing.Point(756, -2);
             this.orderDetailView1.Name = "orderDetailView1";
             this.orderDetailView1.Size = new System.Drawing.Size(1026, 1029);
             this.orderDetailView1.TabIndex = 1;
+            // 
+            // listViewTemplate1
+            // 
+            this.listViewTemplate1.AddButtonText = "ADD <Item>";
+            this.listViewTemplate1.AutoSize = true;
+            this.listViewTemplate1.BackColor = System.Drawing.Color.White;
+            this.listViewTemplate1.DisplayAddButton = false;
+            this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
+            this.listViewTemplate1.Name = "listViewTemplate1";
+            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
+            this.listViewTemplate1.TabIndex = 0;
+            this.listViewTemplate1.Title = "Bestellungen";
             // 
             // OrderViewUC
             // 
@@ -55,6 +61,7 @@
             this.Name = "OrderViewUC";
             this.Size = new System.Drawing.Size(1819, 1116);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

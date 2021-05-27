@@ -57,7 +57,6 @@ namespace DesktopAppTrouvaille.Views
             //Hide Product Detail:
             panelDetailView.Visible = false;
 
-
             // Initialize the ListView:
             listViewTemplate1.SetTitle("Produktliste");
             listViewTemplate1.SetButtonText("Neues Produkt");

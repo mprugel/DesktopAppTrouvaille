@@ -9,6 +9,18 @@ namespace DesktopAppTrouvaille.Views
     {
         public IController Controller;
 
+        // Properties for setting in the Designer:
+        public string Title { get { return label1.Text; } set { label1.Text = value; } }
+        public string AddButtonText { get { return buttonAdd.Text; } set { buttonAdd.Text = value; } }
+
+        private bool _displayAddButton = true;
+        public bool DisplayAddButton { get { return _displayAddButton; } 
+            set 
+            { 
+                _displayAddButton = value;
+                buttonAdd.Visible = value;
+            } 
+        }
        
         public ListViewTemplate()
         {

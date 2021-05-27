@@ -33,10 +33,15 @@
             // 
             // listViewTemplate1
             // 
+            this.listViewTemplate1.AddButtonText = "Neue Kategorie";
+            this.listViewTemplate1.AutoSize = true;
+            this.listViewTemplate1.BackColor = System.Drawing.Color.White;
+            this.listViewTemplate1.DisplayAddButton = true;
             this.listViewTemplate1.Location = new System.Drawing.Point(22, 33);
             this.listViewTemplate1.Name = "listViewTemplate1";
             this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
             this.listViewTemplate1.TabIndex = 0;
+            this.listViewTemplate1.Title = "Kategorien";
             // 
             // CategoryView
             // 
@@ -46,6 +51,7 @@
             this.Name = "CategoryView";
             this.Size = new System.Drawing.Size(1854, 1148);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
