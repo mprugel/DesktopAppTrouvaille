@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
-using DesktopAppTrouvaille.Factories;
 using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
@@ -10,7 +9,7 @@ namespace DesktopAppTrouvaille.Views
     public partial class ListViewTemplate : UserControl , IView
     {
         public IController Controller;
-        public ListItemFactory Factory;
+
         // Properties for setting in the Designer:
         public string Title { get { return label1.Text; } set { label1.Text = value; } }
         public string AddButtonText { get { return buttonAdd.Text; } set { buttonAdd.Text = value; } }
@@ -27,19 +26,14 @@ namespace DesktopAppTrouvaille.Views
         public ListViewTemplate()
         {
             InitializeComponent();
-        }
-
-        public void Init()
-        {
             listView1.View = View.Details;
-
-            // Add cols:
-            foreach (string col in Factory.CreateColumns())
-            {
-                listView1.Columns.Add(col).Width = 100;
-            }
         }
-       
+        public ListViewTemplate(IController controller)
+        {
+            Controller = controller;
+            InitializeComponent();
+            listView1.View = View.Details;
+        }
         public void AddClickHandler(EventHandler handler)
         {
             listView1.Click += handler;
@@ -57,11 +51,16 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
-        public void AddItems(IEnumerable<IModel> models)
+        public void AddColumn(string colname)
         {
-            List<ListViewItem> items = Factory.CreateListViewItems(models);
+            listView1.Columns.Add(colname).Width = 100;
+        }
+
+        public void AddItems(List<ListViewItem> items)
+        {
             listView1.Items.Clear();
-            foreach( ListViewItem itm in items)
+            
+            foreach(ListViewItem itm in items)
             {
                 listView1.Items.Add(itm);
             }
@@ -96,5 +95,7 @@ namespace DesktopAppTrouvaille.Views
             labelPageCount.Text = Controller.GetPageCount().ToString();
             labelPageNumber.Text = Controller.GetCurrentPage().ToString();
         }
+
+       
     }
 }

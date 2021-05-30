@@ -74,18 +74,24 @@
     <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Controllers\Iterator.cs" />
     <Compile Include="Exceptions\GETException.cs" />
+    <Compile Include="Factories\ListItemFactory.cs" />
+    <Compile Include="Factories\ProductItemFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globals\Globals.cs" />
     <Compile Include="IAPIconnection.cs" />
     <Compile Include="IMainView.cs" />
+    <Compile Include="Models\AddressViewModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Picture.cs" />
+    <Compile Include="Models\PostOrderProductViewModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Processors\CategoryGETDTO.cs" />
@@ -105,6 +111,9 @@
     </Compile>
     <Compile Include="Views\AdressView.Designer.cs">
       <DependentUpon>AdressView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\CategoryDetailView.cs">
       <SubType>UserControl</SubType>

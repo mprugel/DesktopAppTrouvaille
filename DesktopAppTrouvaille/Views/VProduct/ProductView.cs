@@ -1,31 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Controllers;
-using DesktopAppTrouvaille.Factories;
+using DesktopAppTrouvaille.Views.VProduct;
 
-namespace DesktopAppTrouvaille.Views
+namespace DesktopAppTrouvaille.Views.VProduct
 {
-    public partial class ProductView : UserControl, IView
+    public partial class ProductView : ViewBase, IView
     {
 
         private ProductDetailView detailView;
-       
+        private ListItemFactory itemFactory = new ProdoctItemFactory();
         public ProductController Controller { get; set; }
-        
+
         public void UpdateView()
         {
-           
-            listViewTemplate1.AddItems(Controller.Products);
+            listViewTemplate1.AddItems();
             listViewTemplate1.UpdateView();
-            switch(Controller.state)
+            switch (Controller.state)
             {
                 case State.ConnectionError:
                     labelStatus.Text = "Ein Verbindungsfehler ist aufgetreten!";
@@ -54,14 +46,19 @@ namespace DesktopAppTrouvaille.Views
         {
             Controller = new ProductController();
             Controller.AttachView(this);
-            
+
             InitializeComponent();
             listViewTemplate1.Controller = Controller;
-            listViewTemplate1.Factory = new ProductItemFactory();
-            listViewTemplate1.Init();
-
             //Hide Product Detail:
             panelDetailView.Visible = false;
+
+            // Initialize the ListView:
+            listViewTemplate1.SetTitle("Produktliste");
+            listViewTemplate1.SetButtonText("Neues Produkt");
+
+            listViewTemplate1.AddColumn("Produkt ID");
+            listViewTemplate1.AddColumn("Produktname");
+            listViewTemplate1.AddColumn("Lagerbestand");
 
             listViewTemplate1.AddClickHandler(ItemSelected);
             listViewTemplate1.AddButtonAddHandler(ButtonAddHandler);
@@ -80,10 +77,9 @@ namespace DesktopAppTrouvaille.Views
         private void ItemSelected(object sender, System.EventArgs e)
         {
             ListViewItem item = listViewTemplate1.GetSelectedItem();
-            if(item != null)
+            if (item != null)
             {
                 Product p = (Product)item.Tag;
-
                 panelDetailView.Controls.Clear();
                 detailView = new ProductDetailView(Controller);
                 panelDetailView.Controls.Add(detailView);
@@ -95,8 +91,9 @@ namespace DesktopAppTrouvaille.Views
             else
             {
                 detailView.Visible = false;
-            } 
+            }
         }
+
 
     }
 }

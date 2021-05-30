@@ -6,14 +6,25 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Models
 {
-    class Order
+    public class Order
     {
-        public int OrderID { get; set; }
-        public string Date { get; set; }
-        public string PaymentMethod { get; set; }
-        public string ShippingMethod { get; set; }
-        public int InvoiceID { get; set; }
-        public string OrderState { get; set; }
+        public Guid OrderId { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public decimal TotalCost { get; set; }
+
+        public Globals.Globals.PaymentMethod PaymentMethod { get; set; }
+
+        public Globals.Globals.Shipmentmethod ShipmentMethod { get; set; }
+
+        public Globals.Globals.OrderState OrderState { get; set; }
+
+        public AddressViewModel DeliveryAddress { get; set; }
+
+        public AddressViewModel InvoiceAddress { get; set; }
+
+        public ICollection<PostOrderProductViewModel> Products { get; set; }
 
     }
 }

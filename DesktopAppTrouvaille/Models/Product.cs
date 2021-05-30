@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Models
 {
-    public class Product
+    public class Product : IModel
     {
         public Guid ProductId { get; set; }
 
