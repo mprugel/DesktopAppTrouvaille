@@ -1,6 +1,6 @@
 ﻿namespace DesktopAppTrouvaille.Views
 {
-    public partial class ProductView
+    public partial class BView
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.panelDetailView = new System.Windows.Forms.Panel();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
+            this.listView = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.SuspendLayout();
             // 
             // panelDetailView
@@ -57,18 +57,18 @@
             // 
             // listViewTemplate1
             // 
-            this.listViewTemplate1.AddButtonText = "Neues Produkt";
-            this.listViewTemplate1.AutoSize = true;
-            this.listViewTemplate1.BackColor = System.Drawing.Color.White;
-            this.listViewTemplate1.DisplayAddButton = true;
-            this.listViewTemplate1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listViewTemplate1.ForeColor = System.Drawing.Color.Black;
-            this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
-            this.listViewTemplate1.Name = "listViewTemplate1";
-            this.listViewTemplate1.Padding = new System.Windows.Forms.Padding(0, 0, 50, 0);
-            this.listViewTemplate1.Size = new System.Drawing.Size(770, 1309);
-            this.listViewTemplate1.TabIndex = 0;
-            this.listViewTemplate1.Title = "Produkte";
+            this.listView.AddButtonText = "Neues Produkt";
+            this.listView.AutoSize = true;
+            this.listView.BackColor = System.Drawing.Color.White;
+            this.listView.DisplayAddButton = true;
+            this.listView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listView.ForeColor = System.Drawing.Color.Black;
+            this.listView.Location = new System.Drawing.Point(0, 0);
+            this.listView.Name = "listViewTemplate1";
+            this.listView.Padding = new System.Windows.Forms.Padding(0, 0, 50, 0);
+            this.listView.Size = new System.Drawing.Size(770, 1309);
+            this.listView.TabIndex = 0;
+            this.listView.Title = "Produkte";
             // 
             // ProductView
             // 
@@ -78,7 +78,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.panelDetailView);
-            this.Controls.Add(this.listViewTemplate1);
+            this.Controls.Add(this.listView);
             this.Name = "ProductView";
             this.Size = new System.Drawing.Size(2277, 1309);
             this.ResumeLayout(false);
@@ -88,7 +88,7 @@
 
         #endregion
 
-        private ListViewTemplate listViewTemplate1;
+        protected ListViewTemplate listView;
         private System.Windows.Forms.Panel panelDetailView;
         private System.Windows.Forms.Label labelStatus;
     }

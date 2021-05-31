@@ -112,7 +112,7 @@
     <Compile Include="Views\AdressView.Designer.cs">
       <DependentUpon>AdressView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BaseView.cs">
+    <Compile Include="Views\ProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\CategoryDetailView.cs">
@@ -189,11 +189,11 @@
     <Compile Include="Views\ProductDetailView.Designer.cs">
       <DependentUpon>ProductDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductView.cs">
+    <Compile Include="Views\BView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ProductView.Designer.cs">
-      <DependentUpon>ProductView.cs</DependentUpon>
+    <Compile Include="Views\BView.Designer.cs">
+      <DependentUpon>BView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -240,8 +240,8 @@
     <EmbeddedResource Include="Views\ProductDetailView.resx">
       <DependentUpon>ProductDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ProductView.resx">
-      <DependentUpon>ProductView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\BView.resx">
+      <DependentUpon>BView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

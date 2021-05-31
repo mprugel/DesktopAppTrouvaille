@@ -8,7 +8,7 @@ using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class ProductDetailView : UserControl
+    public partial class ProductDetailView : UserControl, IView
     {
         private Color _emptyFieldColor = Color.FromArgb(255,168,168);
         public Product Prod;

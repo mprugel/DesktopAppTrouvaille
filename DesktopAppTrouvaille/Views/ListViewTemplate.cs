@@ -7,6 +7,8 @@ using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
 {
+
+    // Base Class For ListView: Can be extended if necessary.
     public partial class ListViewTemplate : UserControl , IView
     {
         public IController Controller;
