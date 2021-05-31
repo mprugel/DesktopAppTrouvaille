@@ -12,19 +12,22 @@ namespace DesktopAppTrouvaille.Views
 {
     public class ProductView : BView, IView
     {
-        
         public ProductView()
         {
             Controller = new ProductController();
+            Controller.AttachView(this);
+            Controller.AttachView(listView);
 
             // Init the ListView:
             listView.Controller = Controller;
             listView.Factory = new ProductItemFactory();
             listView.Init();
+
+            Controller.UpdateData();
         }
         public void UpdateView()
         {
-            
+            UpdateStatusLabel();
         }
 
         protected override IView CreateNewView()

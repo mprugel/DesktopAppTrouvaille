@@ -20,9 +20,11 @@ namespace DesktopAppTrouvaille.Controllers
         public State state { get { return _state; } }
 
         // Iterator:
-        protected Iterator _iterator;
+        protected Iterator _iterator = new Iterator();
 
         public abstract int GetCount();
+
+        public abstract void UpdateData();
 
         public int GetCurrentPage()
         {

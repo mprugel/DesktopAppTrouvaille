@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class OrderDetailView : UserControl
+    public partial class OrderDetailView : UserControl, IView
     {
         private Order _order;
+
+        public OrderController Controller;
         public OrderDetailView()
         {
             InitializeComponent();
@@ -34,6 +37,11 @@ namespace DesktopAppTrouvaille.Views
 
             comboBoxOrderState.SelectedIndex = (int)order.OrderState;
 
+        }
+
+        public void UpdateView()
+        {
+            throw new NotImplementedException();
         }
 
         private void adressViewDelivery_Load(object sender, EventArgs e)

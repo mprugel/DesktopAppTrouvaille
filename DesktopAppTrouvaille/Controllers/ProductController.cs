@@ -29,7 +29,7 @@ namespace DesktopAppTrouvaille
             _state = State.OK;
         }
 
-        public async void UpdateData()
+        public async override void UpdateData()
         {
             try
             {

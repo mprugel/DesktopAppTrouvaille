@@ -1,5 +1,4 @@
-﻿using DesktopAppTrouvaille.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Controllers
 {
-    public class OrderController : Controller
+    class CustomerController : Controller
     {
-        private List<Order> orders = new List<Order>();
-
         public override int GetCount()
         {
-            // TODO: Call API:
-            return 100;
+            throw new NotImplementedException();
         }
 
         public override void UpdateData()

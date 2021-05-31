@@ -28,39 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
-            this.customerDetail1 = new DesktopAppTrouvaille.Views.CustomerDetail();
             this.SuspendLayout();
             // 
-            // listViewTemplate1
+            // listView
             // 
-            this.listViewTemplate1.Location = new System.Drawing.Point(0, 0);
-            this.listViewTemplate1.Name = "listViewTemplate1";
-            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
-            this.listViewTemplate1.TabIndex = 0;
-            // 
-            // customerDetail1
-            // 
-            this.customerDetail1.Location = new System.Drawing.Point(788, 11);
-            this.customerDetail1.Name = "customerDetail1";
-            this.customerDetail1.Size = new System.Drawing.Size(948, 1137);
-            this.customerDetail1.TabIndex = 1;
+            this.listView.DisplayAddButton = false;
+            this.listView.Size = new System.Drawing.Size(770, 1248);
+            this.listView.Title = "Kunden";
             // 
             // CustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.customerDetail1);
-            this.Controls.Add(this.listViewTemplate1);
             this.Name = "CustomerView";
-            this.Size = new System.Drawing.Size(1960, 1151);
+            this.Size = new System.Drawing.Size(1960, 1248);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Views.ListViewTemplate listViewTemplate1;
-        private Views.CustomerDetail customerDetail1;
     }
 }

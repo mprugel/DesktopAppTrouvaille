@@ -6,7 +6,7 @@ using DesktopAppTrouvaille.Factories;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class BView : UserControl
+    public partial class BView : UserControl 
     {
         private IView detailView;
        
@@ -44,10 +44,12 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
             //Hide Product Detail:
             panelDetailView.Visible = false;
-            listView.Controller = Controller;
             listView.AddClickHandler(ItemSelected);
             listView.AddButtonAddHandler(ButtonAddHandler);
+
         }
+
+       
         private void ButtonAddHandler(object sender, EventArgs e)
         {
             panelDetailView.Controls.Clear();

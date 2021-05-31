@@ -69,12 +69,16 @@
   <ItemGroup>
     <Compile Include="APIconnection.cs" />
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\IController.cs" />
     <Compile Include="Controllers\IMainController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Controllers\Iterator.cs" />
     <Compile Include="Exceptions\GETException.cs" />
+    <Compile Include="Factories\CustomerItemFactory.cs" />
     <Compile Include="Factories\ListItemFactory.cs" />
+    <Compile Include="Factories\OrderItemFactory.cs" />
     <Compile Include="Factories\ProductItemFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -112,37 +116,37 @@
     <Compile Include="Views\AdressView.Designer.cs">
       <DependentUpon>AdressView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductView.cs">
+    <Compile Include="Views\ProductV\ProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\CategoryDetailView.cs">
+    <Compile Include="Views\CategoryV\CategoryDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\CategoryDetailView.Designer.cs">
+    <Compile Include="Views\CategoryV\CategoryDetailView.Designer.cs">
       <DependentUpon>CategoryDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CategoryGridView.cs">
+    <Compile Include="Views\CategoryV\CategoryGridView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\CategoryView.cs">
+    <Compile Include="Views\CategoryV\CategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\CategoryView.Designer.cs">
+    <Compile Include="Views\CategoryV\CategoryView.Designer.cs">
       <DependentUpon>CategoryView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomerDetail.cs">
+    <Compile Include="Views\CustomerV\CustomerDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\CustomerDetail.Designer.cs">
+    <Compile Include="Views\CustomerV\CustomerDetail.Designer.cs">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomerView.cs">
+    <Compile Include="Views\CustomerV\CustomerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\CustomerView.Designer.cs">
+    <Compile Include="Views\CustomerV\CustomerView.Designer.cs">
       <DependentUpon>CustomerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\CustomListView.cs">
+    <Compile Include="Views\CustomerV\CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\IMainView.cs" />
@@ -159,16 +163,16 @@
     <Compile Include="Views\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewProductView.cs">
+    <Compile Include="Views\ProductV\NewProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\NewProductView.Designer.cs">
+    <Compile Include="Views\ProductV\NewProductView.Designer.cs">
       <DependentUpon>NewProductView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\OrderDetailView.cs">
+    <Compile Include="Views\OrderV\OrderDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\OrderDetailView.Designer.cs">
+    <Compile Include="Views\OrderV\OrderDetailView.Designer.cs">
       <DependentUpon>OrderDetailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ListViewTemplate.cs">
@@ -177,16 +181,16 @@
     <Compile Include="Views\ListViewTemplate.Designer.cs">
       <DependentUpon>ListViewTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\OrderViewUC.cs">
+    <Compile Include="Views\OrderV\OrderViewUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\OrderViewUC.Designer.cs">
+    <Compile Include="Views\OrderV\OrderViewUC.Designer.cs">
       <DependentUpon>OrderViewUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductDetailView.cs">
+    <Compile Include="Views\ProductV\ProductDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ProductDetailView.Designer.cs">
+    <Compile Include="Views\ProductV\ProductDetailView.Designer.cs">
       <DependentUpon>ProductDetailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BView.cs">
@@ -210,16 +214,16 @@
     <EmbeddedResource Include="Views\AdressView.resx">
       <DependentUpon>AdressView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CategoryDetailView.resx">
+    <EmbeddedResource Include="Views\CategoryV\CategoryDetailView.resx">
       <DependentUpon>CategoryDetailView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CategoryView.resx">
+    <EmbeddedResource Include="Views\CategoryV\CategoryView.resx">
       <DependentUpon>CategoryView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CustomerDetail.resx">
+    <EmbeddedResource Include="Views\CustomerV\CustomerDetail.resx">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\CustomerView.resx">
+    <EmbeddedResource Include="Views\CustomerV\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
@@ -228,16 +232,16 @@
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\OrderDetailView.resx">
+    <EmbeddedResource Include="Views\OrderV\OrderDetailView.resx">
       <DependentUpon>OrderDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ListViewTemplate.resx">
       <DependentUpon>ListViewTemplate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\OrderViewUC.resx">
+    <EmbeddedResource Include="Views\OrderV\OrderViewUC.resx">
       <DependentUpon>OrderViewUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ProductDetailView.resx">
+    <EmbeddedResource Include="Views\ProductV\ProductDetailView.resx">
       <DependentUpon>ProductDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BView.resx">

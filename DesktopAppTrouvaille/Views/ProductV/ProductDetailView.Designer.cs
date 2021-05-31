@@ -295,7 +295,7 @@
             // 
             // numericUpDownInStock
             // 
-            this.numericUpDownInStock.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownInStock.BackColor = System.Drawing.Color.White;
             this.numericUpDownInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownInStock.Location = new System.Drawing.Point(58, 303);
             this.numericUpDownInStock.Maximum = new decimal(new int[] {
@@ -319,7 +319,7 @@
             // 
             // numericUpDownPrice
             // 
-            this.numericUpDownPrice.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownPrice.BackColor = System.Drawing.Color.White;
             this.numericUpDownPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownPrice.DecimalPlaces = 2;
             this.numericUpDownPrice.Location = new System.Drawing.Point(311, 303);
@@ -359,7 +359,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.Location = new System.Drawing.Point(58, 426);
             this.richTextBox1.Name = "richTextBox1";
@@ -429,7 +429,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.BackColor = System.Drawing.SystemColors.Info;
+            this.textBoxName.BackColor = System.Drawing.Color.White;
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxName.Location = new System.Drawing.Point(283, 180);
             this.textBoxName.Name = "textBoxName";
@@ -1684,7 +1684,7 @@
             // 
             // numericUpDownTax
             // 
-            this.numericUpDownTax.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownTax.BackColor = System.Drawing.Color.White;
             this.numericUpDownTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownTax.Location = new System.Drawing.Point(517, 303);
             this.numericUpDownTax.Name = "numericUpDownTax";
@@ -1693,7 +1693,7 @@
             // 
             // numericUpDownMinStock
             // 
-            this.numericUpDownMinStock.BackColor = System.Drawing.SystemColors.Info;
+            this.numericUpDownMinStock.BackColor = System.Drawing.Color.White;
             this.numericUpDownMinStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownMinStock.Location = new System.Drawing.Point(812, 303);
             this.numericUpDownMinStock.Name = "numericUpDownMinStock";
@@ -1728,7 +1728,7 @@
             this.categoryGridView1.AllowUserToDeleteRows = false;
             this.categoryGridView1.AllowUserToResizeColumns = false;
             this.categoryGridView1.AllowUserToResizeRows = false;
-            this.categoryGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.categoryGridView1.BackgroundColor = System.Drawing.Color.White;
             this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoryGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.categoryGridView1.Location = new System.Drawing.Point(563, 426);
