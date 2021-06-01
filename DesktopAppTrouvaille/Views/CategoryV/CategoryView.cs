@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Factories;
+using DesktopAppTrouvaille.Views.CategoryV;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class CategoryView : BView, IView, IBView
+    public partial class CategoryView : BView, IView
     {
         public CategoryView()
         {
@@ -31,15 +24,16 @@ namespace DesktopAppTrouvaille.Views
             UpdateStatusLabel();
         }
 
-        IView IBView.CreateDetailView(IModel model)
+        protected override IView CreateDetailView(IModel model)
         {
             CategoryDetailView view = new CategoryDetailView();
             return view;
         }
 
-        IView IBView.CreateNewView()
+        protected override IView CreateNewView()
         {
-            return null;
+            NewCategoryView view = new NewCategoryView();
+            return view;
         }
     }
 }

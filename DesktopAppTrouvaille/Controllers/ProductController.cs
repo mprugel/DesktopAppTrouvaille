@@ -59,15 +59,23 @@ namespace DesktopAppTrouvaille
         {
             _state = State.SendingData;
             // Call API
-            if (await _productProssesor.SaveNewProduct(p))
+            try
             {
-                UpdateData();
-                _state = State.Saved;
+                if (await _productProssesor.SaveNewProduct(p))
+                {
+                    UpdateData();
+                    _state = State.Saved;
+                }
+                else
+                {
+                    _state = State.ConnectionError;
+                }
             }
-            else
+            catch(GETException e)
             {
                 _state = State.ConnectionError;
             }
+            
             
            UpdateView();
             

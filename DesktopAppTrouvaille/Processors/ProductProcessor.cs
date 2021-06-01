@@ -65,9 +65,6 @@ namespace APIconnector.Processors
             }
 
         }
-
-       
-
         public async Task<bool> UpdateProduct(Product product)
         {
             string url = "Products/" + product.ProductId;

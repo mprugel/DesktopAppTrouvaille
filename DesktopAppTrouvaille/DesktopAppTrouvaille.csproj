@@ -121,6 +121,9 @@
     <Compile Include="Views\AdressView.Designer.cs">
       <DependentUpon>AdressView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\CategoryV\NewCategoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\IBView.cs" />
     <Compile Include="Views\ProductV\ProductView.cs">
       <SubType>UserControl</SubType>
@@ -225,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CategoryV\CategoryView.resx">
       <DependentUpon>CategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CategoryV\NewCategoryView.resx">
+      <DependentUpon>NewCategoryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerV\CustomerDetail.resx">
       <DependentUpon>CustomerDetail.cs</DependentUpon>

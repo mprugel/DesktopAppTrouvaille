@@ -32,7 +32,7 @@
             // 
             // listView
             // 
-            this.listView.DisplayAddButton = false;
+            this.listView.AddButtonText = "Neue Kategorie";
             this.listView.Size = new System.Drawing.Size(770, 1248);
             this.listView.Title = "Kategorien";
             // 
