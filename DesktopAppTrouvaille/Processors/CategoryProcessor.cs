@@ -1,6 +1,7 @@
 ﻿using APIconnector;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,33 @@ namespace DesktopAppTrouvaille.Processors
                 else
                 {
                     return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
+
+        public async Task<bool> PostCategory(CategoryPOSTDTO categoryPOSTDTO)
+        {
+            string url = "Categories/";
+            HttpResponseMessage response;
+
+            string json = JsonConvert.SerializeObject(categoryPOSTDTO);
+            StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                response = await APIconnection.ApiClient.PostAsync(url,data);
+                if (response.IsSuccessStatusCode)
+                { 
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch (Exception e)

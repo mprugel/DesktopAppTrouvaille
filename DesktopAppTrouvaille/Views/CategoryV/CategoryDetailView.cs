@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class CategoryDetailView : UserControl
+    public partial class CategoryDetailView : UserControl, IView
     {
         public CategoryDetailView()
         {
             InitializeComponent();
+        }
+
+        public void UpdateView()
+        {
+            throw new NotImplementedException();
         }
     }
 }

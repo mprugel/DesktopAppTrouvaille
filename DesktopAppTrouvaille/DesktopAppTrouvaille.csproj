@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIconnection.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\IController.cs" />
@@ -98,11 +99,15 @@
     <Compile Include="Models\PostOrderProductViewModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Processors\CategoryGETDTO.cs" />
+    <Compile Include="Processors\CategoryPOSTDTO.cs" />
     <Compile Include="Processors\CategoryProcessor.cs" />
-    <Compile Include="Processors\ProductGETDTO.cs" />
+    <Compile Include="Processors\CustomerProcessor.cs" />
+    <Compile Include="Processors\EmployeeProcessor.cs" />
+    <Compile Include="Processors\LoginProcessor.cs" />
+    <Compile Include="Processors\OrderProcessor.cs" />
     <Compile Include="Processors\ProductPOSTDTO.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />
+    <Compile Include="Processors\RatingProcessor.cs" />
     <Compile Include="States\IProductState.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -116,6 +121,7 @@
     <Compile Include="Views\AdressView.Designer.cs">
       <DependentUpon>AdressView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\IBView.cs" />
     <Compile Include="Views\ProductV\ProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>

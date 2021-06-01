@@ -83,5 +83,15 @@ namespace DesktopAppTrouvaille.Views
         {
             controller.Logout();
         }
+
+        private void buttonShowRatings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonShowEpmloyees_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

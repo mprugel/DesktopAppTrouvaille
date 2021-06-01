@@ -28,35 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listViewTemplate1 = new DesktopAppTrouvaille.Views.ListViewTemplate();
             this.SuspendLayout();
             // 
-            // listViewTemplate1
+            // listView
             // 
-            this.listViewTemplate1.AddButtonText = "Neue Kategorie";
-            this.listViewTemplate1.AutoSize = true;
-            this.listViewTemplate1.BackColor = System.Drawing.Color.White;
-            this.listViewTemplate1.DisplayAddButton = true;
-            this.listViewTemplate1.Location = new System.Drawing.Point(22, 33);
-            this.listViewTemplate1.Name = "listViewTemplate1";
-            this.listViewTemplate1.Size = new System.Drawing.Size(747, 1057);
-            this.listViewTemplate1.TabIndex = 0;
-            this.listViewTemplate1.Title = "Kategorien";
+            this.listView.DisplayAddButton = false;
+            this.listView.Size = new System.Drawing.Size(770, 1248);
+            this.listView.Title = "Kategorien";
             // 
             // CategoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listViewTemplate1);
             this.Name = "CategoryView";
-            this.Size = new System.Drawing.Size(1854, 1148);
+            this.Size = new System.Drawing.Size(1854, 1248);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private ListViewTemplate listViewTemplate1;
     }
 }

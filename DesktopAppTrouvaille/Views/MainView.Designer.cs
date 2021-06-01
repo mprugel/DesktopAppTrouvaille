@@ -36,12 +36,15 @@
             this.buttonShowCategories = new System.Windows.Forms.Button();
             this.panelMainMenu = new System.Windows.Forms.Panel();
             this.buttonLogout = new System.Windows.Forms.Button();
+            this.buttonShowRatings = new System.Windows.Forms.Button();
+            this.buttonShowEpmloyees = new System.Windows.Forms.Button();
             this.panelMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonShowProducts
             // 
             this.buttonShowProducts.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowProducts.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonShowProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowProducts.Location = new System.Drawing.Point(29, 23);
             this.buttonShowProducts.Name = "buttonShowProducts";
@@ -67,7 +70,7 @@
             // 
             this.buttonShowCustomers.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonShowCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowCustomers.Location = new System.Drawing.Point(29, 346);
+            this.buttonShowCustomers.Location = new System.Drawing.Point(29, 323);
             this.buttonShowCustomers.Name = "buttonShowCustomers";
             this.buttonShowCustomers.Size = new System.Drawing.Size(489, 114);
             this.buttonShowCustomers.TabIndex = 2;
@@ -79,7 +82,7 @@
             // 
             this.buttonShowStatistics.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonShowStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowStatistics.Location = new System.Drawing.Point(29, 510);
+            this.buttonShowStatistics.Location = new System.Drawing.Point(29, 747);
             this.buttonShowStatistics.Name = "buttonShowStatistics";
             this.buttonShowStatistics.Size = new System.Drawing.Size(489, 119);
             this.buttonShowStatistics.TabIndex = 3;
@@ -101,7 +104,7 @@
             // 
             this.buttonShowCategories.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonShowCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowCategories.Location = new System.Drawing.Point(29, 682);
+            this.buttonShowCategories.Location = new System.Drawing.Point(29, 467);
             this.buttonShowCategories.Name = "buttonShowCategories";
             this.buttonShowCategories.Size = new System.Drawing.Size(489, 111);
             this.buttonShowCategories.TabIndex = 5;
@@ -111,6 +114,8 @@
             // 
             // panelMainMenu
             // 
+            this.panelMainMenu.Controls.Add(this.buttonShowEpmloyees);
+            this.panelMainMenu.Controls.Add(this.buttonShowRatings);
             this.panelMainMenu.Controls.Add(this.buttonLogout);
             this.panelMainMenu.Controls.Add(this.buttonShowProducts);
             this.panelMainMenu.Controls.Add(this.buttonShowCategories);
@@ -134,6 +139,31 @@
             this.buttonLogout.Text = "Ausloggen";
             this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            // 
+            // buttonShowRatings
+            // 
+            this.buttonShowRatings.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowRatings.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonShowRatings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShowRatings.Location = new System.Drawing.Point(29, 606);
+            this.buttonShowRatings.Name = "buttonShowRatings";
+            this.buttonShowRatings.Size = new System.Drawing.Size(489, 119);
+            this.buttonShowRatings.TabIndex = 7;
+            this.buttonShowRatings.Text = "Bewertungen";
+            this.buttonShowRatings.UseVisualStyleBackColor = false;
+            this.buttonShowRatings.Click += new System.EventHandler(this.buttonShowRatings_Click);
+            // 
+            // buttonShowEpmloyees
+            // 
+            this.buttonShowEpmloyees.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowEpmloyees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShowEpmloyees.Location = new System.Drawing.Point(29, 890);
+            this.buttonShowEpmloyees.Name = "buttonShowEpmloyees";
+            this.buttonShowEpmloyees.Size = new System.Drawing.Size(489, 116);
+            this.buttonShowEpmloyees.TabIndex = 8;
+            this.buttonShowEpmloyees.Text = "Mitarbeiter";
+            this.buttonShowEpmloyees.UseVisualStyleBackColor = false;
+            this.buttonShowEpmloyees.Click += new System.EventHandler(this.buttonShowEpmloyees_Click);
             // 
             // MainView
             // 
@@ -160,5 +190,7 @@
         private System.Windows.Forms.Button buttonShowCategories;
         private System.Windows.Forms.Panel panelMainMenu;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button buttonShowEpmloyees;
+        private System.Windows.Forms.Button buttonShowRatings;
     }
 }
