@@ -27,17 +27,6 @@ namespace DesktopAppTrouvaille.Views
             comboBoxOrderState.Items.Add(Globals.Globals.OrderState.shipped);
         }
 
-        public void SetOrder(Order order)
-        {
-            _order = order;
-            adressViewDelivery.SetAdress(order.DeliveryAddress);
-            adressViewOrder.SetAdress(order.InvoiceAddress);
-
-            labelOrderDate.Text = order.Date.ToString();
-
-            comboBoxOrderState.SelectedIndex = (int)order.OrderState;
-
-        }
 
         public void UpdateView()
         {
@@ -52,11 +41,29 @@ namespace DesktopAppTrouvaille.Views
         public void SetModel(IModel model)
         {
             _order = (Order)model;
+           
+            // Display Values on the GUI:
+            adressViewDelivery.SetAdress(_order.DeliveryAddress);
+            adressViewOrder.SetAdress(_order.InvoiceAddress);
+
+            labelOrderDate.Text = _order.Date.ToString();
+
+            comboBoxOrderState.SelectedIndex = (int)_order.OrderState;
         }
 
         public void SetController(IController controller)
         {
             Controller = (OrderController)controller;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

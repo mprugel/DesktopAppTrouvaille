@@ -33,8 +33,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.adressView1 = new DesktopAppTrouvaille.Views.AdressView();
-            this.adressView2 = new DesktopAppTrouvaille.Views.AdressView();
+            this.adressViewInvoice = new DesktopAppTrouvaille.Views.AdressView();
+            this.adressViewDelivery = new DesktopAppTrouvaille.Views.AdressView();
             this.SuspendLayout();
             // 
             // label1
@@ -56,6 +56,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Deaktivieren";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label16
             // 
@@ -85,30 +86,31 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Bestellungen anzeigen";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // adressView1
+            // adressViewInvoice
             // 
-            this.adressView1.Location = new System.Drawing.Point(28, 286);
-            this.adressView1.Name = "adressView1";
-            this.adressView1.Size = new System.Drawing.Size(368, 266);
-            this.adressView1.TabIndex = 19;
-            this.adressView1.Title = "Rechnungsdresse";
+            this.adressViewInvoice.Location = new System.Drawing.Point(28, 286);
+            this.adressViewInvoice.Name = "adressViewInvoice";
+            this.adressViewInvoice.Size = new System.Drawing.Size(368, 266);
+            this.adressViewInvoice.TabIndex = 19;
+            this.adressViewInvoice.Title = "Rechnungsdresse";
             // 
-            // adressView2
+            // adressViewDelivery
             // 
-            this.adressView2.Location = new System.Drawing.Point(457, 286);
-            this.adressView2.Name = "adressView2";
-            this.adressView2.Size = new System.Drawing.Size(410, 266);
-            this.adressView2.TabIndex = 20;
-            this.adressView2.Title = "Lieferadresse";
+            this.adressViewDelivery.Location = new System.Drawing.Point(457, 286);
+            this.adressViewDelivery.Name = "adressViewDelivery";
+            this.adressViewDelivery.Size = new System.Drawing.Size(410, 266);
+            this.adressViewDelivery.TabIndex = 20;
+            this.adressViewDelivery.Title = "Lieferadresse";
             // 
             // CustomerDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.adressView2);
-            this.Controls.Add(this.adressView1);
+            this.Controls.Add(this.adressViewDelivery);
+            this.Controls.Add(this.adressViewInvoice);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -128,7 +130,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button2;
-        private AdressView adressView1;
-        private AdressView adressView2;
+        private AdressView adressViewInvoice;
+        private AdressView adressViewDelivery;
     }
 }

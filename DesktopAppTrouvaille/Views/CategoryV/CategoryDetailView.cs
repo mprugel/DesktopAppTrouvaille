@@ -44,6 +44,7 @@ namespace DesktopAppTrouvaille.Views
         public void SetModel(IModel model)
         {
             Category = (Category)model;
+            textBoxName.Text = Category.Name;
         }
 
         public void SetController(IController controller)
