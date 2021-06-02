@@ -17,6 +17,8 @@ namespace DesktopAppTrouvaille.Controllers
             return 100;
         }
 
+      
+
         public override void UpdateData()
         {
             throw new NotImplementedException();

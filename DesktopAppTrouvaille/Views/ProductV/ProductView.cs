@@ -28,6 +28,10 @@ namespace DesktopAppTrouvaille.Views
         public void UpdateView()
         {
             UpdateStatusLabel();
+            if(Controller.state == State.Saved)
+            {
+                panelDetailView.Visible = false;
+            }
         }
 
         protected override IDetailView CreateNewView()

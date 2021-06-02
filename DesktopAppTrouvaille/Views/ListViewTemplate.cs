@@ -86,6 +86,18 @@ namespace DesktopAppTrouvaille.Views
 
         public void UpdateView()
         {
+            if (listView1.Items.Count > 0)
+            {
+                foreach(ListViewItem item in listView1.Items)
+                {
+                    if(item.Tag.Equals(Controller.GetSelectedModel()))
+                    {
+                        item.Selected = true;
+                    }
+                }
+               
+                listView1.Select();
+            }
             labelPageCount.Text = Controller.GetPageCount().ToString();
             labelPageNumber.Text = Controller.GetCurrentPage().ToString();
         }

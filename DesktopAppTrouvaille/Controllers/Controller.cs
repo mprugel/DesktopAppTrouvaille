@@ -1,4 +1,5 @@
-﻿using DesktopAppTrouvaille.Views;
+﻿using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace DesktopAppTrouvaille.Controllers
         private List<IView> _views= new List<IView>();
 
         protected State _state;
+        private IModel _selectedModel;
 
         public State state { get { return _state; } }
 
@@ -66,5 +68,13 @@ namespace DesktopAppTrouvaille.Controllers
             UpdateView();
         }
 
+        public  void ItemSelected(IModel model)
+        {
+            _selectedModel = model;
+        }
+        public  IModel GetSelectedModel()
+        {
+            return _selectedModel;
+        }
     }
 }

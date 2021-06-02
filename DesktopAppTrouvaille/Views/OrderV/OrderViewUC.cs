@@ -34,9 +34,6 @@ namespace DesktopAppTrouvaille.Views
         protected override IDetailView CreateDetailView(IModel model)
         {
             OrderDetailView view = new OrderDetailView();
-            view.SetOrder((Order)model);
-            view.Controller = (OrderController)Controller;
-            
             return view;
         }
     }

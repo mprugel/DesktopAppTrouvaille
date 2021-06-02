@@ -57,7 +57,7 @@ namespace DesktopAppTrouvaille
 
         public async void SaveProduct(Product p)
         {
-            _state = State.SendingData;
+            /*_state = State.SendingData;
             // Call API
             try
             {
@@ -74,10 +74,9 @@ namespace DesktopAppTrouvaille
             catch(GETException e)
             {
                 _state = State.ConnectionError;
-            }
-            
-            
-           UpdateView();
+            }*/
+            _state = State.Saved;
+            UpdateView();
             
         }
 
@@ -93,6 +92,7 @@ namespace DesktopAppTrouvaille
             {
                 _state = State.ConnectionError;
             }
+           
             UpdateView();
             UpdateData();
         }
@@ -124,9 +124,11 @@ namespace DesktopAppTrouvaille
             {
                 _state = State.ConnectionError;
             }
+            
             UpdateData();
             UpdateView();
         }
 
+       
     }
 }

@@ -89,7 +89,7 @@
         #endregion
 
         protected ListViewTemplate listView;
-        private System.Windows.Forms.Panel panelDetailView;
+        protected System.Windows.Forms.Panel panelDetailView;
         private System.Windows.Forms.Label labelStatus;
     }
 }
