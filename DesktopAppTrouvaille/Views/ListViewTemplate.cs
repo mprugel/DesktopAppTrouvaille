@@ -59,15 +59,6 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
-        public void AddItems(IEnumerable<IModel> models)
-        {
-            List<ListViewItem> items = Factory.CreateListViewItems(models);
-            listView1.Items.Clear();
-            foreach( ListViewItem itm in items)
-            {
-                listView1.Items.Add(itm);
-            }
-        }
         public void SetTitle(string title)
         {
             label1.Text = title; 

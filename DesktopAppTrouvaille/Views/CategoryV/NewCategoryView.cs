@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopAppTrouvaille.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,15 @@ namespace DesktopAppTrouvaille.Views.CategoryV
 {
     public class NewCategoryView : CategoryDetailView
     {
-        public NewCategoryView()
+        public NewCategoryView(CategoryController controller = null) : base(controller)
         {
+            Category = new Models.Category();
             InitializeComponent();
+        }
+
+        protected override void SaveClick()
+        {
+            Controller.SaveNewCategory(GetCategoryFromInputFields());
         }
 
         private void InitializeComponent()

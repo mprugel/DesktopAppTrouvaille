@@ -30,11 +30,11 @@ namespace DesktopAppTrouvaille.Views
             UpdateStatusLabel();
         }
 
-        protected override IView CreateNewView()
+        protected override IDetailView CreateNewView()
         {
            return new NewProductView((ProductController)Controller);
         }
-        protected override IView CreateDetailView(IModel model)
+        protected override IDetailView CreateDetailView(IModel model)
         {
             ProductDetailView view = new ProductDetailView();
             view.Controller = (ProductController)Controller;

@@ -8,7 +8,7 @@ using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class ProductDetailView : UserControl, IView
+    public partial class ProductDetailView : UserControl, IDetailView
     {
         private Color _emptyFieldColor = Color.FromArgb(255,168,168);
         public Product Prod;
@@ -198,6 +198,16 @@ namespace DesktopAppTrouvaille.Views
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Controller.DeleteProduct(Prod);
+        }
+
+        public void SetModel(IModel model)
+        {
+            Prod = (Product)model;
+        }
+
+        public void SetController(IController controller)
+        {
+            Controller = (ProductController)controller;
         }
     }
 }

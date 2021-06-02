@@ -8,6 +8,6 @@ namespace DesktopAppTrouvaille.Views
 {
     public interface IMainView
     {
-        void SetTabView(IView view);
+        void SetTabView(IDetailView view);
     }
 }

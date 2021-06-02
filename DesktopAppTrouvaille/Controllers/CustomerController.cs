@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Controllers
 {
-    class CustomerController : Controller
+    public class CustomerController : Controller
     {
         public override int GetCount()
         {

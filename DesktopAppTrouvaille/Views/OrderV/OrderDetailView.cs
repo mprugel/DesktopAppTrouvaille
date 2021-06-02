@@ -12,7 +12,7 @@ using DesktopAppTrouvaille.Controllers;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class OrderDetailView : UserControl, IView
+    public partial class OrderDetailView : UserControl, IDetailView
     {
         private Order _order;
 
@@ -47,6 +47,16 @@ namespace DesktopAppTrouvaille.Views
         private void adressViewDelivery_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void SetModel(IModel model)
+        {
+            _order = (Order)model;
+        }
+
+        public void SetController(IController controller)
+        {
+            Controller = (OrderController)controller;
         }
     }
 }

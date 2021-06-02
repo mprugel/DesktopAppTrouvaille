@@ -37,7 +37,7 @@ namespace DesktopAppTrouvaille.Views
                 panelTabView.Controls.Add((UserControl)_tabView);
             }
         }
-        public void SetTabView(IView view)
+        public void SetTabView(IDetailView view)
         {
             panelTabView.Controls.Add((UserControl)view);
         }

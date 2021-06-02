@@ -8,7 +8,7 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class BView : UserControl 
     {
-        private IView detailView;
+        private IDetailView detailView;
        
         public Controller Controller { get; set; }
         
@@ -54,14 +54,15 @@ namespace DesktopAppTrouvaille.Views
         {
             panelDetailView.Controls.Clear();
             detailView = CreateNewView();
+            detailView.SetController(Controller);
             panelDetailView.Controls.Add((UserControl)detailView);
             panelDetailView.Visible = true;
         }
-        protected virtual IView CreateNewView()
+        protected virtual IDetailView CreateNewView()
         {
             return null;
         }
-        protected virtual IView CreateDetailView(IModel model)
+        protected virtual IDetailView CreateDetailView(IModel model)
         {
             return null;
         }
@@ -73,6 +74,8 @@ namespace DesktopAppTrouvaille.Views
             {
                 panelDetailView.Controls.Clear();
                 detailView = CreateDetailView((IModel)item.Tag);
+                detailView.SetModel((IModel)item.Tag);
+                detailView.SetController(Controller);
                 panelDetailView.Controls.Add((UserControl)detailView);
                 detailView.UpdateView();
                 panelDetailView.Visible = true;

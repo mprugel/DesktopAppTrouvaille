@@ -15,7 +15,7 @@ namespace DesktopAppTrouvaille.Views
             Controller.AttachView(this);
             Controller.AttachView(listView);
             listView.Controller = Controller;
-            listView.Factory = new OrderItemFactory();
+            listView.Factory = new CategoryFactory();
             listView.Init();
         }
 
@@ -24,13 +24,13 @@ namespace DesktopAppTrouvaille.Views
             UpdateStatusLabel();
         }
 
-        protected override IView CreateDetailView(IModel model)
+        protected override IDetailView CreateDetailView(IModel model)
         {
             CategoryDetailView view = new CategoryDetailView();
             return view;
         }
 
-        protected override IView CreateNewView()
+        protected override IDetailView CreateNewView()
         {
             NewCategoryView view = new NewCategoryView();
             return view;

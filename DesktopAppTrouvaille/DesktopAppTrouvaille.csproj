@@ -77,6 +77,7 @@
     <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Controllers\Iterator.cs" />
     <Compile Include="Exceptions\GETException.cs" />
+    <Compile Include="Factories\CategoryFactory.cs" />
     <Compile Include="Factories\CustomerItemFactory.cs" />
     <Compile Include="Factories\ListItemFactory.cs" />
     <Compile Include="Factories\OrderItemFactory.cs" />
@@ -124,7 +125,7 @@
     <Compile Include="Views\CategoryV\NewCategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\IBView.cs" />
+    <Compile Include="Views\IDetailView.cs" />
     <Compile Include="Views\ProductV\ProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>

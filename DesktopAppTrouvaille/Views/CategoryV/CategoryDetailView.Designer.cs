@@ -64,6 +64,7 @@
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Löschen";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // textBoxName
             // 
@@ -81,6 +82,7 @@
             this.buttonSave.TabIndex = 5;
             this.buttonSave.Text = "Änderungen speichern";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // CategoryDetailView
             // 

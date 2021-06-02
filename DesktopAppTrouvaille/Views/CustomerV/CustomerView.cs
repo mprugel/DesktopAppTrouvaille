@@ -31,7 +31,7 @@ namespace DesktopAppTrouvaille.Views
         {
             UpdateStatusLabel();
         }
-        protected override IView CreateDetailView(IModel model)
+        protected override IDetailView CreateDetailView(IModel model)
         {
             CustomerDetail view = new CustomerDetail();
            
