@@ -4,12 +4,13 @@ using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Factories;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Views.FilterV;
 
 namespace DesktopAppTrouvaille.Views
 {
 
     // Base Class For ListView: Can be extended if necessary.
-    public partial class ListViewTemplate : UserControl , IView
+    public partial class ListViewTemplate : UserControl, IView
     {
         public IController Controller;
         public ListItemFactory Factory;
@@ -17,12 +18,15 @@ namespace DesktopAppTrouvaille.Views
         public string Title { get { return label1.Text; } set { label1.Text = value; } }
         public string AddButtonText { get { return buttonAdd.Text; } set { buttonAdd.Text = value; } }
 
+        public Control FilterView { set { groupBox1.Controls.Add(value); } }
+
         private bool _displayAddButton = true;
         public bool DisplayAddButton { get { return _displayAddButton; } 
             set 
             { 
                 _displayAddButton = value;
                 buttonAdd.Visible = value;
+
             } 
         }
        
@@ -100,6 +104,12 @@ namespace DesktopAppTrouvaille.Views
             }
             labelPageCount.Text = Controller.GetPageCount().ToString();
             labelPageNumber.Text = Controller.GetCurrentPage().ToString();
+        }
+
+        // Search Button Click:
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Controller.Search(textBox1.Text);
         }
     }
 }

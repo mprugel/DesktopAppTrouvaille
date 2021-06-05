@@ -76,5 +76,10 @@ namespace DesktopAppTrouvaille.Controllers
         {
             return _selectedModel;
         }
+
+        public void Search(string searchText)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

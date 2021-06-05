@@ -125,6 +125,15 @@
     <Compile Include="Views\CategoryV\NewCategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\FilterV\Filter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\FilterV\Filter.Designer.cs">
+      <DependentUpon>Filter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FilterV\ProductFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\IDetailView.cs" />
     <Compile Include="Views\ProductV\ProductView.cs">
       <SubType>UserControl</SubType>
@@ -238,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerV\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FilterV\Filter.resx">
+      <DependentUpon>Filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FilterV\ProductFilter.resx">
+      <DependentUpon>ProductFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>

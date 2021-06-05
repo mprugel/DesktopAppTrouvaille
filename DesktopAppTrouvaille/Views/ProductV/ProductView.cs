@@ -1,6 +1,7 @@
 ﻿using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Factories;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Views.FilterV;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace DesktopAppTrouvaille.Views
             // Init the ListView:
             listView.Controller = Controller;
             listView.Factory = new ProductItemFactory();
+            listView.FilterView = new ProductFilter();
+            
             listView.Init();
 
             Controller.UpdateData();

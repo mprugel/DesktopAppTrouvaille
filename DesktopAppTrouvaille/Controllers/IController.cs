@@ -22,5 +22,8 @@ namespace DesktopAppTrouvaille.Controllers
         int GetPageCount();
 
         int GetCount();
+
+        void Search(string searchText);
+
     }
 }
