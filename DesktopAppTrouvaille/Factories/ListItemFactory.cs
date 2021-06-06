@@ -1,11 +1,8 @@
 ﻿using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
-using DesktopAppTrouvaille.SortCreateria;
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Factories
@@ -32,7 +29,7 @@ namespace DesktopAppTrouvaille.Factories
         public abstract string[] CreateColumns();
         protected abstract string[] CreateRowValues(IModel model);
 
-        protected abstract SortCreteria CreateSortCreteria(int colmumnID);
+        public abstract void SetSortCriteria(int colmumnID, IController controller);
         
     }
 }

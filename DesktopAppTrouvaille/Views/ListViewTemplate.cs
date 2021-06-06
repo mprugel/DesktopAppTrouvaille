@@ -140,8 +140,13 @@ namespace DesktopAppTrouvaille.Views
             if(_sortOrder == SortOrder.Ascending)
             {
                 _sortOrder = SortOrder.Descending;
+                Controller.SetSortingOrder(SortingOrder.Descending);
             }
-            else { _sortOrder = SortOrder.Ascending; }
+            else 
+            { 
+                _sortOrder = SortOrder.Ascending;
+                Controller.SetSortingOrder(SortingOrder.Ascending);
+            }
 
             foreach(ColumnHeader header in listView1.Columns)
             {
@@ -149,6 +154,8 @@ namespace DesktopAppTrouvaille.Views
             }
 
             SetSortArrow(listView1.Columns[e.Column], _sortOrder);
+            Factory.SetSortCriteria(e.Column, Controller);
+            Controller.UpdateData();
 
         }
     }

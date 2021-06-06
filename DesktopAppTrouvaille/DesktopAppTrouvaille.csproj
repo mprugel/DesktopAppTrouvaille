@@ -82,6 +82,7 @@
     <Compile Include="Factories\ListItemFactory.cs" />
     <Compile Include="Factories\OrderItemFactory.cs" />
     <Compile Include="Factories\ProductItemFactory.cs" />
+    <Compile Include="FilterCriterias\FilterCriteria.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +110,6 @@
     <Compile Include="Processors\ProductPOSTDTO.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />
     <Compile Include="Processors\RatingProcessor.cs" />
-    <Compile Include="SortCreateria\SortCreteria.cs" />
     <Compile Include="States\IProductState.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProductController.cs" />

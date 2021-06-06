@@ -1,15 +1,14 @@
-﻿using DesktopAppTrouvaille.Models;
-using DesktopAppTrouvaille.SortCreateria;
+﻿using DesktopAppTrouvaille.FilterCriterias;
+using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace DesktopAppTrouvaille.Controllers
 {
-    public enum SortingOrder { Ascending,Descending}
+    public enum SortingOrder { Ascending, Descending}
 
     public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted }
 
@@ -18,8 +17,10 @@ namespace DesktopAppTrouvaille.Controllers
     {
         // Interface for Updating the GUI:
         private List<IView> _views= new List<IView>();
-        protected SortCreteria sortCreteria;
         protected State _state;
+
+        protected SortingOrder SortOrder;
+
         private IModel _selectedModel;
 
         public State state { get { return _state; } }
@@ -87,9 +88,19 @@ namespace DesktopAppTrouvaille.Controllers
 
         public abstract IEnumerable<IModel> GetModels();
 
-        public void SetSortCreteria(SortCreteria createria)
+        public void Filter(FilterCriteria createria)
         {
             throw new NotImplementedException();
+        }
+
+        public void SetSortingOrder(SortingOrder order)
+        {
+            SortOrder = order;
+        }
+
+        public SortingOrder GetSortingOrder()
+        {
+            return SortOrder;
         }
     }
 }

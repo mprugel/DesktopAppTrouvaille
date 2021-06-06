@@ -1,5 +1,4 @@
 ﻿using DesktopAppTrouvaille.Models;
-using DesktopAppTrouvaille.SortCreateria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +15,15 @@ namespace DesktopAppTrouvaille.Controllers
 
         IModel GetSelectedModel();
 
+        void UpdateData();
+
+        void SetSortingOrder(SortingOrder order);
+
+        SortingOrder GetSortingOrder();
+
         IEnumerable<IModel> GetModels();
 
-        void SetSortCreteria(SortCreteria createria);
+        //void Filter(SortCriteria createria);
 
         void Previous();
 

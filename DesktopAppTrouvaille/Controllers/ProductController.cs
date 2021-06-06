@@ -11,13 +11,17 @@ using System.Linq;
 
 
 namespace DesktopAppTrouvaille
-{    
+{   
+    public enum ProductSortCriteria { Name, InStock}
+    
     public class ProductController : Controller
     {
         private ProductProcessor _productProssesor = new ProductProcessor();
         private CategoryProcessor _categoryProcessor = new CategoryProcessor();
 
         public List<Category> Categories = new List<Category>();
+
+        public ProductSortCriteria SortCriteria;
 
         // List of Products:
         public List<Product> Products = new List<Product>();
@@ -31,6 +35,8 @@ namespace DesktopAppTrouvaille
 
         public async override void UpdateData()
         {
+            Console.WriteLine("SortingCriteria: " + SortCriteria);
+            Console.WriteLine("Sort Order:" + SortOrder);
             try
             {
                 _state = State.LoadData;

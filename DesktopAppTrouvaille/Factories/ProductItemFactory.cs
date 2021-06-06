@@ -1,6 +1,6 @@
 ﻿using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
-using DesktopAppTrouvaille.SortCreateria;
+
 
 namespace DesktopAppTrouvaille.Factories
 {
@@ -19,9 +19,19 @@ namespace DesktopAppTrouvaille.Factories
             return row;
         }
 
-        protected override SortCreteria CreateSortCreteria(int colmumnID)
+        public override void SetSortCriteria(int colmumnID, IController controller)
         {
-            return null;
+            ProductController cont = (ProductController)controller;
+            switch(colmumnID)
+            {
+                case 1:
+                    cont.SortCriteria = ProductSortCriteria.Name;
+                    break;
+                case 2:
+                    cont.SortCriteria = ProductSortCriteria.InStock;
+                    break;
+
+            }
         }
     }
 }

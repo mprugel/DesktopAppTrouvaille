@@ -1,6 +1,5 @@
 ﻿using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
-using DesktopAppTrouvaille.SortCreateria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +23,7 @@ namespace DesktopAppTrouvaille.Factories
             return row;
         }
 
-        protected override SortCreteria CreateSortCreteria(int colmumnID)
+        public override void SetSortCriteria(int colmumnID, IController controller)
         {
             throw new NotImplementedException();
         }
