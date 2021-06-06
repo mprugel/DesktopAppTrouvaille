@@ -85,6 +85,9 @@ namespace DesktopAppTrouvaille.Controllers
             
         }
 
-       
+        public override IEnumerable<IModel> GetModels()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

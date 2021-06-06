@@ -1,4 +1,6 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.SortCreateria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +31,8 @@ namespace DesktopAppTrouvaille.Factories
         }
         public abstract string[] CreateColumns();
         protected abstract string[] CreateRowValues(IModel model);
+
+        protected abstract SortCreteria CreateSortCreteria(int colmumnID);
         
     }
 }

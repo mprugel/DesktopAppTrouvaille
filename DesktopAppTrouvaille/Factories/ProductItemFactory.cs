@@ -1,9 +1,6 @@
-﻿using DesktopAppTrouvaille.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.SortCreateria;
 
 namespace DesktopAppTrouvaille.Factories
 {
@@ -20,6 +17,11 @@ namespace DesktopAppTrouvaille.Factories
             Product p = (Product)model;
             string[] row = { p.ProductId.ToString(), p.Name, p.InStock.ToString() };
             return row;
+        }
+
+        protected override SortCreteria CreateSortCreteria(int colmumnID)
+        {
+            return null;
         }
     }
 }

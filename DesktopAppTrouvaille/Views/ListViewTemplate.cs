@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Factories;
 using DesktopAppTrouvaille.Models;
-using DesktopAppTrouvaille.Views.FilterV;
 
 namespace DesktopAppTrouvaille.Views
 {
@@ -12,6 +11,7 @@ namespace DesktopAppTrouvaille.Views
     // Base Class For ListView: Can be extended if necessary.
     public partial class ListViewTemplate : UserControl, IView
     {
+        private SortOrder _sortOrder;
         public IController Controller;
         public ListItemFactory Factory;
         // Properties for setting in the Designer:
@@ -37,12 +37,16 @@ namespace DesktopAppTrouvaille.Views
 
         public void Init()
         {
-            listView1.View = View.Details;
-
+            //listView1.View = View.Details;
+            _sortOrder = SortOrder.Ascending;
             // Add cols:
             foreach (string col in Factory.CreateColumns())
             {
                 listView1.Columns.Add(col).Width = 100;
+            }
+            if(listView1.Columns.Count > 0)
+            {
+                SetSortArrow(listView1.Columns[0], _sortOrder);
             }
         }
        
@@ -90,18 +94,19 @@ namespace DesktopAppTrouvaille.Views
 
         public void UpdateView()
         {
-            if (listView1.Items.Count > 0)
+            // Display Models from Controller in ListView:
+            listView1.Items.Clear();
+            List<ListViewItem> items = Factory.CreateListViewItems(Controller.GetModels());
+            foreach(ListViewItem item in items)
             {
-                foreach(ListViewItem item in listView1.Items)
+                listView1.Items.Add(item);
+                if(item.Tag.Equals(Controller.GetSelectedModel()))
                 {
-                    if(item.Tag.Equals(Controller.GetSelectedModel()))
-                    {
-                        item.Selected = true;
-                    }
-                }
-               
-                listView1.Select();
+                    item.Selected = true;
+                    listView1.Select();
+                }   
             }
+            // Update Labels:
             labelPageCount.Text = Controller.GetPageCount().ToString();
             labelPageNumber.Text = Controller.GetCurrentPage().ToString();
         }
@@ -110,6 +115,41 @@ namespace DesktopAppTrouvaille.Views
         private void button1_Click(object sender, EventArgs e)
         {
             Controller.Search(textBox1.Text);
+        }
+
+        // Method for setting Arrw Symbol in Columnheader:
+        private void SetSortArrow(ColumnHeader head, SortOrder order)
+        {
+            const string ascArrow = " ▲";
+            const string descArrow = " ▼";
+
+            // remove arrow
+            if (head.Text.EndsWith(ascArrow) || head.Text.EndsWith(descArrow))
+                head.Text = head.Text.Substring(0, head.Text.Length - 2);
+
+            // add arrow
+            switch (order)
+            {
+                case SortOrder.Ascending: head.Text += ascArrow; break;
+                case SortOrder.Descending: head.Text += descArrow; break;
+            }
+        }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if(_sortOrder == SortOrder.Ascending)
+            {
+                _sortOrder = SortOrder.Descending;
+            }
+            else { _sortOrder = SortOrder.Ascending; }
+
+            foreach(ColumnHeader header in listView1.Columns)
+            {
+                SetSortArrow(header, SortOrder.None);
+            }
+
+            SetSortArrow(listView1.Columns[e.Column], _sortOrder);
+
         }
     }
 }

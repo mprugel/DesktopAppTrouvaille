@@ -1,5 +1,6 @@
-﻿using DesktopAppTrouvaille.Models;
-
+﻿using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.SortCreateria;
 
 namespace DesktopAppTrouvaille.Factories
 {
@@ -16,6 +17,11 @@ namespace DesktopAppTrouvaille.Factories
             Order order = (Order)model;
             string[] row = { order.Date.ToString(), order.OrderState.ToString() };
             return row;
+        }
+
+        protected override SortCreteria CreateSortCreteria(int colmumnID)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

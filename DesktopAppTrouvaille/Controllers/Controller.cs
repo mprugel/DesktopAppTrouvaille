@@ -1,4 +1,5 @@
 ﻿using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.SortCreateria;
 using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Controllers
 {
+    public enum SortingOrder { Ascending,Descending}
+
     public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted }
 
     // This Controller Class contains Functions which are used by all specific Controllers.
@@ -15,7 +18,7 @@ namespace DesktopAppTrouvaille.Controllers
     {
         // Interface for Updating the GUI:
         private List<IView> _views= new List<IView>();
-
+        protected SortCreteria sortCreteria;
         protected State _state;
         private IModel _selectedModel;
 
@@ -78,6 +81,13 @@ namespace DesktopAppTrouvaille.Controllers
         }
 
         public void Search(string searchText)
+        {
+            throw new NotImplementedException();
+        }
+
+        public abstract IEnumerable<IModel> GetModels();
+
+        public void SetSortCreteria(SortCreteria createria)
         {
             throw new NotImplementedException();
         }

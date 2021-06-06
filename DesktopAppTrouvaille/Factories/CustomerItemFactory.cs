@@ -1,4 +1,6 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.SortCreateria;
 
 namespace DesktopAppTrouvaille.Factories
 {
@@ -15,6 +17,11 @@ namespace DesktopAppTrouvaille.Factories
             Customer cust = (Customer)model;
             string[] row = { cust.FirstName, cust.LastName};
             return row;
+        }
+
+        protected override SortCreteria CreateSortCreteria(int colmumnID)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

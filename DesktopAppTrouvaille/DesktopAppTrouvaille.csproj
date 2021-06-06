@@ -109,6 +109,7 @@
     <Compile Include="Processors\ProductPOSTDTO.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />
     <Compile Include="Processors\RatingProcessor.cs" />
+    <Compile Include="SortCreateria\SortCreteria.cs" />
     <Compile Include="States\IProductState.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -125,11 +126,23 @@
     <Compile Include="Views\CategoryV\NewCategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\FilterV\CustomerFiler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\FilterV\CustomerFiler.Designer.cs">
+      <DependentUpon>CustomerFiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FilterV\Filter.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\FilterV\Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FilterV\OrderFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\FilterV\OrderFilter.Designer.cs">
+      <DependentUpon>OrderFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FilterV\ProductFilter.cs">
       <SubType>UserControl</SubType>
@@ -248,8 +261,14 @@
     <EmbeddedResource Include="Views\CustomerV\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FilterV\CustomerFiler.resx">
+      <DependentUpon>CustomerFiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FilterV\Filter.resx">
       <DependentUpon>Filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FilterV\OrderFilter.resx">
+      <DependentUpon>OrderFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FilterV\ProductFilter.resx">
       <DependentUpon>ProductFilter.cs</DependentUpon>

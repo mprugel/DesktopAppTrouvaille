@@ -3,15 +3,15 @@ using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
-using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 
+
+
 namespace DesktopAppTrouvaille
-{
-    
+{    
     public class ProductController : Controller
     {
         private ProductProcessor _productProssesor = new ProductProcessor();
@@ -129,6 +129,9 @@ namespace DesktopAppTrouvaille
             UpdateView();
         }
 
-       
+        public override IEnumerable<IModel> GetModels()
+        {
+            return this.Products;
+        }
     }
 }

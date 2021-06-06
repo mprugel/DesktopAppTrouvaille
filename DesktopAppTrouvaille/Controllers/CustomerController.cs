@@ -14,7 +14,10 @@ namespace DesktopAppTrouvaille.Controllers
             throw new NotImplementedException();
         }
 
-     
+        public override IEnumerable<IModel> GetModels()
+        {
+            throw new NotImplementedException();
+        }
 
         public override void UpdateData()
         {

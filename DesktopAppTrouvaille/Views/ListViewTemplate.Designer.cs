@@ -86,7 +86,6 @@
             // 
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(26, 584);
             this.listView1.MultiSelect = false;
@@ -95,6 +94,8 @@
             this.listView1.TabIndex = 7;
             this.listView1.TileSize = new System.Drawing.Size(100, 10);
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
             // 
             // buttonPrevious
             // 
