@@ -31,6 +31,10 @@ namespace DesktopAppTrouvaille
             _iterator = new Iterator(10);
             _iterator.Count = 30;
             _state = State.OK;
+            Category cat = new Category();
+            cat.Name = "Pinsel";
+            Categories.Add(cat);
+            UpdateView();
         }
 
         public async override void UpdateData()

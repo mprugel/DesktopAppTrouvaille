@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Factories;
+using DesktopAppTrouvaille.Views.FilterV;
 
 namespace DesktopAppTrouvaille.Views
 {
     public partial class OrderViewUC : BView, IView
     {
+        private OrderController _controller;
         public OrderViewUC()
         {
             InitializeComponent();
-            Controller = new OrderController();
+            _controller = new OrderController();
+            Controller = _controller;
             Controller.AttachView(this);
             Controller.AttachView(listView);
             listView.Controller = Controller;
             listView.Factory = new OrderItemFactory();
+            listView.FilterView = new OrderFilter(_controller);
             listView.Init();
         }
 

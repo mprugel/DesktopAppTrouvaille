@@ -1,9 +1,21 @@
 ﻿
 
+using System.Collections.Generic;
+
 namespace DesktopAppTrouvaille.Globals
 {
     public class Globals
     {
+        public static Dictionary<OrderState, string> OrderStateDic = new Dictionary<OrderState, string>();
+
+
+        public static void InitGlobals()
+        {
+            OrderStateDic.Add(OrderState.payed, "Bezahlt");
+            OrderStateDic.Add(OrderState.shipped, "Ausgeliefert");
+            OrderStateDic.Add(OrderState.cancelled, "Storniert");
+        }
+        //public static string[] OrderStateText = { "Ausgeliefert", "Bezahlt", "Storniert"};
         public enum PaymentMethod
         {
             Rechnung,

@@ -83,6 +83,8 @@
     <Compile Include="Factories\OrderItemFactory.cs" />
     <Compile Include="Factories\ProductItemFactory.cs" />
     <Compile Include="FilterCriterias\FilterCriteria.cs" />
+    <Compile Include="FilterCriterias\OrderCriteria.cs" />
+    <Compile Include="FilterCriterias\ProductFilterCriteria.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

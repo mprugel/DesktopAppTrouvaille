@@ -13,16 +13,18 @@ namespace DesktopAppTrouvaille.Views
 {
     public class ProductView : BView, IView
     {
+        private ProductController _controller;
         public ProductView()
         {
-            Controller = new ProductController();
+            _controller = new ProductController();
+            Controller = _controller;
             Controller.AttachView(this);
             Controller.AttachView(listView);
 
             // Init the ListView:
             listView.Controller = Controller;
             listView.Factory = new ProductItemFactory();
-            listView.FilterView = new ProductFilter();
+            listView.FilterView = new ProductFilter(_controller);
             
             listView.Init();
 

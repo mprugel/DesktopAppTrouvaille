@@ -26,7 +26,11 @@ namespace DesktopAppTrouvaille.Models
 
         public override bool Equals(object other)
         {
-            Category cat = (Category)other;
+            var cat = other as Category;
+            if(cat == null)
+            {
+                return false;
+            }
             if(CategoryId == cat.CategoryId)
             {
                 return true;

@@ -16,8 +16,10 @@ namespace DesktopAppTrouvaille
         static void Main()
         {
             APIconnection.InitializeClient();
+            Globals.Globals.InitGlobals();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new Form1());
             
         }

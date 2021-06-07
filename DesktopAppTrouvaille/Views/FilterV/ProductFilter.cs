@@ -1,32 +1,44 @@
-﻿using System;
+﻿using DesktopAppTrouvaille.FilterCriterias;
+using DesktopAppTrouvaille.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views.FilterV
 {
     public class ProductFilter : Filter
     {
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxManufacturer;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericUpDownTo;
+        private System.Windows.Forms.NumericUpDown numericUpDownFrom;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
 
-        public ProductFilter()
+        private ProductController _controller;
+        public ProductFilterCriteria GetFilterCriteria()
+        {
+            Category cat = (Category)comboBoxCategory.SelectedItem;
+            return new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value,cat.CategoryId);
+        }
+
+        public ProductFilter(ProductController controller)
         {
             InitializeComponent();
+            _controller = controller;
+            comboBoxCategory.DataSource = _controller.Categories;
+            comboBoxCategory.DisplayMember = "Name";
+            comboBoxCategory.ValueMember = "Name";
+     
         }
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownTo = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownFrom = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
@@ -34,28 +46,16 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrom)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(238, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(62, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 31);
-            this.textBox2.TabIndex = 2;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numericUpDownTo);
+            this.groupBox1.Controls.Add(this.numericUpDownFrom);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(17, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(449, 108);
@@ -64,10 +64,24 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.groupBox1.Text = "Lagerbestand";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // numericUpDownTo
+            // 
+            this.numericUpDownTo.Location = new System.Drawing.Point(260, 47);
+            this.numericUpDownTo.Name = "numericUpDownTo";
+            this.numericUpDownTo.Size = new System.Drawing.Size(114, 31);
+            this.numericUpDownTo.TabIndex = 6;
+            // 
+            // numericUpDownFrom
+            // 
+            this.numericUpDownFrom.Location = new System.Drawing.Point(62, 48);
+            this.numericUpDownFrom.Name = "numericUpDownFrom";
+            this.numericUpDownFrom.Size = new System.Drawing.Size(120, 31);
+            this.numericUpDownFrom.TabIndex = 5;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(183, 51);
+            this.label2.Location = new System.Drawing.Point(205, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 25);
             this.label2.TabIndex = 4;
@@ -84,6 +98,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
             // 
             // comboBoxManufacturer
             // 
+            this.comboBoxManufacturer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxManufacturer.FormattingEnabled = true;
             this.comboBoxManufacturer.Location = new System.Drawing.Point(133, 156);
             this.comboBoxManufacturer.Name = "comboBoxManufacturer";
@@ -92,6 +107,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(133, 220);
             this.comboBoxCategory.Name = "comboBoxCategory";
@@ -129,6 +145,8 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.Size = new System.Drawing.Size(489, 277);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
