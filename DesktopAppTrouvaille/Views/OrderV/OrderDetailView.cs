@@ -30,7 +30,13 @@ namespace DesktopAppTrouvaille.Views
 
         public void UpdateView()
         {
-            throw new NotImplementedException();
+            // Display Values on the GUI:
+            adressViewDelivery.SetAdress(_order.DeliveryAddress);
+            adressViewOrder.SetAdress(_order.InvoiceAddress);
+
+            labelOrderDate.Text = _order.Date.ToString();
+
+            comboBoxOrderState.SelectedIndex = (int)_order.OrderState;
         }
 
         private void adressViewDelivery_Load(object sender, EventArgs e)
@@ -41,14 +47,7 @@ namespace DesktopAppTrouvaille.Views
         public void SetModel(IModel model)
         {
             _order = (Order)model;
-           
-            // Display Values on the GUI:
-            adressViewDelivery.SetAdress(_order.DeliveryAddress);
-            adressViewOrder.SetAdress(_order.InvoiceAddress);
-
-            labelOrderDate.Text = _order.Date.ToString();
-
-            comboBoxOrderState.SelectedIndex = (int)_order.OrderState;
+            UpdateView(); 
         }
 
         public void SetController(IController controller)

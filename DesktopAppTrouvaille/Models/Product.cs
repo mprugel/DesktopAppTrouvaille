@@ -35,7 +35,12 @@ namespace DesktopAppTrouvaille.Models
 
         public int MinStock { get; set; } = 0;
 
-        public List<Category> Categories { get; set; } = new List<Category>();
+        public Guid GetGuid()
+        {
+            return ProductId;
+        }
+
+        // public List<Category> Categories { get; set; } = new List<Category>();
 
         public ProductPOSTDTO toPOSTDTO()
         {
@@ -53,7 +58,7 @@ namespace DesktopAppTrouvaille.Models
                 dto.ImageData = Picture.ImageData;
             }
            
-            dto.ProductCategoryIds = ProductCategories;
+            dto.ProductCategoryIds = ProductCategories.ToList<Guid>();
 
             return dto;
         }

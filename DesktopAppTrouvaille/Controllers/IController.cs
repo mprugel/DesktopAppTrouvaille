@@ -14,6 +14,7 @@ namespace DesktopAppTrouvaille.Controllers
         void ItemSelected(IModel model);
 
         IModel GetSelectedModel();
+        void SelectDetailModel(IModel model);
 
         void UpdateData();
 
@@ -23,8 +24,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         IEnumerable<IModel> GetModels();
 
-        //void Filter(SortCriteria createria);
-
+       
         void Previous();
 
         int GetCurrentPage();

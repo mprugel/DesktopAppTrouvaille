@@ -3,17 +3,14 @@ using DesktopAppTrouvaille.Factories;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Views.FilterV;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace DesktopAppTrouvaille.Views
 {
     public class ProductView : BView, IView
     {
         private ProductController _controller;
+        private ProductFilter filterView;
         public ProductView()
         {
             _controller = new ProductController();
@@ -24,7 +21,9 @@ namespace DesktopAppTrouvaille.Views
             // Init the ListView:
             listView.Controller = Controller;
             listView.Factory = new ProductItemFactory();
-            listView.FilterView = new ProductFilter(_controller);
+            filterView = new ProductFilter(_controller);
+            _controller.AttachView(filterView);
+            listView.FilterView = filterView;
             
             listView.Init();
 
@@ -46,9 +45,31 @@ namespace DesktopAppTrouvaille.Views
         protected override IDetailView CreateDetailView(IModel model)
         {
             ProductDetailView view = new ProductDetailView();
-            view.Controller = (ProductController)Controller;
+            view.Controller = _controller;
             view.Prod = (Product)model;
             return view;
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // listView
+            // 
+            this.listView.Load += new System.EventHandler(this.listView_Load);
+            // 
+            // ProductView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.Name = "ProductView";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        private void listView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

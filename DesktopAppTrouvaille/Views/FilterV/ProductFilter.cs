@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views.FilterV
 {
-    public class ProductFilter : Filter
+    public class ProductFilter : Filter, IView
     {
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
@@ -29,10 +29,6 @@ namespace DesktopAppTrouvaille.Views.FilterV
         {
             InitializeComponent();
             _controller = controller;
-            comboBoxCategory.DataSource = _controller.Categories;
-            comboBoxCategory.DisplayMember = "Name";
-            comboBoxCategory.ValueMember = "Name";
-     
         }
         private void InitializeComponent()
         {
@@ -155,6 +151,13 @@ namespace DesktopAppTrouvaille.Views.FilterV
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        public void UpdateView()
+        {
+            comboBoxCategory.DataSource = _controller.Categories;
+            comboBoxCategory.DisplayMember = "Name";
+            comboBoxCategory.ValueMember = "Name";
         }
     }
 }

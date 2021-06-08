@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Models
 {
-    public class Order
+    public class Order : IModel
     {
         public Guid OrderId { get; set; }
 
@@ -26,5 +26,9 @@ namespace DesktopAppTrouvaille.Models
 
         public ICollection<PostOrderProductViewModel> Products { get; set; }
 
+        public Guid GetGuid()
+        {
+            return OrderId;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Models
 {
-    public class Category
+    public class Category : IModel
     {
         public Guid CategoryId { get; set; }
         public string Name { get; set; }
@@ -38,5 +38,9 @@ namespace DesktopAppTrouvaille.Models
             return false;
         }
 
+        public Guid GetGuid()
+        {
+            return CategoryId;
+        }
     }
 }

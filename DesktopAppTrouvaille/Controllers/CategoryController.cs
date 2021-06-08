@@ -3,28 +3,25 @@ using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Controllers
 {
     public class CategoryController : Controller
     {
         private CategoryProcessor _processor = new CategoryProcessor();
-        private List<Category> _categories = new List<Category>();
+        public List<Category> Categories = new List<Category>();
 
         public override int GetCount()
         {
-            return _categories.Count();
+            return Categories.Count();
         }
 
         public override async void UpdateData()
         {
             try
             {
-                _categories = await _processor.LoadCategories();
+                Categories = await _processor.LoadCategories();
             }
             catch(GETException e)
             {
@@ -86,6 +83,11 @@ namespace DesktopAppTrouvaille.Controllers
         }
 
         public override IEnumerable<IModel> GetModels()
+        {
+            return Categories;
+        }
+
+        public override void SelectDetailModel(IModel model)
         {
             throw new NotImplementedException();
         }

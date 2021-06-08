@@ -63,13 +63,13 @@ namespace DesktopAppTrouvaille.Controllers
         public void Next()
         {
             _iterator.Next();
-            UpdateView();
+            UpdateData();
         }
 
         public void Previous()
         {
             _iterator.Previous();
-            UpdateView();
+            UpdateData();
         }
 
         public  void ItemSelected(IModel model)
@@ -88,10 +88,6 @@ namespace DesktopAppTrouvaille.Controllers
 
         public abstract IEnumerable<IModel> GetModels();
 
-        public void Filter(FilterCriteria createria)
-        {
-            throw new NotImplementedException();
-        }
 
         public void SetSortingOrder(SortingOrder order)
         {
@@ -102,5 +98,7 @@ namespace DesktopAppTrouvaille.Controllers
         {
             return SortOrder;
         }
+
+        public abstract void SelectDetailModel(IModel model);
     }
 }

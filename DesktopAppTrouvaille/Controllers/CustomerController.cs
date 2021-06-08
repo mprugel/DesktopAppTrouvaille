@@ -19,6 +19,11 @@ namespace DesktopAppTrouvaille.Controllers
             throw new NotImplementedException();
         }
 
+        public override void SelectDetailModel(IModel model)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void UpdateData()
         {
             throw new NotImplementedException();

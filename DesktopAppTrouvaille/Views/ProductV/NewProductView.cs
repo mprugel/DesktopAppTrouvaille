@@ -21,8 +21,7 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
             Prod = new Product();
-            Prod.Categories = new List<Category>();
-            UpdateView();
+            //UpdateView();
             
             this.DisplayDeleteButton(false);
             this.SetTitle("Neues Produkt anlegen");

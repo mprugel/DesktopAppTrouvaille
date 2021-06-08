@@ -74,10 +74,15 @@ namespace DesktopAppTrouvaille.Views
             {
                 panelDetailView.Controls.Clear();
                 detailView = CreateDetailView((IModel)item.Tag);
+
                 detailView.SetModel((IModel)item.Tag);
                 detailView.SetController(Controller);
+
+                Controller.AttachView(detailView);
+                Controller.SelectDetailModel((IModel)item.Tag);
+
                 panelDetailView.Controls.Add((UserControl)detailView);
-                detailView.UpdateView();
+                //detailView.UpdateView();
                 panelDetailView.Visible = true;
             }
             else

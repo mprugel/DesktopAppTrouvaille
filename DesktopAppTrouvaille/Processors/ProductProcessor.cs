@@ -12,7 +12,31 @@ namespace APIconnector.Processors
 {
     public class ProductProcessor
     {
-        private CategoryProcessor categoryProcessor = new CategoryProcessor();
+
+        public async Task<int> GetProductCount()
+        {
+            string url = "Products/Count";
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    int count = await response.Content.ReadAsAsync<int>();
+
+                    return count;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
         public async Task<Product> LoadProduct(Guid productID)
         {
             string url = "Products/" + productID.ToString();
@@ -130,7 +154,7 @@ namespace APIconnector.Processors
                 }
                 else
                 {
-                    return null;
+                    throw new GETException();
                 }
             }
             catch (Exception e)
@@ -150,6 +174,7 @@ namespace APIconnector.Processors
                 StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
 
                 response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(url);
                 Console.WriteLine(response);
                 if (response.IsSuccessStatusCode)
                 {

@@ -1,9 +1,6 @@
 ﻿using DesktopAppTrouvaille.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views
@@ -21,8 +18,9 @@ namespace DesktopAppTrouvaille.Views
             Columns.Add(checkBoxCol);
         }
 
-        public void AddCategories(List<Category> productCategories, List<Category> allCategories)
+        public void AddCategories(List<Guid> productCategories, List<Category> allCategories)
         {
+            this.Rows.Clear();
             foreach(Category cat in allCategories)
             {
                 // Create new Row
@@ -31,9 +29,10 @@ namespace DesktopAppTrouvaille.Views
                 
                 // Add the data
                 row.Cells[0].Value = cat.Name;
-                row.Tag = cat;
+                row.Tag = cat.CategoryId;
+               
                 // Check the Categories the product is assigned to:
-                if(CheckCategory(cat,productCategories))
+                if (CheckCategory(cat,productCategories))
                 {
                     row.Cells["Zuordnen"].Value = true;
                 }
@@ -41,13 +40,13 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
-        private bool CheckCategory(Category cat, List<Category> categories)
+        private bool CheckCategory(Category cat, List<Guid> categories)
         {
             if (categories != null)
             {
-                foreach (Category c in categories)
+                foreach (Guid guid in categories)
                 {
-                    if (c.Equals(cat))
+                    if (guid.Equals(cat.CategoryId))
                     {
                         return true;
                     }
@@ -56,14 +55,14 @@ namespace DesktopAppTrouvaille.Views
             return false;
         }
 
-        public List<Category> GetCheckedCategories()
+        public List<Guid> GetCheckedCategories()
         {
-            List<Category> cats = new List<Category>();
+            List<Guid> cats = new List<Guid>();
             foreach(DataGridViewRow row in Rows)
             {
                 if (Convert.ToBoolean(row.Cells["Zuordnen"].Value))
                 {
-                    cats.Add((Category)row.Tag);
+                    cats.Add((Guid)row.Tag);
                 }
             }
             return cats;

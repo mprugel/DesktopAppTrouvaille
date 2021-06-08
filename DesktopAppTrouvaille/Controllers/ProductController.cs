@@ -1,6 +1,7 @@
 ﻿using APIconnector.Processors;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
@@ -20,7 +21,7 @@ namespace DesktopAppTrouvaille
         private CategoryProcessor _categoryProcessor = new CategoryProcessor();
 
         public List<Category> Categories = new List<Category>();
-
+        public Product DetailProduct = new Product();
         public ProductSortCriteria SortCriteria;
 
         // List of Products:
@@ -29,23 +30,19 @@ namespace DesktopAppTrouvaille
         public ProductController()
         {
             _iterator = new Iterator(10);
-            _iterator.Count = 30;
             _state = State.OK;
-            Category cat = new Category();
-            cat.Name = "Pinsel";
-            Categories.Add(cat);
-            UpdateView();
         }
 
         public async override void UpdateData()
         {
-            Console.WriteLine("SortingCriteria: " + SortCriteria);
-            Console.WriteLine("Sort Order:" + SortOrder);
             try
             {
                 _state = State.LoadData;
+
+                _iterator.Count = await _productProssesor.GetProductCount();
                 Categories = await _categoryProcessor.LoadCategories();
                 Products = await _productProssesor.LoadProducts(_iterator.From, _iterator.To);
+
                 _state = State.OK;
             }
             catch(GETException e)
@@ -60,14 +57,13 @@ namespace DesktopAppTrouvaille
 
         public override int GetCount()
         {
-            // TODO -> Call API:
-            return 100;
+            return  _iterator.Count;
         }
 
 
         public async void SaveProduct(Product p)
         {
-            /*_state = State.SendingData;
+            _state = State.SendingData;
             // Call API
             try
             {
@@ -84,7 +80,7 @@ namespace DesktopAppTrouvaille
             catch(GETException e)
             {
                 _state = State.ConnectionError;
-            }*/
+            }
             _state = State.Saved;
             UpdateView();
             
@@ -107,20 +103,29 @@ namespace DesktopAppTrouvaille
             UpdateData();
         }
 
-        public void ItemSelected(Product p)
-        {
-            //state = state.ItemSelected(this);
-        }
-
+    
         public async void UpdateProduct(Product oldP, Product newP)
         {
+            if(oldP.ProductCategories == null)
+            {
+                oldP.ProductCategories = new List<Guid>();
+            }
             // Get the Categories which are removed:
-            List<Guid> removedCats = (List<Guid>)newP.ProductCategories.Except(oldP.ProductCategories);
+            List<Guid> removedCats = oldP.ProductCategories.Except(newP.ProductCategories).ToList();
             // Get the Categories which have been added:
-            List<Guid> newCats = (List<Guid>)oldP.ProductCategories.Except(newP.ProductCategories);
+            List<Guid> newCats = newP.ProductCategories.Except(oldP.ProductCategories).ToList();
+
+            Console.WriteLine("New categories:");
+            foreach(Guid g in newCats)
+            {
+                Console.WriteLine(g.ToString());
+            }
+            Console.WriteLine("----------------------------");
 
             // Save the newly added Categories:
             await _productProssesor.AddCategories(newP.ProductId, newCats);
+
+            await _productProssesor.RemoveCategories(newP.ProductId, removedCats);
 
             //TODO: implement DeleteCategories:
 
@@ -134,7 +139,8 @@ namespace DesktopAppTrouvaille
             {
                 _state = State.ConnectionError;
             }
-            
+
+            DetailProduct = await _productProssesor.LoadProduct(newP.GetGuid());
             UpdateData();
             UpdateView();
         }
@@ -142,6 +148,17 @@ namespace DesktopAppTrouvaille
         public override IEnumerable<IModel> GetModels()
         {
             return this.Products;
+        }
+
+        public void Filter(ProductFilterCriteria filterCriteria )
+        {
+            // TODO Call API for filtering:
+        }
+
+        public async override void SelectDetailModel(IModel model)
+        {
+           DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
+           UpdateView();
         }
     }
 }

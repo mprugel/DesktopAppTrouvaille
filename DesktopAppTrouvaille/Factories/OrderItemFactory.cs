@@ -15,7 +15,7 @@ namespace DesktopAppTrouvaille.Factories
         protected override string[] CreateRowValues(IModel model)
         {
             Order order = (Order)model;
-            string[] row = { order.Date.ToString(), order.OrderState.ToString() };
+            string[] row = { order.Date.ToString(), Globals.Globals.OrderStateDic[order.OrderState]};
             return row;
         }
 

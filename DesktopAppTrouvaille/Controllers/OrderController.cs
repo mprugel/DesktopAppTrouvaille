@@ -1,4 +1,6 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +8,14 @@ namespace DesktopAppTrouvaille.Controllers
 {
     public class OrderController : Controller
     {
-        private List<Order> orders = new List<Order>();
+        public Order DetailOrder = new Order();
+        public List<Order> Orders = new List<Order>();
+        private OrderProcessor _processor = new OrderProcessor();
+
+        public OrderController()
+        {
+            UpdateData();
+        }
 
         public override int GetCount()
         {
@@ -16,12 +25,26 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override IEnumerable<IModel> GetModels()
         {
-            throw new NotImplementedException();
+            return Orders;
         }
 
-        public override void UpdateData()
+        public override void SelectDetailModel(IModel model)
         {
-            throw new NotImplementedException();
+            DetailOrder = (Order)model;
+        }
+
+        public async override void UpdateData()
+        {
+            try
+            {
+                 Orders = await _processor.LoadOrders(_iterator.From, _iterator.To);
+            }
+            catch(GETException e)
+            {
+                _state = State.ConnectionError;
+            }
+           
+            UpdateView();
         }
     }
 }
