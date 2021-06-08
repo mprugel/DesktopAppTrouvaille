@@ -1815,7 +1815,6 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.Label label1;
-        private CategoryGridView categoryGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -2021,5 +2020,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn99;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn100;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn100;
+        protected CategoryGridView categoryGridView1;
     }
 }

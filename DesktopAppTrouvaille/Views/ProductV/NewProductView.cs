@@ -22,7 +22,8 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
             Prod = new Product();
             //UpdateView();
-            
+            categoryGridView1.AddCategories(Prod.ProductCategories, Controller.Categories);
+
             this.DisplayDeleteButton(false);
             this.SetTitle("Neues Produkt anlegen");
             this.SetButtonText("Produkt anlegen");

@@ -37,7 +37,9 @@ namespace DesktopAppTrouvaille.Controllers
         {
             try
             {
+                _state = State.LoadData;
                  Orders = await _processor.LoadOrders(_iterator.From, _iterator.To);
+                _state = State.OK;
             }
             catch(GETException e)
             {

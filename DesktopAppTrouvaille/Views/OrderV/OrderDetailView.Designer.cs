@@ -44,19 +44,26 @@
             // 
             // labelOrderDate
             // 
+            this.labelOrderDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOrderDate.AutoSize = true;
-            this.labelOrderDate.Location = new System.Drawing.Point(833, 406);
+            this.labelOrderDate.Location = new System.Drawing.Point(625, 406);
             this.labelOrderDate.Name = "labelOrderDate";
+            this.labelOrderDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelOrderDate.Size = new System.Drawing.Size(120, 25);
             this.labelOrderDate.TabIndex = 3;
             this.labelOrderDate.Text = "21.08.2020";
+            this.labelOrderDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelOrderDate.Click += new System.EventHandler(this.labelOrderDate_Click);
             // 
             // comboBoxOrderState
             // 
+            this.comboBoxOrderState.BackColor = System.Drawing.Color.Gainsboro;
+            this.comboBoxOrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOrderState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxOrderState.FormattingEnabled = true;
             this.comboBoxOrderState.Items.AddRange(new object[] {
             "Status"});
-            this.comboBoxOrderState.Location = new System.Drawing.Point(173, 403);
+            this.comboBoxOrderState.Location = new System.Drawing.Point(175, 403);
             this.comboBoxOrderState.Name = "comboBoxOrderState";
             this.comboBoxOrderState.Size = new System.Drawing.Size(292, 33);
             this.comboBoxOrderState.TabIndex = 4;

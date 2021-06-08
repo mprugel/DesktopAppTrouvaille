@@ -1,5 +1,4 @@
 ﻿
-
 namespace DesktopAppTrouvaille.Controllers
 {
     public class Iterator
@@ -18,7 +17,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public void Next()
         {
-            if(To <= (Count - StepSize))
+            if(To <= Count)
             {
                 From += StepSize - 1;
                 To += StepSize - 1;

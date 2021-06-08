@@ -36,6 +36,10 @@ namespace DesktopAppTrouvaille.Views
 
             labelOrderDate.Text = _order.Date.ToString();
 
+            comboBoxOrderState.DataSource = Globals.Globals.OrderStateDic.ToList();
+            comboBoxOrderState.DisplayMember = "Value";
+            comboBoxOrderState.ValueMember = "Key";
+
             comboBoxOrderState.SelectedIndex = (int)_order.OrderState;
         }
 
@@ -61,6 +65,11 @@ namespace DesktopAppTrouvaille.Views
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelOrderDate_Click(object sender, EventArgs e)
         {
 
         }

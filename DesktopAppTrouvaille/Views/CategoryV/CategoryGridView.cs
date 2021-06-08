@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views
 {
-    class CategoryGridView : DataGridView
+    public class CategoryGridView : DataGridView
     {
         public CategoryGridView()
         {

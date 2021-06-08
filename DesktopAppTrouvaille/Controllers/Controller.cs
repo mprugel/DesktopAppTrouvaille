@@ -57,7 +57,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public int GetPageCount()
         {
-            return _iterator.Count / _iterator.StepSize;
+            return (_iterator.Count / _iterator.StepSize) +1;
         }
 
         public void Next()
