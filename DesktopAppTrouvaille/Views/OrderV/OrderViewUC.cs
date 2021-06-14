@@ -19,6 +19,8 @@ namespace DesktopAppTrouvaille.Views
             listView.Factory = new OrderItemFactory();
             listView.FilterView = new OrderFilter(_controller);
             listView.Init();
+
+            _controller.UpdateData();
         }
 
         public void UpdateView()
@@ -29,6 +31,7 @@ namespace DesktopAppTrouvaille.Views
         protected override IDetailView CreateDetailView(IModel model)
         {
             OrderDetailView view = new OrderDetailView();
+            view.Controller = _controller;
             return view;
         }
     }

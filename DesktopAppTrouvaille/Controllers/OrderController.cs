@@ -14,7 +14,17 @@ namespace DesktopAppTrouvaille.Controllers
 
         public OrderController()
         {
-            UpdateData();
+            
+        }
+
+        public List<Product> GetProductsInOrder()
+        {
+            List<Product> prods = new List<Product>();
+            Product p1 = new Product();
+            p1.Name = "Pinsel";
+            p1.Price = 3;
+            prods.Add(p1);
+            return prods;
         }
 
         public override int GetCount()
@@ -35,6 +45,13 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void UpdateData()
         {
+            // Test Code:
+            Order order1 = new Order();
+            order1.Date = DateTime.Now;
+            order1.OrderState = Globals.Globals.OrderState.payed;
+
+            Orders.Add(order1);
+            UpdateView();
             try
             {
                 _state = State.LoadData;
@@ -47,6 +64,16 @@ namespace DesktopAppTrouvaille.Controllers
             }
            
             UpdateView();
+        }
+
+        public void UpdateOrder(Order order)
+        {
+
+        }
+
+        public void DeleteOrder(Order order)
+        {
+
         }
     }
 }

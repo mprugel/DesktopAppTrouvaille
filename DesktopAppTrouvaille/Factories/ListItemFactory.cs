@@ -19,7 +19,7 @@ namespace DesktopAppTrouvaille.Factories
             return list;
         }
 
-        private ListViewItem CreateListViewItem(IModel model)
+        protected virtual ListViewItem CreateListViewItem(IModel model)
         {
             string[] stringItems = CreateRowValues(model);
             ListViewItem item = new ListViewItem(stringItems, 1);

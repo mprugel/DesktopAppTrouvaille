@@ -81,6 +81,7 @@
     <Compile Include="Factories\CustomerItemFactory.cs" />
     <Compile Include="Factories\ListItemFactory.cs" />
     <Compile Include="Factories\OrderItemFactory.cs" />
+    <Compile Include="Factories\OrderProductFactory.cs" />
     <Compile Include="Factories\ProductItemFactory.cs" />
     <Compile Include="FilterCriterias\FilterCriteria.cs" />
     <Compile Include="FilterCriterias\OrderCriteria.cs" />

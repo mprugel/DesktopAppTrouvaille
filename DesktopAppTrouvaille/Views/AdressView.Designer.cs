@@ -29,22 +29,26 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.labelCountry = new System.Windows.Forms.Label();
-            this.labelCity = new System.Windows.Forms.Label();
-            this.labelPostalCode = new System.Windows.Forms.Label();
-            this.labelStreet = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
+            this.textBoxStreet = new System.Windows.Forms.TextBox();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.textBoxCountry = new System.Windows.Forms.TextBox();
+            this.numericUpDownStreetNumber = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPostalCode = new System.Windows.Forms.NumericUpDown();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPostalCode)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.labelCountry);
-            this.groupBox3.Controls.Add(this.labelCity);
-            this.groupBox3.Controls.Add(this.labelPostalCode);
-            this.groupBox3.Controls.Add(this.labelStreet);
-            this.groupBox3.Controls.Add(this.labelName);
+            this.groupBox3.Controls.Add(this.numericUpDownPostalCode);
+            this.groupBox3.Controls.Add(this.numericUpDownStreetNumber);
+            this.groupBox3.Controls.Add(this.textBoxCountry);
+            this.groupBox3.Controls.Add(this.textBoxCity);
+            this.groupBox3.Controls.Add(this.textBoxStreet);
+            this.groupBox3.Controls.Add(this.textBoxCustomerName);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -53,56 +57,53 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Adresse";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // labelCountry
+            // textBoxCustomerName
             // 
-            this.labelCountry.AutoSize = true;
-            this.labelCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(6, 193);
-            this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(119, 25);
-            this.labelCountry.TabIndex = 6;
-            this.labelCountry.Text = "Musterland";
+            this.textBoxCustomerName.Location = new System.Drawing.Point(22, 49);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(380, 31);
+            this.textBoxCustomerName.TabIndex = 7;
+            this.textBoxCustomerName.Text = "Kundenname";
             // 
-            // labelCity
+            // textBoxStreet
             // 
-            this.labelCity.AutoSize = true;
-            this.labelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.Location = new System.Drawing.Point(6, 157);
-            this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(125, 25);
-            this.labelCity.TabIndex = 5;
-            this.labelCity.Text = "Musterstadt";
+            this.textBoxStreet.Location = new System.Drawing.Point(22, 106);
+            this.textBoxStreet.Name = "textBoxStreet";
+            this.textBoxStreet.Size = new System.Drawing.Size(242, 31);
+            this.textBoxStreet.TabIndex = 8;
+            this.textBoxStreet.Text = "Straße";
             // 
-            // labelPostalCode
+            // textBoxCity
             // 
-            this.labelPostalCode.AutoSize = true;
-            this.labelPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPostalCode.Location = new System.Drawing.Point(6, 123);
-            this.labelPostalCode.Name = "labelPostalCode";
-            this.labelPostalCode.Size = new System.Drawing.Size(72, 25);
-            this.labelPostalCode.TabIndex = 4;
-            this.labelPostalCode.Text = "12345";
+            this.textBoxCity.Location = new System.Drawing.Point(22, 211);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(380, 31);
+            this.textBoxCity.TabIndex = 10;
+            this.textBoxCity.Text = "Ort";
             // 
-            // labelStreet
+            // textBoxCountry
             // 
-            this.labelStreet.AutoSize = true;
-            this.labelStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStreet.Location = new System.Drawing.Point(6, 86);
-            this.labelStreet.Name = "labelStreet";
-            this.labelStreet.Size = new System.Drawing.Size(181, 25);
-            this.labelStreet.TabIndex = 3;
-            this.labelStreet.Text = "Musterstraße 123";
+            this.textBoxCountry.Location = new System.Drawing.Point(22, 248);
+            this.textBoxCountry.Name = "textBoxCountry";
+            this.textBoxCountry.Size = new System.Drawing.Size(380, 31);
+            this.textBoxCountry.TabIndex = 11;
+            this.textBoxCountry.Text = "Land";
             // 
-            // labelName
+            // numericUpDownStreetNumber
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(6, 42);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(178, 25);
-            this.labelName.TabIndex = 2;
-            this.labelName.Text = "Max Mustermann";
+            this.numericUpDownStreetNumber.Location = new System.Drawing.Point(287, 106);
+            this.numericUpDownStreetNumber.Name = "numericUpDownStreetNumber";
+            this.numericUpDownStreetNumber.Size = new System.Drawing.Size(115, 31);
+            this.numericUpDownStreetNumber.TabIndex = 13;
+            // 
+            // numericUpDownPostalCode
+            // 
+            this.numericUpDownPostalCode.Location = new System.Drawing.Point(22, 156);
+            this.numericUpDownPostalCode.Name = "numericUpDownPostalCode";
+            this.numericUpDownPostalCode.Size = new System.Drawing.Size(380, 31);
+            this.numericUpDownPostalCode.TabIndex = 14;
             // 
             // AdressView
             // 
@@ -113,16 +114,19 @@
             this.Size = new System.Drawing.Size(427, 295);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPostalCode)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label labelCountry;
-        private System.Windows.Forms.Label labelCity;
-        private System.Windows.Forms.Label labelPostalCode;
-        private System.Windows.Forms.Label labelStreet;
-        private System.Windows.Forms.Label labelName;
         public System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBoxCountry;
+        private System.Windows.Forms.TextBox textBoxCity;
+        private System.Windows.Forms.TextBox textBoxStreet;
+        private System.Windows.Forms.TextBox textBoxCustomerName;
+        private System.Windows.Forms.NumericUpDown numericUpDownPostalCode;
+        private System.Windows.Forms.NumericUpDown numericUpDownStreetNumber;
     }
 }

@@ -30,5 +30,22 @@ namespace DesktopAppTrouvaille.Models
         {
             return OrderId;
         }
+        public Order() { }
+        public Order(Order other)
+        {
+            OrderId = other.OrderId;
+            Date = other.Date;
+            TotalCost = other.TotalCost;
+            PaymentMethod = other.PaymentMethod;
+            ShipmentMethod = other.ShipmentMethod;
+            OrderState = other.OrderState;
+            DeliveryAddress = other.DeliveryAddress;
+            InvoiceAddress = other.InvoiceAddress;
+            if(other.Products != null)
+            {
+                Products = other.Products.ToList();
+            }
+
+        }
     }
 }
