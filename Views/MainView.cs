@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
@@ -19,13 +15,36 @@ namespace DesktopAppTrouvaille.Views
         public MainView()
         {
             InitializeComponent();
-            controller = new MainController();
+            controller = new MainController(this);
+            UpdateView();
+        }
+
+        public void ShowProductView()
+        {
+            ProductView view = new ProductView();
+            
+            _tabView = view;
+            _tabView.UpdateView();
+            panelTabView.Controls.Clear();
+            panelTabView.Controls.Add((UserControl)_tabView);
         }
         public void UpdateView() 
-        { 
-         
+        {
+            if(MainController.LoggedIn)
+            {
+                panelMainMenu.Visible = true;
+                panelTabView.Controls.Clear();
+
+            }
+            else
+            {
+                _tabView = new LoginView(controller);
+                panelMainMenu.Visible = false;
+                panelTabView.Controls.Clear();
+                panelTabView.Controls.Add((UserControl)_tabView);
+            }
         }
-        public void SetTabView(IView view)
+        public void SetTabView(IDetailView view)
         {
             panelTabView.Controls.Add((UserControl)view);
         }
@@ -43,7 +62,9 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowOrders_Click(object sender, EventArgs e)
         {
-            _tabView = new OrderViewUC();
+            OrderViewUC orderView = new OrderViewUC(new OrderController(controller));
+ 
+            _tabView = orderView;
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }
@@ -66,5 +87,22 @@ namespace DesktopAppTrouvaille.Views
         {
 
         }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            controller.Logout();
+        }
+
+        private void buttonShowRatings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonShowEpmloyees_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

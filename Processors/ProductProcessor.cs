@@ -12,7 +12,31 @@ namespace APIconnector.Processors
 {
     public class ProductProcessor
     {
-        private CategoryProcessor categoryProcessor = new CategoryProcessor();
+
+        public async Task<int> GetProductCount()
+        {
+            string url = "Products/Count";
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    int count = await response.Content.ReadAsAsync<int>();
+
+                    return count;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
         public async Task<Product> LoadProduct(Guid productID)
         {
             string url = "Products/" + productID.ToString();
@@ -65,9 +89,6 @@ namespace APIconnector.Processors
             }
 
         }
-
-       
-
         public async Task<bool> UpdateProduct(Product product)
         {
             string url = "Products/" + product.ProductId;
@@ -133,7 +154,7 @@ namespace APIconnector.Processors
                 }
                 else
                 {
-                    return null;
+                    throw new GETException();
                 }
             }
             catch (Exception e)
@@ -142,19 +163,42 @@ namespace APIconnector.Processors
             }
         }
 
-        public async Task<bool> AddCategories(Guid id, List<CategoryModel> categories)
+        public async Task<bool> AddCategories(Guid id, List<Guid> categoryGuids)
         {
             string url = "Products/" + id + "/addCategory";
             HttpResponseMessage response;
             try
             {
-                List<Guid> catGuidList = new List<Guid>();
-                foreach(CategoryModel cat in categories)
-                {
-                    catGuidList.Add(cat.CategoryId);
-                }
+                string json = JsonConvert.SerializeObject(categoryGuids);
+                Console.WriteLine(json);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
 
-                string json = JsonConvert.SerializeObject(catGuidList);
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(url);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+        }
+
+        // Remove List of Categories from a Product:
+        public async Task<bool> RemoveCategories(Guid id, List<Guid> categoryGuids)
+        {
+            string url = "Products/" + id + "/deleteCategory";
+            HttpResponseMessage response;
+            try
+            {
+                string json = JsonConvert.SerializeObject(categoryGuids);
                 Console.WriteLine(json);
                 StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -173,7 +217,6 @@ namespace APIconnector.Processors
             {
                 throw new GETException();
             }
-
         }
     }
 }

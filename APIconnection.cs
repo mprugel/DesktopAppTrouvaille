@@ -13,9 +13,21 @@ namespace APIconnector
 
         public static void InitializeClient()
         {
-            ApiClient = new HttpClient();
-            //ApiClient.BaseAddress = new Uri("https://localhost:44372/api/");  //Base-Uri
+            var handler = new HttpClientHandler();
+            handler.ClientCertificateOptions = ClientCertificateOption.Manual;
+            handler.ServerCertificateCustomValidationCallback =
+                (httpRequestMessage, cert, cetChain, policyErrors) =>
+                {
+                    return true;
+                };
+
+            ApiClient = new HttpClient(handler);
+            
+            ApiClient.BaseAddress = new Uri("https://141.79.34.165:5001/api/");  //Base-Uri
+          
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
 
         }
     }

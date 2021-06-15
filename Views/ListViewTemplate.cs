@@ -1,39 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Factories;
+using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class ListViewTemplate : UserControl
+
+    // Base Class For ListView: Can be extended if necessary.
+    public partial class ListViewTemplate : UserControl, IView
     {
+        private SortOrder _sortOrder;
         public IController Controller;
+        public ListItemFactory Factory;
+        // Properties for setting in the Designer:
+        public string Title { get { return label1.Text; } set { label1.Text = value; } }
+        public string AddButtonText { get { return buttonAdd.Text; } set { buttonAdd.Text = value; } }
+
+        public Control FilterView { set { groupBox1.Controls.Add(value); } }
+
+        private bool _displayAddButton = true;
+        public bool DisplayAddButton { get { return _displayAddButton; } 
+            set 
+            { 
+                _displayAddButton = value;
+                buttonAdd.Visible = value;
+
+            } 
+        }
+       
         public ListViewTemplate()
         {
             InitializeComponent();
-            listView1.View = View.Details;
         }
 
-        public ListViewTemplate(IController controller)
+        public void Init()
         {
-            Controller = controller;
-            InitializeComponent();
-            listView1.View = View.Details;
+            //listView1.View = View.Details;
+            _sortOrder = SortOrder.Ascending;
+            // Add cols:
+            foreach (string col in Factory.CreateColumns())
+            {
+                listView1.Columns.Add(col).Width = 100;
+            }
+            if(listView1.Columns.Count > 0)
+            {
+                SetSortArrow(listView1.Columns[0], _sortOrder);
+            }
         }
+       
         public void AddClickHandler(EventHandler handler)
         {
             listView1.Click += handler;
-        }
-
-        public void UpdateList()
-        {
-            listView1.Update();
         }
 
         public ListViewItem GetSelectedItem()
@@ -45,20 +64,6 @@ namespace DesktopAppTrouvaille.Views
             else
             {
                 return null;
-            }
-        }
-
-        public void AddColumn(string colname)
-        {
-            listView1.Columns.Add(colname).Width = 100;
-        }
-
-        public void AddItems(List<ListViewItem> items)
-        {
-            listView1.Items.Clear();
-            foreach(ListViewItem itm in items)
-            {
-                listView1.Items.Add(itm);
             }
         }
 
@@ -85,6 +90,73 @@ namespace DesktopAppTrouvaille.Views
         private void buttonNext_Click(object sender, EventArgs e)
         {
             Controller.Next();
+        }
+
+        public void UpdateView()
+        {
+            // Display Models from Controller in ListView:
+            listView1.Items.Clear();
+            List<ListViewItem> items = Factory.CreateListViewItems(Controller.GetModels());
+            foreach(ListViewItem item in items)
+            {
+                listView1.Items.Add(item);
+                if(item.Tag.Equals(Controller.GetSelectedModel()))
+                {
+                    item.Selected = true;
+                    listView1.Select();
+                }   
+            }
+            // Update Labels:
+            labelPageCount.Text = Controller.GetPageCount().ToString();
+            labelPageNumber.Text = Controller.GetCurrentPage().ToString();
+        }
+
+        // Search Button Click:
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Controller.Search(textBox1.Text);
+        }
+
+        // Method for setting Arrw Symbol in Columnheader:
+        private void SetSortArrow(ColumnHeader head, SortOrder order)
+        {
+            const string ascArrow = " ▲";
+            const string descArrow = " ▼";
+
+            // remove arrow
+            if (head.Text.EndsWith(ascArrow) || head.Text.EndsWith(descArrow))
+                head.Text = head.Text.Substring(0, head.Text.Length - 2);
+
+            // add arrow
+            switch (order)
+            {
+                case SortOrder.Ascending: head.Text += ascArrow; break;
+                case SortOrder.Descending: head.Text += descArrow; break;
+            }
+        }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if(_sortOrder == SortOrder.Ascending)
+            {
+                _sortOrder = SortOrder.Descending;
+                Controller.SetSortingOrder(SortingOrder.Descending);
+            }
+            else 
+            { 
+                _sortOrder = SortOrder.Ascending;
+                Controller.SetSortingOrder(SortingOrder.Ascending);
+            }
+
+            foreach(ColumnHeader header in listView1.Columns)
+            {
+                SetSortArrow(header, SortOrder.None);
+            }
+
+            SetSortArrow(listView1.Columns[e.Column], _sortOrder);
+            Factory.SetSortCriteria(e.Column, Controller);
+            Controller.UpdateData();
+
         }
     }
 }

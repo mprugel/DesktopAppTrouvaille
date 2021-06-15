@@ -1,41 +1,63 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using APIconnector;
+using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace APIconnector.Processors
+namespace DesktopAppTrouvaille.Processors
 {
-    class OrderProcessor
+    public class OrderProcessor
     {
-        //LoadOrderAsync sends a request of the wanted order information depending on the orderID.
-        //It returns an instance of OrderModel if successful
-        public static async Task<OrderModel> LoadOrderAsync(int orderID = -1)
+        public async Task<List<Order>> LoadOrders(int from, int to)
         {
-            string url = "";
-            if (orderID > 0)
+            string url = "Orders";
+            HttpResponseMessage response;
+            try
             {
-                url = $"https://localhost:44372/api/Order/{ orderID }/";
-            }
-            else
-            {
-                url = "https://localhost:44372/api/Order/";
-            }
-
-            using (HttpResponseMessage response = await APIconnection.ApiClient.GetAsync(url))
-            {
+                response = await APIconnection.ApiClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
-                    OrderModel order = await response.Content.ReadAsAsync<OrderModel>();
-
-                    return order;
+                    List<Order> products = await response.Content.ReadAsAsync<List<Order>>();
+                    return products;
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    throw new GETException();
                 }
             }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+        }
+
+        public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
+        {
+            string url = "Categories/";
+            HttpResponseMessage response;
+
+            string json = JsonConvert.SerializeObject(categoryPOSTDTO);
+            StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
         }
     }
 }

@@ -39,8 +39,12 @@ namespace DesktopAppTrouvaille.Controllers
 
         public void RemoveCurrentPicture()
         {
-            _images.RemoveAt(_pos);
-            _pos = 0;
+            if(_images.Count > 0)
+            {
+                _images.RemoveAt(_pos);
+                _pos = 0;
+            }
+          
         }
 
         public Picture GetCurrentPicture()

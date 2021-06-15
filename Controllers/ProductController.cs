@@ -1,52 +1,48 @@
 ﻿using APIconnector.Processors;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
-using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
+
 
 namespace DesktopAppTrouvaille
-{
-    public enum State {ConnectionError, OK, LoadData , SendingData, SavedProduct, DeletedProduct}
-    public class ProductController : IController
+{   
+    public enum ProductSortCriteria { Name, InStock}
+    
+    public class ProductController : Controller
     {
-        private int _productCount = 0;
         private ProductProcessor _productProssesor = new ProductProcessor();
         private CategoryProcessor _categoryProcessor = new CategoryProcessor();
 
-        public List<CategoryModel> Categories = new List<CategoryModel>();
-
-        private State _state;
-
-        private ProductIterator _iterator;
-        public State state { get { return _state; } }
-
+        public List<Category> Categories = new List<Category>();
+        public Product DetailProduct = new Product();
+        public ProductSortCriteria SortCriteria;
 
         // List of Products:
         public List<Product> Products = new List<Product>();
 
-        // Interface for Updating the GUI:
-        private IView _view;
-
-        public ProductController(IView view)
+        public ProductController()
         {
-            _iterator = new ProductIterator(10);
+            _iterator = new Iterator(10);
             _state = State.OK;
-            _view = view;
         }
 
-        public async void UpdateData()
+        public async override void UpdateData()
         {
             try
             {
                 _state = State.LoadData;
+
+                _iterator.Count = await _productProssesor.GetProductCount();
                 Categories = await _categoryProcessor.LoadCategories();
                 Products = await _productProssesor.LoadProducts(_iterator.From, _iterator.To);
+
                 _state = State.OK;
             }
             catch(GETException e)
@@ -55,38 +51,38 @@ namespace DesktopAppTrouvaille
             }
             finally
             {
-                _view.UpdateView();
+                UpdateView();
             }
         }
 
-        public void Next()
+        public override int GetCount()
         {
-            _iterator.Next();
-            UpdateData();
+            return  _iterator.Count;
         }
 
-        public void Previous()
-        {
-            _iterator.Previous();
-            UpdateData();
-        }
 
         public async void SaveProduct(Product p)
         {
-            
             _state = State.SendingData;
             // Call API
-            if (await _productProssesor.SaveNewProduct(p))
+            try
             {
-                UpdateData();
-                _state = State.SavedProduct;
+                if (await _productProssesor.SaveNewProduct(p))
+                {
+                    UpdateData();
+                    _state = State.Saved;
+                }
+                else
+                {
+                    _state = State.ConnectionError;
+                }
             }
-            else
+            catch(GETException e)
             {
                 _state = State.ConnectionError;
             }
-            
-            _view.UpdateView();
+            _state = State.Saved;
+            UpdateView();
             
         }
 
@@ -96,41 +92,73 @@ namespace DesktopAppTrouvaille
             // Call API
             if (await _productProssesor.DeleteProduct(p))
             {
-                _state = State.DeletedProduct;
+                _state = State.Deleted;
             }
             else
             {
                 _state = State.ConnectionError;
             }
-            _view.UpdateView();
+           
+            UpdateView();
             UpdateData();
         }
 
-        public void ItemSelected(Product p)
-        {
-            //state = state.ItemSelected(this);
-        }
-
+    
         public async void UpdateProduct(Product oldP, Product newP)
         {
+            if(oldP.ProductCategories == null)
+            {
+                oldP.ProductCategories = new List<Guid>();
+            }
             // Get the Categories which are removed:
-           
-            await _productProssesor.AddCategories(newP.ProductId, newP.Categories);
+            List<Guid> removedCats = oldP.ProductCategories.Except(newP.ProductCategories).ToList();
+            // Get the Categories which have been added:
+            List<Guid> newCats = newP.ProductCategories.Except(oldP.ProductCategories).ToList();
+
+            Console.WriteLine("New categories:");
+            foreach(Guid g in newCats)
+            {
+                Console.WriteLine(g.ToString());
+            }
+            Console.WriteLine("----------------------------");
+
+            // Save the newly added Categories:
+            await _productProssesor.AddCategories(newP.ProductId, newCats);
+
+            await _productProssesor.RemoveCategories(newP.ProductId, removedCats);
+
+            //TODO: implement DeleteCategories:
 
             _state = State.SendingData;
             // Call API
             if ( await _productProssesor.UpdateProduct(newP))
             {
-                _state = State.SavedProduct;
+                _state = State.Saved;
             }
             else
             {
                 _state = State.ConnectionError;
             }
+
+            DetailProduct = await _productProssesor.LoadProduct(newP.GetGuid());
             UpdateData();
-            _view.UpdateView();
+            UpdateView();
         }
 
-       
+        public override IEnumerable<IModel> GetModels()
+        {
+            return this.Products;
+        }
+
+        public void Filter(ProductFilterCriteria filterCriteria )
+        {
+            // TODO Call API for filtering:
+        }
+
+        public async override void SelectDetailModel(IModel model)
+        {
+           DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
+           UpdateView();
+        }
     }
 }

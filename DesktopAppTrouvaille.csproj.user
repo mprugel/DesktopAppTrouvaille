@@ -4,43 +4,94 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\CategoryDetailView.cs">
+    <Compile Update="Views\AdressView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\CategoryGridView.cs">
+    <Compile Update="Views\BView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryV\CategoryDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CategoryV\CategoryGridView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Views\CategoryView.cs">
+    <Compile Update="Views\CategoryV\NewCategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\CustomerDetail.cs">
+    <Compile Update="Views\Category\CategoryDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\CustomerView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\CustomListView.cs">
+    <Compile Update="Views\Category\CategoryGridView.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Views\Components\AdressView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Components\ListViewTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CustomerV\CustomerDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\CustomerV\CustomListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Views\Customer\CustomerDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Customer\CustomListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Views\FilterBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\FilterV\CustomerFiler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\FilterV\Filter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\FilterV\OrderFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\FilterV\ProductFilter.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\ListViewTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Views\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\NewProductView.cs">
+    <Compile Update="Views\OrderV\OrderDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\OrderDetailView.cs">
+    <Compile Update="Views\Order\OrderDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\OrderViewUC.cs">
+    <Compile Update="Views\ProductV\NewProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\ProductDetailView.cs">
+    <Compile Update="Views\ProductV\ProductDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\ProductView.cs">
+    <Compile Update="Views\ProductV\ProductView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\ViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\VProduct\NewProductView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\VProduct\ProductDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\VProduct\ProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
