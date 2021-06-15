@@ -1,11 +1,7 @@
 ﻿using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille;
 using DesktopAppTrouvaille.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille
 {
@@ -15,9 +11,11 @@ namespace DesktopAppTrouvaille
         private static bool _loggedIn;
         public static bool LoggedIn { get { return _loggedIn; } }
         private User _currentUser;
-        private IView _view;
+        private IMainView _view;
 
-        public MainController(IView view)
+        public ProductController productController = new ProductController();
+
+        public MainController(IMainView view)
         {
             _view = view;
             _loggedIn = false;
@@ -36,6 +34,12 @@ namespace DesktopAppTrouvaille
         {
             _loggedIn = false;
             _view.UpdateView();
+        }
+
+        public void ShowProduct(Product p)
+        {
+            productController = new ProductController();
+            _view.ShowProductView();
         }
 
     }

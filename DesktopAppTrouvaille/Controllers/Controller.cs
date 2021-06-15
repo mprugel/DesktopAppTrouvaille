@@ -10,11 +10,13 @@ namespace DesktopAppTrouvaille.Controllers
 {
     public enum SortingOrder { Ascending, Descending}
 
+
     public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted }
 
     // This Controller Class contains Functions which are used by all specific Controllers.
     public abstract class Controller : IController
     {
+
         // Interface for Updating the GUI:
         private List<IView> _views= new List<IView>();
         protected State _state;

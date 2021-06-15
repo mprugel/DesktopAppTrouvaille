@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
-            this.textBoxStreet = new System.Windows.Forms.TextBox();
-            this.textBoxCity = new System.Windows.Forms.TextBox();
-            this.textBoxCountry = new System.Windows.Forms.TextBox();
-            this.numericUpDownStreetNumber = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPostalCode = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownStreetNumber = new System.Windows.Forms.NumericUpDown();
+            this.textBoxCountry = new System.Windows.Forms.TextBox();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.textBoxStreet = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPostalCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -59,29 +59,19 @@
             this.groupBox3.Text = "Adresse";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // textBoxCustomerName
+            // numericUpDownPostalCode
             // 
-            this.textBoxCustomerName.Location = new System.Drawing.Point(22, 49);
-            this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(380, 31);
-            this.textBoxCustomerName.TabIndex = 7;
-            this.textBoxCustomerName.Text = "Kundenname";
+            this.numericUpDownPostalCode.Location = new System.Drawing.Point(22, 156);
+            this.numericUpDownPostalCode.Name = "numericUpDownPostalCode";
+            this.numericUpDownPostalCode.Size = new System.Drawing.Size(380, 31);
+            this.numericUpDownPostalCode.TabIndex = 14;
             // 
-            // textBoxStreet
+            // numericUpDownStreetNumber
             // 
-            this.textBoxStreet.Location = new System.Drawing.Point(22, 106);
-            this.textBoxStreet.Name = "textBoxStreet";
-            this.textBoxStreet.Size = new System.Drawing.Size(242, 31);
-            this.textBoxStreet.TabIndex = 8;
-            this.textBoxStreet.Text = "Straße";
-            // 
-            // textBoxCity
-            // 
-            this.textBoxCity.Location = new System.Drawing.Point(22, 211);
-            this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(380, 31);
-            this.textBoxCity.TabIndex = 10;
-            this.textBoxCity.Text = "Ort";
+            this.numericUpDownStreetNumber.Location = new System.Drawing.Point(287, 106);
+            this.numericUpDownStreetNumber.Name = "numericUpDownStreetNumber";
+            this.numericUpDownStreetNumber.Size = new System.Drawing.Size(115, 31);
+            this.numericUpDownStreetNumber.TabIndex = 13;
             // 
             // textBoxCountry
             // 
@@ -91,19 +81,29 @@
             this.textBoxCountry.TabIndex = 11;
             this.textBoxCountry.Text = "Land";
             // 
-            // numericUpDownStreetNumber
+            // textBoxCity
             // 
-            this.numericUpDownStreetNumber.Location = new System.Drawing.Point(287, 106);
-            this.numericUpDownStreetNumber.Name = "numericUpDownStreetNumber";
-            this.numericUpDownStreetNumber.Size = new System.Drawing.Size(115, 31);
-            this.numericUpDownStreetNumber.TabIndex = 13;
+            this.textBoxCity.Location = new System.Drawing.Point(22, 202);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(380, 31);
+            this.textBoxCity.TabIndex = 10;
+            this.textBoxCity.Text = "Ort";
             // 
-            // numericUpDownPostalCode
+            // textBoxStreet
             // 
-            this.numericUpDownPostalCode.Location = new System.Drawing.Point(22, 156);
-            this.numericUpDownPostalCode.Name = "numericUpDownPostalCode";
-            this.numericUpDownPostalCode.Size = new System.Drawing.Size(380, 31);
-            this.numericUpDownPostalCode.TabIndex = 14;
+            this.textBoxStreet.Location = new System.Drawing.Point(22, 106);
+            this.textBoxStreet.Name = "textBoxStreet";
+            this.textBoxStreet.Size = new System.Drawing.Size(242, 31);
+            this.textBoxStreet.TabIndex = 8;
+            this.textBoxStreet.Text = "Straße";
+            // 
+            // textBoxCustomerName
+            // 
+            this.textBoxCustomerName.Location = new System.Drawing.Point(22, 49);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(380, 31);
+            this.textBoxCustomerName.TabIndex = 7;
+            this.textBoxCustomerName.Text = "Kundenname";
             // 
             // AdressView
             // 
@@ -114,8 +114,8 @@
             this.Size = new System.Drawing.Size(427, 295);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPostalCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).EndInit();
             this.ResumeLayout(false);
 
         }

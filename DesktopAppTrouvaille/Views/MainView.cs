@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class MainView : UserControl, IView
+    public partial class MainView : UserControl, IMainView
     {
         private IView _tabView;
         private MainController controller;
@@ -22,12 +18,23 @@ namespace DesktopAppTrouvaille.Views
             controller = new MainController(this);
             UpdateView();
         }
+
+        public void ShowProductView()
+        {
+            ProductView view = new ProductView();
+            
+            _tabView = view;
+            _tabView.UpdateView();
+            panelTabView.Controls.Clear();
+            panelTabView.Controls.Add((UserControl)_tabView);
+        }
         public void UpdateView() 
         {
             if(MainController.LoggedIn)
             {
                 panelMainMenu.Visible = true;
                 panelTabView.Controls.Clear();
+
             }
             else
             {
@@ -55,7 +62,9 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowOrders_Click(object sender, EventArgs e)
         {
-            _tabView = new OrderViewUC();
+            OrderViewUC orderView = new OrderViewUC(new OrderController(controller));
+ 
+            _tabView = orderView;
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }
@@ -93,5 +102,7 @@ namespace DesktopAppTrouvaille.Views
         {
 
         }
+
+       
     }
 }

@@ -8,13 +8,14 @@ namespace DesktopAppTrouvaille.Controllers
 {
     public class OrderController : Controller
     {
+        public MainController MainCont;
         public Order DetailOrder = new Order();
         public List<Order> Orders = new List<Order>();
         private OrderProcessor _processor = new OrderProcessor();
 
-        public OrderController()
+        public OrderController(MainController mainController)
         {
-            
+            MainCont = mainController;
         }
 
         public List<Product> GetProductsInOrder()
@@ -74,6 +75,11 @@ namespace DesktopAppTrouvaille.Controllers
         public void DeleteOrder(Order order)
         {
 
+        }
+
+        public void ShowProduct(Product p)
+        {
+            MainCont.ShowProduct(p);
         }
     }
 }

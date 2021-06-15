@@ -22,6 +22,9 @@ namespace DesktopAppTrouvaille.Views
             comboBoxOrderState.Items.Add(Globals.Globals.OrderState.cancelled);
             comboBoxOrderState.Items.Add(Globals.Globals.OrderState.payed);
             comboBoxOrderState.Items.Add(Globals.Globals.OrderState.shipped);
+
+            dataGridView1.Columns[3].Tag = (Action<Product>)ToProductClickHandler;
+
         }
 
 
@@ -42,10 +45,12 @@ namespace DesktopAppTrouvaille.Views
 
             //Display Products of Order in ListView:
             dataGridView1.Rows.Clear();
+            
             foreach(Product product in Controller.GetProductsInOrder())
             {
                 int rowId = dataGridView1.Rows.Add();
-                DataGridViewRow row =dataGridView1.Rows[rowId];
+                DataGridViewRow row = dataGridView1.Rows[rowId];
+                row.Tag = product;
 
                 Button btn = new Button();
                 btn.Text = ">";
@@ -56,6 +61,11 @@ namespace DesktopAppTrouvaille.Views
             }
             
 
+        }
+        public void ToProductClickHandler(Product p)
+        {
+            Console.WriteLine("Go to Product: " + p.Name);
+            Controller.ShowProduct(p);
         }
         private Order GetOrderFromInputFields()
         {
@@ -101,6 +111,25 @@ namespace DesktopAppTrouvaille.Views
         private void labelOrderDate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var grid = (DataGridView)sender;
+
+            if (e.RowIndex < 0)
+            {
+                //They clicked the header column, do nothing
+                return;
+            }
+
+            if (grid[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
+            {
+                var clickHandler = (Action<Product>)grid.Columns[e.ColumnIndex].Tag;
+                var product = (Product)grid.Rows[e.RowIndex].Tag;
+
+                clickHandler(product);
+            }
         }
     }
 }

@@ -94,7 +94,6 @@
     </Compile>
     <Compile Include="Globals\Globals.cs" />
     <Compile Include="IAPIconnection.cs" />
-    <Compile Include="IMainView.cs" />
     <Compile Include="Models\AddressViewModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
