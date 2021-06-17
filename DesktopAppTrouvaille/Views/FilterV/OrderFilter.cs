@@ -20,7 +20,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
         public OrderCriteria GetFilterCriteria()
         {
             OrderCriteria criteria = new OrderCriteria();
-            criteria.OrderDate = dateTimePicker1.Value;
+            criteria.OrderDate = dateTimePickerFrom.Value;
             criteria.OrderState = ((KeyValuePair<OrderState,string>)comboBoxState.SelectedItem).Key;
             Console.WriteLine("Selected State: " + criteria.OrderState);
             return criteria;

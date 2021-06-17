@@ -46,7 +46,7 @@ namespace DesktopAppTrouvaille.Views
             numericUpDownTax.Value = (int)Prod.Tax;
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
-            categoryGridView1.AddCategories(Prod.ProductCategories, Controller.Categories);
+            categorySelection1.AddCategories(Prod.ProductCategories, Controller.Categories);
             
             // Display the Picture in the Picture Box:
             picList.Add(Prod.Picture);
@@ -140,7 +140,7 @@ namespace DesktopAppTrouvaille.Views
             p.Tax = numericUpDownTax.Value;
             p.Price = (int)numericUpDownPrice.Value;
             p.Description = richTextBox1.Text;
-            p.ProductCategories = categoryGridView1.GetCheckedCategories();
+            p.ProductCategories = categorySelection1.GetCheckedCategories();
             p.Picture = pictureController.GetCurrentPicture();
 
             return p;

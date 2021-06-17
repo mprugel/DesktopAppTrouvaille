@@ -16,7 +16,13 @@ namespace DesktopAppTrouvaille.Views
     {
         // Property for setting the title in the Designer:
         public string Title { get { return groupBox3.Text; } set { groupBox3.Text = value; } }
-
+        private bool _editable = true;
+        public bool Editable {
+            get { return _editable; } 
+            set { _editable = value;
+                SetEditable();
+            }
+        }
         private readonly Color errorColor = Color.FromArgb(200, 100, 100);
 
         private List<TextBox> textBoxes = new List<TextBox>();
@@ -46,6 +52,28 @@ namespace DesktopAppTrouvaille.Views
             address.Street = textBoxStreet.Text;
             address.StreetNumber = (int)numericUpDownStreetNumber.Value;
             return address;
+        }
+
+        private void SetEditable()
+        {
+            foreach(TextBox box in textBoxes)
+            {
+                box.ReadOnly = !_editable;
+                
+            }
+            foreach (NumericUpDown updown in numericBoxes)
+            {
+                updown.ReadOnly = !_editable;
+                if(_editable)
+                {
+                    updown.Increment = 1;
+                }
+                else
+                {
+                    updown.Increment = 0;
+                }
+                
+            }
         }
 
         public bool CheckInputFields()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Factories;
@@ -18,7 +19,16 @@ namespace DesktopAppTrouvaille.Views
         public string Title { get { return label1.Text; } set { label1.Text = value; } }
         public string AddButtonText { get { return buttonAdd.Text; } set { buttonAdd.Text = value; } }
 
-        public Control FilterView { set { groupBox1.Controls.Add(value); } }
+        private Filter _filterView;
+        public Filter FilterView {
+            get { return _filterView; }
+            set 
+            {
+                _filterView = value;
+                Control view = value;
+                view.Location = new Point(10, 20);
+                groupBox1.Controls.Add(value); 
+            } }
 
         private bool _displayAddButton = true;
         public bool DisplayAddButton { get { return _displayAddButton; } 
@@ -114,6 +124,7 @@ namespace DesktopAppTrouvaille.Views
         // Search Button Click:
         private void button1_Click(object sender, EventArgs e)
         {
+            FilterView.SendFilterToController();
             Controller.Search(textBox1.Text);
         }
 

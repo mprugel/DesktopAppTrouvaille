@@ -62,6 +62,11 @@
             // numericUpDownPostalCode
             // 
             this.numericUpDownPostalCode.Location = new System.Drawing.Point(22, 156);
+            this.numericUpDownPostalCode.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numericUpDownPostalCode.Name = "numericUpDownPostalCode";
             this.numericUpDownPostalCode.Size = new System.Drawing.Size(380, 31);
             this.numericUpDownPostalCode.TabIndex = 14;
@@ -69,6 +74,11 @@
             // numericUpDownStreetNumber
             // 
             this.numericUpDownStreetNumber.Location = new System.Drawing.Point(287, 106);
+            this.numericUpDownStreetNumber.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numericUpDownStreetNumber.Name = "numericUpDownStreetNumber";
             this.numericUpDownStreetNumber.Size = new System.Drawing.Size(115, 31);
             this.numericUpDownStreetNumber.TabIndex = 13;

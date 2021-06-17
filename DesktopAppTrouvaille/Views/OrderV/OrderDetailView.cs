@@ -18,11 +18,6 @@ namespace DesktopAppTrouvaille.Views
         {
             InitializeComponent();
 
-            // Init the Combobox for selecting the order state:
-            comboBoxOrderState.Items.Add(Globals.Globals.OrderState.cancelled);
-            comboBoxOrderState.Items.Add(Globals.Globals.OrderState.payed);
-            comboBoxOrderState.Items.Add(Globals.Globals.OrderState.shipped);
-
             dataGridView1.Columns[3].Tag = (Action<Product>)ToProductClickHandler;
 
         }
@@ -58,6 +53,7 @@ namespace DesktopAppTrouvaille.Views
                 // Add the data
                 row.Cells[0].Value = product.Name;
                 row.Cells[1].Value = product.Price;
+                row.Cells[2].Value = Controller.GetProductCount(product);
             }
             
 

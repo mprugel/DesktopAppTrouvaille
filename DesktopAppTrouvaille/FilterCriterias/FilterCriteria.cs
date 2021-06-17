@@ -1,7 +1,11 @@
 ﻿
+using System;
+using System.Collections.Generic;
+
 namespace DesktopAppTrouvaille.FilterCriterias
 {
-    public class FilterCriteria
+    public abstract class FilterCriteria
     {
+       
     }
 }

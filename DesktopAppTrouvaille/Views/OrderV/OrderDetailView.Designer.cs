@@ -122,6 +122,11 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -129,10 +134,13 @@
             this.count,
             this.buttonToProduct});
             this.dataGridView1.Location = new System.Drawing.Point(11, 37);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(868, 342);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -143,7 +151,6 @@
             this.name.MinimumWidth = 10;
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Width = 150;
             // 
             // price
             // 
@@ -151,7 +158,6 @@
             this.price.MinimumWidth = 10;
             this.price.Name = "price";
             this.price.ReadOnly = true;
-            this.price.Width = 150;
             // 
             // count
             // 
@@ -159,7 +165,6 @@
             this.count.MinimumWidth = 10;
             this.count.Name = "count";
             this.count.ReadOnly = true;
-            this.count.Width = 150;
             // 
             // buttonToProduct
             // 
@@ -169,7 +174,6 @@
             this.buttonToProduct.ReadOnly = true;
             this.buttonToProduct.Text = ">";
             this.buttonToProduct.UseColumnTextForButtonValue = true;
-            this.buttonToProduct.Width = 200;
             // 
             // label1
             // 
@@ -194,23 +198,26 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(676, 936);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 25);
+            this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 18;
             this.label3.Text = "Summe";
             // 
             // labelSum
             // 
             this.labelSum.AutoSize = true;
+            this.labelSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSum.Location = new System.Drawing.Point(901, 936);
             this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(36, 25);
+            this.labelSum.Size = new System.Drawing.Size(38, 25);
             this.labelSum.TabIndex = 19;
             this.labelSum.Text = "0€";
             // 
             // adressViewOrder
             // 
+            this.adressViewOrder.Editable = false;
             this.adressViewOrder.Location = new System.Drawing.Point(513, 107);
             this.adressViewOrder.Name = "adressViewOrder";
             this.adressViewOrder.Size = new System.Drawing.Size(440, 304);
@@ -219,6 +226,7 @@
             // 
             // adressViewDelivery
             // 
+            this.adressViewDelivery.Editable = false;
             this.adressViewDelivery.Location = new System.Drawing.Point(63, 107);
             this.adressViewDelivery.Name = "adressViewDelivery";
             this.adressViewDelivery.Size = new System.Drawing.Size(427, 304);
@@ -228,8 +236,8 @@
             // 
             // OrderDetailView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.labelSum);
             this.Controls.Add(this.label3);

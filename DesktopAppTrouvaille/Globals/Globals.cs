@@ -11,9 +11,10 @@ namespace DesktopAppTrouvaille.Globals
 
         public static void InitGlobals()
         {
-            OrderStateDic.Add(OrderState.payed, "Bezahlt");
-            OrderStateDic.Add(OrderState.shipped, "Ausgeliefert");
-            OrderStateDic.Add(OrderState.cancelled, "Storniert");
+            OrderStateDic.Add(OrderState.Bestellt, "Bestellt");
+            OrderStateDic.Add(OrderState.Storniert, "Storniert");
+            OrderStateDic.Add(OrderState.Unterwegs, "Unterwegs");
+            OrderStateDic.Add(OrderState.Zugestellt, "Zugestellt");
         }
         //public static string[] OrderStateText = { "Ausgeliefert", "Bezahlt", "Storniert"};
         public enum PaymentMethod
@@ -33,9 +34,10 @@ namespace DesktopAppTrouvaille.Globals
 
         public enum OrderState
         {
-            shipped = 0,
-            payed = 1,
-            cancelled = 2,
+            Bestellt,
+            Unterwegs,
+            Zugestellt,
+            Storniert
 
         }
 

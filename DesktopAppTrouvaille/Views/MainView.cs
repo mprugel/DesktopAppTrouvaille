@@ -21,10 +21,10 @@ namespace DesktopAppTrouvaille.Views
 
         public void ShowProductView()
         {
-            ProductView view = new ProductView();
-            
+            ProductDetailView view = new ProductDetailView();
+            view.Controller = controller.productController;
+            controller.productController.AttachView(view);
             _tabView = view;
-            _tabView.UpdateView();
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }

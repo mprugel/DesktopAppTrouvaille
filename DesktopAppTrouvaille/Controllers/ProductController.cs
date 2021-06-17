@@ -8,9 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
-
-
 namespace DesktopAppTrouvaille
 {   
     public enum ProductSortCriteria { Name, InStock}
@@ -23,6 +20,8 @@ namespace DesktopAppTrouvaille
         public List<Category> Categories = new List<Category>();
         public Product DetailProduct = new Product();
         public ProductSortCriteria SortCriteria;
+
+        private ProductFilterCriteria FilterCriteria;
 
         // List of Products:
         public List<Product> Products = new List<Product>();
@@ -150,15 +149,47 @@ namespace DesktopAppTrouvaille
             return this.Products;
         }
 
-        public void Filter(ProductFilterCriteria filterCriteria )
+        public void SetFilter(ProductFilterCriteria filterCriteria )
         {
-            // TODO Call API for filtering:
+            FilterCriteria = filterCriteria;
         }
 
         public async override void SelectDetailModel(IModel model)
         {
-           DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
-           UpdateView();
+
+            //----------------------------------------
+            // For Testing:
+                DetailProduct = (Product)model;
+                UpdateView();
+            //----------------------------------------
+            
+            try
+            {
+                DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
+            }
+            catch
+            {
+                _state = State.ConnectionError;
+            }
+            finally
+            {
+                UpdateView();
+            }
+           
+        }
+
+        public async override void Search(string searchText)
+        {
+            try
+            {
+                Products = await _productProssesor.SearchAndFilter(searchText,FilterCriteria);
+            }
+            catch (Exception e)
+            {
+
+            }
+           
+            UpdateView();
         }
     }
 }

@@ -35,9 +35,9 @@
             this.panelTabView = new System.Windows.Forms.Panel();
             this.buttonShowCategories = new System.Windows.Forms.Button();
             this.panelMainMenu = new System.Windows.Forms.Panel();
-            this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonShowRatings = new System.Windows.Forms.Button();
             this.buttonShowEpmloyees = new System.Windows.Forms.Button();
+            this.buttonShowRatings = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.panelMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,17 +128,17 @@
             this.panelMainMenu.Size = new System.Drawing.Size(548, 1249);
             this.panelMainMenu.TabIndex = 7;
             // 
-            // buttonLogout
+            // buttonShowEpmloyees
             // 
-            this.buttonLogout.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Location = new System.Drawing.Point(29, 1114);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(489, 104);
-            this.buttonLogout.TabIndex = 6;
-            this.buttonLogout.Text = "Ausloggen";
-            this.buttonLogout.UseVisualStyleBackColor = false;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            this.buttonShowEpmloyees.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowEpmloyees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShowEpmloyees.Location = new System.Drawing.Point(29, 890);
+            this.buttonShowEpmloyees.Name = "buttonShowEpmloyees";
+            this.buttonShowEpmloyees.Size = new System.Drawing.Size(489, 116);
+            this.buttonShowEpmloyees.TabIndex = 8;
+            this.buttonShowEpmloyees.Text = "Mitarbeiter";
+            this.buttonShowEpmloyees.UseVisualStyleBackColor = false;
+            this.buttonShowEpmloyees.Click += new System.EventHandler(this.buttonShowEpmloyees_Click);
             // 
             // buttonShowRatings
             // 
@@ -153,22 +153,22 @@
             this.buttonShowRatings.UseVisualStyleBackColor = false;
             this.buttonShowRatings.Click += new System.EventHandler(this.buttonShowRatings_Click);
             // 
-            // buttonShowEpmloyees
+            // buttonLogout
             // 
-            this.buttonShowEpmloyees.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonShowEpmloyees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowEpmloyees.Location = new System.Drawing.Point(29, 890);
-            this.buttonShowEpmloyees.Name = "buttonShowEpmloyees";
-            this.buttonShowEpmloyees.Size = new System.Drawing.Size(489, 116);
-            this.buttonShowEpmloyees.TabIndex = 8;
-            this.buttonShowEpmloyees.Text = "Mitarbeiter";
-            this.buttonShowEpmloyees.UseVisualStyleBackColor = false;
-            this.buttonShowEpmloyees.Click += new System.EventHandler(this.buttonShowEpmloyees_Click);
+            this.buttonLogout.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Location = new System.Drawing.Point(29, 1114);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(489, 104);
+            this.buttonLogout.TabIndex = 6;
+            this.buttonLogout.Text = "Ausloggen";
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // MainView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panelTabView);
             this.Controls.Add(this.panelMainMenu);

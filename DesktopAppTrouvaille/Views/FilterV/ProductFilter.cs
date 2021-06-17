@@ -11,18 +11,21 @@ namespace DesktopAppTrouvaille.Views.FilterV
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxManufacturer;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownTo;
         private System.Windows.Forms.NumericUpDown numericUpDownFrom;
-        private System.Windows.Forms.Label label4;
 
         private ProductController _controller;
         public ProductFilterCriteria GetFilterCriteria()
         {
             Category cat = (Category)comboBoxCategory.SelectedItem;
             return new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value,cat.CategoryId);
+        }
+
+        public override void SendFilterToController()
+        {
+            _controller.SetFilter(GetFilterCriteria());
         }
 
         public ProductFilter(ProductController controller)
@@ -37,10 +40,8 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.numericUpDownFrom = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrom)).BeginInit();
@@ -92,20 +93,11 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.label1.TabIndex = 3;
             this.label1.Text = "von";
             // 
-            // comboBoxManufacturer
-            // 
-            this.comboBoxManufacturer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxManufacturer.FormattingEnabled = true;
-            this.comboBoxManufacturer.Location = new System.Drawing.Point(133, 156);
-            this.comboBoxManufacturer.Name = "comboBoxManufacturer";
-            this.comboBoxManufacturer.Size = new System.Drawing.Size(333, 33);
-            this.comboBoxManufacturer.TabIndex = 4;
-            // 
             // comboBoxCategory
             // 
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(133, 220);
+            this.comboBoxCategory.Location = new System.Drawing.Point(133, 148);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(333, 33);
             this.comboBoxCategory.TabIndex = 5;
@@ -113,32 +105,21 @@ namespace DesktopAppTrouvaille.Views.FilterV
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 223);
+            this.label3.Location = new System.Drawing.Point(17, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Kategorie";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 25);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Hersteller";
-            // 
             // ProductFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxCategory);
-            this.Controls.Add(this.comboBoxManufacturer);
             this.Controls.Add(this.groupBox1);
             this.Name = "ProductFilter";
-            this.Size = new System.Drawing.Size(489, 277);
+            this.Size = new System.Drawing.Size(499, 228);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).EndInit();

@@ -1,4 +1,5 @@
 ﻿using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using Newtonsoft.Json;
@@ -89,6 +90,45 @@ namespace APIconnector.Processors
             }
 
         }
+
+        public async Task<List<Product>> SearchAndFilter(string searchWord, ProductFilterCriteria criteria)
+        {
+            Console.WriteLine("Search...");
+            // TODO Create URL-String from criteria:
+            string url = "Products/SearchQuery/0/5?searchWord=" + searchWord + "&asc=true&orderBy=gdgsfa";
+            Console.WriteLine(url);
+            HttpResponseMessage response;
+            try
+            {
+                List<Guid> guids = new List<Guid>();
+                guids.Add(new Guid("006217FA-0DA7-409F-AAC3-13766FC81944"));
+                string json = JsonConvert.SerializeObject(guids);
+
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine("Response Status: " + response.StatusCode);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    
+                    List<Product> products = await response.Content.ReadAsAsync<List<Product>>();
+                    
+                    return products;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
+
+
         public async Task<bool> UpdateProduct(Product product)
         {
             string url = "Products/" + product.ProductId;

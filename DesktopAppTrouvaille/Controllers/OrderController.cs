@@ -49,7 +49,7 @@ namespace DesktopAppTrouvaille.Controllers
             // Test Code:
             Order order1 = new Order();
             order1.Date = DateTime.Now;
-            order1.OrderState = Globals.Globals.OrderState.payed;
+            order1.OrderState = Globals.Globals.OrderState.Bestellt;
 
             Orders.Add(order1);
             UpdateView();
@@ -80,6 +80,27 @@ namespace DesktopAppTrouvaille.Controllers
         public void ShowProduct(Product p)
         {
             MainCont.ShowProduct(p);
+        }
+
+        public int GetProductCount(Product p)
+        {
+            if(DetailOrder.Products == null)
+            {
+                return 0;
+            }
+            foreach(PostOrderProductViewModel product in DetailOrder.Products)
+            {
+                if(p.Equals(product))
+                {
+                    return product.Cardinality;
+                }
+            }
+            return 0;
+        }
+
+        public override void Search(string searchText)
+        {
+            throw new NotImplementedException();
         }
     }
 }

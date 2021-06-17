@@ -83,10 +83,8 @@ namespace DesktopAppTrouvaille.Controllers
             return _selectedModel;
         }
 
-        public void Search(string searchText)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Search(string searchText);
+ 
 
         public abstract IEnumerable<IModel> GetModels();
 

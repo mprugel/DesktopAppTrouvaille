@@ -91,5 +91,10 @@ namespace DesktopAppTrouvaille.Controllers
         {
             throw new NotImplementedException();
         }
+
+        public override void Search(string searchText)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

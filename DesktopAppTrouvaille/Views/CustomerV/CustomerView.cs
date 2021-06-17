@@ -11,6 +11,7 @@ using DesktopAppTrouvaille.Views;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Factories;
+using DesktopAppTrouvaille.Views.FilterV;
 
 namespace DesktopAppTrouvaille.Views
 {
@@ -24,6 +25,8 @@ namespace DesktopAppTrouvaille.Views
             Controller.AttachView(listView);
             listView.Controller = Controller;
             listView.Factory = new CustomerItemFactory();
+            listView.FilterView = new CustomerFiler();
+
             listView.Init();
         }
 

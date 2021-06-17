@@ -112,6 +112,7 @@
     <Compile Include="Processors\ProductPOSTDTO.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />
     <Compile Include="Processors\RatingProcessor.cs" />
+    <Compile Include="Processors\SearchQueryDTO.cs" />
     <Compile Include="States\IProductState.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -124,6 +125,12 @@
     </Compile>
     <Compile Include="Views\AdressView.Designer.cs">
       <DependentUpon>AdressView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryV\CategorySelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CategoryV\CategorySelection.Designer.cs">
+      <DependentUpon>CategorySelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CategoryV\NewCategoryView.cs">
       <SubType>UserControl</SubType>
@@ -250,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CategoryV\CategoryDetailView.resx">
       <DependentUpon>CategoryDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CategoryV\CategorySelection.resx">
+      <DependentUpon>CategorySelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CategoryV\CategoryView.resx">
       <DependentUpon>CategoryView.cs</DependentUpon>

@@ -251,16 +251,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn99 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn99 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.categoryGridView1 = new DesktopAppTrouvaille.Views.CategoryGridView();
             this.dataGridViewTextBoxColumn100 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn100 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.categorySelection1 = new DesktopAppTrouvaille.Views.CategoryV.CategorySelection();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -431,9 +430,9 @@
             // 
             this.textBoxName.BackColor = System.Drawing.Color.White;
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxName.Location = new System.Drawing.Point(283, 180);
+            this.textBoxName.Location = new System.Drawing.Point(311, 180);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(756, 31);
+            this.textBoxName.Size = new System.Drawing.Size(728, 31);
             this.textBoxName.TabIndex = 19;
             // 
             // buttonDelete
@@ -1722,24 +1721,6 @@
             this.dataGridViewCheckBoxColumn99.Name = "dataGridViewCheckBoxColumn99";
             this.dataGridViewCheckBoxColumn99.Width = 200;
             // 
-            // categoryGridView1
-            // 
-            this.categoryGridView1.AllowUserToAddRows = false;
-            this.categoryGridView1.AllowUserToDeleteRows = false;
-            this.categoryGridView1.AllowUserToResizeColumns = false;
-            this.categoryGridView1.AllowUserToResizeRows = false;
-            this.categoryGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.categoryGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.categoryGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.categoryGridView1.Location = new System.Drawing.Point(563, 426);
-            this.categoryGridView1.Name = "categoryGridView1";
-            this.categoryGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.categoryGridView1.RowHeadersVisible = false;
-            this.categoryGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.categoryGridView1.RowTemplate.Height = 33;
-            this.categoryGridView1.Size = new System.Drawing.Size(476, 255);
-            this.categoryGridView1.TabIndex = 23;
-            // 
             // dataGridViewTextBoxColumn100
             // 
             this.dataGridViewTextBoxColumn100.MinimumWidth = 10;
@@ -1752,18 +1733,25 @@
             this.dataGridViewCheckBoxColumn100.Name = "dataGridViewCheckBoxColumn100";
             this.dataGridViewCheckBoxColumn100.Width = 200;
             // 
+            // categorySelection1
+            // 
+            this.categorySelection1.Location = new System.Drawing.Point(563, 426);
+            this.categorySelection1.Name = "categorySelection1";
+            this.categorySelection1.Size = new System.Drawing.Size(440, 255);
+            this.categorySelection1.TabIndex = 29;
+            // 
             // ProductDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.categorySelection1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.numericUpDownMinStock);
             this.Controls.Add(this.numericUpDownTax);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.categoryGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.textBoxName);
@@ -1787,7 +1775,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2020,6 +2007,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn99;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn100;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn100;
-        protected CategoryGridView categoryGridView1;
+        protected CategoryV.CategorySelection categorySelection1;
     }
 }
