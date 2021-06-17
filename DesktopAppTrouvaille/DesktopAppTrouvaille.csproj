@@ -108,6 +108,7 @@
     <Compile Include="Processors\CustomerProcessor.cs" />
     <Compile Include="Processors\EmployeeProcessor.cs" />
     <Compile Include="Processors\LoginProcessor.cs" />
+    <Compile Include="Processors\OrderPOSTDTO.cs" />
     <Compile Include="Processors\OrderProcessor.cs" />
     <Compile Include="Processors\ProductPOSTDTO.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />

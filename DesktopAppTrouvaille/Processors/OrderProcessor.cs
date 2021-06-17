@@ -32,5 +32,32 @@ namespace DesktopAppTrouvaille.Processors
                 throw new GETException();
             }
         }
+
+        public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
+        {
+            string url = "Categories/";
+            HttpResponseMessage response;
+
+            string json = JsonConvert.SerializeObject(categoryPOSTDTO);
+            StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+
+        }
     }
 }
