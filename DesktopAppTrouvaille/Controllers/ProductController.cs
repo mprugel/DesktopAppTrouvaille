@@ -1,5 +1,6 @@
 ﻿using APIconnector.Processors;
 using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Enums;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
@@ -10,8 +11,6 @@ using System.Linq;
 
 namespace DesktopAppTrouvaille
 {   
-    public enum ProductSortCriteria { Name, InStock}
-    
     public class ProductController : Controller
     {
         private ProductProcessor _productProssesor = new ProductProcessor();
@@ -19,6 +18,7 @@ namespace DesktopAppTrouvaille
 
         public List<Category> Categories = new List<Category>();
         public Product DetailProduct = new Product();
+
         public ProductSortCriteria SortCriteria;
 
         private ProductFilterCriteria FilterCriteria;
@@ -156,13 +156,11 @@ namespace DesktopAppTrouvaille
 
         public async override void SelectDetailModel(IModel model)
         {
-
             //----------------------------------------
             // For Testing:
                 DetailProduct = (Product)model;
                 UpdateView();
             //----------------------------------------
-            
             try
             {
                 DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
@@ -180,15 +178,18 @@ namespace DesktopAppTrouvaille
 
         public async override void Search(string searchText)
         {
+            Console.WriteLine("Sortorder " + SortOrder);
+            Console.WriteLine("SortCriteria " + SortCriteria);
+            Console.WriteLine("FilterCrit " + FilterCriteria.CategroryID);
+
             try
             {
-                Products = await _productProssesor.SearchAndFilter(searchText,FilterCriteria);
+                Products = await _productProssesor.SearchAndFilter(searchText,SortOrder,SortCriteria, FilterCriteria);
             }
             catch (Exception e)
             {
-
+                _state = State.ConnectionError;
             }
-           
             UpdateView();
         }
     }

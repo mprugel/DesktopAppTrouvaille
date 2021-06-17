@@ -1,4 +1,5 @@
 ﻿using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Enums;
 using DesktopAppTrouvaille.Models;
 
 
@@ -24,10 +25,10 @@ namespace DesktopAppTrouvaille.Factories
             ProductController cont = (ProductController)controller;
             switch(colmumnID)
             {
-                case 1:
+                case 0:
                     cont.SortCriteria = ProductSortCriteria.Name;
                     break;
-                case 2:
+                case 1:
                     cont.SortCriteria = ProductSortCriteria.InStock;
                     break;
 

@@ -1,4 +1,6 @@
-﻿using DesktopAppTrouvaille.Exceptions;
+﻿using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Enums;
+using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
@@ -91,17 +93,17 @@ namespace APIconnector.Processors
 
         }
 
-        public async Task<List<Product>> SearchAndFilter(string searchWord, ProductFilterCriteria criteria)
+        public async Task<List<Product>> SearchAndFilter(string searchWord, SortingOrder order,ProductSortCriteria sort, ProductFilterCriteria criteria)
         {
             Console.WriteLine("Search...");
             // TODO Create URL-String from criteria:
-            string url = "Products/SearchQuery/0/5?searchWord=" + searchWord + "&asc=true&orderBy=gdgsfa";
+            string url = string.Format("Products/SearchQuery/0/5?searchWord=%s&asc=%s&orderBy=%s", searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
             Console.WriteLine(url);
             HttpResponseMessage response;
             try
             {
                 List<Guid> guids = new List<Guid>();
-                guids.Add(new Guid("006217FA-0DA7-409F-AAC3-13766FC81944"));
+                guids.Add(criteria.CategroryID);
                 string json = JsonConvert.SerializeObject(guids);
 
                 StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -118,7 +120,7 @@ namespace APIconnector.Processors
                 }
                 else
                 {
-                    return null;
+                    return new List<Product>();
                 }
             }
             catch (Exception e)

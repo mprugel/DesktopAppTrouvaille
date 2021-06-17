@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Enums;
 using DesktopAppTrouvaille.Factories;
 using DesktopAppTrouvaille.Models;
 
@@ -146,9 +147,11 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
+        private static int lastColumn;
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            if(_sortOrder == SortOrder.Ascending)
+            
+            if(_sortOrder == SortOrder.Ascending || lastColumn != e.Column)
             {
                 _sortOrder = SortOrder.Descending;
                 Controller.SetSortingOrder(SortingOrder.Descending);
@@ -163,7 +166,7 @@ namespace DesktopAppTrouvaille.Views
             {
                 SetSortArrow(header, SortOrder.None);
             }
-
+            lastColumn = e.Column;
             SetSortArrow(listView1.Columns[e.Column], _sortOrder);
             Factory.SetSortCriteria(e.Column, Controller);
             Controller.UpdateData();

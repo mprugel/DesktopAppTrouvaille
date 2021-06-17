@@ -10,7 +10,7 @@ namespace DesktopAppTrouvaille.Processors
     public class OrderPOSTDTO
     {
 
-        public AddressViewModel? DeliveryAddress { get; set; }
+        public AddressViewModel DeliveryAddress { get; set; }
 
         public AddressViewModel InvoiceAddress { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿
 
+using DesktopAppTrouvaille.Enums;
 using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Globals
@@ -8,13 +9,21 @@ namespace DesktopAppTrouvaille.Globals
     {
         public static Dictionary<OrderState, string> OrderStateDic = new Dictionary<OrderState, string>();
 
+        
+
 
         public static void InitGlobals()
         {
+            // Set the names for the Sorting Order
+
+            // Set the Names for the Order states:
             OrderStateDic.Add(OrderState.Bestellt, "Bestellt");
             OrderStateDic.Add(OrderState.Storniert, "Storniert");
             OrderStateDic.Add(OrderState.Unterwegs, "Unterwegs");
             OrderStateDic.Add(OrderState.Zugestellt, "Zugestellt");
+
+            
+
         }
         //public static string[] OrderStateText = { "Ausgeliefert", "Bezahlt", "Storniert"};
         public enum PaymentMethod

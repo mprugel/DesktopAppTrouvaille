@@ -20,6 +20,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
         public ProductFilterCriteria GetFilterCriteria()
         {
             Category cat = (Category)comboBoxCategory.SelectedItem;
+            if(cat == null) { cat = new Category(); }
             return new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value,cat.CategoryId);
         }
 

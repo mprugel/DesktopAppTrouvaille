@@ -13,7 +13,7 @@ using static DesktopAppTrouvaille.Globals.Globals;
 
 namespace DesktopAppTrouvaille.Views.FilterV
 {
-    public partial class OrderFilter : UserControl, IView
+    public partial class OrderFilter : Filter, IView
     {
         public OrderController Controller;
 

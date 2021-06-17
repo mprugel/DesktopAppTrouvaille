@@ -1,4 +1,5 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Enums;
+using DesktopAppTrouvaille.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

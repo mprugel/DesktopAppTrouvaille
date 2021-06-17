@@ -76,6 +76,7 @@
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Controllers\Iterator.cs" />
+    <Compile Include="Enums\Enumerations.cs" />
     <Compile Include="Exceptions\GETException.cs" />
     <Compile Include="Factories\CategoryFactory.cs" />
     <Compile Include="Factories\CustomerItemFactory.cs" />

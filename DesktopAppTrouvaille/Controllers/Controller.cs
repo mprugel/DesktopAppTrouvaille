@@ -1,4 +1,5 @@
-﻿using DesktopAppTrouvaille.FilterCriterias;
+﻿using DesktopAppTrouvaille.Enums;
+using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Views;
 using System;
@@ -8,8 +9,7 @@ using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Controllers
 {
-    public enum SortingOrder { Ascending, Descending}
-
+   
 
     public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted }
 

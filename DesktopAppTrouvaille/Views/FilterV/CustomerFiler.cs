@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views.FilterV
 {
-    public partial class CustomerFiler : UserControl
+    public partial class CustomerFiler : Filter
     {
         public CustomerFiler()
         {

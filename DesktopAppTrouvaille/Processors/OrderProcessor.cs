@@ -1,6 +1,7 @@
 ﻿using APIconnector;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -33,7 +34,7 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-        public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
+     /*   public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
         {
             string url = "Categories/";
             HttpResponseMessage response;
@@ -58,6 +59,7 @@ namespace DesktopAppTrouvaille.Processors
                 throw new GETException();
             }
 
-        }
+        }*/
     }
+     
 }
