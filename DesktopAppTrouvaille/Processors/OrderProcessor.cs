@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace DesktopAppTrouvaille.Processors
 {
@@ -34,12 +35,12 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-     /*   public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
+     public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
         {
             string url = "Orders/";
             HttpResponseMessage response;
 
-            string json = JsonConvert.SerializeObject(categoryPOSTDTO);
+            string json = JsonConvert.SerializeObject(orderPOSTDTO);
             StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
@@ -58,8 +59,7 @@ namespace DesktopAppTrouvaille.Processors
             {
                 throw new GETException();
             }
-
-        }*/
+        }
     }
      
 }
