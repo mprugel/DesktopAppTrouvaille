@@ -17,7 +17,7 @@ namespace DesktopAppTrouvaille.Processors
         }
         public async Task<List<Order>> LoadOrders(int from, int to)
         {
-            string url = "Orders";
+            string url = "Orders/";
             HttpResponseMessage response;
             try
             {
@@ -40,7 +40,7 @@ namespace DesktopAppTrouvaille.Processors
 
      /*   public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
         {
-            string url = "Categories/";
+            string url = "Orders/";
             HttpResponseMessage response;
 
             string json = JsonConvert.SerializeObject(categoryPOSTDTO);
