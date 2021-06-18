@@ -6,15 +6,36 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace DesktopAppTrouvaille.Processors
 {
     public class OrderProcessor
     {
-        public async Task<int> GetCount()
+        public async Task<int> GetOrderCount()
         {
-            return 0;
+            string url = "Orders/Count";
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    int count = await response.Content.ReadAsAsync<int>();
+
+                    return count;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
+
         public async Task<List<Order>> LoadOrders(int from, int to)
         {
             string url = "Orders/";
@@ -38,12 +59,12 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-     /*   public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
+     public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
         {
             string url = "Orders/";
             HttpResponseMessage response;
 
-            string json = JsonConvert.SerializeObject(categoryPOSTDTO);
+            string json = JsonConvert.SerializeObject(orderPOSTDTO);
             StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
@@ -62,8 +83,7 @@ namespace DesktopAppTrouvaille.Processors
             {
                 throw new GETException();
             }
-
-        }*/
+        }
     }
      
 }
