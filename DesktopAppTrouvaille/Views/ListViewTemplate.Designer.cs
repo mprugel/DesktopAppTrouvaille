@@ -54,7 +54,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(26, 111);
+            this.textBox1.Location = new System.Drawing.Point(26, 466);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(381, 49);
             this.textBox1.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(432, 111);
+            this.button1.Location = new System.Drawing.Point(432, 466);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(284, 49);
             this.button1.TabIndex = 2;
@@ -151,7 +151,7 @@
             // groupBox1
             // 
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(26, 225);
+            this.groupBox1.Location = new System.Drawing.Point(27, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(690, 320);
             this.groupBox1.TabIndex = 15;

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.FilterCriterias;
@@ -20,7 +14,9 @@ namespace DesktopAppTrouvaille.Views.FilterV
         public OrderCriteria GetFilterCriteria()
         {
             OrderCriteria criteria = new OrderCriteria();
-            criteria.OrderDate = dateTimePickerFrom.Value;
+            criteria.OrderDateFrom = dateTimePickerFrom.Value;
+            criteria.OrderDateTo = dateTimePickerFrom.Value;
+
             criteria.OrderState = ((KeyValuePair<OrderState,string>)comboBoxState.SelectedItem).Key;
             Console.WriteLine("Selected State: " + criteria.OrderState);
             return criteria;
@@ -31,6 +27,11 @@ namespace DesktopAppTrouvaille.Views.FilterV
             comboBoxState.DataSource = new BindingSource(OrderStateDic,null);
             comboBoxState.DisplayMember = "Value";
             comboBoxState.ValueMember = "Key";
+        }
+
+        public override void SendFilterToController()
+        {
+            Controller.SetFilterCriteria(GetFilterCriteria());
         }
 
         public OrderFilter(OrderController controller = null)

@@ -1,8 +1,11 @@
-﻿using DesktopAppTrouvaille.Exceptions;
+﻿using APIconnector.Processors;
+using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
+using static DesktopAppTrouvaille.Globals.Globals;
 
 namespace DesktopAppTrouvaille.Controllers
 {
@@ -11,27 +14,42 @@ namespace DesktopAppTrouvaille.Controllers
         public MainController MainCont;
         public Order DetailOrder = new Order();
         public List<Order> Orders = new List<Order>();
-        private OrderProcessor _processor = new OrderProcessor();
+        private IOrderProcessor _processor = new OrderProcessor();
+        private ProductProcessor _productProcessor = new ProductProcessor();
+
+        private OrderCriteria _filterCriteria;
 
         public OrderController(MainController mainController)
         {
             MainCont = mainController;
         }
 
-        public List<Product> GetProductsInOrder()
+        public  List<Product> GetProductsInOrder()
         {
-            List<Product> prods = new List<Product>();
-            Product p1 = new Product();
-            p1.Name = "Pinsel";
-            p1.Price = 3;
-            prods.Add(p1);
-            return prods;
+            List<Product> products = new List<Product>();
+            List<Guid> guids = new List<Guid>();
+            if(DetailOrder.Products == null)
+            {
+                return products;
+            }
+            foreach(PostOrderProductViewModel p in DetailOrder.Products)
+            {
+                guids.Add(p.ProductId);
+            }
+            try
+            {
+                products = _productProcessor.GetProductsByID(guids).Result;
+            }
+            catch(Exception e)
+            {
+                _state = State.ConnectionError;
+            }
+            return products;
         }
 
         public override int GetCount()
         {
-            // TODO: Call API:
-            return 100;
+            return Orders.Count;
         }
 
         public override IEnumerable<IModel> GetModels()
@@ -46,16 +64,21 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void UpdateData()
         {
-            // Test Code:
+            /*// Test Code:
             Order order1 = new Order();
             order1.Date = DateTime.Now;
             order1.OrderState = Globals.Globals.OrderState.Bestellt;
+           
 
             Orders.Add(order1);
+            
             UpdateView();
+            */
+           
             try
             {
                 _state = State.LoadData;
+                _iterator.Count = await _processor.GetCount();
                  Orders = await _processor.LoadOrders(_iterator.From, _iterator.To);
                 _state = State.OK;
             }
@@ -69,12 +92,26 @@ namespace DesktopAppTrouvaille.Controllers
 
         public void UpdateOrder(Order order)
         {
-
+            try
+            {
+                _processor.UpdateOrder(order.OrderId, order.OrderState);
+            }
+            catch(Exception e)
+            {
+                _state = State.ConnectionError;
+            }
         }
 
         public void DeleteOrder(Order order)
         {
-
+            try
+            {
+                _processor.DeleteOrder(order.OrderId);
+            }
+            catch(Exception e)
+            {
+                _state = State.ConnectionError;
+            }
         }
 
         public void ShowProduct(Product p)
@@ -98,9 +135,30 @@ namespace DesktopAppTrouvaille.Controllers
             return 0;
         }
 
-        public override void Search(string searchText)
+        public void SetFilterCriteria(OrderCriteria criteria)
         {
-            throw new NotImplementedException();
+            if(criteria != null)
+            {
+                _filterCriteria = criteria;
+            }
+        }
+
+        public async override void Search(string searchText)
+        { 
+            DateTime timeFrom = _filterCriteria.OrderDateFrom;
+            DateTime timeTo = _filterCriteria.OrderDateTo;
+            OrderState state = _filterCriteria.OrderState;
+
+            Console.WriteLine("From: " + timeFrom.ToString());
+            Console.WriteLine("To: " + timeTo.ToString());
+            try
+            {
+                Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, new Guid(),timeFrom, timeTo,state);
+            }
+            catch(Exception e)
+            {
+                _state = State.ConnectionError;
+            }
         }
     }
 }

@@ -19,8 +19,8 @@ namespace DesktopAppTrouvaille
         public List<Category> Categories = new List<Category>();
         public Product DetailProduct = new Product();
 
-        public ProductSortCriteria SortCriteria;
-
+        public ProductSortCriteria SortCriteria = new ProductSortCriteria();
+        private string _searchText = string.Empty;
         private ProductFilterCriteria FilterCriteria;
 
         // List of Products:
@@ -38,10 +38,19 @@ namespace DesktopAppTrouvaille
             {
                 _state = State.LoadData;
 
-                _iterator.Count = await _productProssesor.GetProductCount();
+                
                 Categories = await _categoryProcessor.LoadCategories();
-                Products = await _productProssesor.LoadProducts(_iterator.From, _iterator.To);
+                if(FilterCriteria == null)
+                {
+                    _iterator.Count = await _productProssesor.GetProductCount();
+                    Products = await _productProssesor.LoadProducts(_iterator.From, _iterator.To);
+                }
+                else
+                {
+                    Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, _searchText, SortOrder, SortCriteria, FilterCriteria);
+                }
 
+               
                 _state = State.OK;
             }
             catch(GETException e)
@@ -156,11 +165,7 @@ namespace DesktopAppTrouvaille
 
         public async override void SelectDetailModel(IModel model)
         {
-            //----------------------------------------
-            // For Testing:
-                DetailProduct = (Product)model;
-                UpdateView();
-            //----------------------------------------
+           
             try
             {
                 DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
@@ -178,14 +183,18 @@ namespace DesktopAppTrouvaille
 
         public async override void Search(string searchText)
         {
+            _searchText = searchText;
             Console.WriteLine("Sortorder " + SortOrder);
             Console.WriteLine("SortCriteria " + SortCriteria);
             Console.WriteLine("FilterCrit " + FilterCriteria.CategroryID);
 
             try
             {
-                Products = await _productProssesor.SearchAndFilter(searchText,SortOrder,SortCriteria, FilterCriteria);
+                Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, searchText,SortOrder,SortCriteria, FilterCriteria);
+                _iterator.Reset();
+                _iterator.Count = Products.Count;
             }
+            
             catch (Exception e)
             {
                 _state = State.ConnectionError;

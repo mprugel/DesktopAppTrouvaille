@@ -38,8 +38,8 @@ namespace APIconnector
         // Inits the Dictionaries:
         public static void InitDictionaries()
         {
-            ProductSortDic.Add(ProductSortCriteria.InStock, "inStock");
-            ProductSortDic.Add(ProductSortCriteria.Name, "name");
+            ProductSortDic.Add(ProductSortCriteria.InStock, "InStock");
+            ProductSortDic.Add(ProductSortCriteria.Name, "Name");
 
             SortingOrderDic.Add(SortingOrder.Ascending, "true");
             SortingOrderDic.Add(SortingOrder.Descending, "false");

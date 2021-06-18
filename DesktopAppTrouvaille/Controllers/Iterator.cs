@@ -15,6 +15,13 @@ namespace DesktopAppTrouvaille.Controllers
             To = StepSize - 1;
         }
 
+        public void Reset()
+        {
+            To = StepSize - 1;
+            From = 0;
+            CurrentPage = 0;
+        }
+
         public void Next()
         {
             if(To <= Count)

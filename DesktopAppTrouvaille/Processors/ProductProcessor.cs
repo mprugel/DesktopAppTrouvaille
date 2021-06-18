@@ -15,7 +15,6 @@ namespace APIconnector.Processors
 {
     public class ProductProcessor
     {
-
         public async Task<int> GetProductCount()
         {
             string url = "Products/Count";
@@ -93,11 +92,11 @@ namespace APIconnector.Processors
 
         }
 
-        public async Task<List<Product>> SearchAndFilter(string searchWord, SortingOrder order,ProductSortCriteria sort, ProductFilterCriteria criteria)
+        public async Task<List<Product>> SearchAndFilter(int from, int to, string searchWord, SortingOrder order,ProductSortCriteria sort, ProductFilterCriteria criteria)
         {
             Console.WriteLine("Search...");
             // TODO Create URL-String from criteria:
-            string url = string.Format("Products/SearchQuery/0/5?searchWord=%s&asc=%s&orderBy=%s", searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
+            string url = string.Format("Products/SearchQuery/{0}/{1}?searchWord={2}&asc={3}&orderBy={4}",from, to, searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
             Console.WriteLine(url);
             HttpResponseMessage response;
             try
@@ -253,6 +252,34 @@ namespace APIconnector.Processors
                 else
                 {
                     return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+        }
+
+        public async Task<List<Product>> GetProductsByID(List<Guid> guids)
+        {
+            string url = "Products/GetMultiple";
+            HttpResponseMessage response;
+            try
+            {
+                string json = JsonConvert.SerializeObject(guids);
+                Console.WriteLine(json);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Product> products = await response.Content.ReadAsAsync<List<Product>>();
+                    return products;
+                }
+                else
+                {
+                    return new List<Product>();
                 }
             }
             catch (Exception e)
