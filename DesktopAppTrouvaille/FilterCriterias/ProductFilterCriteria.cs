@@ -8,7 +8,7 @@ namespace DesktopAppTrouvaille.FilterCriterias
     {
         public int InStockFrom;
         public int InStockTo;
-        public Guid CategroryID;
+        public Guid CategroryID = new Guid();
 
         public ProductFilterCriteria(int inStockFrom, int inStockTo, Guid categroryID)
         {

@@ -14,7 +14,7 @@ namespace DesktopAppTrouvaille.Controllers
         public MainController MainCont;
         public Order DetailOrder = new Order();
         public List<Order> Orders = new List<Order>();
-        private IOrderProcessor _processor; // = new OrderProcessor();
+        private IOrderProcessor _processor = new OrderProcessor();
         private ProductProcessor _productProcessor = new ProductProcessor();
 
         private OrderCriteria _filterCriteria;
@@ -28,6 +28,10 @@ namespace DesktopAppTrouvaille.Controllers
         {
             List<Product> products = new List<Product>();
             List<Guid> guids = new List<Guid>();
+            if(DetailOrder.Products == null)
+            {
+                return products;
+            }
             foreach(PostOrderProductViewModel p in DetailOrder.Products)
             {
                 guids.Add(p.ProductId);
@@ -45,15 +49,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override int GetCount()
         {
-            try
-            {
-                return _processor.GetCount().Result;
-            }
-            catch(Exception e)
-            {
-                return 0;
-            }
-            
+            return Orders.Count;
         }
 
         public override IEnumerable<IModel> GetModels()
@@ -68,16 +64,21 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void UpdateData()
         {
-            // Test Code:
+            /*// Test Code:
             Order order1 = new Order();
             order1.Date = DateTime.Now;
             order1.OrderState = Globals.Globals.OrderState.Bestellt;
+           
 
             Orders.Add(order1);
+            
             UpdateView();
+            */
+           
             try
             {
                 _state = State.LoadData;
+                _iterator.Count = await _processor.GetCount();
                  Orders = await _processor.LoadOrders(_iterator.From, _iterator.To);
                 _state = State.OK;
             }
@@ -143,11 +144,13 @@ namespace DesktopAppTrouvaille.Controllers
         }
 
         public async override void Search(string searchText)
-        {
+        { 
             DateTime timeFrom = _filterCriteria.OrderDateFrom;
             DateTime timeTo = _filterCriteria.OrderDateTo;
             OrderState state = _filterCriteria.OrderState;
-            
+
+            Console.WriteLine("From: " + timeFrom.ToString());
+            Console.WriteLine("To: " + timeTo.ToString());
             try
             {
                 Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, new Guid(),timeFrom, timeTo,state);

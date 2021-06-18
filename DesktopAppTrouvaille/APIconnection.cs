@@ -29,7 +29,7 @@ namespace APIconnector
 
             ApiClient = new HttpClient(handler);
             
-            ApiClient.BaseAddress = new Uri("https://141.79.32.68:5001/api/");  //Base-Uri
+            ApiClient.BaseAddress = new Uri("https://141.79.33.142:5001/api/");  //Base-Uri
           
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             InitDictionaries();
@@ -38,8 +38,8 @@ namespace APIconnector
         // Inits the Dictionaries:
         public static void InitDictionaries()
         {
-            ProductSortDic.Add(ProductSortCriteria.InStock, "inStock");
-            ProductSortDic.Add(ProductSortCriteria.Name, "name");
+            ProductSortDic.Add(ProductSortCriteria.InStock, "InStock");
+            ProductSortDic.Add(ProductSortCriteria.Name, "Name");
 
             SortingOrderDic.Add(SortingOrder.Ascending, "true");
             SortingOrderDic.Add(SortingOrder.Descending, "false");

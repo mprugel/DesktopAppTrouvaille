@@ -10,8 +10,18 @@ using System.Text;
 
 namespace DesktopAppTrouvaille.Processors
 {
-    public class OrderProcessor
+    public class OrderProcessor : IOrderProcessor
     {
+        public async Task<bool> DeleteOrder(Guid guid)
+        {
+            return true;
+        }
+
+        public async Task<int> GetCount()
+        {
+            return 0;
+        }
+
         public async Task<int> GetOrderCount()
         {
             string url = "Orders/Count";
@@ -83,6 +93,16 @@ namespace DesktopAppTrouvaille.Processors
             {
                 throw new GETException();
             }
+        }
+
+        public async Task<List<Order>> SearchOrders(int from, int to, Guid customerID, DateTime timeFrom, DateTime timeTo, Globals.Globals.OrderState state)
+        {
+            return new List<Order>();
+        }
+
+        public async Task<bool> UpdateOrder(Guid guid, Globals.Globals.OrderState state)
+        {
+            return true;
         }
     }
      
