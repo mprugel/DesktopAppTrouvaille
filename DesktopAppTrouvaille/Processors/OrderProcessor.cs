@@ -12,10 +12,30 @@ namespace DesktopAppTrouvaille.Processors
 {
     public class OrderProcessor
     {
-        public async Task<int> GetCount()
+        public async Task<int> GetOrderCount()
         {
-            return 0;
+            string url = "Orders/Count";
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    int count = await response.Content.ReadAsAsync<int>();
+
+                    return count;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
+
         public async Task<List<Order>> LoadOrders(int from, int to)
         {
             string url = "Orders/";
