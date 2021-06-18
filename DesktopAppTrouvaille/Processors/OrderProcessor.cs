@@ -14,15 +14,28 @@ namespace DesktopAppTrouvaille.Processors
     {
         public async Task<bool> DeleteOrder(Guid guid)
         {
-            return true;
+            string url = "Orders/" + guid;
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.DeleteAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
+
 
         public async Task<int> GetCount()
-        {
-            return 0;
-        }
-
-        public async Task<int> GetOrderCount()
         {
             string url = "Orders/Count";
             HttpResponseMessage response;
