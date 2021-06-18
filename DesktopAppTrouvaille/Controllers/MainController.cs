@@ -40,7 +40,9 @@ namespace DesktopAppTrouvaille
         {
             productController = new ProductController();
             _view.ShowProductView();
+            productController.LoadCategories();
             productController.SelectDetailModel(p);
+
         }
 
     }

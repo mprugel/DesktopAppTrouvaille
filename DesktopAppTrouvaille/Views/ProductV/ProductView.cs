@@ -28,11 +28,12 @@ namespace DesktopAppTrouvaille.Views
             listView.Init();
 
             Controller.UpdateData();
+      
         }
         public void UpdateView()
         {
             UpdateStatusLabel();
-            if(Controller.state == State.Saved)
+            if(Controller.state == State.Saved || Controller.state == State.Deleted)
             {
                 panelDetailView.Visible = false;
             }

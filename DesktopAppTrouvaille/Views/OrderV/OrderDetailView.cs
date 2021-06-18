@@ -23,7 +23,7 @@ namespace DesktopAppTrouvaille.Views
         }
 
 
-        public void UpdateView()
+        public async void UpdateView()
         {
 
             // Display Values on the GUI:
@@ -41,7 +41,7 @@ namespace DesktopAppTrouvaille.Views
             //Display Products of Order in ListView:
             dataGridView1.Rows.Clear();
             
-            foreach(Product product in Controller.GetProductsInOrder())
+            foreach(Product product in await Controller.GetProductsInOrder())
             {
                 int rowId = dataGridView1.Rows.Add();
                 DataGridViewRow row = dataGridView1.Rows[rowId];

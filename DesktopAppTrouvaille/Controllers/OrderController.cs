@@ -5,6 +5,7 @@ using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using static DesktopAppTrouvaille.Globals.Globals;
 
 namespace DesktopAppTrouvaille.Controllers
@@ -24,7 +25,7 @@ namespace DesktopAppTrouvaille.Controllers
             MainCont = mainController;
         }
 
-        public  List<Product> GetProductsInOrder()
+        public async Task<List<Product>> GetProductsInOrder()
         {
             List<Product> products = new List<Product>();
             List<Guid> guids = new List<Guid>();
@@ -38,7 +39,7 @@ namespace DesktopAppTrouvaille.Controllers
             }
             try
             {
-                products = _productProcessor.GetProductsByID(guids).Result;
+                products = await _productProcessor.GetProductsByID(guids);
             }
             catch(Exception e)
             {
@@ -68,8 +69,7 @@ namespace DesktopAppTrouvaille.Controllers
             Order order1 = new Order();
             order1.Date = DateTime.Now;
             order1.OrderState = Globals.Globals.OrderState.Bestellt;
-           
-
+      
             Orders.Add(order1);
             
             UpdateView();
@@ -125,9 +125,10 @@ namespace DesktopAppTrouvaille.Controllers
             {
                 return 0;
             }
+            
             foreach(PostOrderProductViewModel product in DetailOrder.Products)
             {
-                if(p.Equals(product))
+                if(p.ProductId.Equals(product.ProductId))
                 {
                     return product.Cardinality;
                 }

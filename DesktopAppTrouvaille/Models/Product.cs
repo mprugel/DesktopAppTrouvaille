@@ -62,5 +62,18 @@ namespace DesktopAppTrouvaille.Models
 
             return dto;
         }
+
+        public override bool Equals(object obj)
+        {
+            if(obj != null && obj is Product)
+            {
+                Product p = (Product)obj;
+                if(p.ProductId.Equals(ProductId))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

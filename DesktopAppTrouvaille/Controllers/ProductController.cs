@@ -32,14 +32,25 @@ namespace DesktopAppTrouvaille
             _state = State.OK;
         }
 
+        public async void  LoadCategories()
+        {
+            try
+            {
+                Categories = await _categoryProcessor.LoadCategories();
+            }
+            catch(Exception e)
+            {
+                _state = State.ConnectionError;
+            }
+        }
+
         public async override void UpdateData()
         {
             try
             {
                 _state = State.LoadData;
 
-                
-                Categories = await _categoryProcessor.LoadCategories();
+                LoadCategories();
                 if(FilterCriteria == null)
                 {
                     _iterator.Count = await _productProssesor.GetProductCount();
@@ -101,13 +112,13 @@ namespace DesktopAppTrouvaille
             if (await _productProssesor.DeleteProduct(p))
             {
                 _state = State.Deleted;
+                UpdateView();
             }
             else
             {
                 _state = State.ConnectionError;
             }
            
-            UpdateView();
             UpdateData();
         }
 
