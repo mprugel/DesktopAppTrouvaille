@@ -11,6 +11,10 @@ namespace DesktopAppTrouvaille.Processors
 {
     public class OrderProcessor
     {
+        public async Task<int> GetCount()
+        {
+            return 0;
+        }
         public async Task<List<Order>> LoadOrders(int from, int to)
         {
             string url = "Orders";
