@@ -9,8 +9,10 @@ namespace DesktopAppTrouvaille.FilterCriterias
 {
     public class OrderCriteria
     {
-       public DateTime OrderDate;
-       public OrderState OrderState;
+        public DateTime OrderDateFrom;
+        public DateTime OrderDateTo;
+
+        public OrderState OrderState;
         
     }
 }

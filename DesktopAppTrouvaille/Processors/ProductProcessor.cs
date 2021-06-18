@@ -15,7 +15,6 @@ namespace APIconnector.Processors
 {
     public class ProductProcessor
     {
-
         public async Task<int> GetProductCount()
         {
             string url = "Products/Count";
@@ -253,6 +252,34 @@ namespace APIconnector.Processors
                 else
                 {
                     return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+        }
+
+        public async Task<List<Product>> GetProductsByID(List<Guid> guids)
+        {
+            string url = "Products/GetMultiple";
+            HttpResponseMessage response;
+            try
+            {
+                string json = JsonConvert.SerializeObject(guids);
+                Console.WriteLine(json);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Product> products = await response.Content.ReadAsAsync<List<Product>>();
+                    return products;
+                }
+                else
+                {
+                    return new List<Product>();
                 }
             }
             catch (Exception e)
