@@ -1,6 +1,7 @@
 ﻿using APIconnector;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,26 @@ namespace DesktopAppTrouvaille.Processors
 {
     public class CustomerProcessor : ICustomerProcessor
     {
-        public Task<bool> DeleteCustomer(Customer customer)
+        public async Task<bool> DeleteCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            string url = "Customers/" + customer.Id;
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.DeleteAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
 
         public async Task<int> GetCount()
@@ -69,9 +87,30 @@ namespace DesktopAppTrouvaille.Processors
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateCustomer()
+        public async Task<bool> UpdateCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            string url = "Customers/" + customer.Id.ToString();
+            HttpResponseMessage response;
+            try
+            {
+                string json = JsonConvert.SerializeObject(customer);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PutAsync(url, data);
+                Console.WriteLine(response);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
 
         public Task<bool> UpdateCustomer(Customer customer)
