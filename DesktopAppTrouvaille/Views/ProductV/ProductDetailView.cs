@@ -33,7 +33,8 @@ namespace DesktopAppTrouvaille.Views
             Controller = controller;
 
             // Set Validating Events:
-
+            textBoxManufactureEmail.Validating += textBox_Validating;
+            textBoxManufacturer.Validating += textBox_Validating;
             textBoxName.Validating += textBox_Validating;
             numericUpDownInStock.Validating += numericUpDown_Validating;
             numericUpDownMinStock.Validating += numericUpDown_Validating;
@@ -104,6 +105,15 @@ namespace DesktopAppTrouvaille.Views
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
             categorySelection1.AddCategories(Prod.ProductCategories, Controller.Categories);
+
+            // Display manufacturer:
+            Manufacturer manufacturer = Controller.GetManufacturer();
+            if(manufacturer != null)
+            {
+                textBoxManufacturer.Text = manufacturer.CatalogId;
+                textBoxManufactureEmail.Text = manufacturer.Email;
+            }
+           
             
             // Display the Picture in the Picture Box:
             picList.Add(Prod.Picture);
@@ -186,6 +196,14 @@ namespace DesktopAppTrouvaille.Views
             return ret;
         }
 
+        protected Manufacturer GetManufacturerFromInput()
+        {
+            Manufacturer manufacturer= new Manufacturer();
+            manufacturer.CatalogId = textBoxManufacturer.Text;
+            manufacturer.Email = textBoxManufactureEmail.Text;
+            return manufacturer;
+        }
+
         public Product GetProductFromInputs()
         {
             // Create new Product from the Data in the GUI, but keep ProductID:
@@ -208,7 +226,7 @@ namespace DesktopAppTrouvaille.Views
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 // Update the Product:
-                Controller.UpdateProduct(Prod, GetProductFromInputs());
+                Controller.UpdateProduct(Prod, GetProductFromInputs(), GetManufacturerFromInput());
             }
         }
 

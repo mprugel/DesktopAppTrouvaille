@@ -42,7 +42,7 @@ namespace DesktopAppTrouvaille.Models
 
         // public List<Category> Categories { get; set; } = new List<Category>();
 
-        public ProductPOSTDTO toPOSTDTO()
+        /*public ProductPOSTDTO toPOSTDTO()
         {
             ProductPOSTDTO dto = new ProductPOSTDTO();
             dto.Name = Name;
@@ -61,7 +61,7 @@ namespace DesktopAppTrouvaille.Models
             dto.ProductCategoryIds = ProductCategories.ToList<Guid>();
 
             return dto;
-        }
+        }*/
 
         public override bool Equals(object obj)
         {

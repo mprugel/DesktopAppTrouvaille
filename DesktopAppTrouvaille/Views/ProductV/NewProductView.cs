@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
@@ -34,7 +27,7 @@ namespace DesktopAppTrouvaille.Views
         {
             if(CheckInputFields())
             {
-                Controller.SaveProduct(GetProductFromInputs());
+                Controller.SaveProduct(GetProductFromInputs(),GetManufacturerFromInput());
             }
         }
     }

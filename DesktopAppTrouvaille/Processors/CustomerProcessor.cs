@@ -131,6 +131,6 @@ namespace DesktopAppTrouvaille.Processors
             {
                 throw new GETException();
             }
-        }
+        } 
     }
 }

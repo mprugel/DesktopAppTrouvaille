@@ -18,7 +18,7 @@ namespace DesktopAppTrouvaille
 
         public List<Category> Categories = new List<Category>();
         public Product DetailProduct = new Product();
-
+        private Manufacturer _detailManufacturer;
         public ProductSortCriteria SortCriteria = new ProductSortCriteria();
         private string _searchText = string.Empty;
         private ProductFilterCriteria FilterCriteria;
@@ -30,6 +30,11 @@ namespace DesktopAppTrouvaille
         {
             _iterator = new Iterator(10);
             _state = State.OK;
+        }
+
+        public Manufacturer GetManufacturer()
+        {
+            return _detailManufacturer;
         }
 
         public async void  LoadCategories()
@@ -80,13 +85,29 @@ namespace DesktopAppTrouvaille
         }
 
 
-        public async void SaveProduct(Product p)
+        public async void SaveProduct(Product p, Manufacturer manufacturer)
         {
             _state = State.SendingData;
             // Call API
             try
             {
-                if (await _productProssesor.SaveNewProduct(p))
+                ProductPOSTDTO postDTO = new ProductPOSTDTO();
+                postDTO.Description = p.Description;
+                postDTO.InStock = (int)p.InStock;
+                postDTO.MinStock = p.MinStock;
+                postDTO.Name = p.Name;
+                postDTO.Price = p.Price;
+                postDTO.Tax = (decimal)p.Tax;
+                
+
+                postDTO.ManufacturerCatalogId = manufacturer.CatalogId;
+                postDTO.ManufacturerEmail = manufacturer.Email;
+                if(p.Picture != null && p.Picture.ImageData != null)
+                {
+                    postDTO.ImageData = p.Picture.ImageData;
+                }
+               
+                if (await _productProssesor.SaveNewProduct(postDTO))
                 {
                     UpdateData();
                     _state = State.Saved;
@@ -100,7 +121,6 @@ namespace DesktopAppTrouvaille
             {
                 _state = State.ConnectionError;
             }
-            _state = State.Saved;
             UpdateView();
             
         }
@@ -123,7 +143,7 @@ namespace DesktopAppTrouvaille
         }
 
     
-        public async void UpdateProduct(Product oldP, Product newP)
+        public async void UpdateProduct(Product oldP, Product newP, Manufacturer manufacturer)
         {
             if(oldP.ProductCategories == null)
             {
@@ -134,12 +154,6 @@ namespace DesktopAppTrouvaille
             // Get the Categories which have been added:
             List<Guid> newCats = newP.ProductCategories.Except(oldP.ProductCategories).ToList();
 
-            Console.WriteLine("New categories:");
-            foreach(Guid g in newCats)
-            {
-                Console.WriteLine(g.ToString());
-            }
-            Console.WriteLine("----------------------------");
 
             // Save the newly added Categories:
             await _productProssesor.AddCategories(newP.ProductId, newCats);
@@ -149,9 +163,12 @@ namespace DesktopAppTrouvaille
             //TODO: implement DeleteCategories:
 
             _state = State.SendingData;
+
             // Call API
             // Create PUT Model:
             PutProductModel putModel = new PutProductModel(newP);
+            putModel.ManufacturerCatalogId = manufacturer.CatalogId;
+            putModel.ManufacturerEmail = manufacturer.Email;
 
             // Check if Picture has changed:
             if(oldP.Picture != null && oldP.Picture.ImageData != null && 
@@ -187,10 +204,13 @@ namespace DesktopAppTrouvaille
 
         public async override void SelectDetailModel(IModel model)
         {
-           
             try
-            {
+            { 
                 DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
+                if(DetailProduct.ManufacturerId != null)
+                {
+                    _detailManufacturer = await _productProssesor.GetManufacturerByID((Guid)DetailProduct.ManufacturerId);
+                }
             }
             catch
             {
