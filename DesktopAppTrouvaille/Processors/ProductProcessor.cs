@@ -130,14 +130,13 @@ namespace APIconnector.Processors
         }
 
 
-        public async Task<bool> UpdateProduct(Product product)
+        public async Task<bool> UpdateProduct(Guid guid, PutProductModel product)
         {
-            string url = "Products/" + product.ProductId;
+            string url = "Products/" + guid.ToString();
             HttpResponseMessage response;
             try
             {
-                ProductPOSTDTO dto = product.toPOSTDTO();
-                string json = JsonConvert.SerializeObject(dto);
+                string json = JsonConvert.SerializeObject(product);
                 StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
 
                 response = await APIconnection.ApiClient.PutAsync(url, data);

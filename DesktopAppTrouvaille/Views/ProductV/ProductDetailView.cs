@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
 using System.IO;
 using DesktopAppTrouvaille.Controllers;
+using System.ComponentModel;
 
 namespace DesktopAppTrouvaille.Views
 {
@@ -31,8 +32,64 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
             Controller = controller;
 
+            // Set Validating Events:
+
+            textBoxName.Validating += textBox_Validating;
+            numericUpDownInStock.Validating += numericUpDown_Validating;
+            numericUpDownMinStock.Validating += numericUpDown_Validating;
+            numericUpDownTax.Validating += numericUpDown_Validating;
+            numericUpDownPrice.Validating += numericUpDown_Validating;
+            richTextBox1.Validating += richTextBox_Validating;
+
             // Set Eventhandler for Selecting Images:
             fileDialog.FileOk += FileSelected;
+        }
+
+        private void richTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            RichTextBox textBox = (RichTextBox)sender;
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                e.Cancel = true;
+                textBox.Focus();
+                errorProvider1.SetError(textBox, "Das Feld darf nicht leer sein!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
+        }
+        private void textBox_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                e.Cancel = true;
+                textBox.Focus();
+                errorProvider1.SetError(textBox, "Das Feld darf nicht leer sein!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
+        }
+
+        private void numericUpDown_Validating(object sender, CancelEventArgs e)
+        {
+            NumericUpDown updown = (NumericUpDown)sender;
+            if (updown.Minimum == updown.Value)
+            {
+                e.Cancel = true;
+                updown.Focus();
+                errorProvider1.SetError(updown, "Ungültiger Wert!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(updown, "");
+            }
         }
 
         public void UpdateView()
@@ -148,7 +205,7 @@ namespace DesktopAppTrouvaille.Views
         protected virtual void buttonSave_Click(object sender, EventArgs e)
         {
             // Check if all Form Fields are filled by the User:
-            if (CheckInputFields())
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 // Update the Product:
                 Controller.UpdateProduct(Prod, GetProductFromInputs());

@@ -1,4 +1,6 @@
-﻿using DesktopAppTrouvaille.Models;
+﻿using DesktopAppTrouvaille.Enums;
+using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
 
@@ -8,7 +10,13 @@ namespace DesktopAppTrouvaille.Controllers
     {
         private List<Customer> _customers = new List<Customer>();
         private Customer _detailCustomer = new Customer();
+        private CustomerSortCriteria _customerSortCriteria;
+        private ICustomerProcessor _processor;
 
+        public void SetSortCriteria(CustomerSortCriteria criteria)
+        {
+            _customerSortCriteria = criteria;   
+        }
         public List<Customer> GetCustomers()
         {
             return _customers;
@@ -19,12 +27,12 @@ namespace DesktopAppTrouvaille.Controllers
         }
         public override int GetCount()
         {
-            throw new NotImplementedException();
+            return _customers.Count;
         }
 
         public override IEnumerable<IModel> GetModels()
         {
-            throw new NotImplementedException();
+            return _customers;
         }
 
         public override void Search(string searchText)
@@ -34,22 +42,58 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override void SelectDetailModel(IModel model)
         {
-            throw new NotImplementedException();
+            if(model is Customer && model != null)
+            {
+                _detailCustomer = (Customer)model;
+            }
         }
 
-        public override void UpdateData()
+        public async override void UpdateData()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _iterator.Count = await _processor.GetCount();
+
+                _customers = await _processor.GetCustomers(_iterator.From, _iterator.To);
+            }
+            catch (Exception e)
+            {
+                _state = State.ConnectionError;
+            }
+            finally
+            {
+                UpdateView();
+            }
         }
 
         public async void UpdateCustomer(Customer customer)
         {
-            
+            try
+            {
+                if(await _processor.UpdateCustomer(customer))
+                {
+                    _state = State.Saved;
+                }
+            }
+            catch
+            {
+                _state = State.ConnectionError;
+            }
         }
 
         public async void DeleteCustomer(Customer customer)
         {
-
+            try
+            {
+                if (await _processor.DeleteCustomer(customer))
+                {
+                    _state = State.Deleted;
+                }
+            }
+            catch
+            {
+                _state = State.ConnectionError;
+            }
         }
     }
 }

@@ -150,7 +150,18 @@ namespace DesktopAppTrouvaille
 
             _state = State.SendingData;
             // Call API
-            if ( await _productProssesor.UpdateProduct(newP))
+            // Create PUT Model:
+            PutProductModel putModel = new PutProductModel(newP);
+
+            // Check if Picture has changed:
+            if(oldP.Picture != null && oldP.Picture.ImageData != null && 
+                newP.Picture != null && newP.Picture.ImageData != null &&
+                !oldP.Picture.ImageData.SequenceEqual(newP.Picture.ImageData))
+            {
+                putModel.ImageData = newP.Picture.ImageData;
+            }
+
+            if ( await _productProssesor.UpdateProduct(newP.GetGuid(), putModel))
             {
                 _state = State.Saved;
             }

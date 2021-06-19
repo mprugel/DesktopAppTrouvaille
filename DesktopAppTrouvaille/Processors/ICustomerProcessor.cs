@@ -12,6 +12,7 @@ namespace DesktopAppTrouvaille.Processors
         Task<List<Customer>> GetCustomers(int from, int to);
         Task<List<Customer>> SearchCustomers(int from, int to, Guid customerId, string customerEmail);
         Task<int> GetCount();
-        Task<bool> UpdateCustomer();
+        Task<bool> UpdateCustomer(Customer customer);
+        Task<bool> DeleteCustomer(Customer customer);
     }
 }
