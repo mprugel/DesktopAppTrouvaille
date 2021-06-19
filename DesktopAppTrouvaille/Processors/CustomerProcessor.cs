@@ -15,7 +15,7 @@ namespace DesktopAppTrouvaille.Processors
     {
         public async Task<bool> DeleteCustomer(Customer customer)
         {
-            string url = "Customers/" + customer.Id;
+            string url = "Customer/" + customer.Id;
             HttpResponseMessage response;
             try
             {
@@ -37,7 +37,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<int> GetCount()
         {
-            string url = "Customers/Count";
+            string url = "Customer/Count";
             HttpResponseMessage response;
             try
             {
