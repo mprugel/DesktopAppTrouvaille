@@ -103,10 +103,12 @@
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\PostOrderProductViewModel.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\PutAddressViewModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Processors\CategoryPOSTDTO.cs" />
     <Compile Include="Processors\CategoryProcessor.cs" />
     <Compile Include="Processors\CustomerProcessor.cs" />
+    <Compile Include="Processors\CustomerPUTDTO.cs" />
     <Compile Include="Processors\EmployeeProcessor.cs" />
     <Compile Include="Processors\ICustomerProcessor.cs" />
     <Compile Include="Processors\IOrderProcessor.cs" />

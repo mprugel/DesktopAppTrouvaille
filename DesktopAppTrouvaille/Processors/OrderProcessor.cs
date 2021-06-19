@@ -68,8 +68,8 @@ namespace DesktopAppTrouvaille.Processors
                 response = await APIconnection.ApiClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
-                    List<Order> products = await response.Content.ReadAsAsync<List<Order>>();
-                    return products;
+                    List<Order> orders = await response.Content.ReadAsAsync<List<Order>>();
+                    return orders;
                 }
                 else
                 {

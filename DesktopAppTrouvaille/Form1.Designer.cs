@@ -39,19 +39,21 @@ namespace DesktopAppTrouvaille
             this.mainMenuUC1.BackColor = System.Drawing.Color.White;
             this.mainMenuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainMenuUC1.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuUC1.Margin = new System.Windows.Forms.Padding(1);
             this.mainMenuUC1.Name = "mainMenuUC1";
-            this.mainMenuUC1.Size = new System.Drawing.Size(2974, 1429);
+            this.mainMenuUC1.Size = new System.Drawing.Size(1487, 648);
             this.mainMenuUC1.TabIndex = 2;
             this.mainMenuUC1.Load += new System.EventHandler(this.mainMenuUC1_Load);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(2974, 1429);
+            this.ClientSize = new System.Drawing.Size(1487, 648);
             this.Controls.Add(this.mainMenuUC1);
-            this.MinimumSize = new System.Drawing.Size(3000, 1500);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(967, 539);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
