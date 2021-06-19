@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelProductID = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownInStock = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownPrice = new System.Windows.Forms.NumericUpDown();
@@ -256,6 +255,10 @@
             this.dataGridViewCheckBoxColumn100 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.categorySelection1 = new DesktopAppTrouvaille.Views.CategoryV.CategorySelection();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxManufacturer = new System.Windows.Forms.TextBox();
+            this.textBoxManufactureEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -279,41 +282,31 @@
             // labelProductID
             // 
             this.labelProductID.AutoSize = true;
-            this.labelProductID.Location = new System.Drawing.Point(206, 91);
+            this.labelProductID.Location = new System.Drawing.Point(532, 44);
             this.labelProductID.Name = "labelProductID";
             this.labelProductID.Size = new System.Drawing.Size(60, 25);
             this.labelProductID.TabIndex = 2;
             this.labelProductID.Text = "1045";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Produkt ID:";
-            // 
             // numericUpDownInStock
             // 
             this.numericUpDownInStock.BackColor = System.Drawing.Color.White;
             this.numericUpDownInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownInStock.Location = new System.Drawing.Point(58, 303);
+            this.numericUpDownInStock.Location = new System.Drawing.Point(311, 180);
             this.numericUpDownInStock.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numericUpDownInStock.Name = "numericUpDownInStock";
-            this.numericUpDownInStock.Size = new System.Drawing.Size(151, 31);
+            this.numericUpDownInStock.Size = new System.Drawing.Size(169, 31);
             this.numericUpDownInStock.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 263);
+            this.label3.Location = new System.Drawing.Point(53, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 5;
@@ -324,16 +317,16 @@
             this.numericUpDownPrice.BackColor = System.Drawing.Color.White;
             this.numericUpDownPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownPrice.DecimalPlaces = 2;
-            this.numericUpDownPrice.Location = new System.Drawing.Point(311, 303);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(311, 228);
             this.numericUpDownPrice.Name = "numericUpDownPrice";
-            this.numericUpDownPrice.Size = new System.Drawing.Size(120, 31);
+            this.numericUpDownPrice.Size = new System.Drawing.Size(169, 31);
             this.numericUpDownPrice.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(306, 263);
+            this.label4.Location = new System.Drawing.Point(53, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 25);
             this.label4.TabIndex = 7;
@@ -423,7 +416,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(53, 183);
+            this.label6.Location = new System.Drawing.Point(53, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 25);
             this.label6.TabIndex = 18;
@@ -433,7 +426,7 @@
             // 
             this.textBoxName.BackColor = System.Drawing.Color.White;
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxName.Location = new System.Drawing.Point(311, 180);
+            this.textBoxName.Location = new System.Drawing.Point(311, 116);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(728, 31);
             this.textBoxName.TabIndex = 19;
@@ -1678,7 +1671,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(512, 263);
+            this.label7.Location = new System.Drawing.Point(53, 288);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(175, 25);
             this.label7.TabIndex = 25;
@@ -1688,25 +1681,25 @@
             // 
             this.numericUpDownTax.BackColor = System.Drawing.Color.White;
             this.numericUpDownTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownTax.Location = new System.Drawing.Point(517, 303);
+            this.numericUpDownTax.Location = new System.Drawing.Point(311, 282);
             this.numericUpDownTax.Name = "numericUpDownTax";
-            this.numericUpDownTax.Size = new System.Drawing.Size(170, 31);
+            this.numericUpDownTax.Size = new System.Drawing.Size(169, 31);
             this.numericUpDownTax.TabIndex = 26;
             // 
             // numericUpDownMinStock
             // 
             this.numericUpDownMinStock.BackColor = System.Drawing.Color.White;
             this.numericUpDownMinStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownMinStock.Location = new System.Drawing.Point(812, 303);
+            this.numericUpDownMinStock.Location = new System.Drawing.Point(863, 180);
             this.numericUpDownMinStock.Name = "numericUpDownMinStock";
-            this.numericUpDownMinStock.Size = new System.Drawing.Size(227, 31);
+            this.numericUpDownMinStock.Size = new System.Drawing.Size(176, 31);
             this.numericUpDownMinStock.TabIndex = 27;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(807, 263);
+            this.label8.Location = new System.Drawing.Point(558, 182);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(232, 25);
             this.label8.TabIndex = 28;
@@ -1747,12 +1740,50 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(558, 230);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 25);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Hersteller";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(558, 284);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(188, 25);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Hersteller E-Mail";
+            // 
+            // textBoxManufacturer
+            // 
+            this.textBoxManufacturer.Location = new System.Drawing.Point(863, 227);
+            this.textBoxManufacturer.Name = "textBoxManufacturer";
+            this.textBoxManufacturer.Size = new System.Drawing.Size(176, 31);
+            this.textBoxManufacturer.TabIndex = 32;
+            // 
+            // textBoxManufactureEmail
+            // 
+            this.textBoxManufactureEmail.Location = new System.Drawing.Point(863, 281);
+            this.textBoxManufactureEmail.Name = "textBoxManufactureEmail";
+            this.textBoxManufactureEmail.Size = new System.Drawing.Size(176, 31);
+            this.textBoxManufactureEmail.TabIndex = 33;
+            // 
             // ProductDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.textBoxManufactureEmail);
+            this.Controls.Add(this.textBoxManufacturer);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.categorySelection1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.numericUpDownMinStock);
@@ -1771,7 +1802,6 @@
             this.Controls.Add(this.numericUpDownPrice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDownInStock);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelProductID);
             this.Controls.Add(this.labelTitle);
             this.Name = "ProductDetailView";
@@ -1792,7 +1822,6 @@
 
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelProductID;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDownInStock;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownPrice;
@@ -2017,5 +2046,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn100;
         protected CategoryV.CategorySelection categorySelection1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox textBoxManufactureEmail;
+        private System.Windows.Forms.TextBox textBoxManufacturer;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
     }
 }

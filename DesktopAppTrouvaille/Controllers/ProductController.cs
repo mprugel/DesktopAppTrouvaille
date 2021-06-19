@@ -100,7 +100,6 @@ namespace DesktopAppTrouvaille
             {
                 _state = State.ConnectionError;
             }
-            _state = State.Saved;
             UpdateView();
             
         }

@@ -33,7 +33,8 @@ namespace DesktopAppTrouvaille.Views
             Controller = controller;
 
             // Set Validating Events:
-
+            textBoxManufactureEmail.Validating += textBox_Validating;
+            textBoxManufacturer.Validating += textBox_Validating;
             textBoxName.Validating += textBox_Validating;
             numericUpDownInStock.Validating += numericUpDown_Validating;
             numericUpDownMinStock.Validating += numericUpDown_Validating;
@@ -104,6 +105,9 @@ namespace DesktopAppTrouvaille.Views
             numericUpDownPrice.Value = (int)Prod.Price;
             richTextBox1.Text = Prod.Description;
             categorySelection1.AddCategories(Prod.ProductCategories, Controller.Categories);
+
+            // Display manufacturer:
+            textBoxManufacturer.Text = Prod
             
             // Display the Picture in the Picture Box:
             picList.Add(Prod.Picture);

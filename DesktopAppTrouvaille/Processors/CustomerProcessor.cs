@@ -12,6 +12,11 @@ namespace DesktopAppTrouvaille.Processors
 {
     public class CustomerProcessor : ICustomerProcessor
     {
+        public Task<bool> DeleteCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<int> GetCount()
         {
             string url = "Customers/Count";
@@ -65,6 +70,11 @@ namespace DesktopAppTrouvaille.Processors
         }
 
         public Task<bool> UpdateCustomer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> UpdateCustomer(Customer customer)
         {
             throw new NotImplementedException();
         }
