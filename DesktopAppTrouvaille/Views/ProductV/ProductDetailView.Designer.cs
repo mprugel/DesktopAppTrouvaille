@@ -1746,9 +1746,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(558, 230);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 25);
+            this.label2.Size = new System.Drawing.Size(188, 25);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Hersteller";
+            this.label2.Text = "Hersteller E-Mail";
             // 
             // label9
             // 
@@ -1756,9 +1756,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(558, 284);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(188, 25);
+            this.label9.Size = new System.Drawing.Size(143, 25);
             this.label9.TabIndex = 31;
-            this.label9.Text = "Hersteller E-Mail";
+            this.label9.Text = "Hersteller ID";
             // 
             // textBoxManufacturer
             // 

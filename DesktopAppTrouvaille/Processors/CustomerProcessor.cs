@@ -111,11 +111,6 @@ namespace DesktopAppTrouvaille.Processors
             {
                 throw new GETException();
             }
-        }
-
-        public Task<bool> UpdateCustomer(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
+        } 
     }
 }

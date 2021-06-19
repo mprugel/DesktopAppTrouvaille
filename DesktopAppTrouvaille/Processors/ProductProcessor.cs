@@ -64,14 +64,13 @@ namespace APIconnector.Processors
            
         }
 
-        public async Task<bool> SaveNewProduct(Product product)
+        public async Task<bool> SaveNewProduct(ProductPOSTDTO product)
         {
             string url = "Products/";
             HttpResponseMessage response;
             try
             {
-                ProductPOSTDTO dto = product.toPOSTDTO();
-                string json = JsonConvert.SerializeObject(dto);
+                string json = JsonConvert.SerializeObject(product);
                 StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
 
                 response = await APIconnection.ApiClient.PostAsync(url,data);
@@ -279,6 +278,32 @@ namespace APIconnector.Processors
                 else
                 {
                     return new List<Product>();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+        }
+
+
+        public async Task<Manufacturer> GetManufacturerByID(Guid guid)
+        {
+            string url = "Manufacturer/" + guid.ToString();
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                Console.WriteLine(response);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Manufacturer man = await response.Content.ReadAsAsync<Manufacturer>();
+                    return man;
+                }
+                else
+                {
+                    return new Manufacturer();
                 }
             }
             catch (Exception e)
