@@ -11,7 +11,7 @@ namespace DesktopAppTrouvaille.Controllers
         private List<Customer> _customers = new List<Customer>();
         private Customer _detailCustomer = new Customer();
         private CustomerSortCriteria _customerSortCriteria;
-        private ICustomerProcessor _processor;
+        private ICustomerProcessor _processor = new CustomerProcessor();
 
         public void SetSortCriteria(CustomerSortCriteria criteria)
         {

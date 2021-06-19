@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Views.EmployeeV;
 
 namespace DesktopAppTrouvaille.Views
 {
@@ -100,7 +101,9 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowEpmloyees_Click(object sender, EventArgs e)
         {
-
+            _tabView = new EmployeeView(new EmployeeController());
+            panelTabView.Controls.Clear();
+            panelTabView.Controls.Add((UserControl)_tabView);
         }
 
        

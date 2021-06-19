@@ -48,7 +48,6 @@ namespace DesktopAppTrouvaille
                 _state = State.ConnectionError;
             }
         }
-
         public async override void UpdateData()
         {
             try
@@ -110,6 +109,7 @@ namespace DesktopAppTrouvaille
                 if (await _productProssesor.SaveNewProduct(postDTO))
                 {
                     UpdateData();
+                    LoadDetailProduct(p.GetGuid());
                     _state = State.Saved;
                 }
                 else
@@ -181,6 +181,7 @@ namespace DesktopAppTrouvaille
             if ( await _productProssesor.UpdateProduct(newP.GetGuid(), putModel))
             {
                 _state = State.Saved;
+                LoadDetailProduct(newP.GetGuid());
             }
             else
             {
@@ -201,13 +202,12 @@ namespace DesktopAppTrouvaille
         {
             FilterCriteria = filterCriteria;
         }
-
-        public async override void SelectDetailModel(IModel model)
+        public async void LoadDetailProduct(Guid guid)
         {
             try
-            { 
-                DetailProduct = await _productProssesor.LoadProduct(model.GetGuid());
-                if(DetailProduct.ManufacturerId != null)
+            {
+                DetailProduct = await _productProssesor.LoadProduct(guid);
+                if (DetailProduct.ManufacturerId != null)
                 {
                     _detailManufacturer = await _productProssesor.GetManufacturerByID((Guid)DetailProduct.ManufacturerId);
                 }
@@ -220,7 +220,11 @@ namespace DesktopAppTrouvaille
             {
                 UpdateView();
             }
-           
+        }
+
+        public override void SelectDetailModel(IModel model)
+        {
+            LoadDetailProduct(model.GetGuid());
         }
 
         public async override void Search(string searchText)

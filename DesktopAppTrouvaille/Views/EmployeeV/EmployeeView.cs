@@ -7,44 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DesktopAppTrouvaille.Views;
-using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Factories;
-using DesktopAppTrouvaille.Views.FilterV;
 
-namespace DesktopAppTrouvaille.Views
+namespace DesktopAppTrouvaille.Views.EmployeeV 
 {
-    public partial class CustomerView : BView, IView
+    public partial class EmployeeView : BView, IView
     {
-        private CustomerController _controller;
-        public CustomerView()
+        EmployeeController _controller;
+        public EmployeeView()
         {
             InitializeComponent();
-            _controller = new CustomerController();
+        }
+        public EmployeeView(EmployeeController controller)
+        {
+            InitializeComponent();
+            _controller = controller;
             Controller = _controller;
+
             Controller.AttachView(this);
             Controller.AttachView(listView);
             listView.Controller = Controller;
-            listView.Factory = new CustomerItemFactory();
-            listView.FilterView = new CustomerFiler();
+            listView.Factory = new EmployeeFactory();
+            
 
             listView.Init();
-
-            _controller.UpdateData();
-
-
         }
 
         public void UpdateView()
         {
             UpdateStatusLabel();
         }
+
         protected override IDetailView CreateDetailView(IModel model)
         {
-            CustomerDetail view = new CustomerDetail();
-           
+            EmployeeDetailView view = new EmployeeDetailView(_controller);
             return view;
+        }
+
+        protected override IDetailView CreateNewView()
+        {
+            return new NewEmployeeView(_controller);
         }
     }
 }

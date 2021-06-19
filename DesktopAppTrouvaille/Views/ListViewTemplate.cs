@@ -32,6 +32,19 @@ namespace DesktopAppTrouvaille.Views
             } }
 
         private bool _displayAddButton = true;
+
+        private bool _displayFilterView = true;
+        public bool DisplayFilterView
+        {
+            get { return _displayFilterView; }
+            set
+            {
+                _displayFilterView = value;
+                groupBox1.Visible = value;
+
+            }
+        }
+
         public bool DisplayAddButton { get { return _displayAddButton; } 
             set 
             { 

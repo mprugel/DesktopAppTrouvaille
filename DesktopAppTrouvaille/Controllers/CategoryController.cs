@@ -19,9 +19,11 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override async void UpdateData()
         {
+            _state = State.LoadData;
             try
             {
                 Categories = await _processor.LoadCategories();
+                _state = State.OK;
             }
             catch(GETException e)
             {

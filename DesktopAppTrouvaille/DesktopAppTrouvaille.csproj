@@ -71,6 +71,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\IController.cs" />
     <Compile Include="Controllers\IMainController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Exceptions\GETException.cs" />
     <Compile Include="Factories\CategoryFactory.cs" />
     <Compile Include="Factories\CustomerItemFactory.cs" />
+    <Compile Include="Factories\EmployeeFactory.cs" />
     <Compile Include="Factories\ListItemFactory.cs" />
     <Compile Include="Factories\OrderItemFactory.cs" />
     <Compile Include="Factories\OrderProductFactory.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Models\AddressViewModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\LoginResponse.cs" />
     <Compile Include="Models\Manufacturer.cs" />
@@ -142,6 +145,24 @@
     </Compile>
     <Compile Include="Views\CategoryV\NewCategoryView.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeV\EmployeeDetailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeV\EmployeeDetailView.Designer.cs">
+      <DependentUpon>EmployeeDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeV\EmployeeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeV\EmployeeView.Designer.cs">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeV\NewEmployeeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeV\NewEmployeeView.Designer.cs">
+      <DependentUpon>NewEmployeeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FilterV\CustomerFiler.cs">
       <SubType>UserControl</SubType>
@@ -280,6 +301,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerV\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeV\EmployeeDetailView.resx">
+      <DependentUpon>EmployeeDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeV\EmployeeView.resx">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeV\NewEmployeeView.resx">
+      <DependentUpon>NewEmployeeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FilterV\CustomerFiler.resx">
       <DependentUpon>CustomerFiler.cs</DependentUpon>

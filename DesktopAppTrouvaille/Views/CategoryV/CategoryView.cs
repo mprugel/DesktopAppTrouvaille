@@ -17,6 +17,8 @@ namespace DesktopAppTrouvaille.Views
             listView.Controller = Controller;
             listView.Factory = new CategoryFactory();
             listView.Init();
+
+            Controller.UpdateData();
         }
 
         public void UpdateView()

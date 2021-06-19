@@ -35,7 +35,6 @@
             this.textBoxCountry = new System.Windows.Forms.TextBox();
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxStreet = new System.Windows.Forms.TextBox();
-            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPostalCode)).BeginInit();
@@ -51,7 +50,6 @@
             this.groupBox3.Controls.Add(this.textBoxCountry);
             this.groupBox3.Controls.Add(this.textBoxCity);
             this.groupBox3.Controls.Add(this.textBoxStreet);
-            this.groupBox3.Controls.Add(this.textBoxCustomerName);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -64,7 +62,7 @@
             // 
             // numericUpDownPostalCode
             // 
-            this.numericUpDownPostalCode.Location = new System.Drawing.Point(22, 156);
+            this.numericUpDownPostalCode.Location = new System.Drawing.Point(20, 109);
             this.numericUpDownPostalCode.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -76,7 +74,7 @@
             // 
             // numericUpDownStreetNumber
             // 
-            this.numericUpDownStreetNumber.Location = new System.Drawing.Point(287, 106);
+            this.numericUpDownStreetNumber.Location = new System.Drawing.Point(285, 59);
             this.numericUpDownStreetNumber.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -88,7 +86,7 @@
             // 
             // textBoxCountry
             // 
-            this.textBoxCountry.Location = new System.Drawing.Point(22, 248);
+            this.textBoxCountry.Location = new System.Drawing.Point(20, 201);
             this.textBoxCountry.Name = "textBoxCountry";
             this.textBoxCountry.Size = new System.Drawing.Size(380, 31);
             this.textBoxCountry.TabIndex = 11;
@@ -96,7 +94,7 @@
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(22, 202);
+            this.textBoxCity.Location = new System.Drawing.Point(20, 155);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(380, 31);
             this.textBoxCity.TabIndex = 10;
@@ -104,19 +102,11 @@
             // 
             // textBoxStreet
             // 
-            this.textBoxStreet.Location = new System.Drawing.Point(22, 106);
+            this.textBoxStreet.Location = new System.Drawing.Point(20, 59);
             this.textBoxStreet.Name = "textBoxStreet";
             this.textBoxStreet.Size = new System.Drawing.Size(242, 31);
             this.textBoxStreet.TabIndex = 8;
             this.textBoxStreet.Text = "Straße";
-            // 
-            // textBoxCustomerName
-            // 
-            this.textBoxCustomerName.Location = new System.Drawing.Point(22, 49);
-            this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(380, 31);
-            this.textBoxCustomerName.TabIndex = 7;
-            this.textBoxCustomerName.Text = "Kundenname";
             // 
             // errorProvider1
             // 
@@ -144,7 +134,6 @@
         private System.Windows.Forms.TextBox textBoxCountry;
         private System.Windows.Forms.TextBox textBoxCity;
         private System.Windows.Forms.TextBox textBoxStreet;
-        private System.Windows.Forms.TextBox textBoxCustomerName;
         private System.Windows.Forms.NumericUpDown numericUpDownPostalCode;
         private System.Windows.Forms.NumericUpDown numericUpDownStreetNumber;
         private System.Windows.Forms.ErrorProvider errorProvider1;
