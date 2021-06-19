@@ -29,7 +29,7 @@ namespace DesktopAppTrouvaille.Factories
             switch(colmumnID)
             {
                 case 0:
-                    customerController.SetSortCriteria(Enums.CustomerSortCriteria.Fisrtname);
+                    customerController.SetSortCriteria(Enums.CustomerSortCriteria.Firstname);
                     break;
                 case 1:
                     customerController.SetSortCriteria(Enums.CustomerSortCriteria.Lastname);

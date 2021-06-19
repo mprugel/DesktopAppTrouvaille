@@ -11,7 +11,7 @@ namespace DesktopAppTrouvaille.Enums
 
     public enum OrderSortCriteria { Date}
 
-    public enum CustomerSortCriteria { Fisrtname, Lastname, OrderCount}
+    public enum CustomerSortCriteria { Firstname, Lastname, OrderCount}
 
     // Order of Sorting
     public enum SortingOrder { Ascending, Descending }

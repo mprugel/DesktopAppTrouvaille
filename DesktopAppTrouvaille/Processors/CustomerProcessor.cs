@@ -61,7 +61,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<List<Customer>> GetCustomers(int from, int to)
         {
-            string url = "Customers/";
+            string url = "Customer/" + from.ToString() + "/" + to.ToString();
             HttpResponseMessage response;
             try
             {
@@ -82,14 +82,34 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-        public Task<List<Customer>> SearchCustomers(int from, int to, Guid customerId, string customerEmail)
+        //TEST CUSTOMER EMAIL: @ TO %
+        public async Task<Customer> SearchCustomer(int from, int to, Guid customerId, string customerEmail)
         {
-            throw new NotImplementedException();
+            string url = "Customer/SearchQuery/" + from.ToString() + "/" + to.ToString() + "?customerId=" + customerId.ToString() + "&customerEmail=" + customerEmail;
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    Customer customer = await response.Content.ReadAsAsync<Customer>();
+
+                    return customer;
+                }
+                else
+                {
+                    return new Customer();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
 
         public async Task<bool> UpdateCustomer(Customer customer)
         {
-            string url = "Customers/" + customer.Id.ToString();
+            string url = "Customer/" + customer.Id.ToString();
             HttpResponseMessage response;
             try
             {

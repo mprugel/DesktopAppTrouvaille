@@ -61,7 +61,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<List<Order>> LoadOrders(int from, int to)
         {
-            string url = "Orders/";
+            string url = "Orders/" + from.ToString() + "/" + to.ToString();
             HttpResponseMessage response;
             try
             {
