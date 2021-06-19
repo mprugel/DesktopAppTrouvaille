@@ -1,14 +1,22 @@
 ﻿using DesktopAppTrouvaille.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Controllers
 {
     public class CustomerController : Controller
     {
+        private List<Customer> _customers = new List<Customer>();
+        private Customer _detailCustomer = new Customer();
+
+        public List<Customer> GetCustomers()
+        {
+            return _customers;
+        }
+        public Customer GetDetailCustomer()
+        {
+            return _detailCustomer;
+        }
         public override int GetCount()
         {
             throw new NotImplementedException();
@@ -32,6 +40,16 @@ namespace DesktopAppTrouvaille.Controllers
         public override void UpdateData()
         {
             throw new NotImplementedException();
+        }
+
+        public async void UpdateCustomer(Customer customer)
+        {
+            
+        }
+
+        public async void DeleteCustomer(Customer customer)
+        {
+
         }
     }
 }

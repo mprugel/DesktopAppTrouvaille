@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.numericUpDownPostalCode = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownStreetNumber = new System.Windows.Forms.NumericUpDown();
@@ -35,9 +36,11 @@
             this.textBoxCity = new System.Windows.Forms.TextBox();
             this.textBoxStreet = new System.Windows.Forms.TextBox();
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPostalCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -53,7 +56,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(427, 295);
+            this.groupBox3.Size = new System.Drawing.Size(495, 295);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Adresse";
@@ -115,17 +118,23 @@
             this.textBoxCustomerName.TabIndex = 7;
             this.textBoxCustomerName.Text = "Kundenname";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AdressView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
             this.Name = "AdressView";
-            this.Size = new System.Drawing.Size(427, 295);
+            this.Size = new System.Drawing.Size(495, 295);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPostalCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStreetNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,5 +147,6 @@
         private System.Windows.Forms.TextBox textBoxCustomerName;
         private System.Windows.Forms.NumericUpDown numericUpDownPostalCode;
         private System.Windows.Forms.NumericUpDown numericUpDownStreetNumber;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -17,10 +17,12 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class CustomerView : BView, IView
     {
+        private CustomerController _controller;
         public CustomerView()
         {
             InitializeComponent();
-            Controller = new CustomerController();
+            _controller = new CustomerController();
+            Controller = _controller;
             Controller.AttachView(this);
             Controller.AttachView(listView);
             listView.Controller = Controller;
@@ -28,6 +30,11 @@ namespace DesktopAppTrouvaille.Views
             listView.FilterView = new CustomerFiler();
 
             listView.Init();
+
+            //Test Code:
+            CustomerDetail view = new CustomerDetail(_controller);
+            panelDetailView.Controls.Add(view);
+            panelDetailView.Visible = true;
         }
 
         public void UpdateView()

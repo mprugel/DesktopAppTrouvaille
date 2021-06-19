@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Processors
 {
-    class CustomerProcessor
+    public class CustomerProcessor
     {
     }
 }

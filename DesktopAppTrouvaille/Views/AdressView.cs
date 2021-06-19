@@ -33,14 +33,45 @@ namespace DesktopAppTrouvaille.Views
         public AdressView()
         {
             InitializeComponent();
-            textBoxes.Add(textBoxCity);
-            textBoxes.Add(textBoxCountry);
-            textBoxes.Add(textBoxStreet);
-            textBoxes.Add(textBoxCustomerName);
+            textBoxCity.Validating += textBox_Validating;
+            textBoxCountry.Validating += textBox_Validating;
+            textBoxStreet.Validating += textBox_Validating;
+            textBoxCustomerName.Validating += textBox_Validating;
 
-            numericBoxes.Add(numericUpDownPostalCode);
-            numericBoxes.Add(numericUpDownStreetNumber);
+            numericUpDownPostalCode.Validating += numericUpDown_Validating;
+            numericUpDownStreetNumber.Validating += numericUpDown_Validating;
+        }
+        private void textBox_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                e.Cancel = true;
+                textBox.Focus();
+                errorProvider1.SetError(textBox, "Das Feld darf nicht leer sein!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
+        }
 
+        private void numericUpDown_Validating(object sender, CancelEventArgs e)
+        {
+            NumericUpDown updown = (NumericUpDown)sender;
+
+            if (updown.Value <= 0)
+            {
+                e.Cancel = true;
+                updown.Focus();
+                errorProvider1.SetError(updown, "Ungültige Eingabe!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(updown, "");
+            }
         }
 
         public AddressViewModel GetAddressFromView()
