@@ -34,10 +34,11 @@ namespace DesktopAppTrouvaille.Models
 
         public void SetImageData(Bitmap img)
         {
+            Bitmap resized = new Bitmap(img,new Size(300,300));
             ImageConverter converter = new ImageConverter();
 
             // Convert Picture to Byte Array and add to List:
-            ImageData =  (byte[])converter.ConvertTo(img, typeof(byte[]));
+            ImageData =  (byte[])converter.ConvertTo(resized, typeof(byte[]));
         }
     }
 }

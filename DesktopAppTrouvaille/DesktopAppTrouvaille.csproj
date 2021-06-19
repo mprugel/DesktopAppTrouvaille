@@ -104,6 +104,7 @@
     <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\PostOrderProductViewModel.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\PutProductModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Processors\CategoryPOSTDTO.cs" />
     <Compile Include="Processors\CategoryProcessor.cs" />
