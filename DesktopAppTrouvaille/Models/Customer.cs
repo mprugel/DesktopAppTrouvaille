@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Models
 {
-    public class Customer
+    public class Customer : IModel
     {
         public string Id { get; set; }
 
@@ -26,8 +26,9 @@ namespace DesktopAppTrouvaille.Models
 
         public Customer(){}
 
-
-       
-
+        public Guid GetGuid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

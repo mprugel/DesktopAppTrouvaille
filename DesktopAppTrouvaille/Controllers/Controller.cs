@@ -9,8 +9,6 @@ using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Controllers
 {
-   
-
     public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted }
 
     // This Controller Class contains Functions which are used by all specific Controllers.

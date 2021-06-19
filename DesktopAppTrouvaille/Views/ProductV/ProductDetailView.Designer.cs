@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelProductID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -254,12 +255,14 @@
             this.dataGridViewTextBoxColumn100 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn100 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.categorySelection1 = new DesktopAppTrouvaille.Views.CategoryV.CategorySelection();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -1740,6 +1743,10 @@
             this.categorySelection1.Size = new System.Drawing.Size(440, 255);
             this.categorySelection1.TabIndex = 29;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ProductDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1775,6 +1782,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2008,5 +2016,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn100;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn100;
         protected CategoryV.CategorySelection categorySelection1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

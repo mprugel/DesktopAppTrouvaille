@@ -21,7 +21,21 @@ namespace DesktopAppTrouvaille.Factories
 
         public override void SetSortCriteria(int colmumnID, IController controller)
         {
-            throw new System.NotImplementedException();
+            if(!(controller is CustomerController))
+            {
+                return;
+            }
+            CustomerController customerController = (CustomerController)controller;
+            switch(colmumnID)
+            {
+                case 0:
+                    customerController.SetSortCriteria(Enums.CustomerSortCriteria.Fisrtname);
+                    break;
+                case 1:
+                    customerController.SetSortCriteria(Enums.CustomerSortCriteria.Lastname);
+                    break;
+                
+            }
         }
     }
 }
