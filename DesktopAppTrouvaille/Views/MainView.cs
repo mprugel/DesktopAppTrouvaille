@@ -49,7 +49,11 @@ namespace DesktopAppTrouvaille.Views
             }
             else
             {
-                _tabView = new LoginView(controller);
+                LoginView view = new LoginView(controller);
+                view.Left = (ClientSize.Width - view.Width) / 2;
+                view.Top = (ClientSize.Height - view.Height) / 2;
+
+                _tabView = view;
                 panelMainMenu.Visible = false;
                 panelTabView.Controls.Clear();
                 panelTabView.Controls.Add((UserControl)_tabView);

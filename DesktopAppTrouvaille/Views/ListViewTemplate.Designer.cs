@@ -48,7 +48,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 2);
+            this.label1.Location = new System.Drawing.Point(8, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 26);
@@ -59,7 +59,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(13, 249);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(192, 28);
             this.textBox1.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(217, 249);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 28);
             this.button1.TabIndex = 2;
@@ -82,8 +82,8 @@
             this.buttonAdd.BackColor = System.Drawing.Color.Gray;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(221, 6);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdd.Location = new System.Drawing.Point(219, 9);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(142, 23);
             this.buttonAdd.TabIndex = 6;
@@ -96,7 +96,7 @@
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(13, 292);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(348, 202);
@@ -111,7 +111,7 @@
             this.buttonPrevious.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrevious.Location = new System.Drawing.Point(13, 506);
-            this.buttonPrevious.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(74, 22);
             this.buttonPrevious.TabIndex = 8;
@@ -124,7 +124,7 @@
             this.buttonNext.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.Location = new System.Drawing.Point(287, 506);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(74, 22);
             this.buttonNext.TabIndex = 9;
@@ -166,9 +166,9 @@
             // 
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(14, 60);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(345, 175);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
@@ -182,7 +182,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 35);
+            this.panel1.Size = new System.Drawing.Size(377, 40);
             this.panel1.TabIndex = 16;
             // 
             // ListViewTemplate
@@ -203,7 +203,7 @@
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ListViewTemplate";
-            this.Size = new System.Drawing.Size(377, 543);
+            this.Size = new System.Drawing.Size(377, 552);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

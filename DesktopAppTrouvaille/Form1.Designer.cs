@@ -39,7 +39,7 @@ namespace DesktopAppTrouvaille
             this.mainMenuUC1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mainMenuUC1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainMenuUC1.Location = new System.Drawing.Point(0, 0);
-            this.mainMenuUC1.Margin = new System.Windows.Forms.Padding(1);
+            this.mainMenuUC1.Margin = new System.Windows.Forms.Padding(0);
             this.mainMenuUC1.Name = "mainMenuUC1";
             this.mainMenuUC1.Size = new System.Drawing.Size(1487, 648);
             this.mainMenuUC1.TabIndex = 2;

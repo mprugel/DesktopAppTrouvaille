@@ -50,7 +50,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(92, 77);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(188, 20);
             this.textBoxEmail.TabIndex = 1;
@@ -78,7 +78,7 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(92, 121);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(188, 20);
@@ -89,7 +89,7 @@
             this.buttonLogin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Location = new System.Drawing.Point(23, 170);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(257, 27);
             this.buttonLogin.TabIndex = 5;
@@ -101,6 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
@@ -108,7 +109,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginView";
             this.Size = new System.Drawing.Size(305, 228);
             this.ResumeLayout(false);
