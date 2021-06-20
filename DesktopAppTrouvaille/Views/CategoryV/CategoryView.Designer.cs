@@ -33,12 +33,17 @@
             // listView
             // 
             this.listView.AddButtonText = "Neue Kategorie";
-            this.listView.Size = new System.Drawing.Size(770, 1248);
+            this.listView.DisplayFilterView = false;
+            this.listView.Size = new System.Drawing.Size(388, 1248);
             this.listView.Title = "Kategorien";
+            // 
+            // panelDetailView
+            // 
+            this.panelDetailView.Size = new System.Drawing.Size(1466, 0);
             // 
             // CategoryView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "CategoryView";
             this.Size = new System.Drawing.Size(1854, 1248);

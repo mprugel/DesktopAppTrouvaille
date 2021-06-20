@@ -11,6 +11,7 @@ namespace DesktopAppTrouvaille.Controllers
     {
         private CategoryProcessor _processor = new CategoryProcessor();
         public List<Category> Categories = new List<Category>();
+        private Category _detailCategory;
 
         public override int GetCount()
         {
@@ -22,6 +23,7 @@ namespace DesktopAppTrouvaille.Controllers
             _state = State.LoadData;
             try
             {
+                //_iterator.Count = _processor.GetCount();
                 Categories = await _processor.LoadCategories();
                 _state = State.OK;
             }
@@ -91,7 +93,10 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override void SelectDetailModel(IModel model)
         {
-            throw new NotImplementedException();
+            if(model != null && model is Category)
+            {
+                _detailCategory = (Category)model;
+            }
         }
 
         public override void Search(string searchText)

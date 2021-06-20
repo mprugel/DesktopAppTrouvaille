@@ -25,10 +25,14 @@ namespace DesktopAppTrouvaille.Views
             get { return _filterView; }
             set 
             {
-                _filterView = value;
-                Control view = value;
-                view.Location = new Point(10, 20);
-                groupBox1.Controls.Add(value); 
+                if(value != null && value is Filter)
+                {
+                    _filterView = value;
+                    Control view = value;
+                    view.Location = new Point(10, 20);
+                    groupBox1.Controls.Add(value); 
+                }
+                
             } }
 
         private bool _displayAddButton = true;

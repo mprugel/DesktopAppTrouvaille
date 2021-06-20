@@ -38,82 +38,113 @@
             this.buttonShowEpmloyees = new System.Windows.Forms.Button();
             this.buttonShowRatings = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.panelMainMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonShowProducts
             // 
-            this.buttonShowProducts.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonShowProducts.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonShowProducts.BackColor = System.Drawing.Color.DimGray;
+            this.buttonShowProducts.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonShowProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowProducts.Location = new System.Drawing.Point(29, 23);
+            this.buttonShowProducts.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowProducts.ForeColor = System.Drawing.Color.White;
+            this.buttonShowProducts.Location = new System.Drawing.Point(28, 0);
+            this.buttonShowProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
             this.buttonShowProducts.Name = "buttonShowProducts";
-            this.buttonShowProducts.Size = new System.Drawing.Size(489, 109);
+            this.buttonShowProducts.Size = new System.Drawing.Size(488, 108);
             this.buttonShowProducts.TabIndex = 0;
             this.buttonShowProducts.Text = "Produkte";
             this.buttonShowProducts.UseVisualStyleBackColor = false;
             this.buttonShowProducts.Click += new System.EventHandler(this.button1_Click);
+            this.buttonShowProducts.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // buttonShowOrders
             // 
-            this.buttonShowOrders.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowOrders.BackColor = System.Drawing.Color.DimGray;
+            this.buttonShowOrders.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonShowOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowOrders.Location = new System.Drawing.Point(29, 184);
+            this.buttonShowOrders.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowOrders.ForeColor = System.Drawing.Color.White;
+            this.buttonShowOrders.Location = new System.Drawing.Point(28, 132);
+            this.buttonShowOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
             this.buttonShowOrders.Name = "buttonShowOrders";
-            this.buttonShowOrders.Size = new System.Drawing.Size(489, 113);
+            this.buttonShowOrders.Size = new System.Drawing.Size(488, 112);
             this.buttonShowOrders.TabIndex = 1;
             this.buttonShowOrders.Text = "Bestellungen";
             this.buttonShowOrders.UseVisualStyleBackColor = false;
             this.buttonShowOrders.Click += new System.EventHandler(this.buttonShowOrders_Click);
+            this.buttonShowOrders.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // buttonShowCustomers
             // 
-            this.buttonShowCustomers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowCustomers.BackColor = System.Drawing.Color.DimGray;
+            this.buttonShowCustomers.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonShowCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowCustomers.Location = new System.Drawing.Point(29, 323);
+            this.buttonShowCustomers.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowCustomers.ForeColor = System.Drawing.Color.White;
+            this.buttonShowCustomers.Location = new System.Drawing.Point(28, 268);
+            this.buttonShowCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
             this.buttonShowCustomers.Name = "buttonShowCustomers";
-            this.buttonShowCustomers.Size = new System.Drawing.Size(489, 114);
+            this.buttonShowCustomers.Size = new System.Drawing.Size(488, 114);
             this.buttonShowCustomers.TabIndex = 2;
             this.buttonShowCustomers.Text = "Kunden";
             this.buttonShowCustomers.UseVisualStyleBackColor = false;
             this.buttonShowCustomers.Click += new System.EventHandler(this.buttonShowCustomers_Click);
+            this.buttonShowCustomers.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // buttonShowStatistics
             // 
-            this.buttonShowStatistics.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowStatistics.BackColor = System.Drawing.Color.DimGray;
+            this.buttonShowStatistics.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonShowStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowStatistics.Location = new System.Drawing.Point(29, 747);
+            this.buttonShowStatistics.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowStatistics.ForeColor = System.Drawing.Color.White;
+            this.buttonShowStatistics.Location = new System.Drawing.Point(28, 686);
+            this.buttonShowStatistics.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
             this.buttonShowStatistics.Name = "buttonShowStatistics";
-            this.buttonShowStatistics.Size = new System.Drawing.Size(489, 119);
+            this.buttonShowStatistics.Size = new System.Drawing.Size(488, 120);
             this.buttonShowStatistics.TabIndex = 3;
             this.buttonShowStatistics.Text = "Statistiken";
             this.buttonShowStatistics.UseVisualStyleBackColor = false;
+            this.buttonShowStatistics.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // panelTabView
             // 
             this.panelTabView.AutoSize = true;
-            this.panelTabView.BackColor = System.Drawing.Color.White;
-            this.panelTabView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelTabView.Location = new System.Drawing.Point(548, 0);
+            this.panelTabView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelTabView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelTabView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTabView.Location = new System.Drawing.Point(560, 84);
+            this.panelTabView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTabView.Name = "panelTabView";
-            this.panelTabView.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.panelTabView.Size = new System.Drawing.Size(20, 1249);
+            this.panelTabView.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.panelTabView.Size = new System.Drawing.Size(1604, 1282);
             this.panelTabView.TabIndex = 4;
             // 
             // buttonShowCategories
             // 
-            this.buttonShowCategories.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowCategories.BackColor = System.Drawing.Color.DimGray;
+            this.buttonShowCategories.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonShowCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowCategories.Location = new System.Drawing.Point(29, 467);
+            this.buttonShowCategories.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowCategories.ForeColor = System.Drawing.Color.White;
+            this.buttonShowCategories.Location = new System.Drawing.Point(28, 406);
+            this.buttonShowCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
             this.buttonShowCategories.Name = "buttonShowCategories";
-            this.buttonShowCategories.Size = new System.Drawing.Size(489, 111);
+            this.buttonShowCategories.Size = new System.Drawing.Size(488, 112);
             this.buttonShowCategories.TabIndex = 5;
             this.buttonShowCategories.Text = "Kategorien";
             this.buttonShowCategories.UseVisualStyleBackColor = false;
             this.buttonShowCategories.Click += new System.EventHandler(this.buttonShowCategories_Click);
+            this.buttonShowCategories.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // panelMainMenu
             // 
+            this.panelMainMenu.AutoSize = true;
+            this.panelMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelMainMenu.Controls.Add(this.buttonShowEpmloyees);
             this.panelMainMenu.Controls.Add(this.buttonShowRatings);
             this.panelMainMenu.Controls.Add(this.buttonLogout);
@@ -123,58 +154,103 @@
             this.panelMainMenu.Controls.Add(this.buttonShowOrders);
             this.panelMainMenu.Controls.Add(this.buttonShowCustomers);
             this.panelMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMainMenu.Location = new System.Drawing.Point(0, 84);
+            this.panelMainMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMainMenu.Name = "panelMainMenu";
-            this.panelMainMenu.Size = new System.Drawing.Size(548, 1249);
+            this.panelMainMenu.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
+            this.panelMainMenu.Size = new System.Drawing.Size(560, 1282);
             this.panelMainMenu.TabIndex = 7;
             // 
             // buttonShowEpmloyees
             // 
-            this.buttonShowEpmloyees.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonShowEpmloyees.BackColor = System.Drawing.Color.DimGray;
+            this.buttonShowEpmloyees.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonShowEpmloyees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowEpmloyees.Location = new System.Drawing.Point(29, 890);
+            this.buttonShowEpmloyees.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowEpmloyees.ForeColor = System.Drawing.Color.White;
+            this.buttonShowEpmloyees.Location = new System.Drawing.Point(28, 830);
+            this.buttonShowEpmloyees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
             this.buttonShowEpmloyees.Name = "buttonShowEpmloyees";
-            this.buttonShowEpmloyees.Size = new System.Drawing.Size(489, 116);
+            this.buttonShowEpmloyees.Size = new System.Drawing.Size(488, 116);
             this.buttonShowEpmloyees.TabIndex = 8;
             this.buttonShowEpmloyees.Text = "Mitarbeiter";
             this.buttonShowEpmloyees.UseVisualStyleBackColor = false;
             this.buttonShowEpmloyees.Click += new System.EventHandler(this.buttonShowEpmloyees_Click);
+            this.buttonShowEpmloyees.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // buttonShowRatings
             // 
-            this.buttonShowRatings.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonShowRatings.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.buttonShowRatings.BackColor = System.Drawing.Color.DimGray;
+            this.buttonShowRatings.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonShowRatings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowRatings.Location = new System.Drawing.Point(29, 606);
+            this.buttonShowRatings.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShowRatings.ForeColor = System.Drawing.Color.White;
+            this.buttonShowRatings.Location = new System.Drawing.Point(28, 542);
+            this.buttonShowRatings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 20);
             this.buttonShowRatings.Name = "buttonShowRatings";
-            this.buttonShowRatings.Size = new System.Drawing.Size(489, 119);
+            this.buttonShowRatings.Size = new System.Drawing.Size(488, 120);
             this.buttonShowRatings.TabIndex = 7;
             this.buttonShowRatings.Text = "Bewertungen";
             this.buttonShowRatings.UseVisualStyleBackColor = false;
             this.buttonShowRatings.Click += new System.EventHandler(this.buttonShowRatings_Click);
+            this.buttonShowRatings.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // buttonLogout
             // 
-            this.buttonLogout.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonLogout.BackColor = System.Drawing.Color.DimGray;
+            this.buttonLogout.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Location = new System.Drawing.Point(29, 1114);
+            this.buttonLogout.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.ForeColor = System.Drawing.Color.White;
+            this.buttonLogout.Location = new System.Drawing.Point(28, 1152);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(489, 104);
+            this.buttonLogout.Size = new System.Drawing.Size(488, 104);
             this.buttonLogout.TabIndex = 6;
             this.buttonLogout.Text = "Ausloggen";
             this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelStatus);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2164, 84);
+            this.panel1.TabIndex = 0;
+            this.panel1.Visible = false;
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.ForeColor = System.Drawing.Color.White;
+            this.labelStatus.Location = new System.Drawing.Point(540, 22);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(108, 37);
+            this.labelStatus.TabIndex = 0;
+            this.labelStatus.Text = "Status";
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.White;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panelTabView);
             this.Controls.Add(this.panelMainMenu);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainView";
-            this.Size = new System.Drawing.Size(2140, 1249);
+            this.Size = new System.Drawing.Size(2164, 1366);
             this.panelMainMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +268,7 @@
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonShowEpmloyees;
         private System.Windows.Forms.Button buttonShowRatings;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelStatus;
     }
 }

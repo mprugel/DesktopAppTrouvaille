@@ -39,9 +39,10 @@
             // 
             this.labelTitel.AutoSize = true;
             this.labelTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitel.Location = new System.Drawing.Point(3, 0);
+            this.labelTitel.Location = new System.Drawing.Point(2, 0);
+            this.labelTitel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitel.Name = "labelTitel";
-            this.labelTitel.Size = new System.Drawing.Size(442, 51);
+            this.labelTitel.Size = new System.Drawing.Size(233, 26);
             this.labelTitel.TabIndex = 0;
             this.labelTitel.Text = "Kategorie bearbeiten";
             // 
@@ -49,18 +50,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 120);
+            this.label1.Location = new System.Drawing.Point(6, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 25);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Name:";
             // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonDelete.Location = new System.Drawing.Point(17, 986);
+            this.buttonDelete.Location = new System.Drawing.Point(8, 513);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(214, 63);
+            this.buttonDelete.Size = new System.Drawing.Size(107, 33);
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Löschen";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -68,17 +71,19 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(129, 117);
+            this.textBoxName.Location = new System.Drawing.Point(64, 61);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(210, 31);
+            this.textBoxName.Size = new System.Drawing.Size(107, 20);
             this.textBoxName.TabIndex = 4;
             // 
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonSave.Location = new System.Drawing.Point(552, 986);
+            this.buttonSave.Location = new System.Drawing.Point(276, 513);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(379, 63);
+            this.buttonSave.Size = new System.Drawing.Size(190, 33);
             this.buttonSave.TabIndex = 5;
             this.buttonSave.Text = "Änderungen speichern";
             this.buttonSave.UseVisualStyleBackColor = false;
@@ -86,16 +91,18 @@
             // 
             // CategoryDetailView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CategoryDetailView";
-            this.Size = new System.Drawing.Size(985, 1089);
+            this.Size = new System.Drawing.Size(492, 566);
             this.ResumeLayout(false);
             this.PerformLayout();
 

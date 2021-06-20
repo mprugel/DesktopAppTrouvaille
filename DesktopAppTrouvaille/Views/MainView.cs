@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Drawing;
 using System.Windows.Forms;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
@@ -8,17 +8,27 @@ using DesktopAppTrouvaille.Views.EmployeeV;
 
 namespace DesktopAppTrouvaille.Views
 {
+
     public partial class MainView : UserControl, IMainView
     {
         private IView _tabView;
+
+        private Color _buttonActiveColor = Color.FromArgb(160, 212, 250);
+        private Color _buttonForeColorActive = Color.FromArgb(0, 0, 0);
+        private Color _buttonColor;
+
         private MainController controller;
         private List<Product> _products = new List<Product>();
+
         public MainView()
         {
             InitializeComponent();
             controller = new MainController(this);
             UpdateView();
+            _buttonColor = buttonLogout.BackColor;
         }
+
+
 
         public void ShowProductView()
         {
@@ -53,18 +63,23 @@ namespace DesktopAppTrouvaille.Views
         private void button1_Click(object sender, EventArgs e)
         {
             ProductView view = new ProductView();
+            view.Dock = DockStyle.Fill;
            
             _tabView = view;
             _tabView.UpdateView();
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
+            buttonShowProducts.BackColor = _buttonActiveColor;
+            buttonShowProducts.ForeColor = _buttonForeColorActive;
 
         }
 
         private void buttonShowOrders_Click(object sender, EventArgs e)
         {
+            buttonShowOrders.BackColor = _buttonActiveColor;
+            buttonShowOrders.ForeColor = _buttonForeColorActive; 
             OrderViewUC orderView = new OrderViewUC(new OrderController(controller));
- 
+            orderView.Dock = DockStyle.Fill;
             _tabView = orderView;
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
@@ -72,13 +87,21 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowCategories_Click(object sender, EventArgs e)
         {
-            _tabView = new CategoryView();
+            buttonShowCategories.BackColor = _buttonActiveColor;
+            buttonShowCategories.ForeColor = _buttonForeColorActive;
+            CategoryView view = new CategoryView();
+            view.Dock = DockStyle.Fill;
+            _tabView = view;
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }
 
         private void buttonShowCustomers_Click(object sender, EventArgs e)
         {
+            buttonShowCustomers.BackColor = _buttonActiveColor;
+            buttonShowCustomers.ForeColor = _buttonForeColorActive;
+            CustomerView view = new CustomerView();
+            view.Dock = DockStyle.Fill;
             _tabView = new CustomerView();
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
@@ -101,11 +124,20 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowEpmloyees_Click(object sender, EventArgs e)
         {
-            _tabView = new EmployeeView(new EmployeeController());
+            buttonShowEpmloyees.BackColor = _buttonActiveColor;
+            buttonShowEpmloyees.ForeColor = _buttonForeColorActive;
+            EmployeeView view = new EmployeeView(new EmployeeController());
+            view.Dock = DockStyle.Fill;
+            _tabView = view;
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }
 
-       
+        private void buttonShowProducts_Leave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = _buttonColor;
+            btn.ForeColor = Color.White;
+        }
     }
 }

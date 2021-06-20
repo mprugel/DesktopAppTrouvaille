@@ -36,11 +36,12 @@
             // panelDetailView
             // 
             this.panelDetailView.AutoSize = true;
-            this.panelDetailView.BackColor = System.Drawing.Color.White;
-            this.panelDetailView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDetailView.Location = new System.Drawing.Point(770, 0);
+            this.panelDetailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelDetailView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelDetailView.Location = new System.Drawing.Point(377, 0);
+            this.panelDetailView.Margin = new System.Windows.Forms.Padding(50, 2, 2, 2);
             this.panelDetailView.Name = "panelDetailView";
-            this.panelDetailView.Size = new System.Drawing.Size(1507, 0);
+            this.panelDetailView.Size = new System.Drawing.Size(0, 639);
             this.panelDetailView.TabIndex = 1;
             // 
             // labelStatus
@@ -49,38 +50,42 @@
             this.labelStatus.BackColor = System.Drawing.Color.White;
             this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.ForeColor = System.Drawing.Color.Black;
-            this.labelStatus.Location = new System.Drawing.Point(24, 1223);
+            this.labelStatus.Location = new System.Drawing.Point(12, 612);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(80, 25);
+            this.labelStatus.Size = new System.Drawing.Size(43, 13);
             this.labelStatus.TabIndex = 2;
             this.labelStatus.Text = "Online";
             // 
-            // listViewTemplate1
+            // listView
             // 
             this.listView.AddButtonText = "Neues Produkt";
             this.listView.AutoSize = true;
             this.listView.BackColor = System.Drawing.Color.White;
             this.listView.DisplayAddButton = true;
+            this.listView.DisplayFilterView = true;
             this.listView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listView.FilterView = null;
             this.listView.ForeColor = System.Drawing.Color.Black;
             this.listView.Location = new System.Drawing.Point(0, 0);
-            this.listView.Name = "listViewTemplate1";
-            this.listView.Padding = new System.Windows.Forms.Padding(0, 0, 50, 0);
-            this.listView.Size = new System.Drawing.Size(770, 1309);
+            this.listView.Margin = new System.Windows.Forms.Padding(20);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(377, 639);
             this.listView.TabIndex = 0;
             this.listView.Title = "Produkte";
             // 
-            // ProductView
+            // BView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.panelDetailView);
             this.Controls.Add(this.listView);
-            this.Name = "ProductView";
-            this.Size = new System.Drawing.Size(2277, 1309);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "BView";
+            this.Size = new System.Drawing.Size(1138, 639);
             this.ResumeLayout(false);
             this.PerformLayout();
 

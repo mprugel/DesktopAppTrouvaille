@@ -272,9 +272,10 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(48, 20);
+            this.labelTitle.Location = new System.Drawing.Point(24, 10);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(463, 55);
+            this.labelTitle.Size = new System.Drawing.Size(243, 29);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Produktbearbeitung";
             this.labelTitle.Click += new System.EventHandler(this.label1_Click);
@@ -282,9 +283,10 @@
             // labelProductID
             // 
             this.labelProductID.AutoSize = true;
-            this.labelProductID.Location = new System.Drawing.Point(532, 44);
+            this.labelProductID.Location = new System.Drawing.Point(302, 22);
+            this.labelProductID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProductID.Name = "labelProductID";
-            this.labelProductID.Size = new System.Drawing.Size(60, 25);
+            this.labelProductID.Size = new System.Drawing.Size(31, 13);
             this.labelProductID.TabIndex = 2;
             this.labelProductID.Text = "1045";
             // 
@@ -292,23 +294,25 @@
             // 
             this.numericUpDownInStock.BackColor = System.Drawing.Color.White;
             this.numericUpDownInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownInStock.Location = new System.Drawing.Point(311, 180);
+            this.numericUpDownInStock.Location = new System.Drawing.Point(156, 90);
+            this.numericUpDownInStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownInStock.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numericUpDownInStock.Name = "numericUpDownInStock";
-            this.numericUpDownInStock.Size = new System.Drawing.Size(169, 31);
+            this.numericUpDownInStock.Size = new System.Drawing.Size(84, 20);
             this.numericUpDownInStock.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(53, 186);
+            this.label3.Location = new System.Drawing.Point(26, 92);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 25);
+            this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Lagerbestand";
             // 
@@ -317,18 +321,20 @@
             this.numericUpDownPrice.BackColor = System.Drawing.Color.White;
             this.numericUpDownPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownPrice.DecimalPlaces = 2;
-            this.numericUpDownPrice.Location = new System.Drawing.Point(311, 228);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(156, 119);
+            this.numericUpDownPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownPrice.Name = "numericUpDownPrice";
-            this.numericUpDownPrice.Size = new System.Drawing.Size(169, 31);
+            this.numericUpDownPrice.Size = new System.Drawing.Size(84, 20);
             this.numericUpDownPrice.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(53, 230);
+            this.label4.Location = new System.Drawing.Point(26, 120);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 25);
+            this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Preis in €";
             // 
@@ -336,18 +342,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(53, 372);
+            this.label5.Location = new System.Drawing.Point(26, 193);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 25);
+            this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Beschreibung";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(40, 21);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(494, 315);
+            this.pictureBox1.Size = new System.Drawing.Size(247, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -356,9 +364,10 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(58, 426);
+            this.richTextBox1.Location = new System.Drawing.Point(29, 222);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(463, 255);
+            this.richTextBox1.Size = new System.Drawing.Size(234, 182);
             this.richTextBox1.TabIndex = 11;
             this.richTextBox1.Text = "Geben Sie hier eine Beschreibung des Produktes ein...";
             // 
@@ -366,9 +375,10 @@
             // 
             this.buttonPicturePrevious.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonPicturePrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPicturePrevious.Location = new System.Drawing.Point(24, 40);
+            this.buttonPicturePrevious.Location = new System.Drawing.Point(12, 21);
+            this.buttonPicturePrevious.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPicturePrevious.Name = "buttonPicturePrevious";
-            this.buttonPicturePrevious.Size = new System.Drawing.Size(34, 315);
+            this.buttonPicturePrevious.Size = new System.Drawing.Size(17, 164);
             this.buttonPicturePrevious.TabIndex = 14;
             this.buttonPicturePrevious.Text = "<";
             this.buttonPicturePrevious.UseVisualStyleBackColor = false;
@@ -378,9 +388,10 @@
             // 
             this.buttonPictureNext.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonPictureNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPictureNext.Location = new System.Drawing.Point(594, 40);
+            this.buttonPictureNext.Location = new System.Drawing.Point(297, 21);
+            this.buttonPictureNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonPictureNext.Name = "buttonPictureNext";
-            this.buttonPictureNext.Size = new System.Drawing.Size(35, 315);
+            this.buttonPictureNext.Size = new System.Drawing.Size(18, 164);
             this.buttonPictureNext.TabIndex = 15;
             this.buttonPictureNext.Text = ">";
             this.buttonPictureNext.UseVisualStyleBackColor = false;
@@ -392,9 +403,10 @@
             this.buttonDeletePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeletePicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeletePicture.ForeColor = System.Drawing.Color.Red;
-            this.buttonDeletePicture.Location = new System.Drawing.Point(765, 30);
+            this.buttonDeletePicture.Location = new System.Drawing.Point(382, 16);
+            this.buttonDeletePicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDeletePicture.Name = "buttonDeletePicture";
-            this.buttonDeletePicture.Size = new System.Drawing.Size(167, 75);
+            this.buttonDeletePicture.Size = new System.Drawing.Size(84, 39);
             this.buttonDeletePicture.TabIndex = 16;
             this.buttonDeletePicture.Text = "Löschen";
             this.buttonDeletePicture.UseVisualStyleBackColor = false;
@@ -404,9 +416,10 @@
             // 
             this.buttonUploadPicture.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonUploadPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUploadPicture.Location = new System.Drawing.Point(765, 131);
+            this.buttonUploadPicture.Location = new System.Drawing.Point(382, 68);
+            this.buttonUploadPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUploadPicture.Name = "buttonUploadPicture";
-            this.buttonUploadPicture.Size = new System.Drawing.Size(167, 81);
+            this.buttonUploadPicture.Size = new System.Drawing.Size(84, 42);
             this.buttonUploadPicture.TabIndex = 17;
             this.buttonUploadPicture.Text = "Hochladen";
             this.buttonUploadPicture.UseVisualStyleBackColor = false;
@@ -416,9 +429,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(53, 116);
+            this.label6.Location = new System.Drawing.Point(26, 60);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 25);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 18;
             this.label6.Text = "Name:";
             // 
@@ -426,18 +440,20 @@
             // 
             this.textBoxName.BackColor = System.Drawing.Color.White;
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxName.Location = new System.Drawing.Point(311, 116);
+            this.textBoxName.Location = new System.Drawing.Point(157, 58);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(728, 31);
+            this.textBoxName.Size = new System.Drawing.Size(365, 20);
             this.textBoxName.TabIndex = 19;
             // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Location = new System.Drawing.Point(58, 1130);
+            this.buttonDelete.Location = new System.Drawing.Point(29, 632);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(139, 48);
+            this.buttonDelete.Size = new System.Drawing.Size(70, 25);
             this.buttonDelete.TabIndex = 12;
             this.buttonDelete.Text = "Löschen";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -447,9 +463,10 @@
             // 
             this.buttonSave.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Location = new System.Drawing.Point(755, 1130);
+            this.buttonSave.Location = new System.Drawing.Point(378, 632);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(284, 48);
+            this.buttonSave.Size = new System.Drawing.Size(142, 25);
             this.buttonSave.TabIndex = 13;
             this.buttonSave.Text = "Änderungen speichern";
             this.buttonSave.UseVisualStyleBackColor = false;
@@ -460,18 +477,20 @@
             this.labelMessage.AutoSize = true;
             this.labelMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelMessage.Location = new System.Drawing.Point(306, 1139);
+            this.labelMessage.Location = new System.Drawing.Point(153, 636);
+            this.labelMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(0, 29);
+            this.labelMessage.Size = new System.Drawing.Size(0, 15);
             this.labelMessage.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(558, 372);
+            this.label1.Location = new System.Drawing.Point(279, 193);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 25);
+            this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "Kategorien";
             // 
@@ -628,9 +647,11 @@
             this.groupBox1.Controls.Add(this.buttonUploadPicture);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(58, 716);
+            this.groupBox1.Location = new System.Drawing.Point(29, 416);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(981, 387);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(490, 201);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bildverwaltung";
@@ -1671,9 +1692,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(53, 288);
+            this.label7.Location = new System.Drawing.Point(26, 149);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 25);
+            this.label7.Size = new System.Drawing.Size(94, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "Mehrwertsteuer";
             // 
@@ -1681,27 +1703,30 @@
             // 
             this.numericUpDownTax.BackColor = System.Drawing.Color.White;
             this.numericUpDownTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownTax.Location = new System.Drawing.Point(311, 282);
+            this.numericUpDownTax.Location = new System.Drawing.Point(156, 147);
+            this.numericUpDownTax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownTax.Name = "numericUpDownTax";
-            this.numericUpDownTax.Size = new System.Drawing.Size(169, 31);
+            this.numericUpDownTax.Size = new System.Drawing.Size(84, 20);
             this.numericUpDownTax.TabIndex = 26;
             // 
             // numericUpDownMinStock
             // 
             this.numericUpDownMinStock.BackColor = System.Drawing.Color.White;
             this.numericUpDownMinStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownMinStock.Location = new System.Drawing.Point(863, 180);
+            this.numericUpDownMinStock.Location = new System.Drawing.Point(432, 90);
+            this.numericUpDownMinStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownMinStock.Name = "numericUpDownMinStock";
-            this.numericUpDownMinStock.Size = new System.Drawing.Size(176, 31);
+            this.numericUpDownMinStock.Size = new System.Drawing.Size(90, 20);
             this.numericUpDownMinStock.TabIndex = 27;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(558, 182);
+            this.label8.Location = new System.Drawing.Point(279, 92);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(232, 25);
+            this.label8.Size = new System.Drawing.Size(124, 13);
             this.label8.TabIndex = 28;
             this.label8.Text = "Mindestlagerbestand";
             // 
@@ -1731,9 +1756,11 @@
             // 
             // categorySelection1
             // 
-            this.categorySelection1.Location = new System.Drawing.Point(563, 426);
+            this.categorySelection1.AutoScroll = true;
+            this.categorySelection1.Location = new System.Drawing.Point(282, 222);
+            this.categorySelection1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.categorySelection1.Name = "categorySelection1";
-            this.categorySelection1.Size = new System.Drawing.Size(440, 255);
+            this.categorySelection1.Size = new System.Drawing.Size(240, 182);
             this.categorySelection1.TabIndex = 29;
             // 
             // errorProvider1
@@ -1744,9 +1771,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(558, 230);
+            this.label2.Location = new System.Drawing.Point(279, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 25);
+            this.label2.Size = new System.Drawing.Size(100, 13);
             this.label2.TabIndex = 30;
             this.label2.Text = "Hersteller E-Mail";
             // 
@@ -1754,29 +1782,32 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(558, 284);
+            this.label9.Location = new System.Drawing.Point(279, 148);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 25);
+            this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 31;
             this.label9.Text = "Hersteller ID";
             // 
             // textBoxManufacturer
             // 
-            this.textBoxManufacturer.Location = new System.Drawing.Point(863, 227);
+            this.textBoxManufacturer.Location = new System.Drawing.Point(432, 118);
+            this.textBoxManufacturer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxManufacturer.Name = "textBoxManufacturer";
-            this.textBoxManufacturer.Size = new System.Drawing.Size(176, 31);
+            this.textBoxManufacturer.Size = new System.Drawing.Size(90, 20);
             this.textBoxManufacturer.TabIndex = 32;
             // 
             // textBoxManufactureEmail
             // 
-            this.textBoxManufactureEmail.Location = new System.Drawing.Point(863, 281);
+            this.textBoxManufactureEmail.Location = new System.Drawing.Point(432, 146);
+            this.textBoxManufactureEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxManufactureEmail.Name = "textBoxManufactureEmail";
-            this.textBoxManufactureEmail.Size = new System.Drawing.Size(176, 31);
+            this.textBoxManufactureEmail.Size = new System.Drawing.Size(90, 20);
             this.textBoxManufactureEmail.TabIndex = 33;
             // 
             // ProductDetailView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
@@ -1804,8 +1835,10 @@
             this.Controls.Add(this.numericUpDownInStock);
             this.Controls.Add(this.labelProductID);
             this.Controls.Add(this.labelTitle);
+            this.Location = new System.Drawing.Point(50, 0);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ProductDetailView";
-            this.Size = new System.Drawing.Size(1105, 1295);
+            this.Size = new System.Drawing.Size(552, 673);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

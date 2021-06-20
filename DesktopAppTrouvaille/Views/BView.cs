@@ -55,7 +55,9 @@ namespace DesktopAppTrouvaille.Views
             panelDetailView.Controls.Clear();
             detailView = CreateNewView();
             detailView.SetController(Controller);
-            panelDetailView.Controls.Add((UserControl)detailView);
+            UserControl control = (UserControl)detailView;
+            control.Dock = DockStyle.Fill;
+            panelDetailView.Controls.Add(control);
             panelDetailView.Visible = true;
         }
         protected virtual IDetailView CreateNewView()
@@ -81,7 +83,9 @@ namespace DesktopAppTrouvaille.Views
                 Controller.AttachView(detailView);
                 Controller.SelectDetailModel((IModel)item.Tag);
 
-                panelDetailView.Controls.Add((UserControl)detailView);
+                UserControl control = (UserControl)detailView;
+                control.Dock = DockStyle.Fill;
+                panelDetailView.Controls.Add(control);
                 //detailView.UpdateView();
                 panelDetailView.Visible = true;
             }
