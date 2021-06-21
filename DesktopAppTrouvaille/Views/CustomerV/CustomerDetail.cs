@@ -45,7 +45,7 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
-            public void SetController(IController controller)
+        public void SetController(IController controller)
         {
             Controller = (CustomerController)controller;
         }

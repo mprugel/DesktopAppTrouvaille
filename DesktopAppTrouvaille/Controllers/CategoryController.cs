@@ -99,6 +99,11 @@ namespace DesktopAppTrouvaille.Controllers
             }
         }
 
+        public Category GetDetailCategory()
+        {
+            return _detailCategory;
+        }
+
         public override void Search(string searchText)
         {
             throw new NotImplementedException();

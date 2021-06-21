@@ -50,16 +50,19 @@ namespace DesktopAppTrouvaille.Controllers
             if(model is Customer && model != null)
             {
                 _detailCustomer = (Customer)model;
+                UpdateView();
             }
         }
 
         public async override void UpdateData()
         {
+            _state = State.LoadData;
+            UpdateView();
             try
             {
                 _iterator.Count = await _processor.GetCount();
-
                 _customers = await _processor.GetCustomers(_iterator.From, _iterator.To);
+                _state = State.OK;
             }
             catch (Exception e)
             {

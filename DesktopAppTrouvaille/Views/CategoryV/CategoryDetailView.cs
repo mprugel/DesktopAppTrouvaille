@@ -38,7 +38,8 @@ namespace DesktopAppTrouvaille.Views
 
         public void UpdateView()
         {
-            throw new NotImplementedException();
+            Category = Controller.GetDetailCategory();
+            textBoxName.Text = Category.Name;
         }
 
         public void SetModel(IModel model)

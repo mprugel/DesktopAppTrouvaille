@@ -37,7 +37,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<int> GetCount()
         {
-            string url = "auth/Count";
+            string url = "auth/Customer/Count";
             HttpResponseMessage response;
             try
             {
@@ -61,7 +61,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<List<Customer>> GetCustomers(int from, int to)
         {
-            string url = "auth/Customer/";
+            string url = "auth/Customer/" + from + "/" + to;
             HttpResponseMessage response;
             try
             {
@@ -107,9 +107,9 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-        public async Task<bool> UpdateCustomer(Customer customer)
+        public async Task<bool> UpdateCustomer(PutCustomerModel customer, Guid guid)
         {
-            string url = "auth/Customer/" + customer.Id.ToString();
+            string url = "auth/Customer/" + guid.ToString();
             HttpResponseMessage response;
             try
             {

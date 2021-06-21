@@ -8,7 +8,6 @@ using DesktopAppTrouvaille.Views.EmployeeV;
 
 namespace DesktopAppTrouvaille.Views
 {
-   
     public partial class MainView : UserControl, IMainView
     {
        
@@ -44,8 +43,6 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
-
-
         public void ShowProductView()
         {
             ProductDetailView view = new ProductDetailView();
@@ -55,13 +52,13 @@ namespace DesktopAppTrouvaille.Views
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }
+
         public void UpdateView() 
         {
             if(MainController.LoggedIn)
             {
                 panelMainMenu.Visible = true;
                 panelTabView.Controls.Clear();
-
             }
             else
             {
@@ -127,7 +124,7 @@ namespace DesktopAppTrouvaille.Views
 
             buttonShowCustomers.BackColor = _buttonActiveColor;
             buttonShowCustomers.ForeColor = _buttonForeColorActive;
-            CustomerView view = new CustomerView();
+            CustomerView view = new CustomerView(new CustomerController(controller));
             view.Dock = DockStyle.Fill;
             _tabView = view;
             panelTabView.Controls.Clear();
@@ -169,8 +166,6 @@ namespace DesktopAppTrouvaille.Views
 
         public void ShowOrderView()
         {
-            
-
             _tabView = new OrderViewUC(controller.orderController);
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);

@@ -28,7 +28,7 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
         }
 
-            public void UpdateView()
+        public void UpdateView()
         {
             UpdateStatusLabel();
         }
