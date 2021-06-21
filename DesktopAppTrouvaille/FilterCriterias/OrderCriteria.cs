@@ -11,7 +11,7 @@ namespace DesktopAppTrouvaille.FilterCriterias
     {
         public DateTime OrderDateFrom;
         public DateTime OrderDateTo;
-
+        public Guid CustomerGuid;
         public OrderState OrderState;
         
     }

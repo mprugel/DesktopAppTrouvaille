@@ -34,19 +34,19 @@
             // 
             this.listView.DisplayAddButton = false;
             this.listView.DisplayFilterView = false;
-            this.listView.Size = new System.Drawing.Size(377, 681);
+            this.listView.Size = new System.Drawing.Size(377, 683);
             this.listView.Title = "Kunden";
             // 
             // panelDetailView
             // 
-            this.panelDetailView.Size = new System.Drawing.Size(0, 681);
+            this.panelDetailView.Size = new System.Drawing.Size(0, 683);
             // 
             // CustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "CustomerView";
-            this.Size = new System.Drawing.Size(1960, 681);
+            this.Size = new System.Drawing.Size(1960, 683);
             this.ResumeLayout(false);
             this.PerformLayout();
 

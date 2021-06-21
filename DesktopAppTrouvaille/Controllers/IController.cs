@@ -1,5 +1,6 @@
 ﻿using DesktopAppTrouvaille.Enums;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,11 @@ namespace DesktopAppTrouvaille.Controllers
     {
         void Next();
 
+        void AttachView(IView view);
+
+
+        void DetachView(IView view);
+       
         void ItemSelected(IModel model);
 
         IModel GetSelectedModel();

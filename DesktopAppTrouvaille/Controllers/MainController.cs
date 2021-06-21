@@ -3,6 +3,7 @@ using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille;
 using DesktopAppTrouvaille.Views;
 using DesktopAppTrouvaille.FilterCriterias;
+using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille
 {
@@ -43,6 +44,7 @@ namespace DesktopAppTrouvaille
         {
             productController = new ProductController();
             _view.ShowProductView();
+           
             productController.LoadCategories();
             productController.SelectDetailModel(p);
 
@@ -52,7 +54,10 @@ namespace DesktopAppTrouvaille
         {
             orderController = new OrderController(this);
             _view.ShowOrderView();
-           //TODO send Search...
+            OrderCriteria criteria = new OrderCriteria();
+            criteria.CustomerGuid = customer.GetGuid();
+            orderController.SetFilterCriteria(criteria);
+            orderController.Search("");
         }
 
     }

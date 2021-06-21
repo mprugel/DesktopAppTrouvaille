@@ -48,9 +48,12 @@ namespace DesktopAppTrouvaille.Views
             ProductDetailView view = new ProductDetailView();
             view.Controller = controller.productController;
             controller.productController.AttachView(view);
-            _tabView = view;
-            panelTabView.Controls.Clear();
-            panelTabView.Controls.Add((UserControl)_tabView);
+            //_tabView = view;
+            //panelTabView.Controls.Clear();
+            //panelTabView.Controls.Add((UserControl)_tabView);
+            Form form = new Form();
+            form.Controls.Add(view);
+            form.Show();
         }
 
         public void UpdateView() 

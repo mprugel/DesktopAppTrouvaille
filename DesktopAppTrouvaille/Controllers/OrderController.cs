@@ -1,4 +1,5 @@
 ﻿using APIconnector.Processors;
+using DesktopAppTrouvaille.Enums;
 using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
@@ -17,35 +18,20 @@ namespace DesktopAppTrouvaille.Controllers
         public List<Order> Orders = new List<Order>();
         private IOrderProcessor _processor = new OrderProcessor();
         private ProductProcessor _productProcessor = new ProductProcessor();
-
+        private OrderSortCriteria _sortCriteria;
         private OrderCriteria _filterCriteria;
+
+        private List<Product> _products = new List<Product>();
 
         public OrderController(MainController mainController)
         {
             MainCont = mainController;
         }
 
-        public async Task<List<Product>> GetProductsInOrder()
+        public List<Product> GetProductsInOrder()
         {
-            List<Product> products = new List<Product>();
-            List<Guid> guids = new List<Guid>();
-            if(DetailOrder.Products == null)
-            {
-                return products;
-            }
-            foreach(PostOrderProductViewModel p in DetailOrder.Products)
-            {
-                guids.Add(p.ProductId);
-            }
-            try
-            {
-                products = await _productProcessor.GetProductsByID(guids);
-            }
-            catch(Exception e)
-            {
-                _state = State.ConnectionError;
-            }
-            return products;
+            return _products;
+            
         }
 
         public override int GetCount()
@@ -58,36 +44,63 @@ namespace DesktopAppTrouvaille.Controllers
             return Orders;
         }
 
-        public override void SelectDetailModel(IModel model)
+        public async override void SelectDetailModel(IModel model)
         {
             DetailOrder = (Order)model;
+
+            List<Guid> guids = new List<Guid>();
+            if (DetailOrder.Products == null)
+            {
+                return;
+            }
+            foreach (PostOrderProductViewModel p in DetailOrder.Products)
+            {
+                guids.Add(p.ProductId);
+            }
+            try
+            {
+                _products = await _productProcessor.GetProductsByID(guids);
+            }
+            catch (Exception e)
+            {
+                _state = State.ConnectionError;
+            }
+            
+            UpdateView();
+        }
+
+        public async void LoadOrdersFromCustomer(Guid guid)
+        {
+            try
+            {
+                Orders = await _processor.GetOrdersFRomCustomer(_iterator.From, _iterator.To, guid);
+                UpdateView();
+            }catch(Exception e)
+            {
+
+            }
         }
 
         public async override void UpdateData()
         {
-            /*// Test Code:
-            Order order1 = new Order();
-            order1.Date = DateTime.Now;
-            order1.OrderState = Globals.Globals.OrderState.Bestellt;
-      
-            Orders.Add(order1);
-            
-            UpdateView();
-            */
-           
+          
             try
             {
                 _state = State.LoadData;
                 _iterator.Count = await _processor.GetCount();
-                 Orders = await _processor.LoadOrders(_iterator.From, _iterator.To);
+                Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
                 _state = State.OK;
             }
             catch(GETException e)
             {
                 _state = State.ConnectionError;
             }
+            finally
+            {
+                 UpdateView();
+            }
            
-            UpdateView();
+           
         }
 
         public void UpdateOrder(Order order)
@@ -95,10 +108,15 @@ namespace DesktopAppTrouvaille.Controllers
             try
             {
                 _processor.UpdateOrder(order.OrderId, order.OrderState);
+                DetailOrder = order;
             }
             catch(Exception e)
             {
                 _state = State.ConnectionError;
+            }
+            finally
+            {
+                UpdateData();
             }
         }
 
@@ -111,6 +129,10 @@ namespace DesktopAppTrouvaille.Controllers
             catch(Exception e)
             {
                 _state = State.ConnectionError;
+            }
+            finally
+            {
+                UpdateData();
             }
         }
 
@@ -145,21 +167,27 @@ namespace DesktopAppTrouvaille.Controllers
         }
 
         public async override void Search(string searchText)
-        { 
-            DateTime timeFrom = _filterCriteria.OrderDateFrom;
-            DateTime timeTo = _filterCriteria.OrderDateTo;
-            OrderState state = _filterCriteria.OrderState;
-
-            Console.WriteLine("From: " + timeFrom.ToString());
-            Console.WriteLine("To: " + timeTo.ToString());
+        {
             try
             {
-                Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, new Guid(),timeFrom, timeTo,state);
+                _iterator.Reset();
+                _iterator.Count = await _processor.GetCount();
+                
+                Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
             }
             catch(Exception e)
             {
                 _state = State.ConnectionError;
             }
+            finally
+            {
+                UpdateView();
+            }
+        }
+
+        public void SetSortCriteria(OrderSortCriteria criteria)
+        {
+            _sortCriteria = criteria;
         }
     }
 }

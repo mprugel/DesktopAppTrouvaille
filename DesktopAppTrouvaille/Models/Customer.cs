@@ -7,7 +7,7 @@ namespace DesktopAppTrouvaille.Models
 {
     public class Customer : IModel
     {
-        public string Id { get; set; }
+        public string Id { get; set; } = new Guid().ToString();
 
         public Boolean IsDisabled { get; set; }
 
@@ -25,12 +25,11 @@ namespace DesktopAppTrouvaille.Models
 
         public ICollection<Guid> Orders { get; set; }
 
-
         public Customer(){}
 
         public Guid GetGuid()
         {
-            throw new NotImplementedException();
+           return  new Guid(Id);
         }
     }
 }

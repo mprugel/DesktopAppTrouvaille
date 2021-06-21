@@ -86,5 +86,30 @@ namespace DesktopAppTrouvaille.Processors
             }
 
         }
+
+        public async Task<bool> UpdateCategory(Guid guid, string name)
+        {
+            string url = string.Format( "Categories/{0}/ChangeName?name={1}",guid.ToString(), name);
+            HttpResponseMessage response;
+
+            StringContent data = new StringContent("{}", Encoding.UTF8, "application/json");
+
+            try
+            {
+                response = await APIconnection.ApiClient.PutAsync(url, data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+        }
     }
 }

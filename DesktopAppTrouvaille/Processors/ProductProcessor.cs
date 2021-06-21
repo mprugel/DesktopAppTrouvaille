@@ -95,13 +95,16 @@ namespace APIconnector.Processors
         {
             Console.WriteLine("Search...");
             // TODO Create URL-String from criteria:
-            string url = string.Format("Products/SearchQuery/{0}/{1}?searchWord={2}&asc={3}&orderBy={4}",from, to, searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
+            string url = string.Format("Products/SearchQuery/{0}/{1}?searchWord={2}&asc={3}&orderBy={4}&onlyActive=false", from, to, searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
             Console.WriteLine(url);
             HttpResponseMessage response;
             try
             {
                 List<Guid> guids = new List<Guid>();
-                guids.Add(criteria.CategroryID);
+                if(criteria != null)
+                {
+                    guids.Add(criteria.CategroryID);
+                }
                 string json = JsonConvert.SerializeObject(guids);
 
                 StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -127,7 +130,6 @@ namespace APIconnector.Processors
             }
 
         }
-
 
         public async Task<bool> UpdateProduct(Guid guid, PutProductModel product)
         {
@@ -181,7 +183,7 @@ namespace APIconnector.Processors
 
         public async Task<List<Product>> LoadProducts(int from, int to)
         {
-            string url = "Products/" + from.ToString() + "/" + to.ToString();
+            string url = "Products/" + from.ToString() + "/" + to.ToString() + "?onlyActive=false";
             HttpResponseMessage response;
             try
             {
@@ -285,7 +287,6 @@ namespace APIconnector.Processors
                 throw new GETException();
             }
         }
-
 
         public async Task<Manufacturer> GetManufacturerByID(Guid guid)
         {

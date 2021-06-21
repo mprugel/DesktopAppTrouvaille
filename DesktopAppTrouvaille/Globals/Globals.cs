@@ -43,10 +43,10 @@ namespace DesktopAppTrouvaille.Globals
 
         public enum OrderState
         {
-            Bestellt,
-            Unterwegs,
-            Zugestellt,
-            Storniert
+            Bestellt ,
+            Unterwegs ,
+            Zugestellt ,
+            Storniert 
 
         }
 

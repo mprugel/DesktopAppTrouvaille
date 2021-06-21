@@ -142,8 +142,12 @@ namespace DesktopAppTrouvaille.Views
         // Search Button Click:
         private void button1_Click(object sender, EventArgs e)
         {
-            FilterView.SendFilterToController();
-            Controller.Search(textBox1.Text);
+            if(FilterView != null)
+            {
+                FilterView.SendFilterToController();
+                Controller.Search(textBox1.Text);
+            }
+           
         }
 
         // Method for setting Arrw Symbol in Columnheader:

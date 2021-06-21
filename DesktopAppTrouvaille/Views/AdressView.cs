@@ -149,7 +149,7 @@ namespace DesktopAppTrouvaille.Views
                 textBoxCountry.Text = address.Country;
                 textBoxCity.Text = address.CityName;
                 numericUpDownPostalCode.Value = address.PostalCode;
-                textBoxStreet.Text = address.Street + " " + address.StreetNumber.ToString();
+                textBoxStreet.Text = address.Street;
                 numericUpDownStreetNumber.Value = address.StreetNumber;
             }
             

@@ -15,6 +15,8 @@ namespace APIconnector
 
         public static Dictionary<SortingOrder, string> SortingOrderDic = new Dictionary<SortingOrder, string>();
 
+        public static Dictionary<OrderSortCriteria, string> OrderSortDic = new Dictionary<OrderSortCriteria, string>();
+
         public static HttpClient ApiClient { get; set; }
 
         public static void InitializeClient()
@@ -43,6 +45,8 @@ namespace APIconnector
 
             SortingOrderDic.Add(SortingOrder.Ascending, "true");
             SortingOrderDic.Add(SortingOrder.Descending, "false");
+
+            OrderSortDic.Add(OrderSortCriteria.Date,"date");
         }
     }
 }

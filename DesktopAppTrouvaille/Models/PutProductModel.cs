@@ -26,13 +26,16 @@ namespace DesktopAppTrouvaille.Models
 
             public string ManufacturerCatalogId { get; set; }
 
+
+
             //Image
             public string ImageTitle { get; set; }
 
             public byte[] ImageData { get; set; }
 
+            public bool? IsDisabled { get; set; }
 
-            public PutProductModel(Product product )
+        public PutProductModel(Product product )
             {
                 Name = product.Name;
                 Description = product.Description;
@@ -40,6 +43,7 @@ namespace DesktopAppTrouvaille.Models
                 InStock = product.InStock;
                 MinStock = product.MinStock;
                 Tax = product.Tax;
+                IsDisabled = product.IsDisabled;
             }
         }
     }

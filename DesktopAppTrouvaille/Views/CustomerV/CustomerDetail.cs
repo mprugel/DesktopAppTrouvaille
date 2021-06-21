@@ -66,6 +66,8 @@ namespace DesktopAppTrouvaille.Views
 
             adressViewDelivery.SetAdress(_customer.DeliveryAddress);
             adressViewInvoice.SetAdress(_customer.InvoiceAddress);
+
+            checkBoxActive.Checked = _customer.IsDisabled;
         }
 
         private Customer GetCustomerFromInputFields()
@@ -79,6 +81,7 @@ namespace DesktopAppTrouvaille.Views
             customer.LastName = textBoxLastName.Text;
             customer.PhoneNumber = textBoxPhoneNumber.Text;
             customer.Email = textBoxEmail.Text;
+            customer.IsDisabled = checkBoxActive.Checked;
 
             return customer;
         }
@@ -107,7 +110,7 @@ namespace DesktopAppTrouvaille.Views
         // Button click show orders:
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Controller.ShowOrders();
         }
     }
 }

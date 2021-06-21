@@ -35,6 +35,8 @@ namespace DesktopAppTrouvaille.Models
 
         public int MinStock { get; set; } = 0;
 
+        public bool? IsDisabled { get; set; }
+
         public Guid GetGuid()
         {
             return ProductId;

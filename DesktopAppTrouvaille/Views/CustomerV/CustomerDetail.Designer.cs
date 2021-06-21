@@ -41,6 +41,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.adressViewDelivery = new DesktopAppTrouvaille.Views.AdressView();
             this.adressViewInvoice = new DesktopAppTrouvaille.Views.AdressView();
+            this.checkBoxActive = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             // 
             // buttonDelete
             // 
+            this.buttonDelete.Visible = false;
             this.buttonDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // label16
@@ -101,7 +103,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(534, 452);
+            this.button3.Location = new System.Drawing.Point(534, 443);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(202, 32);
@@ -173,12 +175,24 @@
             this.adressViewInvoice.TabIndex = 19;
             this.adressViewInvoice.Title = "Rechnungsdresse";
             // 
+            // checkBoxActive
+            // 
+            this.checkBoxActive.AutoSize = true;
+            this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxActive.Location = new System.Drawing.Point(15, 452);
+            this.checkBoxActive.Name = "checkBoxActive";
+            this.checkBoxActive.Size = new System.Drawing.Size(55, 17);
+            this.checkBoxActive.TabIndex = 30;
+            this.checkBoxActive.Text = "Aktiv";
+            this.checkBoxActive.UseVisualStyleBackColor = true;
+            // 
             // CustomerDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxEmail);
@@ -204,6 +218,7 @@
             this.Controls.SetChildIndex(this.textBoxEmail, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.checkBoxActive, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,5 +238,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox checkBoxActive;
     }
 }

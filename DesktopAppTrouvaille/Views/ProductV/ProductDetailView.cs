@@ -106,6 +106,12 @@ namespace DesktopAppTrouvaille.Views
             richTextBox1.Text = Prod.Description;
             categorySelection1.AddCategories(Prod.ProductCategories, Controller.Categories);
 
+            // CheckBox activated:
+            if(Prod.IsDisabled != null)
+            {
+                checkBoxActive.Checked = (bool)Prod.IsDisabled;
+            }
+
             // Display manufacturer:
             Manufacturer manufacturer = Controller.GetManufacturer();
             if(manufacturer != null)
@@ -217,6 +223,7 @@ namespace DesktopAppTrouvaille.Views
             p.Description = richTextBox1.Text;
             p.ProductCategories = categorySelection1.GetCheckedCategories();
             p.Picture = pictureController.GetCurrentPicture();
+            p.IsDisabled = checkBoxActive.Checked;
 
             return p;
         }

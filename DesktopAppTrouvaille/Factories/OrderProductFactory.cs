@@ -19,6 +19,16 @@ namespace DesktopAppTrouvaille.Factories
 
         public override void SetSortCriteria(int colmumnID, IController controller)
         {
+            if(controller is OrderController)
+            {
+                OrderController orderController = (OrderController)controller;
+                switch(colmumnID)
+                {
+                    case 0:
+                        orderController.SetSortCriteria(Enums.OrderSortCriteria.Date);
+                        break;
+                }
+            }
             
         }
         protected override ListViewItem CreateListViewItem(IModel model)

@@ -23,25 +23,29 @@ namespace DesktopAppTrouvaille.Views
         }
 
 
-        public async void UpdateView()
+        public void UpdateView()
         {
 
             // Display Values on the GUI:
+            _order = Controller.DetailOrder;
+           
             adressViewDelivery.SetAdress(_order.DeliveryAddress);
             adressViewOrder.SetAdress(_order.InvoiceAddress);
 
+           
             labelOrderDate.Text = _order.Date.ToString();
             labelSum.Text = _order.TotalCost.ToString();
+
             comboBoxOrderState.DataSource = Globals.Globals.OrderStateDic.ToList();
             comboBoxOrderState.DisplayMember = "Value";
             comboBoxOrderState.ValueMember = "Key";
 
-            comboBoxOrderState.SelectedIndex = (int)_order.OrderState;
+            comboBoxOrderState.SelectedValue = _order.OrderState;
 
             //Display Products of Order in ListView:
             dataGridView1.Rows.Clear();
             
-            foreach(Product product in await Controller.GetProductsInOrder())
+            foreach(Product product in Controller.GetProductsInOrder())
             {
                 int rowId = dataGridView1.Rows.Add();
                 DataGridViewRow row = dataGridView1.Rows[rowId];
@@ -79,7 +83,7 @@ namespace DesktopAppTrouvaille.Views
         public void SetModel(IModel model)
         {
             _order = (Order)model;
-            UpdateView(); 
+             
         }
 
         public void SetController(IController controller)
@@ -90,12 +94,7 @@ namespace DesktopAppTrouvaille.Views
         //Button save click:
         private void button2_Click(object sender, EventArgs e)
         {
-            bool valid1 = adressViewDelivery.CheckInputFields();
-            bool valid2 = adressViewOrder.CheckInputFields();
-            if (valid1 && valid2)
-            {
-                Controller.UpdateOrder(GetOrderFromInputFields());
-            }
+            Controller.UpdateOrder(GetOrderFromInputFields()); 
         }
 
         // Button delete Click:

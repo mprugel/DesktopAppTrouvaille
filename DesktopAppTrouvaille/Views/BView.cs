@@ -74,12 +74,17 @@ namespace DesktopAppTrouvaille.Views
             ListViewItem item = listView.GetSelectedItem();
             if(item != null)
             {
-                panelDetailView.Controls.Clear();
+                
                 detailView = CreateDetailView((IModel)item.Tag);
 
                 detailView.SetModel((IModel)item.Tag);
                 detailView.SetController(Controller);
 
+                if(panelDetailView.Controls.Count > 0)
+                {
+                    Controller.DetachView((IView)panelDetailView.Controls[0]);
+                }
+                panelDetailView.Controls.Clear();
                 Controller.AttachView(detailView);
                 Controller.SelectDetailModel((IModel)item.Tag);
 

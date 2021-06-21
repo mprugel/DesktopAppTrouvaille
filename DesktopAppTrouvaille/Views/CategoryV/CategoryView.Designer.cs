@@ -34,19 +34,19 @@
             // 
             this.listView.AddButtonText = "Neue Kategorie";
             this.listView.DisplayFilterView = false;
-            this.listView.Size = new System.Drawing.Size(388, 1248);
+            this.listView.Size = new System.Drawing.Size(377, 686);
             this.listView.Title = "Kategorien";
             // 
             // panelDetailView
             // 
-            this.panelDetailView.Size = new System.Drawing.Size(1466, 0);
+            this.panelDetailView.Size = new System.Drawing.Size(0, 686);
             // 
             // CategoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "CategoryView";
-            this.Size = new System.Drawing.Size(1854, 1248);
+            this.Size = new System.Drawing.Size(1854, 686);
             this.ResumeLayout(false);
             this.PerformLayout();
 

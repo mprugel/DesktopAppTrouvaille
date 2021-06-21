@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text;
+using static DesktopAppTrouvaille.Globals.Globals;
+using DesktopAppTrouvaille.FilterCriterias;
+using DesktopAppTrouvaille.Enums;
 
 namespace DesktopAppTrouvaille.Processors
 {
@@ -33,7 +36,6 @@ namespace DesktopAppTrouvaille.Processors
                 throw new GETException();
             }
         }
-
 
         public async Task<int> GetCount()
         {
@@ -82,7 +84,7 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-     public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
+        public async Task<bool> PostOrder(OrderPOSTDTO orderPOSTDTO)
         {
             string url = "Orders/";
             HttpResponseMessage response;
@@ -108,14 +110,103 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-        public async Task<List<Order>> SearchOrders(int from, int to, Guid customerID, DateTime timeFrom, DateTime timeTo, Globals.Globals.OrderState state)
+        public async Task<List<Order>> GetOrdersFRomCustomer(int from, int to, Guid guid)
         {
-            return new List<Order>();
+            string url = string.Format("Orders/{0}/{1}?customerId={2}&fromDateTime=&toDateTime=&orderState=&orderBy=&asc=",
+                from, to, guid.ToString());
+            Console.WriteLine(url);
+            HttpResponseMessage response;
+            try
+            {
+                StringContent data = new StringContent("{}", Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine("Response Status: " + response.StatusCode);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Order> orders = await response.Content.ReadAsAsync<List<Order>>();
+                    return orders;
+                }
+                else
+                {
+                    return new List<Order>();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
+        }
+        
+        public async Task<List<Order>> SearchOrders(int from, int to, OrderCriteria criteria, OrderSortCriteria sortCriteria, SortingOrder order)
+        {
+            string timeFrom = "";
+            string timeto = "";
+            string cID = "";
+            string orderState = "";
+
+            if (criteria != null)
+            {
+                timeFrom = criteria.OrderDateFrom.ToString("dd-MM-yyyy");
+                timeto = criteria.OrderDateTo.ToString("dd-MM-yyyy");
+                orderState = ((int)criteria.OrderState).ToString();
+                if(criteria.CustomerGuid != null)
+                {
+                    cID = criteria.CustomerGuid.ToString();
+                }
+            }
+ 
+            Console.WriteLine("Search Orders...");
+            string url = string.Format("Orders/{0}/{1}?customerId={2}&fromDateTime={3}&toDateTime={4}&orderState={5}&orderBy={6}&asc={7}", 
+                from, to, cID, timeFrom, timeto, orderState, APIconnection.OrderSortDic[sortCriteria], APIconnection.SortingOrderDic[order]);
+            Console.WriteLine(url);
+            HttpResponseMessage response;
+            try
+            {
+                StringContent data = new StringContent("{}", Encoding.UTF8, "application/json");
+
+                response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine("Response Status: " + response.StatusCode);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Order> orders = await response.Content.ReadAsAsync<List<Order>>();
+                    return orders;
+                }
+                else
+                {
+                    return new List<Order>();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
 
         public async Task<bool> UpdateOrder(Guid guid, Globals.Globals.OrderState state)
         {
-            return true;
+            string url = string.Format( "Orders/{0}?orderState={1}" , guid.ToString(),((int)state).ToString());
+            HttpResponseMessage response;
+
+            StringContent data = new StringContent("{}", Encoding.UTF8, "application/json");
+            try
+            {
+                response = await APIconnection.ApiClient.PutAsync(url, data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new GETException();
+            }
         }
     }
      

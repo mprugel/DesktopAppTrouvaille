@@ -55,17 +55,10 @@ namespace DesktopAppTrouvaille
                 _state = State.LoadData;
 
                 LoadCategories();
-                if(FilterCriteria == null)
-                {
-                    _iterator.Count = await _productProssesor.GetProductCount();
-                    Products = await _productProssesor.LoadProducts(_iterator.From, _iterator.To);
-                }
-                else
-                {
-                    Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, _searchText, SortOrder, SortCriteria, FilterCriteria);
-                }
-
-               
+              
+                _iterator.Count = await _productProssesor.GetProductCount();
+                Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, _searchText, SortOrder, SortCriteria, FilterCriteria);
+ 
                 _state = State.OK;
             }
             catch(GETException e)
@@ -230,17 +223,14 @@ namespace DesktopAppTrouvaille
         public async override void Search(string searchText)
         {
             _searchText = searchText;
-            Console.WriteLine("Sortorder " + SortOrder);
-            Console.WriteLine("SortCriteria " + SortCriteria);
-            Console.WriteLine("FilterCrit " + FilterCriteria.CategroryID);
-
             try
             {
-                Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, searchText,SortOrder,SortCriteria, FilterCriteria);
                 _iterator.Reset();
-                _iterator.Count = Products.Count;
+                _iterator.Count = await _productProssesor.GetProductCount();
+                Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, searchText,SortOrder,SortCriteria, FilterCriteria);
+                
             }
-            
+
             catch (Exception e)
             {
                 _state = State.ConnectionError;

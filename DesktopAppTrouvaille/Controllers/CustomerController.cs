@@ -57,7 +57,6 @@ namespace DesktopAppTrouvaille.Controllers
         public async override void UpdateData()
         {
             _state = State.LoadData;
-            UpdateView();
             try
             {
                 _iterator.Count = await _processor.GetCount();
@@ -76,16 +75,30 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void UpdateCustomer(Customer customer)
         {
+            PutCustomerModel putModel = new PutCustomerModel();
+            putModel.DeliveryAddress = customer.DeliveryAddress;
+            putModel.InvoiceAddress = customer.InvoiceAddress;
+            putModel.FirstName = customer.FirstName;
+            putModel.LastName = customer.LastName;
+            putModel.PhoneNumber = putModel.PhoneNumber;
+            putModel.Email = putModel.Email;
+            putModel.IsDisabled = customer.IsDisabled;
+
             try
             {
-                if(await _processor.UpdateCustomer(customer))
+                if(await _processor.UpdateCustomer(putModel, new Guid(customer.Id)))
                 {
                     _state = State.Saved;
+                    _detailCustomer = customer;
                 }
             }
             catch
             {
                 _state = State.ConnectionError;
+            }
+            finally
+            {
+                UpdateData();
             }
         }
 
@@ -106,7 +119,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public void ShowOrders()
         {
-
+            _mainController.ShowOrders(_detailCustomer);
         }
     }
 }

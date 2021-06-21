@@ -109,7 +109,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<bool> UpdateCustomer(PutCustomerModel customer, Guid guid)
         {
-            string url = "auth/Customer/" + guid.ToString();
+            string url = "auth/Customer/?customerId=" + guid.ToString();
             HttpResponseMessage response;
             try
             {

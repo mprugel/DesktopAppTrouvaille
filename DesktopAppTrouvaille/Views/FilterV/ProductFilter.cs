@@ -26,7 +26,15 @@ namespace DesktopAppTrouvaille.Views.FilterV
 
         public override void SendFilterToController()
         {
-            _controller.SetFilter(GetFilterCriteria());
+            if(checkBox1.Checked)
+            {
+                _controller.SetFilter(GetFilterCriteria());
+            }
+            else
+            {
+                _controller.SetFilter(null);
+            }
+           
         }
 
         public ProductFilter(ProductController controller)

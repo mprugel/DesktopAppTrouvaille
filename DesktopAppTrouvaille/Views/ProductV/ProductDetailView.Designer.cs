@@ -256,6 +256,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxManufacturer = new System.Windows.Forms.TextBox();
             this.textBoxManufactureEmail = new System.Windows.Forms.TextBox();
+            this.checkBoxActive = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -272,12 +273,13 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(408, 12);
+            this.buttonSave.Location = new System.Drawing.Point(302, 12);
             this.buttonSave.Size = new System.Drawing.Size(209, 29);
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonDelete
             // 
+            this.buttonDelete.Visible = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // labelProductID
@@ -1784,12 +1786,24 @@
             this.textBoxManufactureEmail.Size = new System.Drawing.Size(134, 20);
             this.textBoxManufactureEmail.TabIndex = 33;
             // 
+            // checkBoxActive
+            // 
+            this.checkBoxActive.AutoSize = true;
+            this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxActive.Location = new System.Drawing.Point(29, 707);
+            this.checkBoxActive.Name = "checkBoxActive";
+            this.checkBoxActive.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxActive.TabIndex = 34;
+            this.checkBoxActive.Text = "Aktiviert";
+            this.checkBoxActive.UseVisualStyleBackColor = true;
+            // 
             // ProductDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.labelProductID);
             this.Controls.Add(this.textBoxManufactureEmail);
             this.Controls.Add(this.textBoxManufacturer);
@@ -1837,6 +1851,7 @@
             this.Controls.SetChildIndex(this.textBoxManufacturer, 0);
             this.Controls.SetChildIndex(this.textBoxManufactureEmail, 0);
             this.Controls.SetChildIndex(this.labelProductID, 0);
+            this.Controls.SetChildIndex(this.checkBoxActive, 0);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2077,5 +2092,6 @@
         private System.Windows.Forms.TextBox textBoxManufacturer;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBoxActive;
     }
 }

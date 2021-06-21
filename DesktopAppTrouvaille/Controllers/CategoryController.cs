@@ -81,9 +81,23 @@ namespace DesktopAppTrouvaille.Controllers
                 UpdateView(); 
             }
         }
-        public void UpdateCategory(Category category)
+        public async void UpdateCategory(Category category)
         {
-            
+            try
+            {
+                if( await _processor.UpdateCategory(category.CategoryId, category.Name))
+                {
+                    _state = State.Saved;
+                }
+            }
+            catch(Exception e)
+            {
+                _state = State.ConnectionError;
+            }
+            finally
+            {
+                UpdateData();
+            }
         }
 
         public override IEnumerable<IModel> GetModels()
@@ -106,7 +120,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override void Search(string searchText)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
