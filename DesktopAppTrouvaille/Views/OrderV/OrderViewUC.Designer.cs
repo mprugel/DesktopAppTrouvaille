@@ -33,15 +33,19 @@
             // listView
             // 
             this.listView.DisplayAddButton = false;
-            this.listView.Size = new System.Drawing.Size(770, 1248);
+            this.listView.Size = new System.Drawing.Size(377, 637);
             this.listView.Title = "Bestellungen";
+            // 
+            // panelDetailView
+            // 
+            this.panelDetailView.Size = new System.Drawing.Size(0, 637);
             // 
             // OrderViewUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "OrderViewUC";
-            this.Size = new System.Drawing.Size(1819, 1248);
+            this.Size = new System.Drawing.Size(1819, 637);
             this.ResumeLayout(false);
             this.PerformLayout();
 

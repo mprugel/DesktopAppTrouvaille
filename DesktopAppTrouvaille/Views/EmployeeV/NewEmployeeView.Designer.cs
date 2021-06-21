@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
+           /* // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(529, 51);
-            this.label1.Text = "Neuen Mitarbeiter anlegen";
+            this.labelTitle.Size = new System.Drawing.Size(529, 51);
+            this.labelTitle.Text = "Neuen Mitarbeiter anlegen";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(181, 1054);
-            this.button1.Text = "Anlegen";
+            this.buttonSave.Location = new System.Drawing.Point(181, 1054);
+            this.buttonSave.Text = "Anlegen";
             // 
             // button2
             // 
-            this.button2.Visible = false;
+            this.buttonDelete.Visible = false;
+
+            */
             // 
             // NewEmployeeView
             // 

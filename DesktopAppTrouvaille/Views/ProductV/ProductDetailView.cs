@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class ProductDetailView : UserControl, IDetailView
+    public partial class ProductDetailView : DetailViewBase, IDetailView
     {
         private Color _emptyFieldColor = Color.FromArgb(255,168,168);
         public Product Prod;

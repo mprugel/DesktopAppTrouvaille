@@ -29,28 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxFistName = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.adressView1 = new DesktopAppTrouvaille.Views.AdressView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mitarbeiter bearbeiten";
+            this.labelTitle.Size = new System.Drawing.Size(222, 26);
+            this.labelTitle.Text = "Mitarbeiter bearbeiten";
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(530, 12);
+            this.buttonSave.Size = new System.Drawing.Size(206, 29);
+            this.buttonSave.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -91,32 +92,6 @@
             this.textBoxLastName.Size = new System.Drawing.Size(172, 20);
             this.textBoxLastName.TabIndex = 5;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(209, 548);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Änderungen speichern";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(14, 547);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 43);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Löschen";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -138,17 +113,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFistName);
             this.Controls.Add(this.adressView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmployeeDetailView";
-            this.Size = new System.Drawing.Size(397, 602);
+            this.Size = new System.Drawing.Size(750, 602);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.adressView1, 0);
+            this.Controls.SetChildIndex(this.textBoxFistName, 0);
+            this.Controls.SetChildIndex(this.textBoxLastName, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,8 +139,5 @@
         private System.Windows.Forms.TextBox textBoxFistName;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Button button1;
-        protected System.Windows.Forms.Button button2;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.labelTitle = new System.Windows.Forms.Label();
             this.labelProductID = new System.Windows.Forms.Label();
             this.numericUpDownInStock = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -257,10 +256,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxManufacturer = new System.Windows.Forms.TextBox();
             this.textBoxManufactureEmail = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -268,40 +263,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(24, 6);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(243, 29);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Produktbearbeitung";
-            this.labelTitle.Click += new System.EventHandler(this.label1_Click);
+            this.labelTitle.Size = new System.Drawing.Size(195, 26);
+            this.labelTitle.Text = "Produkt bearbeiten";
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(408, 12);
+            this.buttonSave.Size = new System.Drawing.Size(209, 29);
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // labelProductID
             // 
             this.labelProductID.AutoSize = true;
             this.labelProductID.BackColor = System.Drawing.Color.DimGray;
             this.labelProductID.ForeColor = System.Drawing.Color.White;
-            this.labelProductID.Location = new System.Drawing.Point(330, 18);
+            this.labelProductID.Location = new System.Drawing.Point(611, 102);
             this.labelProductID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProductID.Name = "labelProductID";
             this.labelProductID.Size = new System.Drawing.Size(31, 13);
             this.labelProductID.TabIndex = 2;
             this.labelProductID.Text = "1045";
+            this.labelProductID.Visible = false;
             // 
             // numericUpDownInStock
             // 
             this.numericUpDownInStock.BackColor = System.Drawing.Color.White;
             this.numericUpDownInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownInStock.Location = new System.Drawing.Point(183, 119);
+            this.numericUpDownInStock.Location = new System.Drawing.Point(171, 119);
             this.numericUpDownInStock.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownInStock.Maximum = new decimal(new int[] {
             1000,
@@ -309,7 +305,7 @@
             0,
             0});
             this.numericUpDownInStock.Name = "numericUpDownInStock";
-            this.numericUpDownInStock.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownInStock.Size = new System.Drawing.Size(132, 20);
             this.numericUpDownInStock.TabIndex = 4;
             // 
             // label3
@@ -328,10 +324,10 @@
             this.numericUpDownPrice.BackColor = System.Drawing.Color.White;
             this.numericUpDownPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownPrice.DecimalPlaces = 2;
-            this.numericUpDownPrice.Location = new System.Drawing.Point(183, 148);
+            this.numericUpDownPrice.Location = new System.Drawing.Point(171, 148);
             this.numericUpDownPrice.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownPrice.Name = "numericUpDownPrice";
-            this.numericUpDownPrice.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownPrice.Size = new System.Drawing.Size(132, 20);
             this.numericUpDownPrice.TabIndex = 6;
             // 
             // label4
@@ -359,10 +355,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 21);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 164);
+            this.pictureBox1.Size = new System.Drawing.Size(262, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -389,19 +385,21 @@
             this.buttonPicturePrevious.TabIndex = 14;
             this.buttonPicturePrevious.Text = "<";
             this.buttonPicturePrevious.UseVisualStyleBackColor = false;
+            this.buttonPicturePrevious.Visible = false;
             this.buttonPicturePrevious.Click += new System.EventHandler(this.buttonPicturePrevious_Click);
             // 
             // buttonPictureNext
             // 
             this.buttonPictureNext.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonPictureNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPictureNext.Location = new System.Drawing.Point(297, 21);
+            this.buttonPictureNext.Location = new System.Drawing.Point(241, 21);
             this.buttonPictureNext.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPictureNext.Name = "buttonPictureNext";
             this.buttonPictureNext.Size = new System.Drawing.Size(18, 164);
             this.buttonPictureNext.TabIndex = 15;
             this.buttonPictureNext.Text = ">";
             this.buttonPictureNext.UseVisualStyleBackColor = false;
+            this.buttonPictureNext.Visible = false;
             this.buttonPictureNext.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonDeletePicture
@@ -410,7 +408,7 @@
             this.buttonDeletePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeletePicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeletePicture.ForeColor = System.Drawing.Color.Red;
-            this.buttonDeletePicture.Location = new System.Drawing.Point(366, 146);
+            this.buttonDeletePicture.Location = new System.Drawing.Point(304, 144);
             this.buttonDeletePicture.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeletePicture.Name = "buttonDeletePicture";
             this.buttonDeletePicture.Size = new System.Drawing.Size(84, 39);
@@ -423,7 +421,7 @@
             // 
             this.buttonUploadPicture.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonUploadPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUploadPicture.Location = new System.Drawing.Point(366, 21);
+            this.buttonUploadPicture.Location = new System.Drawing.Point(304, 21);
             this.buttonUploadPicture.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUploadPicture.Name = "buttonUploadPicture";
             this.buttonUploadPicture.Size = new System.Drawing.Size(84, 42);
@@ -436,7 +434,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 60);
+            this.label6.Location = new System.Drawing.Point(26, 69);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
@@ -447,10 +445,10 @@
             // 
             this.textBoxName.BackColor = System.Drawing.Color.White;
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxName.Location = new System.Drawing.Point(183, 58);
+            this.textBoxName.Location = new System.Drawing.Point(171, 67);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(434, 20);
+            this.textBoxName.Size = new System.Drawing.Size(446, 20);
             this.textBoxName.TabIndex = 19;
             // 
             // labelMessage
@@ -1684,10 +1682,10 @@
             // 
             this.numericUpDownTax.BackColor = System.Drawing.Color.White;
             this.numericUpDownTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownTax.Location = new System.Drawing.Point(183, 176);
+            this.numericUpDownTax.Location = new System.Drawing.Point(171, 176);
             this.numericUpDownTax.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownTax.Name = "numericUpDownTax";
-            this.numericUpDownTax.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownTax.Size = new System.Drawing.Size(132, 20);
             this.numericUpDownTax.TabIndex = 26;
             // 
             // numericUpDownMinStock
@@ -1786,69 +1784,13 @@
             this.textBoxManufactureEmail.Size = new System.Drawing.Size(134, 20);
             this.textBoxManufactureEmail.TabIndex = 33;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.labelTitle);
-            this.panel1.Controls.Add(this.labelProductID);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(645, 40);
-            this.panel1.TabIndex = 34;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.BackColor = System.Drawing.Color.DimGray;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(478, 7);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(142, 25);
-            this.buttonSave.TabIndex = 13;
-            this.buttonSave.Text = "Änderungen speichern";
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.Color.DimGray;
-            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(29, 7);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(70, 25);
-            this.buttonDelete.TabIndex = 12;
-            this.buttonDelete.Text = "Löschen";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.buttonDelete);
-            this.panel2.Controls.Add(this.buttonSave);
-            this.panel2.Location = new System.Drawing.Point(0, 696);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(645, 40);
-            this.panel2.TabIndex = 35;
-            // 
             // ProductDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelProductID);
             this.Controls.Add(this.textBoxManufactureEmail);
             this.Controls.Add(this.textBoxManufacturer);
             this.Controls.Add(this.label9);
@@ -1873,7 +1815,28 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 10, 2);
             this.MinimumSize = new System.Drawing.Size(644, 0);
             this.Name = "ProductDetailView";
-            this.Size = new System.Drawing.Size(644, 736);
+            this.Size = new System.Drawing.Size(644, 815);
+            this.Controls.SetChildIndex(this.numericUpDownInStock, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.numericUpDownPrice, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.richTextBox1, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.textBoxName, 0);
+            this.Controls.SetChildIndex(this.labelMessage, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.numericUpDownTax, 0);
+            this.Controls.SetChildIndex(this.numericUpDownMinStock, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.categorySelection1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label9, 0);
+            this.Controls.SetChildIndex(this.textBoxManufacturer, 0);
+            this.Controls.SetChildIndex(this.textBoxManufactureEmail, 0);
+            this.Controls.SetChildIndex(this.labelProductID, 0);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1881,17 +1844,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelProductID;
         private System.Windows.Forms.NumericUpDown numericUpDownInStock;
         private System.Windows.Forms.Label label3;
@@ -2119,9 +2077,5 @@
         private System.Windows.Forms.TextBox textBoxManufacturer;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonSave;
     }
 }

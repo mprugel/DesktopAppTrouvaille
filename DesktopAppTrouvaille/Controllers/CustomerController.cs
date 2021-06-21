@@ -12,7 +12,12 @@ namespace DesktopAppTrouvaille.Controllers
         private Customer _detailCustomer = new Customer();
         private CustomerSortCriteria _customerSortCriteria;
         private ICustomerProcessor _processor = new CustomerProcessor();
+        private MainController _mainController;
 
+        public CustomerController(MainController mainController)
+        {
+            _mainController = mainController;
+        }
         public void SetSortCriteria(CustomerSortCriteria criteria)
         {
             _customerSortCriteria = criteria;   
@@ -37,7 +42,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override void Search(string searchText)
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void SelectDetailModel(IModel model)
@@ -94,6 +99,11 @@ namespace DesktopAppTrouvaille.Controllers
             {
                 _state = State.ConnectionError;
             }
+        }
+
+        public void ShowOrders()
+        {
+
         }
     }
 }

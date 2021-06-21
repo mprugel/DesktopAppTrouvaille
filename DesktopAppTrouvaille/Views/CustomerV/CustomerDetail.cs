@@ -6,7 +6,7 @@ using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class CustomerDetail : UserControl, IDetailView
+    public partial class CustomerDetail : DetailViewBase, IDetailView
     {
         public CustomerController Controller;
         private Customer _customer;
@@ -102,6 +102,12 @@ namespace DesktopAppTrouvaille.Views
             {
                 Controller.UpdateCustomer(GetCustomerFromInputFields());
             }
+        }
+
+        // Button click show orders:
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

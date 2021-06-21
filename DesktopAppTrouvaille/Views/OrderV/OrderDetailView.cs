@@ -8,7 +8,7 @@ using static DesktopAppTrouvaille.Globals.Globals;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class OrderDetailView : UserControl, IDetailView
+    public partial class OrderDetailView : DetailViewBase, IDetailView
     {
         private Order _order;
 
@@ -126,6 +126,16 @@ namespace DesktopAppTrouvaille.Views
 
                 clickHandler(product);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSum_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

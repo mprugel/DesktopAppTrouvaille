@@ -2,6 +2,7 @@
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille;
 using DesktopAppTrouvaille.Views;
+using DesktopAppTrouvaille.FilterCriterias;
 
 namespace DesktopAppTrouvaille
 {
@@ -14,6 +15,8 @@ namespace DesktopAppTrouvaille
         private IMainView _view;
 
         public ProductController productController = new ProductController();
+        public OrderController orderController;
+
 
         public MainController(IMainView view)
         {
@@ -43,6 +46,13 @@ namespace DesktopAppTrouvaille
             productController.LoadCategories();
             productController.SelectDetailModel(p);
 
+        }
+
+        public void ShowOrders(Customer customer)
+        {
+            orderController = new OrderController(this);
+            _view.ShowOrderView();
+           //TODO send Search...
         }
 
     }

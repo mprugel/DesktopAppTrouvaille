@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views.EmployeeV
 {
-    public partial class EmployeeDetailView : UserControl, IDetailView
+    public partial class EmployeeDetailView : DetailViewBase, IDetailView
     {
         protected EmployeeController _controller;
         protected Employee _customer;

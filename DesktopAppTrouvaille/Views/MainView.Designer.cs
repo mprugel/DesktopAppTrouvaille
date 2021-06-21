@@ -102,13 +102,14 @@
             this.buttonShowStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowStatistics.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonShowStatistics.ForeColor = System.Drawing.Color.White;
-            this.buttonShowStatistics.Location = new System.Drawing.Point(14, 383);
+            this.buttonShowStatistics.Location = new System.Drawing.Point(14, 453);
             this.buttonShowStatistics.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.buttonShowStatistics.Name = "buttonShowStatistics";
             this.buttonShowStatistics.Size = new System.Drawing.Size(244, 60);
             this.buttonShowStatistics.TabIndex = 3;
             this.buttonShowStatistics.Text = "Statistiken";
             this.buttonShowStatistics.UseVisualStyleBackColor = false;
+            this.buttonShowStatistics.Visible = false;
             this.buttonShowStatistics.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
             // panelTabView
@@ -155,7 +156,7 @@
             this.panelMainMenu.Controls.Add(this.buttonShowCustomers);
             this.panelMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMainMenu.Location = new System.Drawing.Point(0, 42);
-            this.panelMainMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMainMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainMenu.Name = "panelMainMenu";
             this.panelMainMenu.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.panelMainMenu.Size = new System.Drawing.Size(280, 641);
@@ -168,7 +169,7 @@
             this.buttonShowEpmloyees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowEpmloyees.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonShowEpmloyees.ForeColor = System.Drawing.Color.White;
-            this.buttonShowEpmloyees.Location = new System.Drawing.Point(14, 455);
+            this.buttonShowEpmloyees.Location = new System.Drawing.Point(14, 311);
             this.buttonShowEpmloyees.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.buttonShowEpmloyees.Name = "buttonShowEpmloyees";
             this.buttonShowEpmloyees.Size = new System.Drawing.Size(244, 58);
@@ -185,13 +186,14 @@
             this.buttonShowRatings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowRatings.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonShowRatings.ForeColor = System.Drawing.Color.White;
-            this.buttonShowRatings.Location = new System.Drawing.Point(14, 311);
+            this.buttonShowRatings.Location = new System.Drawing.Point(14, 381);
             this.buttonShowRatings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.buttonShowRatings.Name = "buttonShowRatings";
             this.buttonShowRatings.Size = new System.Drawing.Size(244, 60);
             this.buttonShowRatings.TabIndex = 7;
             this.buttonShowRatings.Text = "Bewertungen";
             this.buttonShowRatings.UseVisualStyleBackColor = false;
+            this.buttonShowRatings.Visible = false;
             this.buttonShowRatings.Click += new System.EventHandler(this.buttonShowRatings_Click);
             this.buttonShowRatings.Leave += new System.EventHandler(this.buttonShowProducts_Leave);
             // 
@@ -203,8 +205,8 @@
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogout.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogout.ForeColor = System.Drawing.Color.White;
-            this.buttonLogout.Location = new System.Drawing.Point(14, 576);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogout.Location = new System.Drawing.Point(14, 578);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(244, 52);
             this.buttonLogout.TabIndex = 6;
@@ -243,7 +245,7 @@
             this.Controls.Add(this.panelTabView);
             this.Controls.Add(this.panelMainMenu);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainView";
             this.Size = new System.Drawing.Size(1082, 683);
             this.panelMainMenu.ResumeLayout(false);

@@ -8,11 +8,12 @@ using DesktopAppTrouvaille.Views.EmployeeV;
 
 namespace DesktopAppTrouvaille.Views
 {
-
+   
     public partial class MainView : UserControl, IMainView
     {
+       
         private IView _tabView;
-
+        private List<Button> buttons = new List<Button>();
         private Color _buttonActiveColor = Color.FromArgb(160, 212, 250);
         private Color _buttonForeColorActive = Color.FromArgb(0, 0, 0);
         private Color _buttonColor;
@@ -26,6 +27,21 @@ namespace DesktopAppTrouvaille.Views
             controller = new MainController(this);
             UpdateView();
             _buttonColor = buttonLogout.BackColor;
+
+            buttons.Add(buttonShowCategories);
+            buttons.Add(buttonShowCustomers);
+            buttons.Add(buttonShowEpmloyees);
+            buttons.Add(buttonShowProducts);
+            buttons.Add(buttonShowOrders);
+        }
+
+        private void ResetButtonsColor()
+        {
+            foreach(Button btn in buttons)
+            {
+                btn.BackColor = _buttonColor;
+                btn.ForeColor = Color.White;
+            }
         }
 
 
@@ -66,6 +82,7 @@ namespace DesktopAppTrouvaille.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ResetButtonsColor();
             ProductView view = new ProductView();
             view.Dock = DockStyle.Fill;
            
@@ -80,6 +97,8 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowOrders_Click(object sender, EventArgs e)
         {
+            ResetButtonsColor();
+
             buttonShowOrders.BackColor = _buttonActiveColor;
             buttonShowOrders.ForeColor = _buttonForeColorActive; 
             OrderViewUC orderView = new OrderViewUC(new OrderController(controller));
@@ -91,6 +110,8 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowCategories_Click(object sender, EventArgs e)
         {
+            ResetButtonsColor();
+
             buttonShowCategories.BackColor = _buttonActiveColor;
             buttonShowCategories.ForeColor = _buttonForeColorActive;
             CategoryView view = new CategoryView();
@@ -102,11 +123,13 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowCustomers_Click(object sender, EventArgs e)
         {
+            ResetButtonsColor();
+
             buttonShowCustomers.BackColor = _buttonActiveColor;
             buttonShowCustomers.ForeColor = _buttonForeColorActive;
             CustomerView view = new CustomerView();
             view.Dock = DockStyle.Fill;
-            _tabView = new CustomerView();
+            _tabView = view;
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }
@@ -128,6 +151,8 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowEpmloyees_Click(object sender, EventArgs e)
         {
+            ResetButtonsColor();
+
             buttonShowEpmloyees.BackColor = _buttonActiveColor;
             buttonShowEpmloyees.ForeColor = _buttonForeColorActive;
             EmployeeView view = new EmployeeView(new EmployeeController());
@@ -139,9 +164,16 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonShowProducts_Leave(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            btn.BackColor = _buttonColor;
-            btn.ForeColor = Color.White;
+            
+        }
+
+        public void ShowOrderView()
+        {
+            
+
+            _tabView = new OrderViewUC(controller.orderController);
+            panelTabView.Controls.Clear();
+            panelTabView.Controls.Add((UserControl)_tabView);
         }
     }
 }

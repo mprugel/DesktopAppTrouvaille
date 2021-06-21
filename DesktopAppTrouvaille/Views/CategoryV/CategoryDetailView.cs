@@ -12,11 +12,11 @@ using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class CategoryDetailView : UserControl, IDetailView
+    public partial class CategoryDetailView : DetailViewBase, IDetailView
     {
         public Category Category;
         public CategoryController Controller { get; set; }
-        public string Title { get { return labelTitel.Text; } set { labelTitel.Text = value; } }
+        public string Title { get { return labelTitle.Text; } set { labelTitle.Text = value; } }
         public string SaveButtonText { get { return buttonSave.Text; } set { buttonSave.Text = value; } }
 
         private bool _displaySaveButton = true;
@@ -83,6 +83,11 @@ namespace DesktopAppTrouvaille.Views
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Controller.DeleteCategory(Category);
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

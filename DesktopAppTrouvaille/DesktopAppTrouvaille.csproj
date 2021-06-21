@@ -146,6 +146,12 @@
     <Compile Include="Views\CategoryV\NewCategoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\DetailViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DetailViewBase.Designer.cs">
+      <DependentUpon>DetailViewBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\EmployeeV\EmployeeDetailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -301,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CustomerV\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DetailViewBase.resx">
+      <DependentUpon>DetailViewBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeeV\EmployeeDetailView.resx">
       <DependentUpon>EmployeeDetailView.cs</DependentUpon>
