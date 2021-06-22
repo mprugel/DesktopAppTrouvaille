@@ -200,12 +200,12 @@ namespace DesktopAppTrouvaille
             try
             {
                 DetailProduct = await _productProssesor.LoadProduct(guid);
-                if (DetailProduct.ManufacturerId != null)
+                if (DetailProduct != null && DetailProduct.ManufacturerId != null)
                 {
                     _detailManufacturer = await _productProssesor.GetManufacturerByID((Guid)DetailProduct.ManufacturerId);
                 }
             }
-            catch
+            catch (GETException)
             {
                 _state = State.ConnectionError;
             }

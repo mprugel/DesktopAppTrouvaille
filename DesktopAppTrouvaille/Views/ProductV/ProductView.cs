@@ -45,8 +45,7 @@ namespace DesktopAppTrouvaille.Views
         }
         protected override IDetailView CreateDetailView(IModel model)
         {
-            ProductDetailView view = new ProductDetailView();
-            view.Controller = _controller;
+            ProductDetailView view = new ProductDetailView(_controller);
             view.Prod = (Product)model;
             return view;
         }
