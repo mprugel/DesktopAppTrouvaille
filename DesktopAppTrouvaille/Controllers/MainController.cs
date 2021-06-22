@@ -91,8 +91,7 @@ namespace DesktopAppTrouvaille
             _view.ShowOrderView();
             OrderCriteria criteria = new OrderCriteria();
             criteria.CustomerGuid = customer.GetGuid();
-            orderController.SetFilterCriteria(criteria);
-            orderController.Search("");
+            orderController.LoadOrdersFromCustomer(customer.GetGuid());
         }
 
        

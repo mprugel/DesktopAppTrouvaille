@@ -97,6 +97,7 @@ namespace DesktopAppTrouvaille.Processors
             try
             {
                 response = await APIconnection.ApiClient.GetAsync(url);
+                Console.WriteLine(response.StatusCode);
                 if (response.IsSuccessStatusCode)
                 {
                     List<Customer> customer = await response.Content.ReadAsAsync<List<Customer>>();

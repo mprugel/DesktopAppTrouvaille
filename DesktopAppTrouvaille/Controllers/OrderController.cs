@@ -189,5 +189,17 @@ namespace DesktopAppTrouvaille.Controllers
         {
             _sortCriteria = criteria;
         }
+
+        public async void GetOrdersFromCustomer(Guid guid)
+        {
+            try
+            {
+                Orders = await _processor.GetOrdersFRomCustomer(_iterator.From, _iterator.To, guid);
+            }
+            catch(GETException)
+            {
+                _state = State.ConnectionError;
+            }
+        }
     }
 }

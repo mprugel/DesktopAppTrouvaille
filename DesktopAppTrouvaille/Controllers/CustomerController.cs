@@ -50,6 +50,7 @@ namespace DesktopAppTrouvaille.Controllers
             try
             {
                 _customers = await _processor.SearchCustomer(_iterator.From, _iterator.To, _filter);
+                UpdateView();
             }
             catch(GETException e)
             {

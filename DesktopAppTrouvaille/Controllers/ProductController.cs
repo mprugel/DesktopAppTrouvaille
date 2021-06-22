@@ -218,6 +218,7 @@ namespace DesktopAppTrouvaille
         public override void SelectDetailModel(IModel model)
         {
             LoadDetailProduct(model.GetGuid());
+            DetailProduct = (Product)model;
         }
 
         public async override void Search(string searchText)
