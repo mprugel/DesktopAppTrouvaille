@@ -102,6 +102,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IModel.cs" />
+    <Compile Include="Models\LoginEmployeeModel.cs" />
     <Compile Include="Models\LoginResponse.cs" />
     <Compile Include="Models\Manufacturer.cs" />
     <Compile Include="Models\Order.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\PutCustomerModel.cs" />
     <Compile Include="Models\PutProductModel.cs" />
+    <Compile Include="Models\RegisterEmployeeModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Processors\CategoryPOSTDTO.cs" />
     <Compile Include="Processors\CategoryProcessor.cs" />

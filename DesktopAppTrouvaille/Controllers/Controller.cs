@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Controllers
 {
-    public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted }
+    public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted, Updated, SaveFailed, UpdateFailed, DeleteFailed }
 
     // This Controller Class contains Functions which are used by all specific Controllers.
     public abstract class Controller : IController

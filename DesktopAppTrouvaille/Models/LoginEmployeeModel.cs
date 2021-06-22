@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Models
 {
-    public class Employee : IModel
+    public class LoginEmployeeModel
     {
         public string Email { get; set; }
 
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
+        public string Password { get; set; }
     }
 }

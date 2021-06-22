@@ -16,6 +16,7 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
             InitializeComponent();
             textBoxFistName.Validating += textboxValidating;
             textBoxLastName.Validating += textboxValidating;
+            textBoxEmail.Validating += textboxValidating;
         }
 
         public EmployeeDetailView(EmployeeController controller)
@@ -48,6 +49,9 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
         protected Employee GetEmployeeFromInputField()
         {
             Employee em = new Employee();
+            em.FirstName = textBoxFistName.Text;
+            em.LastName = textBoxLastName.Text;
+            em.Email = textBoxEmail.Text;
             return em;
         }
         protected virtual void ButtonSaveClick()
@@ -87,7 +91,11 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
 
         public void UpdateView()
         {
-            
+            _customer = _controller.GetDetailEmployee();
+
+            textBoxFistName.Text = _customer.FirstName;
+            textBoxLastName.Text = _customer.LastName;
+            textBoxEmail.Text = _customer.Email;
         }
     }
 }

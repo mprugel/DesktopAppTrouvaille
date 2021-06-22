@@ -16,7 +16,7 @@ namespace DesktopAppTrouvaille.Processors
         Task<bool> UpdateOrder(Guid guid, OrderState state);
 
         Task<bool> DeleteOrder(Guid guid);
-         Task<List<Order>> GetOrdersFRomCustomer(int from, int to, Guid guid);
+        Task<List<Order>> GetOrdersFRomCustomer(int from, int to, Guid guid);
         Task<List<Order>> SearchOrders(int from, int to, OrderCriteria criteria, OrderSortCriteria sortCriteria, SortingOrder order);
     }
 }
