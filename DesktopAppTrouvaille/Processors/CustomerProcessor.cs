@@ -1,5 +1,6 @@
 ﻿using APIconnector;
 using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using Newtonsoft.Json;
 using System;
@@ -15,7 +16,7 @@ namespace DesktopAppTrouvaille.Processors
     {
         public async Task<bool> DeleteCustomer(Customer customer)
         {
-            string url = "auth/Customer/" + customer.Id;
+            string url = "Auth/Customer/" + customer.Id;
             HttpResponseMessage response;
             try
             {
@@ -37,7 +38,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<int> GetCount()
         {
-            string url = "auth/Customer/Count";
+            string url = "Auth/Customer/Count";
             HttpResponseMessage response;
             try
             {
@@ -61,7 +62,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<List<Customer>> GetCustomers(int from, int to)
         {
-            string url = "auth/Customer/" + from + "/" + to;
+            string url = "Auth/Customer/" + from + "/" + to + "?onlyActive=false";
             HttpResponseMessage response;
             try
             {
@@ -83,22 +84,28 @@ namespace DesktopAppTrouvaille.Processors
         }
 
         //TEST CUSTOMER EMAIL: @ TO %
-        public async Task<Customer> SearchCustomer(int from, int to, Guid customerId, string customerEmail)
+        public async Task<List<Customer>> SearchCustomer(int from, int to, CustomerFilter filter)
         {
-            string url = "Customer/SearchQuery/" + from.ToString() + "/" + to.ToString() + "?customerId=" + customerId.ToString() + "&customerEmail=" + customerEmail;
+            string guid = "";
+            if(filter.SearchGuid)
+            {
+                guid = filter.CustomerGuid.ToString();
+            }
+            string url = string.Format( "Auth/Customer/SearchQuery/{0}/{1}/?customerId={2}&customerEmail={3}&onlyActive=false",from.ToString(),to.ToString(),guid, filter.Email);
+            Console.WriteLine(url);
             HttpResponseMessage response;
             try
             {
                 response = await APIconnection.ApiClient.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
-                    Customer customer = await response.Content.ReadAsAsync<Customer>();
+                    List<Customer> customer = await response.Content.ReadAsAsync<List<Customer>>();
 
                     return customer;
                 }
                 else
                 {
-                    return new Customer();
+                    return new List<Customer>();
                 }
             }
             catch (Exception e)
@@ -109,7 +116,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<bool> UpdateCustomer(PutCustomerModel customer, Guid guid)
         {
-            string url = "auth/Customer/?customerId=" + guid.ToString();
+            string url = "Auth/Customer/?customerId=" + guid.ToString();
             HttpResponseMessage response;
             try
             {

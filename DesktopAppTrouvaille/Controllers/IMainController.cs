@@ -9,7 +9,9 @@ namespace DesktopAppTrouvaille.Controllers
 {
     public interface IMainController
     {
-        void Login(User user);
+        void Login(LoginEmployeeModel user);
         void Logout();
+
+        State GetState();
     }
 }

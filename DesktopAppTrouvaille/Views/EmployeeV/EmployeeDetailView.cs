@@ -1,5 +1,6 @@
 ﻿using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
+using DesktopAppTrouvaille.Processors;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -9,7 +10,7 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
     public partial class EmployeeDetailView : DetailViewBase, IDetailView
     {
         protected EmployeeController _controller;
-        protected Employee _customer;
+        protected Employee _customer = new Employee();
 
         public EmployeeDetailView()
         {
@@ -50,6 +51,8 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
         protected Employee GetEmployeeFromInputField()
         {
             Employee em = new Employee();
+         
+            em.Id = _customer.Id;
             em.FirstName = textBoxFistName.Text;
             em.LastName = textBoxLastName.Text;
             em.Email = textBoxEmail.Text;
@@ -90,13 +93,18 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
             }
         }
 
-        public void UpdateView()
+        public virtual void UpdateView()
         {
             _customer = _controller.GetDetailEmployee();
 
             textBoxFistName.Text = _customer.FirstName;
             textBoxLastName.Text = _customer.LastName;
             textBoxEmail.Text = _customer.Email;
+            labelEmailNotValid.Visible = false;
+            if (_controller.GetError() == EmployeeProcessor.Errors.EmailInvalid)
+            {        
+                labelEmailNotValid.Visible = true;      
+            }
         }
     }
 }

@@ -33,6 +33,7 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
             
 
             listView.Init();
+            _controller.UpdateData();
         }
 
         public void UpdateView()

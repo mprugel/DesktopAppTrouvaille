@@ -10,6 +10,15 @@ namespace APIconnector
 {
     public static class APIconnection
     {
+        public static string _token = "";
+
+        public static void SetToken(string token)
+        {
+            _token = token;
+            // Set the Token as Default Request Header:
+            ApiClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
+        }
+
         // Map Enums and strings for accessind the API:
         public static Dictionary<ProductSortCriteria, string> ProductSortDic = new Dictionary<ProductSortCriteria, string>();
 
@@ -31,17 +40,21 @@ namespace APIconnector
 
             ApiClient = new HttpClient(handler);
             
-            ApiClient.BaseAddress = new Uri("https://141.79.34.86:5001/api/");  //Base-Uri
+            ApiClient.BaseAddress = new Uri("https://141.79.34.112:5001/api/");  //Base-Uri
           
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            
             InitDictionaries();
         }
+
+
 
         // Inits the Dictionaries:
         public static void InitDictionaries()
         {
             ProductSortDic.Add(ProductSortCriteria.InStock, "InStock");
             ProductSortDic.Add(ProductSortCriteria.Name, "Name");
+            ProductSortDic.Add(ProductSortCriteria.Price, "Price");
 
             SortingOrderDic.Add(SortingOrder.Ascending, "true");
             SortingOrderDic.Add(SortingOrder.Descending, "false");

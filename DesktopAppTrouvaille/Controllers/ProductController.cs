@@ -19,7 +19,7 @@ namespace DesktopAppTrouvaille
         public List<Category> Categories = new List<Category>();
         public Product DetailProduct = new Product();
         private Manufacturer _detailManufacturer;
-        public ProductSortCriteria SortCriteria = new ProductSortCriteria();
+        public ProductSortCriteria SortCriteria = ProductSortCriteria.Price;
         private string _searchText = string.Empty;
         private ProductFilterCriteria FilterCriteria;
 

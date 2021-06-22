@@ -20,12 +20,12 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override async void UpdateData()
         {
-            _state = State.LoadData;
+            
             try
             {
                 //_iterator.Count = _processor.GetCount();
                 Categories = await _processor.LoadCategories();
-                _state = State.OK;
+               
             }
             catch(GETException e)
             {
@@ -87,7 +87,8 @@ namespace DesktopAppTrouvaille.Controllers
             {
                 if( await _processor.UpdateCategory(category.CategoryId, category.Name))
                 {
-                    _state = State.Saved;
+                    _state = State.Updated;
+                    _detailCategory = category;
                 }
             }
             catch(Exception e)

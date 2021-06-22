@@ -1,4 +1,6 @@
 ﻿using DesktopAppTrouvaille.Enums;
+using DesktopAppTrouvaille.Exceptions;
+using DesktopAppTrouvaille.FilterCriterias;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
@@ -13,6 +15,8 @@ namespace DesktopAppTrouvaille.Controllers
         private CustomerSortCriteria _customerSortCriteria;
         private ICustomerProcessor _processor = new CustomerProcessor();
         private MainController _mainController;
+
+        private CustomerFilter _filter;
 
         public CustomerController(MainController mainController)
         {
@@ -40,9 +44,18 @@ namespace DesktopAppTrouvaille.Controllers
             return _customers;
         }
 
-        public override void Search(string searchText)
+        public async override void Search(string searchText)
         {
-            
+            _filter = new CustomerFilter(false,searchText);
+            try
+            {
+                _customers = await _processor.SearchCustomer(_iterator.From, _iterator.To, _filter);
+            }
+            catch(GETException e)
+            {
+                _state = State.ConnectionError;
+            }
+           
         }
 
         public override void SelectDetailModel(IModel model)

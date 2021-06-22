@@ -28,13 +28,22 @@ namespace DesktopAppTrouvaille.Views
 
         public void UpdateView()
         {
-            throw new NotImplementedException();
+            if(_controller.GetState() == State.LoginFailed)
+            {
+                labelStatus.Visible = true;
+            }
+        }
+
+        private LoginEmployeeModel GetUserFromInput()
+        {
+            LoginEmployeeModel model = new LoginEmployeeModel(textBoxEmail.Text,textBoxPassword.Text);
+            return model;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             // TODO: Check input
-            _controller.Login(new User());
+            _controller.Login(GetUserFromInput());
         }
     }
 }

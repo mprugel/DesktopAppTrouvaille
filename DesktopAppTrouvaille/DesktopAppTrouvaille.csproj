@@ -86,6 +86,7 @@
     <Compile Include="Factories\OrderItemFactory.cs" />
     <Compile Include="Factories\OrderProductFactory.cs" />
     <Compile Include="Factories\ProductItemFactory.cs" />
+    <Compile Include="FilterCriterias\CustomerFilter.cs" />
     <Compile Include="FilterCriterias\FilterCriteria.cs" />
     <Compile Include="FilterCriterias\OrderCriteria.cs" />
     <Compile Include="FilterCriterias\ProductFilterCriteria.cs" />
@@ -101,6 +102,8 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\ErrorResponse.cs" />
+    <Compile Include="Models\ErrorViewModel.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\LoginEmployeeModel.cs" />
     <Compile Include="Models\LoginResponse.cs" />

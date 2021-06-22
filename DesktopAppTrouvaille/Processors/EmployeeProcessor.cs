@@ -4,44 +4,37 @@ using DesktopAppTrouvaille.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Processors
 {
+
     public class EmployeeProcessor
     {
-        public async Task<bool> RegisterNewEmployee(RegisterEmployeeModel employee)
+        private Errors _error;
+        public Errors Error { get { return _error; } }
+        public enum Errors { NoError, PasswordInvalid, EmailInvalid}
+
+        private void SetError(ErrorResponse response)
         {
-            string url = "Employee/Register";
-            HttpResponseMessage response;
-
-            string json = JsonConvert.SerializeObject(employee);
-            StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
-
-            try
+            if(response == null || response.errors == null)
             {
-                response = await APIconnection.ApiClient.PostAsync(url, data);
-                if (response.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return;
             }
-            catch (Exception e)
+            if(response.errors.Email != null)
             {
-                throw new GETException();
+                _error = Errors.EmailInvalid;
+            }
+            if (response.errors.Password != null)
+            {
+                _error = Errors.PasswordInvalid;
             }
         }
-
-        public async Task<bool> LoginEmployee(LoginEmployeeModel employee)
+        public async Task<bool> RegisterNewEmployee(RegisterEmployeeModel employee)
         {
-            string url = "Employee/Login";
+            string url = "Auth/Employee/Register";
             HttpResponseMessage response;
 
             string json = JsonConvert.SerializeObject(employee);
@@ -50,12 +43,15 @@ namespace DesktopAppTrouvaille.Processors
             try
             {
                 response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(response);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;
                 }
                 else
                 {
+                    ErrorResponse error = await response.Content.ReadAsAsync<ErrorResponse>();
+                    SetError(error);
                     return false;
                 }
             }
@@ -68,7 +64,7 @@ namespace DesktopAppTrouvaille.Processors
         // TODO add GUID:
         public async Task<bool> UpdateEmployee(Guid guid,Employee employee)
         {
-            string url = "Employee?employeeId=" + guid.ToString();
+            string url = "Auth/Employee?employeeId=" + guid.ToString();
             HttpResponseMessage response;
 
             string json = JsonConvert.SerializeObject(employee);
@@ -76,13 +72,16 @@ namespace DesktopAppTrouvaille.Processors
 
             try
             {
-                response = await APIconnection.ApiClient.PostAsync(url, data);
+                response = await APIconnection.ApiClient.PutAsync(url, data);
+                Console.WriteLine(response);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;
                 }
                 else
                 {
+                    ErrorResponse error = await response.Content.ReadAsAsync<ErrorResponse>();
+                    SetError(error);
                     return false;
                 }
             }
@@ -94,7 +93,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<List<Employee>> GetEmployees(int from , int to)
         {
-            string url = string.Format("Employee/{0}/{1}", from, to);
+            string url = string.Format("Auth/Employee/{0}/{1}", from, to);
             HttpResponseMessage response;
 
             try
@@ -117,7 +116,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<int> GetCount()
         {
-            string url = "Employee/Count";
+            string url = "Auth/Employee/Count";
             HttpResponseMessage response;
 
             try
@@ -137,6 +136,7 @@ namespace DesktopAppTrouvaille.Processors
                 throw new GETException();
             }
         }
+
     }
 
 }

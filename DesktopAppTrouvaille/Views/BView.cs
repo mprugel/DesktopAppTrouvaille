@@ -25,6 +25,15 @@ namespace DesktopAppTrouvaille.Views
                 case State.LoadData:
                     labelStatus.Text = "Lade Daten vom Server...";
                     break;
+                case State.SaveFailed:
+                    labelStatus.Text = "Anlegen fehlgeschalgen!";
+                    break;
+                case State.UpdateFailed:
+                    labelStatus.Text = "Speichern fehlgeschalgen!";
+                    break;
+                case State.Updated:
+                    labelStatus.Text = "Erfolgreich gespeichert!";
+                    break;
                 case State.SendingData:
                     labelStatus.Text = "Sende Daten zum Server...";
                     break;

@@ -1,7 +1,7 @@
 ﻿
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
-using System.Windows.Forms;
+using DesktopAppTrouvaille.Processors;
 
 namespace DesktopAppTrouvaille.Views.EmployeeV
 {
@@ -9,15 +9,23 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
     {
         public NewEmployeeView()
         {
-            InitializeComponent();
-            
+            InitializeComponent();  
         }
         public NewEmployeeView(EmployeeController controller) : base(controller)
         {
             InitializeComponent();
             textBoxPassword.Validating += textboxValidating;
             textBoxPasswordReType.Validating += textboxValidating;
-           
+        }
+        public override void UpdateView()
+        {
+            base.UpdateView();
+
+            labelPasswordNotValid.Visible = false;
+            if (_controller.GetError() == EmployeeProcessor.Errors.EmailInvalid)
+            {
+                labelPasswordNotValid.Visible = true;
+            }
         }
 
         protected override void ButtonSaveClick()

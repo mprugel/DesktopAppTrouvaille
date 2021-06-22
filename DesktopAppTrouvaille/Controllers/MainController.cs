@@ -4,6 +4,8 @@ using DesktopAppTrouvaille;
 using DesktopAppTrouvaille.Views;
 using DesktopAppTrouvaille.FilterCriterias;
 using System.Windows.Forms;
+using DesktopAppTrouvaille.Processors;
+using System;
 
 namespace DesktopAppTrouvaille
 {
@@ -12,12 +14,16 @@ namespace DesktopAppTrouvaille
     {
         private static bool _loggedIn;
         public static bool LoggedIn { get { return _loggedIn; } }
-        private User _currentUser;
+        private static bool _isAdmin;
+        public static bool IsAdmin { get { return _isAdmin; } }
         private IMainView _view;
 
         public ProductController productController = new ProductController();
         public OrderController orderController;
 
+        private LoginProcessor _loginProcessor = new LoginProcessor();
+
+        private State _state;
 
         public MainController(IMainView view)
         {
@@ -25,12 +31,41 @@ namespace DesktopAppTrouvaille
             _loggedIn = false;
         }
 
-        public void Login(User user)
+        public async void Login(LoginEmployeeModel user)
         {
             // Call API to Login User:
-            //...
-            //Successfuly logged in:
-            _loggedIn = true;
+            try
+            {
+                LoginResponse response = await _loginProcessor.LoginEmployee(user);
+                if (response != null)
+                {
+                    APIconnector.APIconnection.SetToken(response.Message);
+                    string role = await _loginProcessor.GetRole();
+                    if(role.Equals("Admin")|| role.Equals("Employee"))
+                    {
+                        if(role.Equals("Admin"))
+                        {
+                            _isAdmin = true;
+                        }
+                        else
+                        {
+                            _isAdmin = false;
+                        }
+                        //Successfuly logged in:
+                        _loggedIn = true;
+                        _state = State.LoggedIn;
+                    }
+                }
+                else
+                {
+                    _state = State.LoginFailed;
+                }
+
+            }
+            catch(Exception e)
+            {
+                _state = State.ConnectionError;
+            }
             _view.UpdateView();
         }
 
@@ -60,5 +95,11 @@ namespace DesktopAppTrouvaille
             orderController.Search("");
         }
 
+       
+
+        public State GetState()
+        {
+            return _state;
+        }
     }
 }

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Controllers
 {
-    public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted, Updated, SaveFailed, UpdateFailed, DeleteFailed }
+    public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted, Updated, SaveFailed, UpdateFailed, DeleteFailed, LoggedIn, LoginFailed }
 
     // This Controller Class contains Functions which are used by all specific Controllers.
     public abstract class Controller : IController
@@ -17,7 +17,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         // Interface for Updating the GUI:
         private List<IView> _views= new List<IView>();
-        protected State _state;
+        protected State _state = State.OK;
 
         protected SortingOrder SortOrder;
 

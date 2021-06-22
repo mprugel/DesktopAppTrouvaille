@@ -62,17 +62,27 @@ namespace DesktopAppTrouvaille.Views
             {
                 panelMainMenu.Visible = true;
                 panelTabView.Controls.Clear();
+
+                if(MainController.IsAdmin)
+                {
+                    buttonShowEpmloyees.Visible = true;
+                }
+                else
+                {
+                    buttonShowEpmloyees.Visible = false;
+                }
             }
             else
             {
                 LoginView view = new LoginView(controller);
-                view.Left = (ClientSize.Width - view.Width) / 2;
-                view.Top = (ClientSize.Height - view.Height) / 2;
-
+                //view.Left = (ClientSize.Width - view.Width) / 2;
+                //view.Top = (ClientSize.Height - view.Height) / 2;
+                view.Dock = DockStyle.Left;
                 _tabView = view;
                 panelMainMenu.Visible = false;
                 panelTabView.Controls.Clear();
                 panelTabView.Controls.Add((UserControl)_tabView);
+                _tabView.UpdateView();
             }
         }
         public void SetTabView(IDetailView view)
