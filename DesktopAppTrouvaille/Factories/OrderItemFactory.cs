@@ -19,9 +19,21 @@ namespace DesktopAppTrouvaille.Factories
             return row;
         }
 
-        public override void SetSortCriteria(int colmumnID, IController controller)
+        public override bool SetSortCriteria(int colmumnID, IController controller)
         {
-            
+            if(controller is OrderController)
+            {
+                OrderController orderController = (OrderController)controller;
+                switch(colmumnID)
+                {
+                    case 0:
+                        orderController.SetSortCriteria(Enums.OrderSortCriteria.Date);
+                        return true;
+
+                }
+                return false;
+            }
+            return false;
         }
     }
 }

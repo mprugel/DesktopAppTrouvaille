@@ -78,10 +78,10 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(558, 12);
+            this.buttonSave.Location = new System.Drawing.Point(523, 12);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(178, 29);
+            this.buttonSave.Size = new System.Drawing.Size(213, 29);
             this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Änderungen speichern";
             this.buttonSave.UseVisualStyleBackColor = true;

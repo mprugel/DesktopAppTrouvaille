@@ -273,7 +273,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(302, 12);
+            this.buttonSave.Location = new System.Drawing.Point(196, 12);
             this.buttonSave.Size = new System.Drawing.Size(209, 29);
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
@@ -1792,9 +1792,9 @@
             this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxActive.Location = new System.Drawing.Point(29, 707);
             this.checkBoxActive.Name = "checkBoxActive";
-            this.checkBoxActive.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxActive.Size = new System.Drawing.Size(88, 17);
             this.checkBoxActive.TabIndex = 34;
-            this.checkBoxActive.Text = "Aktiviert";
+            this.checkBoxActive.Text = "Deaktiviert";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
             // ProductDetailView

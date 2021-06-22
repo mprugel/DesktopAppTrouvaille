@@ -14,18 +14,19 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
         public EmployeeDetailView()
         {
             InitializeComponent();
-            textBoxFistName.Validating += textboxValidating;
-            textBoxLastName.Validating += textboxValidating;
-            textBoxEmail.Validating += textboxValidating;
+           
         }
 
         public EmployeeDetailView(EmployeeController controller)
         {
             InitializeComponent();
+            textBoxFistName.Validating += textboxValidating;
+            textBoxLastName.Validating += textboxValidating;
+            textBoxEmail.Validating += textboxValidating;
             _controller = controller;
         }
 
-        private void textboxValidating(object sender, CancelEventArgs e)
+        protected void textboxValidating(object sender, CancelEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -56,7 +57,7 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
         }
         protected virtual void ButtonSaveClick()
         {
-
+            _controller.UpdateEmployee(GetEmployeeFromInputField());
         }
 
         // Button Save Click

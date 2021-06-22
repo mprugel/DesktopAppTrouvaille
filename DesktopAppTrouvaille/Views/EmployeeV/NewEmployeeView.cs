@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Models;
+using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views.EmployeeV
 {
@@ -21,12 +15,21 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
         public NewEmployeeView(EmployeeController controller) : base(controller)
         {
             InitializeComponent();
+            textBoxPassword.Validating += textboxValidating;
+            textBoxPasswordReType.Validating += textboxValidating;
            
         }
 
         protected override void ButtonSaveClick()
         {
-            _controller.SaveNewEmployee(GetEmployeeFromInputField());
+            // Check if Passwords are Equal:
+            if(textBoxPassword.Text.Equals(textBoxPasswordReType.Text))
+            {
+                Employee employee = GetEmployeeFromInputField();
+                RegisterEmployeeModel registerModel = new RegisterEmployeeModel(employee,textBoxPassword.Text,textBoxPasswordReType.Text);
+                _controller.SaveNewEmployee(registerModel);
+            }
+           
         }
     }
 }

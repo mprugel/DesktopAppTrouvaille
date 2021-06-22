@@ -12,23 +12,25 @@ namespace DesktopAppTrouvaille.Factories
     {
         public override string[] CreateColumns()
         {
-            string[] cols = { "Vorname", "Nachname" };
+            string[] cols = { "Vorname", "Nachname", "E-Mail" };
             return cols;
         }
 
-        public override void SetSortCriteria(int colmumnID, IController controller)
+        public override bool SetSortCriteria(int colmumnID, IController controller)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         protected override string[] CreateRowValues(IModel model)
         {
-            string[] row;
+           
             if(model is Employee)
             {
-                //...
+                Employee em = (Employee)model;
+                string[] row = {em.FirstName, em.LastName, em.Email};
+                return row;
             }
-            return null;
+            return new string[1];
         }
     }
 }

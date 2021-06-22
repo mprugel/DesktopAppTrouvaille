@@ -19,23 +19,25 @@ namespace DesktopAppTrouvaille.Factories
             return row;
         }
 
-        public override void SetSortCriteria(int colmumnID, IController controller)
+        public override bool SetSortCriteria(int colmumnID, IController controller)
         {
             if(!(controller is CustomerController))
             {
-                return;
+                return false;
             }
             CustomerController customerController = (CustomerController)controller;
             switch(colmumnID)
             {
                 case 0:
                     customerController.SetSortCriteria(Enums.CustomerSortCriteria.Firstname);
-                    break;
+                    return true;
+                   
                 case 1:
                     customerController.SetSortCriteria(Enums.CustomerSortCriteria.Lastname);
-                    break;
-                
+                    return true;
+               
             }
+            return false;
         }
     }
 }

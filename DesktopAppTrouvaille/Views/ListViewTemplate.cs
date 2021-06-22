@@ -72,10 +72,7 @@ namespace DesktopAppTrouvaille.Views
             {
                 listView1.Columns.Add(col).Width = 100;
             }
-            if(listView1.Columns.Count > 0)
-            {
-                SetSortArrow(listView1.Columns[0], _sortOrder);
-            }
+           
         }
        
         public void AddClickHandler(EventHandler handler)
@@ -150,7 +147,7 @@ namespace DesktopAppTrouvaille.Views
            
         }
 
-        // Method for setting Arrw Symbol in Columnheader:
+        // Method for setting Arrow Symbol in Columnheader:
         private void SetSortArrow(ColumnHeader head, SortOrder order)
         {
             const string ascArrow = " ▲";
@@ -188,9 +185,13 @@ namespace DesktopAppTrouvaille.Views
                 SetSortArrow(header, SortOrder.None);
             }
             lastColumn = e.Column;
-            SetSortArrow(listView1.Columns[e.Column], _sortOrder);
-            Factory.SetSortCriteria(e.Column, Controller);
-            Controller.UpdateData();
+           
+            if(Factory.SetSortCriteria(e.Column, Controller))
+            {
+                SetSortArrow(listView1.Columns[e.Column], _sortOrder);
+                Controller.UpdateData();
+            }
+            
 
         }
     }

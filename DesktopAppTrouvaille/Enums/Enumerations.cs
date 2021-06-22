@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DesktopAppTrouvaille.Enums
 {
     // Attributes to Sort
-    public enum ProductSortCriteria { Name, InStock }
+    public enum ProductSortCriteria { Name, InStock ,Price}
 
     public enum OrderSortCriteria { Date}
 

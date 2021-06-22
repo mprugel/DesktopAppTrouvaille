@@ -9,7 +9,7 @@ namespace DesktopAppTrouvaille.Factories
     {
         public override string[] CreateColumns()
         {
-           string[] cols = { "Name", "Lagerbestand" };
+           string[] cols = { "Name", "Lagerbestand", "Preis" };
            return cols;
         }
 
@@ -20,19 +20,15 @@ namespace DesktopAppTrouvaille.Factories
             return row;
         }
 
-        public override void SetSortCriteria(int colmumnID, IController controller)
+        public override bool SetSortCriteria(int colmumnID, IController controller)
         {
             ProductController cont = (ProductController)controller;
-            switch(colmumnID)
+            if(colmumnID == 2)
             {
-                case 0:
-                    cont.SortCriteria = ProductSortCriteria.Name;
-                    break;
-                case 1:
-                    cont.SortCriteria = ProductSortCriteria.InStock;
-                    break;
-
+                cont.SortCriteria = ProductSortCriteria.Price;
+                return true;
             }
+            return false;
         }
     }
 }

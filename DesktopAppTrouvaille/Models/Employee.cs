@@ -13,5 +13,10 @@ namespace DesktopAppTrouvaille.Models
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public Guid GetGuid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

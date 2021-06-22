@@ -23,9 +23,10 @@ namespace DesktopAppTrouvaille.Factories
             return row;
         }
 
-        public override void SetSortCriteria(int colmumnID, IController controller)
+        public override bool SetSortCriteria(int colmumnID, IController controller)
         {
-            throw new NotImplementedException();
+            // No Sorting:
+            return false;
         }
     }
 }

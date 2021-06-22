@@ -29,7 +29,7 @@ namespace DesktopAppTrouvaille.Factories
         public abstract string[] CreateColumns();
         protected abstract string[] CreateRowValues(IModel model);
 
-        public abstract void SetSortCriteria(int colmumnID, IController controller);
+        public abstract bool SetSortCriteria(int colmumnID, IController controller);
         
     }
 }
