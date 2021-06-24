@@ -33,8 +33,7 @@
             // listView
             // 
             this.listView.DisplayAddButton = false;
-            this.listView.DisplayFilterView = false;
-            this.listView.Size = new System.Drawing.Size(377, 683);
+            this.listView.Size = new System.Drawing.Size(427, 683);
             this.listView.Title = "Kunden";
             // 
             // panelDetailView

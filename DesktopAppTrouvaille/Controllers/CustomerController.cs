@@ -16,7 +16,7 @@ namespace DesktopAppTrouvaille.Controllers
         private ICustomerProcessor _processor = new CustomerProcessor();
         private MainController _mainController;
 
-        private CustomerFilter _filter;
+        private CustomerFilter _filter = new CustomerFilter(false,"");
 
         public CustomerController(MainController mainController)
         {
@@ -46,7 +46,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void Search(string searchText)
         {
-            _filter = new CustomerFilter(false,searchText);
+            _filter.Email = searchText;
             try
             {
                 _customers = await _processor.SearchCustomer(_iterator.From, _iterator.To, _filter);
@@ -134,6 +134,11 @@ namespace DesktopAppTrouvaille.Controllers
         public void ShowOrders()
         {
             _mainController.ShowOrders(_detailCustomer);
+        }
+
+        public void SetFilter(CustomerFilter filter)
+        {
+            _filter = filter;
         }
     }
 }

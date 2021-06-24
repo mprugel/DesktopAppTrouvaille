@@ -10,16 +10,17 @@ namespace DesktopAppTrouvaille.Views.FilterV
     public partial class OrderFilter : Filter, IView
     {
         public OrderController Controller;
+        private OrderCriteria _criteria = new OrderCriteria();
 
         public OrderCriteria GetFilterCriteria()
         {
-            OrderCriteria criteria = new OrderCriteria();
-            criteria.OrderDateFrom = dateTimePickerFrom.Value;
-            criteria.OrderDateTo = dateTimePickerFrom.Value;
+            
+            _criteria.OrderDateFrom = dateTimePickerFrom.Value;
+            _criteria.OrderDateTo = dateTimePickerFrom.Value;
 
-            criteria.OrderState = ((KeyValuePair<OrderState,string>)comboBoxState.SelectedItem).Key;
-            Console.WriteLine("Selected State: " + criteria.OrderState);
-            return criteria;
+            _criteria.OrderState = ((KeyValuePair<OrderState,string>)comboBoxState.SelectedItem).Key;
+            Console.WriteLine("Selected State: " + _criteria.OrderState);
+            return _criteria;
         }
 
         public void UpdateView()
@@ -31,15 +32,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
 
         public override void SendFilterToController()
         {
-            if(checkBox1.Checked)
-            {
-                Controller.SetFilterCriteria(GetFilterCriteria());
-            }
-            else
-            {
-                Controller.SetFilterCriteria(null);
-            }
-            
+            Controller.SetFilterCriteria(GetFilterCriteria());
         }
 
         public OrderFilter(OrderController controller = null)
@@ -52,6 +45,16 @@ namespace DesktopAppTrouvaille.Views.FilterV
         private void comboBoxState_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetFilterCriteria();
+        }
+
+        private void checkBoxDate_CheckedChanged(object sender, EventArgs e)
+        {
+            _criteria.FilterDate = checkBoxDate.Checked;
+        }
+
+        private void checkBoxState_CheckedChanged(object sender, EventArgs e)
+        {
+            _criteria.FilterState = checkBoxState.Checked;
         }
     }
 }

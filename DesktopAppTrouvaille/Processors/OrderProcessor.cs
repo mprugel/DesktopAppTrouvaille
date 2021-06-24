@@ -148,10 +148,16 @@ namespace DesktopAppTrouvaille.Processors
 
             if (criteria != null)
             {
-                timeFrom = criteria.OrderDateFrom.ToString("dd-MM-yyyy");
-                timeto = criteria.OrderDateTo.ToString("dd-MM-yyyy");
-                orderState = ((int)criteria.OrderState).ToString();
-                if(criteria.CustomerGuid != null)
+                if(criteria.FilterDate)
+                {
+                    timeFrom = criteria.OrderDateFrom.ToString("dd-MM-yyyy");
+                    timeto = criteria.OrderDateTo.ToString("dd-MM-yyyy");
+                }
+                if(criteria.FilterState)
+                {
+                    orderState = ((int)criteria.OrderState).ToString();
+                }
+                if(criteria.FilerID)
                 {
                     cID = criteria.CustomerGuid.ToString();
                 }

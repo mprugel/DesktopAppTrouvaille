@@ -199,7 +199,6 @@ namespace DesktopAppTrouvaille
         {
             try
             {
-                DetailProduct = await _productProssesor.LoadProduct(guid);
                 if (DetailProduct != null && DetailProduct.ManufacturerId != null)
                 {
                     _detailManufacturer = await _productProssesor.GetManufacturerByID((Guid)DetailProduct.ManufacturerId);
@@ -217,8 +216,9 @@ namespace DesktopAppTrouvaille
 
         public override void SelectDetailModel(IModel model)
         {
-            LoadDetailProduct(model.GetGuid());
+            //LoadDetailProduct(model.GetGuid());
             DetailProduct = (Product)model;
+            UpdateView();
         }
 
         public async override void Search(string searchText)

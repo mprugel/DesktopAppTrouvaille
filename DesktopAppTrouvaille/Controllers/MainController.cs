@@ -33,6 +33,10 @@ namespace DesktopAppTrouvaille
 
         public async void Login(LoginEmployeeModel user)
         {
+            _state = State.LoggedIn;
+            _loggedIn = true;
+            _view.UpdateView();
+            return;
             // Call API to Login User:
             try
             {

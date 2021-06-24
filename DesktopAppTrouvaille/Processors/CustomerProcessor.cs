@@ -83,15 +83,21 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-        //TEST CUSTOMER EMAIL: @ TO %
+     
         public async Task<List<Customer>> SearchCustomer(int from, int to, CustomerFilter filter)
         {
             string guid = "";
+            string onlyActive = "false";
             if(filter.SearchGuid)
             {
                 guid = filter.CustomerGuid.ToString();
             }
-            string url = string.Format( "Auth/Customer/SearchQuery/{0}/{1}/?customerId={2}&customerEmail={3}&onlyActive=false",from.ToString(),to.ToString(),guid, filter.Email);
+            if(filter.OnlyActive)
+            {
+                onlyActive = "true";
+            }
+           
+            string url = string.Format( "Auth/Customer/SearchQuery/{0}/{1}/?customerId={2}&customerEmail={3}&onlyActive={4}",from.ToString(),to.ToString(),guid, filter.Email, onlyActive);
             Console.WriteLine(url);
             HttpResponseMessage response;
             try

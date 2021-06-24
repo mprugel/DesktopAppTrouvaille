@@ -194,5 +194,14 @@ namespace DesktopAppTrouvaille.Views
             
 
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (FilterView != null && e.KeyCode == Keys.Enter)
+            {
+                FilterView.SendFilterToController();
+                Controller.Search(textBox1.Text);
+            }
+        }
     }
 }

@@ -26,10 +26,10 @@ namespace DesktopAppTrouvaille.Views
                     labelStatus.Text = "Lade Daten vom Server...";
                     break;
                 case State.SaveFailed:
-                    labelStatus.Text = "Anlegen fehlgeschalgen!";
+                    labelStatus.Text = "Anlegen fehlgeschlagen!";
                     break;
                 case State.UpdateFailed:
-                    labelStatus.Text = "Speichern fehlgeschalgen!";
+                    labelStatus.Text = "Speichern fehlgeschlagen!";
                     break;
                 case State.Updated:
                     labelStatus.Text = "Erfolgreich gespeichert!";
@@ -55,15 +55,17 @@ namespace DesktopAppTrouvaille.Views
             panelDetailView.Visible = false;
             listView.AddClickHandler(ItemSelected);
             listView.AddButtonAddHandler(ButtonAddHandler);
-
         }
-
-       
         private void ButtonAddHandler(object sender, EventArgs e)
-        {
+        { 
+            Controller.DetachView(detailView);
             panelDetailView.Controls.Clear();
+
             detailView = CreateNewView();
             detailView.SetController(Controller);
+           
+            Controller.AttachView(detailView);
+
             UserControl control = (UserControl)detailView;
             control.Dock = DockStyle.Fill;
             panelDetailView.Controls.Add(control);

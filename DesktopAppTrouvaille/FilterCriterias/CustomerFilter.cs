@@ -10,12 +10,12 @@ namespace DesktopAppTrouvaille.FilterCriterias
     {
         public bool SearchGuid = false;
         public Guid CustomerGuid = new Guid();
+        public bool OnlyActive = false;
         public string Email;
 
         public CustomerFilter(bool searchGuid, string email)
         {
             SearchGuid = searchGuid;
-            
             Email = email;
         }
     }

@@ -13,6 +13,9 @@ namespace DesktopAppTrouvaille.FilterCriterias
         public DateTime OrderDateTo;
         public Guid CustomerGuid;
         public OrderState OrderState;
+        public bool FilterDate;
+        public bool FilterState;
+        public bool FilerID;
         
     }
 }

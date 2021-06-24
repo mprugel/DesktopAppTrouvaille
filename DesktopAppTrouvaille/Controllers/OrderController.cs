@@ -6,8 +6,7 @@ using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using static DesktopAppTrouvaille.Globals.Globals;
+
 
 namespace DesktopAppTrouvaille.Controllers
 {
@@ -75,9 +74,10 @@ namespace DesktopAppTrouvaille.Controllers
             {
                 Orders = await _processor.GetOrdersFRomCustomer(_iterator.From, _iterator.To, guid);
                 UpdateView();
-            }catch(Exception e)
+            }
+            catch(Exception e)
             {
-
+                _state = State.ConnectionError;
             }
         }
 
@@ -87,7 +87,7 @@ namespace DesktopAppTrouvaille.Controllers
             try
             {
                 _state = State.LoadData;
-                _iterator.Count = await _processor.GetCount();
+               _iterator.Count = await _processor.GetCount();
                 Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
                 _state = State.OK;
             }
@@ -171,7 +171,7 @@ namespace DesktopAppTrouvaille.Controllers
             try
             {
                 _iterator.Reset();
-                _iterator.Count = await _processor.GetCount();
+               // _iterator.Count = await _processor.GetCount();
                 
                 Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
             }
@@ -190,16 +190,5 @@ namespace DesktopAppTrouvaille.Controllers
             _sortCriteria = criteria;
         }
 
-        public async void GetOrdersFromCustomer(Guid guid)
-        {
-            try
-            {
-                Orders = await _processor.GetOrdersFRomCustomer(_iterator.From, _iterator.To, guid);
-            }
-            catch(GETException)
-            {
-                _state = State.ConnectionError;
-            }
-        }
     }
 }

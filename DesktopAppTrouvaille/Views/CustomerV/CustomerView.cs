@@ -4,10 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DesktopAppTrouvaille.Views;
+
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Factories;
@@ -27,7 +24,7 @@ namespace DesktopAppTrouvaille.Views
             Controller.AttachView(listView);
             listView.Controller = Controller;
             listView.Factory = new CustomerItemFactory();
-            listView.FilterView = new CustomerFiler();
+            listView.FilterView = new CustomerFiler(_controller);
 
             listView.Init();
 
