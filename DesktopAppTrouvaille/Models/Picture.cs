@@ -16,26 +16,25 @@ namespace DesktopAppTrouvaille.Models
         public Bitmap ToBitmap()
         {
             Bitmap img;
-            
-            using (MemoryStream stream = new MemoryStream(ImageData))
+            if(ImageData != null)
             {
-                if(stream != null)
+                using (MemoryStream stream = new MemoryStream(ImageData))
                 {
-                    img = new Bitmap(stream);
-                }
-                else
-                {
-                    img = new Bitmap(1024, 1024);
-                    using (Graphics g = Graphics.FromImage(img)) 
-                    {
-                        g.Clear(Color.White);
-                        Font font = new Font("Arial", 14);
-                        Brush brush = new SolidBrush(Color.Black);
-                        g.DrawString("Noch kein Bild vorhanden", font, brush, new Point(0, 0));
-                    }
+                    img = new Bitmap(stream); 
                 }
 
-            } 
+            }
+            else
+            {
+                img = new Bitmap(1024, 1024);
+                using (Graphics g = Graphics.FromImage(img))
+                {
+                    g.Clear(Color.White);
+                    Font font = new Font("Arial", 14);
+                    Brush brush = new SolidBrush(Color.Black);
+                    g.DrawString("Noch kein Bild vorhanden", font, brush, new Point(0, 0));
+                }
+            }
                
            return img;  
         }
