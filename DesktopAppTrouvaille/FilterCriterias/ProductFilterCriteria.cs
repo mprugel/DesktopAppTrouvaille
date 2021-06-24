@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.FilterCriterias
 {
@@ -8,13 +9,13 @@ namespace DesktopAppTrouvaille.FilterCriterias
     {
         public int InStockFrom;
         public int InStockTo;
-        public Guid CategroryID = new Guid();
+        public List<Guid> CategroryIDs = new List<Guid>();
 
-        public ProductFilterCriteria(int inStockFrom, int inStockTo, Guid categroryID)
+        public ProductFilterCriteria(int inStockFrom, int inStockTo, List<Guid> categroryIDs)
         {
             InStockFrom = inStockFrom;
             InStockTo = inStockTo;
-            CategroryID = categroryID;
+            CategroryIDs = categroryIDs;
         }
     }
 }

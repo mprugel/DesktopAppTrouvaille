@@ -103,7 +103,7 @@ namespace APIconnector.Processors
                 List<Guid> guids = new List<Guid>();
                 if(criteria != null)
                 {
-                    guids.Add(criteria.CategroryID);
+                    guids = criteria.CategroryIDs;
                 }
                 string json = JsonConvert.SerializeObject(guids);
 

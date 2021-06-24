@@ -15,13 +15,25 @@ namespace DesktopAppTrouvaille.Views.FilterV
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownTo;
         private System.Windows.Forms.NumericUpDown numericUpDownFrom;
-
+        private CheckBox checkBox2;
+        private System.ComponentModel.IContainer components;
         private ProductController _controller;
         public ProductFilterCriteria GetFilterCriteria()
         {
+            List<Guid> categories = new List<Guid>();
             Category cat = (Category)comboBoxCategory.SelectedItem;
-            if(cat == null) { cat = new Category(); }
-            return new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value,cat.CategoryId);
+            if(cat == null) 
+            { 
+                foreach(Category c in _controller.Categories)
+                {
+                    categories.Add(c.CategoryId);
+                }
+            }
+            else
+            {
+                categories.Add(cat.GetGuid());
+            }
+            return new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value,categories);
         }
 
         public override void SendFilterToController()
@@ -41,6 +53,9 @@ namespace DesktopAppTrouvaille.Views.FilterV
         {
             InitializeComponent();
             _controller = controller;
+            comboBoxCategory.SelectedItem = null;
+            comboBoxCategory.SelectedText = "Alle";
+
         }
         private void InitializeComponent()
         {
@@ -51,6 +66,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrom)).BeginInit();
@@ -58,7 +74,10 @@ namespace DesktopAppTrouvaille.Views.FilterV
             // 
             // checkBox1
             // 
-            this.checkBox1.Location = new System.Drawing.Point(11, 118);
+            this.checkBox1.Location = new System.Drawing.Point(240, 13);
+            this.checkBox1.Size = new System.Drawing.Size(77, 17);
+            this.checkBox1.Text = "Anwenden";
+            this.checkBox1.Visible = false;
             // 
             // groupBox1
             // 
@@ -66,7 +85,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.groupBox1.Controls.Add(this.numericUpDownFrom);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 7);
+            this.groupBox1.Location = new System.Drawing.Point(14, 80);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -74,6 +93,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lagerbestand";
+            this.groupBox1.Visible = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // numericUpDownTo
@@ -116,36 +136,48 @@ namespace DesktopAppTrouvaille.Views.FilterV
             // 
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(64, 76);
+            this.comboBoxCategory.Location = new System.Drawing.Point(67, 11);
             this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(168, 21);
+            this.comboBoxCategory.Size = new System.Drawing.Size(159, 21);
             this.comboBoxCategory.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 79);
+            this.label3.Location = new System.Drawing.Point(11, 14);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Kategorie";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(14, 58);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(121, 17);
+            this.checkBox2.TabIndex = 7;
+            this.checkBox2.Text = "Nur aktive Produkte";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // ProductFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "ProductFilter";
-            this.Size = new System.Drawing.Size(242, 138);
+            this.Size = new System.Drawing.Size(320, 138);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.comboBoxCategory, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.checkBox1, 0);
+            this.Controls.SetChildIndex(this.checkBox2, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).EndInit();
@@ -165,6 +197,8 @@ namespace DesktopAppTrouvaille.Views.FilterV
             comboBoxCategory.DataSource = _controller.Categories;
             comboBoxCategory.DisplayMember = "Name";
             comboBoxCategory.ValueMember = "Name";
+            comboBoxCategory.SelectedItem = null;
+            comboBoxCategory.SelectedText = "Alle";
         }
     }
 }

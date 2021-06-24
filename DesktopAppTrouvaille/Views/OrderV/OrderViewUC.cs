@@ -39,5 +39,10 @@ namespace DesktopAppTrouvaille.Views
             view.Controller = controller;
             return view;
         }
+
+        private void listView_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

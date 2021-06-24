@@ -37,6 +37,27 @@ namespace DesktopAppTrouvaille.Views
 
         private bool _displayAddButton = true;
 
+        private bool _displaySearchBox = true;
+
+        public bool DisplaySearchBox
+        {
+            get { return _displaySearchBox; }
+            set 
+            {
+                _displaySearchBox = value;
+                textBox1.Visible = value;
+            }
+        }
+
+        public string SearchButtonText
+        {
+            get { return button1.Text; }
+            set
+            {
+                button1.Text = value;
+            }
+        }
+
         private bool _displayFilterView = true;
         public bool DisplayFilterView
         {
