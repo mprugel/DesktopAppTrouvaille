@@ -32,7 +32,7 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    return null;
+                    throw new GETException();
                 }
             }
             catch (Exception)

@@ -54,7 +54,7 @@ namespace APIconnector.Processors
                 }
                 else
                 {
-                    return null;
+                    throw new GETException();
                 }
             }
             catch(Exception)
@@ -195,7 +195,7 @@ namespace APIconnector.Processors
                 }
                 else
                 {
-                    throw new GETException();
+                    return new List<Product>();
                 }
             }
             catch (Exception)

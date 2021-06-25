@@ -74,7 +74,7 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    throw new GETException();
+                    return new List<Customer>();
                 }
             }
             catch (Exception)
