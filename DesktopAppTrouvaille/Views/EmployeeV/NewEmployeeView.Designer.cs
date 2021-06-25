@@ -50,7 +50,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 180);
+            this.label4.Location = new System.Drawing.Point(12, 277);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 8;
@@ -60,7 +60,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 223);
+            this.label5.Location = new System.Drawing.Point(12, 320);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 13);
             this.label5.TabIndex = 9;
@@ -68,7 +68,7 @@
             // 
             // textBoxPasswordReType
             // 
-            this.textBoxPasswordReType.Location = new System.Drawing.Point(149, 220);
+            this.textBoxPasswordReType.Location = new System.Drawing.Point(151, 317);
             this.textBoxPasswordReType.Name = "textBoxPasswordReType";
             this.textBoxPasswordReType.PasswordChar = '*';
             this.textBoxPasswordReType.Size = new System.Drawing.Size(115, 20);
@@ -76,7 +76,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(149, 180);
+            this.textBoxPassword.Location = new System.Drawing.Point(151, 277);
             this.textBoxPassword.MaxLength = 50;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
@@ -86,7 +86,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 270);
+            this.label6.Location = new System.Drawing.Point(15, 386);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(278, 39);
@@ -99,7 +99,7 @@
             this.labelPasswordNotValid.AutoSize = true;
             this.labelPasswordNotValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswordNotValid.ForeColor = System.Drawing.Color.Red;
-            this.labelPasswordNotValid.Location = new System.Drawing.Point(301, 183);
+            this.labelPasswordNotValid.Location = new System.Drawing.Point(298, 320);
             this.labelPasswordNotValid.Name = "labelPasswordNotValid";
             this.labelPasswordNotValid.Size = new System.Drawing.Size(111, 13);
             this.labelPasswordNotValid.TabIndex = 18;

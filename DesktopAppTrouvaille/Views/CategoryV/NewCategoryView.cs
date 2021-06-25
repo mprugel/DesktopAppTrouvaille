@@ -13,6 +13,7 @@ namespace DesktopAppTrouvaille.Views.CategoryV
         {
             Category = new Models.Category();
             InitializeComponent();
+            Enabled = true;
         }
 
         protected override void SaveClick()

@@ -16,6 +16,7 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
             InitializeComponent();
             textBoxPassword.Validating += textboxValidating;
             textBoxPasswordReType.Validating += textboxValidating;
+            Enabled = true;
         }
         public override void UpdateView()
         {

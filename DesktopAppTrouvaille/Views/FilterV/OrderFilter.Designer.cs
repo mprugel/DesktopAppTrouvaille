@@ -42,14 +42,14 @@
             // 
             // checkBox1
             // 
-            this.checkBox1.Location = new System.Drawing.Point(6, 71);
+            this.checkBox1.Location = new System.Drawing.Point(202, 98);
             this.checkBox1.Visible = false;
             // 
             // comboBoxState
             // 
             this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(65, 94);
+            this.comboBoxState.Location = new System.Drawing.Point(62, 72);
             this.comboBoxState.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(180, 21);
@@ -58,7 +58,7 @@
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(65, 14);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(62, 2);
             this.dateTimePickerFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(180, 20);
@@ -67,7 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 15);
+            this.label1.Location = new System.Drawing.Point(0, 3);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
@@ -77,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 97);
+            this.label2.Location = new System.Drawing.Point(0, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
@@ -86,7 +86,7 @@
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(65, 44);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(62, 32);
             this.dateTimePickerTo.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(180, 20);
@@ -95,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 49);
+            this.label3.Location = new System.Drawing.Point(0, 37);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 13);
@@ -105,7 +105,7 @@
             // checkBoxDate
             // 
             this.checkBoxDate.AutoSize = true;
-            this.checkBoxDate.Location = new System.Drawing.Point(259, 14);
+            this.checkBoxDate.Location = new System.Drawing.Point(247, 2);
             this.checkBoxDate.Name = "checkBoxDate";
             this.checkBoxDate.Size = new System.Drawing.Size(77, 17);
             this.checkBoxDate.TabIndex = 6;
@@ -116,7 +116,7 @@
             // checkBoxState
             // 
             this.checkBoxState.AutoSize = true;
-            this.checkBoxState.Location = new System.Drawing.Point(259, 95);
+            this.checkBoxState.Location = new System.Drawing.Point(247, 73);
             this.checkBoxState.Name = "checkBoxState";
             this.checkBoxState.Size = new System.Drawing.Size(77, 17);
             this.checkBoxState.TabIndex = 7;
@@ -126,7 +126,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 136);
+            this.textBox1.Location = new System.Drawing.Point(62, 114);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 20);
             this.textBox1.TabIndex = 8;
@@ -134,7 +134,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 139);
+            this.label4.Location = new System.Drawing.Point(0, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 9;
@@ -156,7 +156,7 @@
             this.Controls.Add(this.comboBoxState);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "OrderFilter";
-            this.Size = new System.Drawing.Size(339, 171);
+            this.Size = new System.Drawing.Size(327, 137);
             this.Controls.SetChildIndex(this.comboBoxState, 0);
             this.Controls.SetChildIndex(this.dateTimePickerFrom, 0);
             this.Controls.SetChildIndex(this.label1, 0);

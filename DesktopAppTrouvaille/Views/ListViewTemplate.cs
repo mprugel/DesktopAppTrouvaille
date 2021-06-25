@@ -70,6 +70,18 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
+        private bool _displaySearchButton = true;
+        public bool DisplaySearchButton
+        {
+            get { return _displaySearchButton; }
+            set
+            {
+                _displaySearchButton = value;
+                button1.Visible = value;
+
+            }
+        }
+
         public bool DisplayAddButton { get { return _displayAddButton; } 
             set 
             { 

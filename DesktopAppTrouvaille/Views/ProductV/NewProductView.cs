@@ -20,6 +20,7 @@ namespace DesktopAppTrouvaille.Views
             this.DisplayDeleteButton(false);
             this.SetTitle("Neues Produkt anlegen");
             this.SetButtonText("Produkt anlegen");
+            Enabled = true;
 
         }
 

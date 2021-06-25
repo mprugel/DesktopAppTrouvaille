@@ -273,7 +273,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(196, 12);
+            this.buttonSave.Location = new System.Drawing.Point(408, 12);
             this.buttonSave.Size = new System.Drawing.Size(209, 29);
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 

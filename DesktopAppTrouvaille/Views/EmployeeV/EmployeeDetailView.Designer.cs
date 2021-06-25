@@ -49,7 +49,7 @@
             // buttonSave
             // 
             this.buttonSave.Location = new System.Drawing.Point(529, 12);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Size = new System.Drawing.Size(206, 29);
             this.buttonSave.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -62,7 +62,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 63);
+            this.label2.Location = new System.Drawing.Point(13, 158);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
@@ -73,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 96);
+            this.label3.Location = new System.Drawing.Point(13, 191);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
@@ -82,16 +82,16 @@
             // 
             // textBoxFistName
             // 
-            this.textBoxFistName.Location = new System.Drawing.Point(92, 60);
-            this.textBoxFistName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFistName.Location = new System.Drawing.Point(94, 155);
+            this.textBoxFistName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFistName.Name = "textBoxFistName";
             this.textBoxFistName.Size = new System.Drawing.Size(172, 20);
             this.textBoxFistName.TabIndex = 4;
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(92, 93);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxLastName.Location = new System.Drawing.Point(94, 188);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(172, 20);
             this.textBoxLastName.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 133);
+            this.label1.Location = new System.Drawing.Point(15, 228);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 6;
@@ -112,7 +112,7 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(92, 130);
+            this.textBoxEmail.Location = new System.Drawing.Point(94, 225);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(172, 20);
             this.textBoxEmail.TabIndex = 7;
@@ -122,7 +122,7 @@
             this.labelEmailNotValid.AutoSize = true;
             this.labelEmailNotValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmailNotValid.ForeColor = System.Drawing.Color.Red;
-            this.labelEmailNotValid.Location = new System.Drawing.Point(296, 133);
+            this.labelEmailNotValid.Location = new System.Drawing.Point(298, 228);
             this.labelEmailNotValid.Name = "labelEmailNotValid";
             this.labelEmailNotValid.Size = new System.Drawing.Size(95, 13);
             this.labelEmailNotValid.TabIndex = 15;
@@ -142,7 +142,7 @@
             this.Controls.Add(this.textBoxFistName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmployeeDetailView";
             this.Size = new System.Drawing.Size(750, 616);
             this.Controls.SetChildIndex(this.label2, 0);

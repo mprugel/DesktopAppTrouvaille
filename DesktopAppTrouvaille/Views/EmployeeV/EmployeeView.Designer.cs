@@ -34,11 +34,13 @@
             // 
             this.listView.AddButtonText = "Neuer Mitarbeiter";
             this.listView.DisplayFilterView = false;
+            this.listView.DisplaySearchBox = false;
+            this.listView.DisplaySearchButton = false;
             this.listView.Title = "Mitarbeiter";
             // 
             // EmployeeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "EmployeeView";
             this.ResumeLayout(false);
