@@ -20,12 +20,12 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override async void UpdateData()
         {
-            
             try
             {
+                _state = State.LoadData;
                 //_iterator.Count = _processor.GetCount();
                 Categories = await _processor.LoadCategories();
-               
+                _state = State.OK;
             }
             catch(GETException e)
             {
@@ -41,10 +41,12 @@ namespace DesktopAppTrouvaille.Controllers
                 if (await _processor.PostCategory(new CategoryPOSTDTO(category)))
                 {
                     _state = State.Deleted;
+                    UpdateView();
+                    UpdateData();
                 }
                 else
                 {
-                    _state = State.ConnectionError;
+                    _state = State.DeleteFailed;
                 }
             }
             catch (Exception e)
@@ -53,7 +55,6 @@ namespace DesktopAppTrouvaille.Controllers
             }
             finally
             {
-                UpdateData();
                 UpdateView();
             }
         }
@@ -65,10 +66,12 @@ namespace DesktopAppTrouvaille.Controllers
                 if (await _processor.PostCategory(new CategoryPOSTDTO(category)))
                 {
                     _state = State.Saved;
+                    UpdateView();
+                    UpdateData();
                 }
                 else
                 {
-                    _state = State.ConnectionError;
+                    _state = State.SaveFailed;
                 }
             }
             catch(Exception e)
@@ -77,7 +80,6 @@ namespace DesktopAppTrouvaille.Controllers
             }
             finally 
             {
-                UpdateData();
                 UpdateView(); 
             }
         }
@@ -89,6 +91,12 @@ namespace DesktopAppTrouvaille.Controllers
                 {
                     _state = State.Updated;
                     _detailCategory = category;
+                    UpdateView();
+                    UpdateData();
+                }
+                else
+                {
+                    _state = State.UpdateFailed;
                 }
             }
             catch(Exception e)
@@ -97,7 +105,7 @@ namespace DesktopAppTrouvaille.Controllers
             }
             finally
             {
-                UpdateData();
+                UpdateView();
             }
         }
 

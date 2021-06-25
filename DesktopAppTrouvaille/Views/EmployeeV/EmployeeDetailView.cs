@@ -93,8 +93,10 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
             }
         }
 
-        public virtual void UpdateView()
+        public override void UpdateView()
         {
+            base.UpdateView();
+
             _customer = _controller.GetDetailEmployee();
 
             textBoxFistName.Text = _customer.FirstName;

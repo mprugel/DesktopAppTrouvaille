@@ -117,6 +117,7 @@
             this.panelTabView.AutoSize = true;
             this.panelTabView.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelTabView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelTabView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelTabView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTabView.Location = new System.Drawing.Point(280, 42);
             this.panelTabView.Margin = new System.Windows.Forms.Padding(0);

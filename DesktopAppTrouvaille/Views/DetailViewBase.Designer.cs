@@ -85,6 +85,7 @@
             this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Änderungen speichern";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonDelete
             // 
@@ -98,6 +99,7 @@
             this.buttonDelete.TabIndex = 0;
             this.buttonDelete.Text = "Löschen";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // DetailViewBase
             // 

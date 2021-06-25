@@ -23,8 +23,9 @@ namespace DesktopAppTrouvaille.Views
         }
 
 
-        public void UpdateView()
+        public override void UpdateView()
         {
+            base.UpdateView();
 
             // Display Values on the GUI:
             _order = Controller.DetailOrder;

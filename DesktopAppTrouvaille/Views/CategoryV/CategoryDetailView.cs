@@ -36,8 +36,10 @@ namespace DesktopAppTrouvaille.Views
             InitializeComponent();
         }
 
-        public void UpdateView()
+        public override void UpdateView()
         {
+            base.UpdateView();
+
             Category = Controller.GetDetailCategory();
             textBoxName.Text = Category.Name;
         }

@@ -95,8 +95,9 @@ namespace DesktopAppTrouvaille.Views
             }
         }
 
-        public void UpdateView()
+        public override void UpdateView()
         {
+            base.UpdateView();
             Prod = Controller.DetailProduct;
             // Update the View Elemts with with the Product Data:
             labelProductID.Text = Prod.ProductId.ToString();

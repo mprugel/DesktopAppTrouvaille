@@ -56,8 +56,10 @@ namespace DesktopAppTrouvaille.Views
             // Display the Values on the GUI:
         }
 
-        public void UpdateView()
+        public override void UpdateView()
         {
+            base.UpdateView();
+
             _customer = Controller.GetDetailCustomer();
             textBoxEmail.Text = _customer.Email;
             textBoxFirstName.Text = _customer.FirstName;

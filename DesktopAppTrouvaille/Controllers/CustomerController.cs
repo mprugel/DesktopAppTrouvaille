@@ -104,6 +104,11 @@ namespace DesktopAppTrouvaille.Controllers
                 {
                     _state = State.Saved;
                     _detailCustomer = customer;
+                    UpdateView();
+                }
+                else
+                {
+                    _state = State.UpdateFailed;
                 }
             }
             catch
