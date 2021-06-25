@@ -33,8 +33,10 @@ namespace DesktopAppTrouvaille.Views
             adressViewDelivery.SetAdress(_order.DeliveryAddress);
             adressViewOrder.SetAdress(_order.InvoiceAddress);
 
+            labelDeliveryMethod.Text = Globals.Globals.ShipmentMethodDic[_order.ShipmentMethod];
+            labelPaymentMethod.Text = PaymentMethodDic[_order.PaymentMethod];
            
-            labelOrderDate.Text = _order.Date.ToString();
+            labelOrderDate.Text = _order.Date.ToString("dd.MM.yyyy");
             labelSum.Text = _order.TotalCost.ToString();
 
             comboBoxOrderState.DataSource = Globals.Globals.OrderStateDic.ToList();

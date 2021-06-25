@@ -9,6 +9,9 @@ namespace DesktopAppTrouvaille.Globals
     {
         public static Dictionary<OrderState, string> OrderStateDic = new Dictionary<OrderState, string>();
 
+        public static Dictionary<PaymentMethod, string> PaymentMethodDic = new Dictionary<PaymentMethod, string>();
+
+        public static Dictionary<Shipmentmethod, string> ShipmentMethodDic = new Dictionary<Shipmentmethod, string>();
         
 
 
@@ -22,7 +25,15 @@ namespace DesktopAppTrouvaille.Globals
             OrderStateDic.Add(OrderState.Unterwegs, "Unterwegs");
             OrderStateDic.Add(OrderState.Zugestellt, "Zugestellt");
 
-            
+            PaymentMethodDic.Add(PaymentMethod.Paypal,"PayPal");
+            PaymentMethodDic.Add(PaymentMethod.Rechnung, "Rechnung");
+            PaymentMethodDic.Add(PaymentMethod.Vorkasse, "Vorkasse");
+
+            ShipmentMethodDic.Add(Shipmentmethod.dhl, "DHL");
+            ShipmentMethodDic.Add(Shipmentmethod.dpd, "DPD");
+            ShipmentMethodDic.Add(Shipmentmethod.hermes, "Hermes");
+            ShipmentMethodDic.Add(Shipmentmethod.ups, "UPS");
+
 
         }
         //public static string[] OrderStateText = { "Ausgeliefert", "Bezahlt", "Storniert"};

@@ -8,14 +8,14 @@ namespace DesktopAppTrouvaille.Factories
     {
         public override string[] CreateColumns()
         {
-            string[] cols = { "Datum", "Status" };
+            string[] cols = { "Datum", "Status", "Betrag in €" };
             return cols;
         }
 
         protected override string[] CreateRowValues(IModel model)
         {
             Order order = (Order)model;
-            string[] row = { order.Date.ToString(), Globals.Globals.OrderStateDic[order.OrderState]};
+            string[] row = { order.Date.ToString("dd.MM.yyyy"), Globals.Globals.OrderStateDic[order.OrderState], order.TotalCost.ToString()};
             return row;
         }
 

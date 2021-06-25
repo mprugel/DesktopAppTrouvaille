@@ -46,6 +46,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelLastName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelPaymentMethod = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelDeliveryMethod = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +73,7 @@
             // 
             this.labelOrderDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOrderDate.AutoSize = true;
-            this.labelOrderDate.Location = new System.Drawing.Point(473, 271);
+            this.labelOrderDate.Location = new System.Drawing.Point(121, 230);
             this.labelOrderDate.Name = "labelOrderDate";
             this.labelOrderDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelOrderDate.Size = new System.Drawing.Size(61, 13);
@@ -80,9 +84,10 @@
             // 
             // comboBoxOrderState
             // 
-            this.comboBoxOrderState.BackColor = System.Drawing.Color.Gainsboro;
+            this.comboBoxOrderState.BackColor = System.Drawing.Color.Silver;
             this.comboBoxOrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxOrderState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxOrderState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxOrderState.ForeColor = System.Drawing.Color.White;
             this.comboBoxOrderState.FormattingEnabled = true;
             this.comboBoxOrderState.Items.AddRange(new object[] {
             "Status"});
@@ -173,7 +178,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(373, 271);
+            this.label2.Location = new System.Drawing.Point(13, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 17;
@@ -204,7 +209,7 @@
             // adressViewOrder
             // 
             this.adressViewOrder.Editable = false;
-            this.adressViewOrder.Location = new System.Drawing.Point(376, 100);
+            this.adressViewOrder.Location = new System.Drawing.Point(376, 72);
             this.adressViewOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adressViewOrder.Name = "adressViewOrder";
             this.adressViewOrder.Size = new System.Drawing.Size(281, 140);
@@ -214,7 +219,7 @@
             // adressViewDelivery
             // 
             this.adressViewDelivery.Editable = false;
-            this.adressViewDelivery.Location = new System.Drawing.Point(16, 100);
+            this.adressViewDelivery.Location = new System.Drawing.Point(16, 72);
             this.adressViewDelivery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adressViewDelivery.Name = "adressViewDelivery";
             this.adressViewDelivery.Size = new System.Drawing.Size(260, 140);
@@ -226,39 +231,81 @@
             // 
             this.Vorname.AutoSize = true;
             this.Vorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vorname.Location = new System.Drawing.Point(16, 66);
+            this.Vorname.Location = new System.Drawing.Point(394, 52);
             this.Vorname.Name = "Vorname";
             this.Vorname.Size = new System.Drawing.Size(56, 13);
             this.Vorname.TabIndex = 20;
             this.Vorname.Text = "Vorname";
+            this.Vorname.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(209, 66);
+            this.label4.Location = new System.Drawing.Point(587, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "Nachname";
+            this.label4.Visible = false;
             // 
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(88, 66);
+            this.labelFirstName.Location = new System.Drawing.Point(466, 52);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(35, 13);
             this.labelFirstName.TabIndex = 22;
             this.labelFirstName.Text = "label1";
+            this.labelFirstName.Visible = false;
             // 
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(303, 66);
+            this.labelLastName.Location = new System.Drawing.Point(681, 52);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(35, 13);
             this.labelLastName.TabIndex = 23;
             this.labelLastName.Text = "label1";
+            this.labelLastName.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(373, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Bezahlmethode";
+            // 
+            // labelPaymentMethod
+            // 
+            this.labelPaymentMethod.AutoSize = true;
+            this.labelPaymentMethod.Location = new System.Drawing.Point(507, 271);
+            this.labelPaymentMethod.Name = "labelPaymentMethod";
+            this.labelPaymentMethod.Size = new System.Drawing.Size(35, 13);
+            this.labelPaymentMethod.TabIndex = 25;
+            this.labelPaymentMethod.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(373, 230);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Versandmethode";
+            // 
+            // labelDeliveryMethod
+            // 
+            this.labelDeliveryMethod.AutoSize = true;
+            this.labelDeliveryMethod.Location = new System.Drawing.Point(507, 230);
+            this.labelDeliveryMethod.Name = "labelDeliveryMethod";
+            this.labelDeliveryMethod.Size = new System.Drawing.Size(35, 13);
+            this.labelDeliveryMethod.TabIndex = 27;
+            this.labelDeliveryMethod.Text = "label8";
             // 
             // OrderDetailView
             // 
@@ -266,6 +313,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.labelDeliveryMethod);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelPaymentMethod);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelLastName);
             this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.label4);
@@ -294,6 +345,10 @@
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.labelFirstName, 0);
             this.Controls.SetChildIndex(this.labelLastName, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.labelPaymentMethod, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.labelDeliveryMethod, 0);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -320,5 +375,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelFirstName;
         private System.Windows.Forms.Label labelLastName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPaymentMethod;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelDeliveryMethod;
     }
 }
