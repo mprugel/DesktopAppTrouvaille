@@ -49,8 +49,15 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            // TODO: Check input
             _controller.Login(GetUserFromInput());
+        }
+
+        private void textBoxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _controller.Login(GetUserFromInput());
+            }
         }
     }
 }
