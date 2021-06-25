@@ -28,9 +28,16 @@ namespace DesktopAppTrouvaille.Views
 
         public void UpdateView()
         {
-            if(_controller.GetState() == State.LoginFailed)
+            switch(_controller.GetState())
             {
-                labelStatus.Visible = true;
+                case State.LoginFailed:
+                    labelStatus.Visible = true;
+                    labelStatus.Text = "Passwort oder Email falsch!";
+                    break;
+                case State.ConnectionError:
+                    labelStatus.Visible = true;
+                    labelStatus.Text = "Keine Verbindung zum Server möglich!";
+                    break;
             }
         }
 

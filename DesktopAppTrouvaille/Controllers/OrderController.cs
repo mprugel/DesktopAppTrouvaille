@@ -171,7 +171,7 @@ namespace DesktopAppTrouvaille.Controllers
             try
             {
                 _iterator.Reset();
-               // _iterator.Count = await _processor.GetCount();
+                _iterator.Count = await _processor.GetCount();
                 
                 Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
             }

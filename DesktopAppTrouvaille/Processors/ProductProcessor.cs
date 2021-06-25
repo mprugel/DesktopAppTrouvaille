@@ -95,7 +95,7 @@ namespace APIconnector.Processors
         {
             Console.WriteLine("Search...");
             // TODO Create URL-String from criteria:
-            string url = string.Format("Products/SearchQuery/{0}/{1}?searchWord={2}&asc={3}&orderBy={4}&onlyActive=false", from, to, searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
+            string url = string.Format("Products/SearchQuery/{0}/{1}?searchWord={2}&asc={3}&orderBy={4}&onlyActive=false&getCategories=true", from, to, searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
             Console.WriteLine(url);
             HttpResponseMessage response;
             try

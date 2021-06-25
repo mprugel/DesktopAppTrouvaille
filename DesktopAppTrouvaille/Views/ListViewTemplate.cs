@@ -93,7 +93,7 @@ namespace DesktopAppTrouvaille.Views
             {
                 listView1.Columns.Add(col).Width = 100;
             }
-           
+            this.Enabled = false;
         }
        
         public void AddClickHandler(EventHandler handler)
@@ -130,11 +130,13 @@ namespace DesktopAppTrouvaille.Views
 
         private void buttonPrevious_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             Controller.Previous();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             Controller.Next();
         }
 
@@ -155,6 +157,8 @@ namespace DesktopAppTrouvaille.Views
             // Update Labels:
             labelPageCount.Text = Controller.GetPageCount().ToString();
             labelPageNumber.Text = Controller.GetCurrentPage().ToString();
+
+            this.Enabled = true;
         }
 
         // Search Button Click:
@@ -162,6 +166,7 @@ namespace DesktopAppTrouvaille.Views
         {
             if(FilterView != null)
             {
+                this.Enabled = false;
                 FilterView.SendFilterToController();
                 Controller.Search(textBox1.Text);
             }
@@ -189,8 +194,8 @@ namespace DesktopAppTrouvaille.Views
         private static int lastColumn;
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            
-            if(_sortOrder == SortOrder.Ascending || lastColumn != e.Column)
+           
+            if (_sortOrder == SortOrder.Ascending || lastColumn != e.Column)
             {
                 _sortOrder = SortOrder.Descending;
                 Controller.SetSortingOrder(SortingOrder.Descending);
@@ -208,7 +213,8 @@ namespace DesktopAppTrouvaille.Views
             lastColumn = e.Column;
            
             if(Factory.SetSortCriteria(e.Column, Controller))
-            {
+            { 
+                this.Enabled = false;
                 SetSortArrow(listView1.Columns[e.Column], _sortOrder);
                 Controller.UpdateData();
             }
@@ -220,6 +226,7 @@ namespace DesktopAppTrouvaille.Views
         {
             if (FilterView != null && e.KeyCode == Keys.Enter)
             {
+                this.Enabled = false;
                 FilterView.SendFilterToController();
                 Controller.Search(textBox1.Text);
             }

@@ -44,6 +44,8 @@ namespace DesktopAppTrouvaille.Views
 
             // Set Eventhandler for Selecting Images:
             fileDialog.FileOk += FileSelected;
+
+           
         }
 
         private void richTextBox_Validating(object sender, CancelEventArgs e)

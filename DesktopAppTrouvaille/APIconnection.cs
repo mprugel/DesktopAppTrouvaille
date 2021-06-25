@@ -40,7 +40,7 @@ namespace APIconnector
 
             ApiClient = new HttpClient(handler);
             
-            ApiClient.BaseAddress = new Uri("https://141.79.34.112:5001/api/");  //Base-Uri
+            ApiClient.BaseAddress = new Uri("https://trouvaille.conveyor.cloud/api/");  //Base-Uri
           
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             

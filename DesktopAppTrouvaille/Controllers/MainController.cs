@@ -23,7 +23,7 @@ namespace DesktopAppTrouvaille
 
         private LoginProcessor _loginProcessor = new LoginProcessor();
 
-        private State _state;
+        private State _state = State.OK;
 
         public MainController(IMainView view)
         {
@@ -33,10 +33,7 @@ namespace DesktopAppTrouvaille
 
         public async void Login(LoginEmployeeModel user)
         {
-            _state = State.LoggedIn;
-            _loggedIn = true;
-            _view.UpdateView();
-            return;
+           
             // Call API to Login User:
             try
             {
@@ -62,7 +59,7 @@ namespace DesktopAppTrouvaille
                 }
                 else
                 {
-                    _state = State.LoginFailed;
+                    _state = State.ConnectionError;
                 }
 
             }

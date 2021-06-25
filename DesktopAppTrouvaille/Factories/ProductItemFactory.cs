@@ -16,7 +16,7 @@ namespace DesktopAppTrouvaille.Factories
         protected override string[] CreateRowValues(IModel model)
         {
             Product p = (Product)model;
-            string[] row = {  p.Name, p.InStock.ToString() };
+            string[] row = {  p.Name, p.InStock.ToString(), p.Price.ToString() };
             return row;
         }
 

@@ -85,7 +85,6 @@ namespace DesktopAppTrouvaille.Views
             ListViewItem item = listView.GetSelectedItem();
             if(item != null)
             {
-                
                 detailView = CreateDetailView((IModel)item.Tag);
 
                 detailView.SetModel((IModel)item.Tag);
@@ -102,7 +101,6 @@ namespace DesktopAppTrouvaille.Views
                 UserControl control = (UserControl)detailView;
                 control.Dock = DockStyle.Fill;
                 panelDetailView.Controls.Add(control);
-                //detailView.UpdateView();
                 panelDetailView.Visible = true;
             }
             else

@@ -16,7 +16,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
         {
             
             _criteria.OrderDateFrom = dateTimePickerFrom.Value;
-            _criteria.OrderDateTo = dateTimePickerFrom.Value;
+            _criteria.OrderDateTo = dateTimePickerTo.Value;
 
             _criteria.OrderState = ((KeyValuePair<OrderState,string>)comboBoxState.SelectedItem).Key;
             Console.WriteLine("Selected State: " + _criteria.OrderState);

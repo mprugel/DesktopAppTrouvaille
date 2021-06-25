@@ -18,44 +18,42 @@ namespace DesktopAppTrouvaille.Views.FilterV
         private CheckBox checkBox2;
         private System.ComponentModel.IContainer components;
         private ProductController _controller;
+
+
+        private ProductFilterCriteria _filter;
+
+        private Category _selectedCategory;
         public ProductFilterCriteria GetFilterCriteria()
         {
             List<Guid> categories = new List<Guid>();
             Category cat = (Category)comboBoxCategory.SelectedItem;
-            if(cat == null) 
+            if(comboBoxCategory.SelectedIndex == 0) 
             { 
-                foreach(Category c in _controller.Categories)
+                /*foreach(Category c in _controller.Categories)
                 {
                     categories.Add(c.CategoryId);
+                    Console.WriteLine(c.CategoryId.ToString());
                 }
+                */
             }
             else
             {
+                _selectedCategory = cat;
                 categories.Add(cat.GetGuid());
             }
-            return new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value,categories);
+            _filter = new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value, categories);
+            return _filter;
         }
 
         public override void SendFilterToController()
         {
-            if(checkBox1.Checked)
-            {
-                _controller.SetFilter(GetFilterCriteria());
-            }
-            else
-            {
-                _controller.SetFilter(null);
-            }
-           
+              _controller.SetFilter(GetFilterCriteria());
         }
 
         public ProductFilter(ProductController controller)
         {
             InitializeComponent();
             _controller = controller;
-            comboBoxCategory.SelectedItem = null;
-            comboBoxCategory.SelectedText = "Alle";
-
         }
         private void InitializeComponent()
         {
@@ -136,6 +134,8 @@ namespace DesktopAppTrouvaille.Views.FilterV
             // 
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Items.AddRange(new object[] {
+            "Alle"});
             this.comboBoxCategory.Location = new System.Drawing.Point(67, 11);
             this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategory.Name = "comboBoxCategory";
@@ -194,11 +194,20 @@ namespace DesktopAppTrouvaille.Views.FilterV
 
         public void UpdateView()
         {
-            comboBoxCategory.DataSource = _controller.Categories;
+            Category first = new Category();
+            first.Name = "-- Alle --";
+            List<Category> categories = new List<Category>(_controller.Categories);
+            categories.Insert(0, first);
+            comboBoxCategory.DataSource = categories;
             comboBoxCategory.DisplayMember = "Name";
             comboBoxCategory.ValueMember = "Name";
-            comboBoxCategory.SelectedItem = null;
-            comboBoxCategory.SelectedText = "Alle";
+
+            if(_selectedCategory != null)
+            {
+                comboBoxCategory.SelectedItem = _selectedCategory;
+            }
+            
+           
         }
     }
 }

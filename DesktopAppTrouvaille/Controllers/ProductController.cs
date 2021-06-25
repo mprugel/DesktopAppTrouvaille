@@ -151,9 +151,8 @@ namespace DesktopAppTrouvaille
             // Save the newly added Categories:
             await _productProssesor.AddCategories(newP.ProductId, newCats);
 
+            // Remove Categories:
             await _productProssesor.RemoveCategories(newP.ProductId, removedCats);
-
-            //TODO: implement DeleteCategories:
 
             _state = State.SendingData;
 
@@ -164,26 +163,24 @@ namespace DesktopAppTrouvaille
             putModel.ManufacturerEmail = manufacturer.Email;
 
             // Check if Picture has changed:
-            if(oldP.Picture != null && oldP.Picture.ImageData != null && 
-                newP.Picture != null && newP.Picture.ImageData != null &&
+            if( (oldP.Picture.ImageData == null && newP.Picture.ImageData != null) || 
+                (newP.Picture != null && newP.Picture.ImageData != null &&
                 !oldP.Picture.ImageData.SequenceEqual(newP.Picture.ImageData))
+              )
             {
                 putModel.ImageData = newP.Picture.ImageData;
             }
 
             if ( await _productProssesor.UpdateProduct(newP.GetGuid(), putModel))
             {
+                DetailProduct = newP;
                 _state = State.Saved;
-                LoadDetailProduct(newP.GetGuid());
             }
             else
             {
                 _state = State.ConnectionError;
             }
-
-            DetailProduct = await _productProssesor.LoadProduct(newP.GetGuid());
             UpdateData();
-            UpdateView();
         }
 
         public override IEnumerable<IModel> GetModels()
@@ -216,9 +213,8 @@ namespace DesktopAppTrouvaille
 
         public override void SelectDetailModel(IModel model)
         {
-            //LoadDetailProduct(model.GetGuid());
             DetailProduct = (Product)model;
-            UpdateView();
+            LoadDetailProduct(model.GetGuid());
         }
 
         public async override void Search(string searchText)

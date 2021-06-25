@@ -150,8 +150,8 @@ namespace DesktopAppTrouvaille.Processors
             {
                 if(criteria.FilterDate)
                 {
-                    timeFrom = criteria.OrderDateFrom.ToString("dd-MM-yyyy");
-                    timeto = criteria.OrderDateTo.ToString("dd-MM-yyyy");
+                    timeFrom = criteria.OrderDateFrom.ToString("MM-dd-yyyy");
+                    timeto = criteria.OrderDateTo.ToString("MM-dd-yyyy");
                 }
                 if(criteria.FilterState)
                 {
