@@ -179,7 +179,9 @@ namespace DesktopAppTrouvaille.Views
 
         public void ShowOrderView()
         {
-            _tabView = new OrderViewUC(controller.orderController);
+            OrderViewUC view = new OrderViewUC(controller.orderController);
+            view.Dock = DockStyle.Left;
+            _tabView = view;
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
         }

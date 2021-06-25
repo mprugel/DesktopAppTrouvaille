@@ -43,7 +43,7 @@ namespace DesktopAppTrouvaille
             {
                 Categories = await _categoryProcessor.LoadCategories();
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }
@@ -61,7 +61,7 @@ namespace DesktopAppTrouvaille
  
                 _state = State.OK;
             }
-            catch(GETException e)
+            catch (GETException)
             {
                 _state = State.ConnectionError;
             }
@@ -110,7 +110,7 @@ namespace DesktopAppTrouvaille
                     _state = State.ConnectionError;
                 }
             }
-            catch(GETException e)
+            catch (GETException)
             {
                 _state = State.ConnectionError;
             }
@@ -228,7 +228,7 @@ namespace DesktopAppTrouvaille
                 
             }
 
-            catch (Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }

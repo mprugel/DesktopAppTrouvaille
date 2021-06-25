@@ -158,6 +158,10 @@ namespace DesktopAppTrouvaille.Views
             labelPageCount.Text = Controller.GetPageCount().ToString();
             labelPageNumber.Text = Controller.GetCurrentPage().ToString();
 
+            if(FilterView != null)
+            {
+                FilterView.UpdateView();
+            }
             this.Enabled = true;
         }
 

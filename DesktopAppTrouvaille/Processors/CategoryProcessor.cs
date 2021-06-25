@@ -26,10 +26,10 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    return null;
+                    return new Category();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -50,10 +50,10 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    return null;
+                    return new List<Category>();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -80,7 +80,7 @@ namespace DesktopAppTrouvaille.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -106,7 +106,7 @@ namespace DesktopAppTrouvaille.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }

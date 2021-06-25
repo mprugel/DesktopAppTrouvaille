@@ -33,7 +33,7 @@ namespace APIconnector.Processors
                     return 0;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -57,7 +57,7 @@ namespace APIconnector.Processors
                     return null;
                 }
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 throw new GETException();  
             }
@@ -84,7 +84,7 @@ namespace APIconnector.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -124,7 +124,7 @@ namespace APIconnector.Processors
                     return new List<Product>();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -151,7 +151,7 @@ namespace APIconnector.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -174,7 +174,7 @@ namespace APIconnector.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -198,7 +198,7 @@ namespace APIconnector.Processors
                     throw new GETException();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -226,7 +226,7 @@ namespace APIconnector.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -254,7 +254,7 @@ namespace APIconnector.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -282,7 +282,7 @@ namespace APIconnector.Processors
                     return new List<Product>();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -307,7 +307,7 @@ namespace APIconnector.Processors
                     return new Manufacturer();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }

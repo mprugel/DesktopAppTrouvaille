@@ -55,7 +55,7 @@ namespace DesktopAppTrouvaille.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -85,7 +85,7 @@ namespace DesktopAppTrouvaille.Processors
                     return false;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -108,7 +108,7 @@ namespace DesktopAppTrouvaille.Processors
                     return new List<Employee>();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }
@@ -131,7 +131,7 @@ namespace DesktopAppTrouvaille.Processors
                     return 0;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new GETException();
             }

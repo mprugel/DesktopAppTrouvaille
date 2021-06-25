@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace DesktopAppTrouvaille.Views
 {
-    public partial class Filter : UserControl
+    public partial class Filter : UserControl, IView
     {
 
         public Filter()
@@ -14,6 +14,11 @@ namespace DesktopAppTrouvaille.Views
         public virtual void SendFilterToController()
         {
 
+        }
+
+        public virtual void UpdateView()
+        {
+           
         }
     }
 }

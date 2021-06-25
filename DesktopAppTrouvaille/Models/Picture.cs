@@ -23,7 +23,7 @@ namespace DesktopAppTrouvaille.Models
                     {
                         return new Bitmap(stream); 
                     }
-                    catch(ArgumentException e)
+                    catch(ArgumentException)
                     {
                         return CreateEmptyBitmap();
                     }

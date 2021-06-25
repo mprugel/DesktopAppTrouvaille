@@ -27,7 +27,7 @@ namespace DesktopAppTrouvaille.Controllers
                 Categories = await _processor.LoadCategories();
                 _state = State.OK;
             }
-            catch(GETException e)
+            catch (GETException)
             {
                 _state = State.ConnectionError;
             }
@@ -49,7 +49,7 @@ namespace DesktopAppTrouvaille.Controllers
                     _state = State.DeleteFailed;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }
@@ -74,7 +74,7 @@ namespace DesktopAppTrouvaille.Controllers
                     _state = State.SaveFailed;
                 }
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }
@@ -99,7 +99,7 @@ namespace DesktopAppTrouvaille.Controllers
                     _state = State.UpdateFailed;
                 }
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }
@@ -119,6 +119,7 @@ namespace DesktopAppTrouvaille.Controllers
             if(model != null && model is Category)
             {
                 _detailCategory = (Category)model;
+                UpdateView();
             }
         }
 

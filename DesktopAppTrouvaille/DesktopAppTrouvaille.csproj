@@ -188,6 +188,7 @@
     <Compile Include="Views\FilterV\Filter.Designer.cs">
       <DependentUpon>Filter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FilterV\IFilterView.cs" />
     <Compile Include="Views\FilterV\OrderFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>

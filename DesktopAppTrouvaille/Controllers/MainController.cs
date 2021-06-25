@@ -63,7 +63,7 @@ namespace DesktopAppTrouvaille
                 }
 
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 _state = State.ConnectionError;
             }
@@ -92,7 +92,10 @@ namespace DesktopAppTrouvaille
             _view.ShowOrderView();
             OrderCriteria criteria = new OrderCriteria();
             criteria.CustomerGuid = customer.GetGuid();
-            orderController.LoadOrdersFromCustomer(customer.GetGuid());
+            criteria.FilerID = true;
+
+            orderController.SetFilterCriteria(criteria);
+            orderController.Search("");
         }
 
        

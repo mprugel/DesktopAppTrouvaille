@@ -51,7 +51,7 @@ namespace DesktopAppTrouvaille.Controllers
                 _iterator.Count = await _processor.GetCount();
                 _employees = await _processor.GetEmployees(_iterator.From, _iterator.To); 
             }
-            catch (GETException e)
+            catch (GETException)
             {
                 _state = State.ConnectionError;
             }
@@ -75,7 +75,7 @@ namespace DesktopAppTrouvaille.Controllers
                     _state = State.SaveFailed;
                 }
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }
@@ -96,7 +96,7 @@ namespace DesktopAppTrouvaille.Controllers
                     _state = State.UpdateFailed;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }
@@ -116,7 +116,7 @@ namespace DesktopAppTrouvaille.Controllers
                     _state = State.DeleteFailed;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }

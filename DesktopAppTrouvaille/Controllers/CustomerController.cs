@@ -52,7 +52,7 @@ namespace DesktopAppTrouvaille.Controllers
                 _customers = await _processor.SearchCustomer(_iterator.From, _iterator.To, _filter);
                 UpdateView();
             }
-            catch(GETException e)
+            catch (GETException)
             {
                 _state = State.ConnectionError;
             }
@@ -77,7 +77,7 @@ namespace DesktopAppTrouvaille.Controllers
                 _customers = await _processor.GetCustomers(_iterator.From, _iterator.To);
                 _state = State.OK;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 _state = State.ConnectionError;
             }

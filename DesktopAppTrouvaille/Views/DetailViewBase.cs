@@ -15,6 +15,7 @@ namespace DesktopAppTrouvaille.Views
         public DetailViewBase()
         {
             InitializeComponent();
+            Enabled = false;
         }
 
         public virtual void UpdateView()
