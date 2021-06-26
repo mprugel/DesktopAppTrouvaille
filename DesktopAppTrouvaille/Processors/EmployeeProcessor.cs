@@ -61,7 +61,6 @@ namespace DesktopAppTrouvaille.Processors
             }
         }
 
-        // TODO add GUID:
         public async Task<bool> UpdateEmployee(Guid guid,Employee employee)
         {
             string url = "Auth/Employee?employeeId=" + guid.ToString();
@@ -129,6 +128,28 @@ namespace DesktopAppTrouvaille.Processors
                 else
                 {
                     return 0;
+                }
+            }
+            catch (Exception)
+            {
+                throw new GETException();
+            }
+        }
+
+        public async Task<bool> DeleteEmployee(Guid guid)
+        {
+            string url = string.Format("Auth/Employee/{0}", guid.ToString());
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.DeleteAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch (Exception)

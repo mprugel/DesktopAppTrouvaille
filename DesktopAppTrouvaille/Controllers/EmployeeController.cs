@@ -107,7 +107,7 @@ namespace DesktopAppTrouvaille.Controllers
         {
             try
             {
-                if (await _processor.UpdateEmployee(new Guid(), employee))
+                if (await _processor.DeleteEmployee(employee.GetGuid()))
                 {
                     _state = State.Deleted;
                 }

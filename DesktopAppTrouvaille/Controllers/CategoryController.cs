@@ -23,8 +23,8 @@ namespace DesktopAppTrouvaille.Controllers
             try
             {
                 _state = State.LoadData;
-                //_iterator.Count = _processor.GetCount();
-                Categories = await _processor.LoadCategories();
+                _iterator.Count = await  _processor.GetCategoryCount();
+                Categories = await _processor.LoadCategoriesFromTo(_iterator.From, _iterator.To);
                 _state = State.OK;
             }
             catch (GETException)
@@ -38,7 +38,7 @@ namespace DesktopAppTrouvaille.Controllers
         {
             try
             {
-                if (await _processor.PostCategory(new CategoryPOSTDTO(category)))
+                if (await _processor.DeleteCategory(category.GetGuid()))
                 {
                     _state = State.Deleted;
                     UpdateView();

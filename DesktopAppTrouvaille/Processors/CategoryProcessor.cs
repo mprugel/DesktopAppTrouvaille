@@ -12,6 +12,51 @@ namespace DesktopAppTrouvaille.Processors
 {
     class CategoryProcessor
     {
+        public async Task<int> GetCategoryCount()
+        {
+            string url = "Categories/Count";
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    int count = await response.Content.ReadAsAsync<int>();
+
+                    return count;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception)
+            {
+                throw new GETException();
+            }
+        }
+        public async Task<List<Category>> LoadCategoriesFromTo(int from, int to)
+        {
+            string url = "Categories/" + from.ToString() + "/" + to.ToString();
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Category> products = await response.Content.ReadAsAsync<List<Category>>();
+                    return products;
+                }
+                else
+                {
+                    return new List<Category>();
+                }
+            }
+            catch (Exception)
+            {
+                throw new GETException();
+            }
+        }
         public async Task<Category> LoadCategoryByID(Guid id)
         {
             string url = "Categories/" + id.ToString();
@@ -97,6 +142,28 @@ namespace DesktopAppTrouvaille.Processors
             try
             {
                 response = await APIconnection.ApiClient.PutAsync(url, data);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                throw new GETException();
+            }
+        }
+
+        public async Task<bool> DeleteCategory(Guid guid)
+        {
+            string url = string.Format("Categories/{0}", guid.ToString());
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.DeleteAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
                     return true;

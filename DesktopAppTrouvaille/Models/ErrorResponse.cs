@@ -1,8 +1,6 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DesktopAppTrouvaille.Models
 {
@@ -18,9 +16,9 @@ namespace DesktopAppTrouvaille.Models
 
     public class Errors
     {
-        public string[] Email { get; set; }
-        public string[] Password { get; set; }
-        public string[] ConfirmPassword { get; set; }
+        public List<string> Email{ get; set; }
+        public List<string> Password { get; set; }
+        public List<string> ConfirmPassword { get; set; }
     }
 
 }
