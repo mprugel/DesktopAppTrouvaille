@@ -8,10 +8,12 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class CategoryView : BView, IView
     {
+        private CategoryController _controller;
         public CategoryView()
         {
             InitializeComponent();
-            Controller = new CategoryController();
+            _controller = new CategoryController();
+            Controller = _controller;
             Controller.AttachView(this);
             Controller.AttachView(listView);
             listView.Controller = Controller;
@@ -28,13 +30,13 @@ namespace DesktopAppTrouvaille.Views
 
         protected override IDetailView CreateDetailView(IModel model)
         {
-            CategoryDetailView view = new CategoryDetailView();
+            CategoryDetailView view = new CategoryDetailView(_controller);
             return view;
         }
 
         protected override IDetailView CreateNewView()
         {
-            NewCategoryView view = new NewCategoryView();
+            NewCategoryView view = new NewCategoryView(_controller);
             return view;
         }
     }

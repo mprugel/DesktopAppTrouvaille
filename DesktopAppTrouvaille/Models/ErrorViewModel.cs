@@ -8,10 +8,14 @@ namespace DesktopAppTrouvaille.Models
 {
     public class ErrorViewModel
     {
-       
-        public string RequestId { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
-        
+        public string Message { get; set; }
+
+        public bool IsSuccess { get; set; }
+
+        public List<string> Errors { get; set; }
+
+        public DateTime? ExpireDate { get; set; }
+
     }
 }

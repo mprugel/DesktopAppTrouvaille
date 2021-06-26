@@ -33,17 +33,15 @@
             // listView
             // 
             this.listView.DisplayAddButton = false;
-            this.listView.DisplaySearchBox = false;
-            this.listView.SearchButtonText = "Filtern";
             this.listView.Title = "Bestellungen";
             this.listView.Load += new System.EventHandler(this.listView_Load);
             // 
             // OrderViewUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "OrderViewUC";
-            this.Size = new System.Drawing.Size(1819, 639);
+            this.Size = new System.Drawing.Size(1819, 1278);
             this.ResumeLayout(false);
             this.PerformLayout();
 

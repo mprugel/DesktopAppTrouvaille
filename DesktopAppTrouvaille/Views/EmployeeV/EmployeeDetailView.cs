@@ -74,7 +74,7 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
         // Button Delete Click
         private void button2_Click(object sender, EventArgs e)
         {
-
+            _controller.DeleteEmployee(_customer);
         }
 
         public void SetModel(IModel model)

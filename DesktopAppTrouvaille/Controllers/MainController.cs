@@ -33,10 +33,11 @@ namespace DesktopAppTrouvaille
 
         public async void Login(LoginEmployeeModel user)
         {
-            _loggedIn = true;
+          /*  _loggedIn = true;
             _isAdmin = true;
             _view.UpdateView();
             return;
+          */
             // Call API to Login User:
             try
             {
@@ -98,7 +99,7 @@ namespace DesktopAppTrouvaille
             criteria.FilerID = true;
 
             orderController.SetFilterCriteria(criteria);
-            orderController.Search("");
+            orderController.Search(customer.GetGuid().ToString());
         }
 
        

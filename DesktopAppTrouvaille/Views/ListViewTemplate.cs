@@ -175,6 +175,7 @@ namespace DesktopAppTrouvaille.Views
                 FilterView.UpdateView();
             }
             this.Enabled = true;
+            textBox1.Text = Controller.GetSearchText();
         }
 
         // Search Button Click:

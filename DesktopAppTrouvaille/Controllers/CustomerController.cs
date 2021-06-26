@@ -94,8 +94,8 @@ namespace DesktopAppTrouvaille.Controllers
             putModel.InvoiceAddress = customer.InvoiceAddress;
             putModel.FirstName = customer.FirstName;
             putModel.LastName = customer.LastName;
-            putModel.PhoneNumber = putModel.PhoneNumber;
-            putModel.Email = putModel.Email;
+            putModel.PhoneNumber = customer.PhoneNumber;
+            putModel.Email = customer.Email;
             putModel.IsDisabled = customer.IsDisabled;
 
             try

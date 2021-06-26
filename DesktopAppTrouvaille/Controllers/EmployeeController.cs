@@ -9,7 +9,7 @@ namespace DesktopAppTrouvaille.Controllers
     public class EmployeeController : Controller
     {
         private List<Employee> _employees;
-        private Employee _detailEmployee;
+        private Employee _detailEmployee = new Employee();
         private EmployeeProcessor _processor = new EmployeeProcessor();
         private EmployeeProcessor.Errors _error;
         public override int GetCount()
@@ -68,6 +68,8 @@ namespace DesktopAppTrouvaille.Controllers
                 if(await _processor.RegisterNewEmployee(employee))
                 {
                     _state = State.Saved;
+              
+                    UpdateData();
                 }
                 else
                 {
@@ -79,7 +81,8 @@ namespace DesktopAppTrouvaille.Controllers
             {
                 _state = State.ConnectionError;
             }
-            UpdateData();
+            UpdateView();
+            
         }
 
         public async void UpdateEmployee(Employee employee)
@@ -89,6 +92,7 @@ namespace DesktopAppTrouvaille.Controllers
                 if (await _processor.UpdateEmployee(employee.GetGuid(),employee))
                 {
                     _state = State.Updated;
+                    _detailEmployee = employee;
                 }
                 else
                 {

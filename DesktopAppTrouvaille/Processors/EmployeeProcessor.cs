@@ -17,17 +17,17 @@ namespace DesktopAppTrouvaille.Processors
         public Errors Error { get { return _error; } }
         public enum Errors { NoError, PasswordInvalid, EmailInvalid}
 
-        private void SetError(ErrorResponse response)
+        private void SetError(ErrorViewModel response)
         {
-            if(response == null || response.errors == null)
+            if(response == null || response.Errors == null)
             {
                 return;
             }
-            if(response.errors.Email != null)
+            if(response.Errors != null)
             {
                 _error = Errors.EmailInvalid;
             }
-            if (response.errors.Password != null)
+            if (response.Errors != null)
             {
                 _error = Errors.PasswordInvalid;
             }
@@ -50,7 +50,7 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    ErrorResponse error = await response.Content.ReadAsAsync<ErrorResponse>();
+                    ErrorViewModel error = await response.Content.ReadAsAsync<ErrorViewModel>();
                     SetError(error);
                     return false;
                 }
@@ -79,7 +79,7 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    ErrorResponse error = await response.Content.ReadAsAsync<ErrorResponse>();
+                    ErrorViewModel error = await response.Content.ReadAsAsync<ErrorViewModel>();
                     SetError(error);
                     return false;
                 }

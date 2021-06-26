@@ -11,7 +11,7 @@ namespace DesktopAppTrouvaille.Controllers
     {
         private CategoryProcessor _processor = new CategoryProcessor();
         public List<Category> Categories = new List<Category>();
-        private Category _detailCategory;
+        private Category _detailCategory = new Category();
 
         public override int GetCount()
         {

@@ -167,6 +167,7 @@ namespace DesktopAppTrouvaille.Controllers
                 _iterator.Count = await _processor.GetCount();
                 
                 Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
+                _searchText = searchText;
                 UpdateView();
             }
             catch (Exception)

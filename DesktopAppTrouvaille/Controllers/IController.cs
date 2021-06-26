@@ -11,7 +11,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         void AttachView(IView view);
 
-
+        string GetSearchText();
         void DetachView(IView view);
        
         void ItemSelected(IModel model);

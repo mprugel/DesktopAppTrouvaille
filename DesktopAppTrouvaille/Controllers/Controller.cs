@@ -20,7 +20,7 @@ namespace DesktopAppTrouvaille.Controllers
         protected State _state = State.OK;
 
         protected SortingOrder SortOrder;
-
+        protected string _searchText;
         private IModel _selectedModel;
 
         public State state { get { return _state; } }
@@ -98,5 +98,10 @@ namespace DesktopAppTrouvaille.Controllers
         }
 
         public abstract void SelectDetailModel(IModel model);
+
+        public string GetSearchText()
+        {
+            return _searchText;
+        }
     }
 }
