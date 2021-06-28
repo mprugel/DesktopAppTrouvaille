@@ -11,7 +11,8 @@ namespace DesktopAppTrouvaille.Views
         private IDetailView detailView;
        
         public Controller Controller { get; set; }
-        
+
+      
         public void UpdateStatusLabel()
         {
             switch (Controller.state)
@@ -19,9 +20,7 @@ namespace DesktopAppTrouvaille.Views
                 case State.ConnectionError:
                     labelStatus.Text = "Ein Verbindungsfehler ist aufgetreten!";
                     break;
-                case State.OK:
-                    labelStatus.Text = String.Empty;
-                    break;
+              
                 case State.LoadData:
                     labelStatus.Text = "Lade Daten vom Server...";
                     break;
@@ -43,6 +42,7 @@ namespace DesktopAppTrouvaille.Views
                     break;
                 case State.Saved:
                     labelStatus.Text = "Erfolgreich gespeichert";
+                   
                     panelDetailView.Controls.Clear();
                     break;
                     /*// Show Saved Model in DetailView:
