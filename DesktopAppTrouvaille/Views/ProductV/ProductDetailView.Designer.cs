@@ -257,6 +257,8 @@
             this.textBoxManufacturer = new System.Windows.Forms.TextBox();
             this.textBoxManufactureEmail = new System.Windows.Forms.TextBox();
             this.checkBoxActive = new System.Windows.Forms.CheckBox();
+            this.labelImageError = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -273,7 +275,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(408, 12);
+            this.buttonSave.Location = new System.Drawing.Point(302, 12);
             this.buttonSave.Size = new System.Drawing.Size(209, 29);
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
@@ -621,6 +623,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Controls.Add(this.labelImageError);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.buttonPicturePrevious);
             this.groupBox1.Controls.Add(this.buttonPictureNext);
@@ -1797,6 +1801,22 @@
             this.checkBoxActive.Text = "Deaktiviert";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
+            // labelImageError
+            // 
+            this.labelImageError.AutoSize = true;
+            this.labelImageError.ForeColor = System.Drawing.Color.Red;
+            this.labelImageError.Location = new System.Drawing.Point(301, 85);
+            this.labelImageError.Name = "labelImageError";
+            this.labelImageError.Size = new System.Drawing.Size(0, 13);
+            this.labelImageError.TabIndex = 18;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(332, 101);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
+            this.flowLayoutPanel1.TabIndex = 19;
+            // 
             // ProductDetailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1856,6 +1876,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -2093,5 +2114,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBoxActive;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label labelImageError;
     }
 }

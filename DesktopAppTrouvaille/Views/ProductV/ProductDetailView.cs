@@ -255,12 +255,20 @@ namespace DesktopAppTrouvaille.Views
         // Called wehen User selects File in filechooser
         private void FileSelected(object sender, EventArgs e)
         {
+            labelImageError.Text = "";
             Stream fileStream = fileDialog.OpenFile();
-            Bitmap img = (Bitmap)Image.FromStream(fileStream);
-            Picture pic = new Picture();
-            pic.SetImageData(img);
-            pictureController.AddPicture(pic);
-            pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
+            try
+            {
+                Bitmap img = (Bitmap)Image.FromStream(fileStream); 
+                Picture pic = new Picture();
+                pic.SetImageData(img);
+                pictureController.AddPicture(pic);
+                pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();
+            }
+            catch(Exception)
+            {
+                labelImageError.Text = "Datei konnte nicht geladen werden!";
+            }
         }
 
         // Button Picture Next:
