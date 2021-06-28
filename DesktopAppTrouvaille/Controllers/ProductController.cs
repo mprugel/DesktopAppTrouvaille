@@ -173,6 +173,7 @@ namespace DesktopAppTrouvaille
             // Check if Picture has changed:
             if( (oldP.Picture == null && newP.Picture.ImageData != null) || 
                 (newP.Picture != null && newP.Picture.ImageData != null &&
+                oldP.Picture.ImageData != null &&
                 !oldP.Picture.ImageData.SequenceEqual(newP.Picture.ImageData))
               )
             {
