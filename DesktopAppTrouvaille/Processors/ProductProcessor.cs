@@ -64,7 +64,7 @@ namespace APIconnector.Processors
            
         }
 
-        public async Task<bool> SaveNewProduct(ProductPOSTDTO product)
+        public async Task<Product> SaveNewProduct(ProductPOSTDTO product)
         {
             string url = "Products/";
             HttpResponseMessage response;
@@ -77,11 +77,11 @@ namespace APIconnector.Processors
                 Console.WriteLine(response);
                 if (response.IsSuccessStatusCode)
                 {
-                    return true;
+                    return await response.Content.ReadAsAsync<Product>();
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
             }
             catch (Exception)

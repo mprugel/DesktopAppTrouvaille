@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Models;
 
@@ -77,7 +72,7 @@ namespace DesktopAppTrouvaille.Views
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if(CheckInputField())
+            if(ValidateChildren(System.Windows.Forms.ValidationConstraints.Enabled))
             {
                 Enabled = false;
                 SaveClick(); 
@@ -92,6 +87,22 @@ namespace DesktopAppTrouvaille.Views
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           
+            if (string.IsNullOrWhiteSpace(textBoxName.Text))
+            {
+                e.Cancel = true;
+                textBoxName.Focus();
+                errorProvider1.SetError(textBoxName, "Feld darf nicht leer sein!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBoxName, "");
+            }
         }
     }
 }

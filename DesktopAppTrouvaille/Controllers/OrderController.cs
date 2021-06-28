@@ -46,7 +46,7 @@ namespace DesktopAppTrouvaille.Controllers
         public async override void SelectDetailModel(IModel model)
         {
             DetailOrder = (Order)model;
-
+            _selectedModel = model;
             List<Guid> guids = new List<Guid>();
             if (DetailOrder.Products == null)
             {

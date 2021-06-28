@@ -64,6 +64,7 @@ namespace DesktopAppTrouvaille.Controllers
         {
             if(model is Customer && model != null)
             {
+                _selectedModel = model;
                 _detailCustomer = (Customer)model;
                 UpdateView();
             }

@@ -40,6 +40,7 @@ namespace DesktopAppTrouvaille.Controllers
         {
             if(model is Employee)
             {
+                _selectedModel = model;
                 _detailEmployee = (Employee)model;
                 UpdateView();
             }

@@ -33,8 +33,8 @@ namespace DesktopAppTrouvaille.Views
             Controller = controller;
 
             // Set Validating Events:
-            textBoxManufactureEmail.Validating += textBox_Validating;
-            textBoxManufacturer.Validating += textBox_Validating;
+            //textBoxManufactureEmail.Validating += textBox_Validating;
+            //textBoxManufacturer.Validating += textBox_Validating;
             textBoxName.Validating += textBox_Validating;
             numericUpDownInStock.Validating += numericUpDown_Validating;
             numericUpDownMinStock.Validating += numericUpDown_Validating;

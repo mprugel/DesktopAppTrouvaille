@@ -33,10 +33,6 @@ namespace DesktopAppTrouvaille.Views
         public void UpdateView()
         {
             UpdateStatusLabel();
-            if(Controller.state == State.Saved || Controller.state == State.Deleted)
-            {
-                panelDetailView.Visible = false;
-            }
         }
 
         protected override IDetailView CreateNewView()

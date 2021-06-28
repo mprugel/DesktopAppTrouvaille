@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
 
 namespace DesktopAppTrouvaille.Views
@@ -26,7 +26,7 @@ namespace DesktopAppTrouvaille.Views
 
         protected override void buttonSave_Click(object sender, EventArgs e)
         {
-            if(CheckInputFields())
+            if ( ValidateChildren(ValidationConstraints.Enabled)) 
             {
                 Controller.SaveProduct(GetProductFromInputs(),GetManufacturerFromInput());
             }

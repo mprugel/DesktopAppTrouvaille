@@ -96,12 +96,21 @@ namespace DesktopAppTrouvaille
                 {
                     postDTO.ImageData = p.Picture.ImageData;
                 }
-               
-                if (await _productProssesor.SaveNewProduct(postDTO))
+                // Save the newly added Categories:
+              
+                
+                Product newP  = await _productProssesor.SaveNewProduct(postDTO);
+                if (newP != null)
                 {
-                    UpdateData();
-                    LoadDetailProduct(p.GetGuid());
-                    _state = State.Saved;
+                    if(await _productProssesor.AddCategories(newP.ProductId, p.ProductCategories))
+                    {
+                        _state = State.Saved;
+                        DetailProduct = newP;
+                    
+                        UpdateData();
+                        LoadDetailProduct(newP.GetGuid());
+                    }
+                   
                 }
                 else
                 {
@@ -217,6 +226,7 @@ namespace DesktopAppTrouvaille
 
         public override void SelectDetailModel(IModel model)
         {
+            _selectedModel = model;
             DetailProduct = (Product)model;
             LoadDetailProduct(model.GetGuid());
         }

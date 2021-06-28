@@ -160,7 +160,8 @@ namespace DesktopAppTrouvaille.Views
             foreach(ListViewItem item in items)
             {
                 listView1.Items.Add(item);
-                if(item.Tag.Equals(Controller.GetSelectedModel()))
+                IModel model = (IModel)item.Tag;
+                if (Controller.GetSelectedModel() != null && Controller.GetSelectedModel().GetGuid() == model.GetGuid())
                 {
                     item.Selected = true;
                     listView1.Select();

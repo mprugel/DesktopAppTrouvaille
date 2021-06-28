@@ -117,7 +117,8 @@ namespace DesktopAppTrouvaille.Controllers
 
         public override void SelectDetailModel(IModel model)
         {
-            if(model != null && model is Category)
+            _selectedModel = model;
+            if (model != null && model is Category)
             {
                 _detailCategory = (Category)model;
                 UpdateView();

@@ -21,7 +21,7 @@ namespace DesktopAppTrouvaille.Controllers
         protected ErrorHandler _errorHandler = new ErrorHandler();
         protected SortingOrder SortOrder;
         protected string _searchText;
-        private IModel _selectedModel;
+        protected IModel _selectedModel;
 
         public State state { get { return _state; } }
 
@@ -56,6 +56,7 @@ namespace DesktopAppTrouvaille.Controllers
                 v.UpdateView();
             }
             _errorHandler.Reset();
+            _state = State.OK;
         }
 
         public int GetPageCount()
