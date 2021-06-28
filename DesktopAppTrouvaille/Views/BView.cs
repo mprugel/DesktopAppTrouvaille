@@ -45,14 +45,6 @@ namespace DesktopAppTrouvaille.Views
                    
                     panelDetailView.Controls.Clear();
                    
-                    // Show Saved Model in DetailView:
-                    detailView = CreateDetailView(Controller.GetSelectedModel());
-                    
-                    panelDetailView.Controls.Clear();
-                    UserControl control = (UserControl)detailView;
-                    control.Dock = DockStyle.Fill;
-                    panelDetailView.Controls.Add(control);
-                    panelDetailView.Visible = true;
                     
                     break;
             }

@@ -78,6 +78,7 @@ namespace DesktopAppTrouvaille.Controllers
                 }
                 else
                 {
+                    _detailEmployee = new Employee();
                     _errorHandler.SetError(_processor.Error);
                     _state = State.SaveFailed;
                 }
