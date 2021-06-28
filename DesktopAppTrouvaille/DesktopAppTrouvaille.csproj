@@ -133,6 +133,7 @@
     <Compile Include="Processors\ProductProcessor.cs" />
     <Compile Include="Processors\RatingProcessor.cs" />
     <Compile Include="Processors\SearchQueryDTO.cs" />
+    <Compile Include="ServerSettings.cs" />
     <Compile Include="States\IProductState.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ProductController.cs" />

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using DesktopAppTrouvaille;
 using DesktopAppTrouvaille.Enums;
 using DesktopAppTrouvaille.Models;
+using Newtonsoft.Json;
 
 namespace APIconnector
 {
@@ -39,8 +41,27 @@ namespace APIconnector
                 };
 
             ApiClient = new HttpClient(handler);
-            
-            ApiClient.BaseAddress = new Uri("https://trouvaille.conveyor.cloud/api/");  //Base-Uri
+
+            string url = "https://trouvaille.conveyor.cloud/api/";
+
+            // Read Url from Setting Json:
+            try
+            {
+                string fileText = System.IO.File.ReadAllText(@".\ServerSetting.json");
+                ServerSettings settings = JsonConvert.DeserializeObject<ServerSettings>(fileText);
+                if (settings != null)
+                {
+                    url = settings.Url;
+                }
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Can't openerverSetting.json!");
+            }
+           
+
+
+            ApiClient.BaseAddress = new Uri(url);  //Base-Uri
           
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             
