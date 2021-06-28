@@ -105,8 +105,8 @@ namespace DesktopAppTrouvaille.Views
             textBoxName.Text = Prod.Name;
             numericUpDownInStock.Value = (int)Prod.InStock;
             numericUpDownMinStock.Value = Prod.MinStock;
-            numericUpDownTax.Value = (int)Prod.Tax;
-            numericUpDownPrice.Value = (int)Prod.Price;
+            numericUpDownTax.Value = (decimal)Prod.Tax;
+            numericUpDownPrice.Value = Prod.Price;
             richTextBox1.Text = Prod.Description;
             categorySelection1.AddCategories(Prod.ProductCategories, Controller.Categories);
 
@@ -224,7 +224,7 @@ namespace DesktopAppTrouvaille.Views
             p.InStock = (int)numericUpDownInStock.Value;
             p.MinStock = (int)numericUpDownMinStock.Value;
             p.Tax = numericUpDownTax.Value;
-            p.Price = (int)numericUpDownPrice.Value;
+            p.Price = (decimal)numericUpDownPrice.Value;
             p.Description = richTextBox1.Text;
             p.ProductCategories = categorySelection1.GetCheckedCategories();
             p.Picture = pictureController.GetCurrentPicture();

@@ -54,6 +54,7 @@ namespace DesktopAppTrouvaille.Views
             Form form = new Form();
             form.MinimumSize = new Size(750, 850);
             form.Controls.Add(view);
+           
             form.Show();
         }
 

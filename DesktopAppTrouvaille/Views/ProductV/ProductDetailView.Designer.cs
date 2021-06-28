@@ -275,7 +275,8 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(196, 12);
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonSave.Location = new System.Drawing.Point(408, 12);
             this.buttonSave.Size = new System.Drawing.Size(209, 29);
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
