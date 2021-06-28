@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerController : Controller, IErrorHandler
     {
         private List<Customer> _customers = new List<Customer>();
         private Customer _detailCustomer = new Customer();
@@ -17,6 +17,7 @@ namespace DesktopAppTrouvaille.Controllers
         private MainController _mainController;
 
         private CustomerFilter _filter = new CustomerFilter(false,"");
+
 
         public CustomerController(MainController mainController)
         {
@@ -102,7 +103,7 @@ namespace DesktopAppTrouvaille.Controllers
             {
                 if(await _processor.UpdateCustomer(putModel, new Guid(customer.Id)))
                 {
-                    _state = State.Saved;
+                    _state = State.Updated;
                     _detailCustomer = customer;
                     UpdateView();
                 }
@@ -145,5 +146,7 @@ namespace DesktopAppTrouvaille.Controllers
         {
             _filter = filter;
         }
+
+       
     }
 }

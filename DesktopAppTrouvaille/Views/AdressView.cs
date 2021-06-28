@@ -36,7 +36,14 @@ namespace DesktopAppTrouvaille.Views
             textBoxCity.Validating += textBox_Validating;
             textBoxCountry.Validating += textBox_Validating;
             textBoxStreet.Validating += textBox_Validating;
-            
+
+            textBoxes.Add(textBoxCity);
+            textBoxes.Add(textBoxCountry);
+            textBoxes.Add(textBoxStreet);
+
+            numericBoxes.Add(numericUpDownPostalCode);
+            numericBoxes.Add(numericUpDownStreetNumber);
+
 
             numericUpDownPostalCode.Validating += numericUpDown_Validating;
             numericUpDownStreetNumber.Validating += numericUpDown_Validating;

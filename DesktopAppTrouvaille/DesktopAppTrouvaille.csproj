@@ -72,7 +72,9 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorHandler.cs" />
     <Compile Include="Controllers\IController.cs" />
+    <Compile Include="Controllers\IErrorHandler.cs" />
     <Compile Include="Controllers\IMainController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PictureController.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Processors\LoginProcessor.cs" />
     <Compile Include="Processors\OrderPOSTDTO.cs" />
     <Compile Include="Processors\OrderProcessor.cs" />
+    <Compile Include="Processors\Processor.cs" />
     <Compile Include="Processors\ProductPOSTDTO.cs" />
     <Compile Include="Processors\ProductProcessor.cs" />
     <Compile Include="Processors\RatingProcessor.cs" />

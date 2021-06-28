@@ -12,13 +12,13 @@ namespace DesktopAppTrouvaille.Controllers
     public enum State { ConnectionError, OK, LoadData, SendingData, Saved, Deleted, Updated, SaveFailed, UpdateFailed, DeleteFailed, LoggedIn, LoginFailed }
 
     // This Controller Class contains Functions which are used by all specific Controllers.
-    public abstract class Controller : IController
+    public abstract class Controller : IController, IErrorHandler
     {
 
         // Interface for Updating the GUI:
         private List<IView> _views= new List<IView>();
         protected State _state = State.OK;
-
+        protected ErrorHandler _errorHandler = new ErrorHandler();
         protected SortingOrder SortOrder;
         protected string _searchText;
         private IModel _selectedModel;
@@ -102,6 +102,11 @@ namespace DesktopAppTrouvaille.Controllers
         public string GetSearchText()
         {
             return _searchText;
+        }
+
+        public List<Errors> GetError()
+        {
+            return _errorHandler.GetErrors();
         }
     }
 }

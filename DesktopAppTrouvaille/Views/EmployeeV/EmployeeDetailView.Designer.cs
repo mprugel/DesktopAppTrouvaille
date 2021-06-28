@@ -134,6 +134,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.labelEmailNotValid);
             this.Controls.Add(this.textBoxEmail);
@@ -163,9 +164,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxFistName;
         private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelEmailNotValid;
+        protected System.Windows.Forms.ErrorProvider errorProvider1;
+        protected System.Windows.Forms.Label labelEmailNotValid;
     }
 }

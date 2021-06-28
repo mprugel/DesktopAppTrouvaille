@@ -42,6 +42,7 @@
             this.adressViewDelivery = new DesktopAppTrouvaille.Views.AdressView();
             this.adressViewInvoice = new DesktopAppTrouvaille.Views.AdressView();
             this.checkBoxActive = new System.Windows.Forms.CheckBox();
+            this.labelError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // buttonSave
             // 
             this.buttonSave.Location = new System.Drawing.Point(531, 12);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Size = new System.Drawing.Size(202, 29);
             this.buttonSave.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -77,7 +78,7 @@
             // textBoxFirstName
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(85, 67);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(156, 20);
             this.textBoxFirstName.TabIndex = 21;
@@ -85,7 +86,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Location = new System.Drawing.Point(85, 100);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(156, 20);
             this.textBoxLastName.TabIndex = 22;
@@ -106,7 +107,7 @@
             this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(334, 426);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(202, 32);
             this.button3.TabIndex = 24;
@@ -117,7 +118,7 @@
             // textBoxPhoneNumber
             // 
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(85, 138);
-            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(156, 20);
             this.textBoxPhoneNumber.TabIndex = 25;
@@ -125,7 +126,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(85, 170);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(156, 20);
             this.textBoxEmail.TabIndex = 27;
@@ -161,7 +162,7 @@
             // 
             this.adressViewDelivery.Editable = true;
             this.adressViewDelivery.Location = new System.Drawing.Point(286, 236);
-            this.adressViewDelivery.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.adressViewDelivery.Margin = new System.Windows.Forms.Padding(1);
             this.adressViewDelivery.Name = "adressViewDelivery";
             this.adressViewDelivery.Size = new System.Drawing.Size(250, 164);
             this.adressViewDelivery.TabIndex = 20;
@@ -171,7 +172,7 @@
             // 
             this.adressViewInvoice.Editable = true;
             this.adressViewInvoice.Location = new System.Drawing.Point(14, 236);
-            this.adressViewInvoice.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.adressViewInvoice.Margin = new System.Windows.Forms.Padding(1);
             this.adressViewInvoice.Name = "adressViewInvoice";
             this.adressViewInvoice.Size = new System.Drawing.Size(244, 164);
             this.adressViewInvoice.TabIndex = 19;
@@ -188,12 +189,23 @@
             this.checkBoxActive.Text = "Inaktiv";
             this.checkBoxActive.UseVisualStyleBackColor = true;
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(283, 173);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(0, 13);
+            this.labelError.TabIndex = 31;
+            // 
             // CustomerDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.checkBoxActive);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -206,7 +218,7 @@
             this.Controls.Add(this.adressViewDelivery);
             this.Controls.Add(this.adressViewInvoice);
             this.Controls.Add(this.label16);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerDetail";
             this.Size = new System.Drawing.Size(750, 892);
             this.Controls.SetChildIndex(this.label16, 0);
@@ -221,6 +233,7 @@
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.checkBoxActive, 0);
+            this.Controls.SetChildIndex(this.labelError, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,5 +254,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox checkBoxActive;
+        private System.Windows.Forms.Label labelError;
     }
 }

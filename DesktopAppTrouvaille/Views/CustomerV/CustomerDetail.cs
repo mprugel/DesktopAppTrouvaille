@@ -26,6 +26,8 @@ namespace DesktopAppTrouvaille.Views
             textBoxPhoneNumber.Validating += textBox_Validating;
             textBoxFirstName.Validating += textBox_Validating;
             textBoxLastName.Validating += textBox_Validating;
+
+            textBoxEmail.Validating += emailValidating;
             Controller = controller;
         }
 
@@ -70,6 +72,40 @@ namespace DesktopAppTrouvaille.Views
             adressViewInvoice.SetAdress(_customer.InvoiceAddress);
 
             checkBoxActive.Checked = _customer.IsDisabled;
+            labelError.Text = string.Empty;
+            if(Controller.GetError().Contains(Enums.Errors.UserAlreadyTaken))
+            {
+                labelError.Text = "E-Mail ist schon vergeben!";
+            }
+            
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void emailValidating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!IsValidEmail(textBox.Text))
+            {
+                e.Cancel = true;
+                textBox.Focus();
+                errorProvider1.SetError(textBox, "E-Mail Adresse ist nicht gültig!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
         }
 
         private Customer GetCustomerFromInputFields()

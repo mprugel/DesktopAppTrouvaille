@@ -12,8 +12,9 @@ using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille.Processors
 {
-    public class CustomerProcessor : ICustomerProcessor
+    public class CustomerProcessor : Processor, ICustomerProcessor
     {
+        
         public async Task<bool> DeleteCustomer(Customer customer)
         {
             string url = "Auth/Customer/" + customer.Id;
@@ -138,6 +139,7 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
+                    _error = await response.Content.ReadAsAsync<ErrorViewModel>();
                     return false;
                 }
             }

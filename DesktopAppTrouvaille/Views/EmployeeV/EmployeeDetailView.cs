@@ -1,4 +1,5 @@
 ﻿using DesktopAppTrouvaille.Controllers;
+using DesktopAppTrouvaille.Enums;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
@@ -24,7 +25,37 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
             textBoxFistName.Validating += textboxValidating;
             textBoxLastName.Validating += textboxValidating;
             textBoxEmail.Validating += textboxValidating;
+            textBoxEmail.Validating += emailValidating;
             _controller = controller;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void emailValidating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!IsValidEmail(textBox.Text))
+            {
+                e.Cancel = true;
+                textBox.Focus();
+                errorProvider1.SetError(textBox, "E-Mail Adresse ist nicht gültig!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
         }
 
         protected void textboxValidating(object sender, CancelEventArgs e)
@@ -68,12 +99,14 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
         {
             if(ValidateChildren(ValidationConstraints.Enabled))
             {
+                Enabled = false; // Disable View while Loading Data
                 ButtonSaveClick();
             }
         }
         // Button Delete Click
         private void button2_Click(object sender, EventArgs e)
         {
+            Enabled = false;
             _controller.DeleteEmployee(_customer);
         }
 
@@ -103,9 +136,10 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
             textBoxLastName.Text = _customer.LastName;
             textBoxEmail.Text = _customer.Email;
             labelEmailNotValid.Visible = false;
-            if (_controller.GetError() == EmployeeProcessor.Errors.EmailInvalid)
-            {        
-                labelEmailNotValid.Visible = true;      
+            if (_controller.GetError().Contains(Errors.UserAlreadyTaken))
+            {
+                labelEmailNotValid.Text = "Benutzer existiert Bereits!";
+                labelEmailNotValid.Visible = true;
             }
         }
     }

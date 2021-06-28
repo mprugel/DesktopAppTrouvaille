@@ -42,7 +42,7 @@ namespace DesktopAppTrouvaille.Views
         }
         protected override IDetailView CreateDetailView(IModel model)
         {
-            CustomerDetail view = new CustomerDetail();
+            CustomerDetail view = new CustomerDetail(_controller);
            
             return view;
         }

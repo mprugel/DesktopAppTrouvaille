@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace DesktopAppTrouvaille.Enums
 {
     // Attributes to Sort
+    public enum Errors { NoError, PasswordInvalid, UserAlreadyTaken }
+
     public enum ProductSortCriteria { Name, InStock ,Price}
 
     public enum OrderSortCriteria { Date}

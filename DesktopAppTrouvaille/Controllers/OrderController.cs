@@ -165,7 +165,15 @@ namespace DesktopAppTrouvaille.Controllers
             {
                 _iterator.Reset();
                 _iterator.Count = await _processor.GetCount();
-                
+                if(searchText.Length > 0)
+                {
+                    Guid.TryParse(searchText, out _filterCriteria.CustomerGuid);
+                    _filterCriteria.FilerID = true;
+                }
+                else
+                {
+                    _filterCriteria.FilerID = false;
+                }
                 Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
                 _searchText = searchText;
                 UpdateView();

@@ -126,19 +126,21 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 114);
+            this.textBox1.Location = new System.Drawing.Point(62, 98);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 20);
             this.textBox1.TabIndex = 8;
+            this.textBox1.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 117);
+            this.label4.Location = new System.Drawing.Point(0, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Kunden ID";
+            this.label4.Visible = false;
             // 
             // OrderFilter
             // 
@@ -156,7 +158,7 @@
             this.Controls.Add(this.comboBoxState);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "OrderFilter";
-            this.Size = new System.Drawing.Size(327, 137);
+            this.Size = new System.Drawing.Size(327, 121);
             this.Controls.SetChildIndex(this.comboBoxState, 0);
             this.Controls.SetChildIndex(this.dateTimePickerFrom, 0);
             this.Controls.SetChildIndex(this.label1, 0);

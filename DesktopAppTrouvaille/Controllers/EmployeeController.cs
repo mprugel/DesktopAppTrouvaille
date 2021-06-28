@@ -1,25 +1,26 @@
-﻿using DesktopAppTrouvaille.Exceptions;
+﻿using DesktopAppTrouvaille.Enums;
+using DesktopAppTrouvaille.Exceptions;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
 
 namespace DesktopAppTrouvaille.Controllers
-{  
-    public class EmployeeController : Controller
+{
+   
+
+    public class EmployeeController : Controller, IErrorHandler
     {
         private List<Employee> _employees;
         private Employee _detailEmployee = new Employee();
         private EmployeeProcessor _processor = new EmployeeProcessor();
-        private EmployeeProcessor.Errors _error;
+       
         public override int GetCount()
         {
             return _iterator.Count;
         }
-        public EmployeeProcessor.Errors GetError()
-        {
-            return _error;
-        }
+       
+       
         public override IEnumerable<IModel> GetModels()
         {
             return _employees;
@@ -54,6 +55,7 @@ namespace DesktopAppTrouvaille.Controllers
             catch (GETException)
             {
                 _state = State.ConnectionError;
+               
             }
             finally
             {
@@ -68,12 +70,12 @@ namespace DesktopAppTrouvaille.Controllers
                 if(await _processor.RegisterNewEmployee(employee))
                 {
                     _state = State.Saved;
-              
+                    _errorHandler.Reset();
                     UpdateData();
                 }
                 else
                 {
-                    _error = _processor.Error;
+                    _errorHandler.SetError(_processor.Error);
                     _state = State.SaveFailed;
                 }
             }
@@ -96,7 +98,7 @@ namespace DesktopAppTrouvaille.Controllers
                 }
                 else
                 {
-                    _error = _processor.Error;
+                    _errorHandler.SetError(_processor.Error);
                     _state = State.UpdateFailed;
                 }
             }
@@ -126,8 +128,6 @@ namespace DesktopAppTrouvaille.Controllers
             }
             UpdateData();
         }
-
-
 
     }
 }

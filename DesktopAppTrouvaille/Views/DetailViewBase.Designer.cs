@@ -45,7 +45,7 @@
             this.panelHead.Location = new System.Drawing.Point(0, 0);
             this.panelHead.Margin = new System.Windows.Forms.Padding(0);
             this.panelHead.Name = "panelHead";
-            this.panelHead.Size = new System.Drawing.Size(750, 52);
+            this.panelHead.Size = new System.Drawing.Size(1500, 100);
             this.panelHead.TabIndex = 0;
             // 
             // labelTitle
@@ -53,10 +53,10 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(11, 13);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTitle.Location = new System.Drawing.Point(22, 25);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(70, 26);
+            this.labelTitle.Size = new System.Drawing.Size(138, 51);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "label1";
             // 
@@ -66,10 +66,10 @@
             this.panelFooter.Controls.Add(this.buttonSave);
             this.panelFooter.Controls.Add(this.buttonDelete);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 443);
+            this.panelFooter.Location = new System.Drawing.Point(0, 852);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(0);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(750, 52);
+            this.panelFooter.Size = new System.Drawing.Size(1500, 100);
             this.panelFooter.TabIndex = 1;
             // 
             // buttonSave
@@ -78,39 +78,37 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(523, 12);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSave.Location = new System.Drawing.Point(1046, 23);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(213, 29);
+            this.buttonSave.Size = new System.Drawing.Size(426, 56);
             this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Änderungen speichern";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonDelete
             // 
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.Coral;
-            this.buttonDelete.Location = new System.Drawing.Point(16, 12);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDelete.Location = new System.Drawing.Point(32, 23);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(114, 29);
+            this.buttonDelete.Size = new System.Drawing.Size(228, 56);
             this.buttonDelete.TabIndex = 0;
             this.buttonDelete.Text = "Löschen";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // DetailViewBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHead);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MinimumSize = new System.Drawing.Size(750, 0);
+            this.MinimumSize = new System.Drawing.Size(1500, 0);
             this.Name = "DetailViewBase";
-            this.Size = new System.Drawing.Size(750, 495);
+            this.Size = new System.Drawing.Size(1500, 952);
             this.panelHead.ResumeLayout(false);
             this.panelHead.PerformLayout();
             this.panelFooter.ResumeLayout(false);

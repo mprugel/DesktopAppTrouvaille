@@ -52,6 +52,7 @@ namespace DesktopAppTrouvaille.Views
             //panelTabView.Controls.Clear();
             //panelTabView.Controls.Add((UserControl)_tabView);
             Form form = new Form();
+            form.MinimumSize = new Size(750, 850);
             form.Controls.Add(view);
             form.Show();
         }
@@ -179,6 +180,10 @@ namespace DesktopAppTrouvaille.Views
 
         public void ShowOrderView()
         {
+            ResetButtonsColor();
+            buttonShowOrders.BackColor = _buttonActiveColor;
+            buttonShowOrders.ForeColor = _buttonForeColorActive;
+
             OrderViewUC view = new OrderViewUC(controller.orderController);
             view.Dock = DockStyle.Left;
             _tabView = view;

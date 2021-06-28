@@ -11,27 +11,10 @@ using System.Threading.Tasks;
 namespace DesktopAppTrouvaille.Processors
 {
 
-    public class EmployeeProcessor
+    public class EmployeeProcessor : Processor
     {
-        private Errors _error;
-        public Errors Error { get { return _error; } }
-        public enum Errors { NoError, PasswordInvalid, EmailInvalid}
-
-        private void SetError(ErrorViewModel response)
-        {
-            if(response == null || response.Errors == null)
-            {
-                return;
-            }
-            if(response.Errors != null)
-            {
-                _error = Errors.EmailInvalid;
-            }
-            if (response.Errors != null)
-            {
-                _error = Errors.PasswordInvalid;
-            }
-        }
+    
+      
         public async Task<bool> RegisterNewEmployee(RegisterEmployeeModel employee)
         {
             string url = "Auth/Employee/Register";
@@ -43,6 +26,7 @@ namespace DesktopAppTrouvaille.Processors
             try
             {
                 response = await APIconnection.ApiClient.PostAsync(url, data);
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
                 Console.WriteLine(response);
                 if (response.IsSuccessStatusCode)
                 {
@@ -50,8 +34,8 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    ErrorViewModel error = await response.Content.ReadAsAsync<ErrorViewModel>();
-                    SetError(error);
+                    _error = await response.Content.ReadAsAsync<ErrorViewModel>();
+                  
                     return false;
                 }
             }
@@ -79,8 +63,7 @@ namespace DesktopAppTrouvaille.Processors
                 }
                 else
                 {
-                    ErrorViewModel error = await response.Content.ReadAsAsync<ErrorViewModel>();
-                    SetError(error);
+                    _error = await response.Content.ReadAsAsync<ErrorViewModel>();
                     return false;
                 }
             }
@@ -138,7 +121,7 @@ namespace DesktopAppTrouvaille.Processors
 
         public async Task<bool> DeleteEmployee(Guid guid)
         {
-            string url = string.Format("Auth/Employee/{0}", guid.ToString());
+            string url = string.Format("Auth/Employee/Delete/{0}", guid.ToString());
             HttpResponseMessage response;
             try
             {
