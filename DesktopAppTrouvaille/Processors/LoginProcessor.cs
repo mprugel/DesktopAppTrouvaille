@@ -26,13 +26,12 @@ namespace DesktopAppTrouvaille.Processors
                 response = await APIconnection.ApiClient.PostAsync(url, data);
                 Console.WriteLine(response.ReasonPhrase);
                 if (response.IsSuccessStatusCode)
-                {
-                    
+                {  
                     return await response.Content.ReadAsAsync<LoginResponse>();
                 }
                 else
                 {
-                    throw new GETException();
+                    return new LoginResponse();
                 }
             }
             catch (Exception)
