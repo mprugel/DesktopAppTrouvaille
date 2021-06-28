@@ -8,14 +8,14 @@ namespace DesktopAppTrouvaille.Factories
     {
         public override string[] CreateColumns()
         {
-            string[] cols = { "Vorname", "Nachname" };
+            string[] cols = { "Vorname", "Nachname" , "Kunden ID" };
             return cols;
         }
 
         protected override string[] CreateRowValues(IModel model)
         {
             Customer cust = (Customer)model;
-            string[] row = { cust.FirstName, cust.LastName};
+            string[] row = { cust.FirstName, cust.LastName, cust.Id};
             return row;
         }
 

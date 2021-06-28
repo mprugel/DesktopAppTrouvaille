@@ -44,8 +44,8 @@ namespace DesktopAppTrouvaille.Views
                     labelStatus.Text = "Erfolgreich gespeichert";
                    
                     panelDetailView.Controls.Clear();
-                    break;
-                    /*// Show Saved Model in DetailView:
+                   
+                    // Show Saved Model in DetailView:
                     detailView = CreateDetailView(Controller.GetSelectedModel());
                     
                     panelDetailView.Controls.Clear();
@@ -53,8 +53,8 @@ namespace DesktopAppTrouvaille.Views
                     control.Dock = DockStyle.Fill;
                     panelDetailView.Controls.Add(control);
                     panelDetailView.Visible = true;
-                    detailView.UpdateView();
-                    break;*/
+                    
+                    break;
             }
         }
 
