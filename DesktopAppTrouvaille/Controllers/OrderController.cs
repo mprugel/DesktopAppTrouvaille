@@ -93,6 +93,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void UpdateOrder(Order order)
         {
+            _locked = true;
             try
             {
                 if( await _processor.UpdateOrder(order.OrderId, order.OrderState))
@@ -117,6 +118,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void DeleteOrder(Order order)
         {
+            _locked = true;
             try
             {
                 _state = State.DeleteFailed;

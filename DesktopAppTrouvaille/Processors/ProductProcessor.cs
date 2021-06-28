@@ -93,9 +93,14 @@ namespace APIconnector.Processors
 
         public async Task<List<Product>> SearchAndFilter(int from, int to, string searchWord, SortingOrder order,ProductSortCriteria sort, ProductFilterCriteria criteria)
         {
+            string isActive = "false";
+            if(criteria != null && criteria.OnlyActive)
+            {
+                isActive = "true";
+            }
             Console.WriteLine("Search...");
             // TODO Create URL-String from criteria:
-            string url = string.Format("Products/SearchQuery/{0}/{1}?searchWord={2}&asc={3}&orderBy={4}&onlyActive=false&getCategories=true", from, to, searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort]);
+            string url = string.Format("Products/SearchQuery/{0}/{1}?searchWord={2}&asc={3}&orderBy={4}&onlyActive={5}&getCategories=true", from, to, searchWord, APIconnection.SortingOrderDic[order], APIconnection.ProductSortDic[sort],isActive);
             Console.WriteLine(url);
             HttpResponseMessage response;
             try

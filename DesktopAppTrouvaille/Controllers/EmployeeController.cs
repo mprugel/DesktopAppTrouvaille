@@ -47,6 +47,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void UpdateData()
         {
+            _locked = true;
             try
             {
                 _iterator.Count = await _processor.GetCount();
@@ -65,6 +66,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void SaveNewEmployee(RegisterEmployeeModel employee)
         {
+            _locked = true;
             try
             {
                 if(await _processor.RegisterNewEmployee(employee))
@@ -89,6 +91,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void UpdateEmployee(Employee employee)
         {
+            _locked = true;
             try
             {
                 if (await _processor.UpdateEmployee(employee.GetGuid(),employee))
@@ -111,6 +114,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void DeleteEmployee(Employee employee)
         {
+            _locked = true;
             try
             {
                 if (await _processor.DeleteEmployee(employee.GetGuid()))

@@ -50,10 +50,12 @@ namespace DesktopAppTrouvaille.Controllers
 
         protected void UpdateView()
         {
-            foreach(IView v in _views)
+            _locked = false;
+            foreach (IView v in _views)
             {
                 v.UpdateView();
             }
+            _errorHandler.Reset();
         }
 
         public int GetPageCount()
@@ -107,6 +109,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public List<Errors> GetError()
         {
+            
             return _errorHandler.GetErrors();
         }
 

@@ -34,6 +34,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void DeleteCategory(Category category)
         {
+            _locked = true;
             try
             {
                 if (await _processor.DeleteCategory(category.GetGuid()))
@@ -59,6 +60,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void SaveNewCategory(Category category)
         {
+            _locked = true;
             try
             {
                 if (await _processor.PostCategory(new CategoryPOSTDTO(category)))
@@ -83,6 +85,7 @@ namespace DesktopAppTrouvaille.Controllers
         }
         public async void UpdateCategory(Category category)
         {
+            _locked = true;
             try
             {
                 if( await _processor.UpdateCategory(category.CategoryId, category.Name))

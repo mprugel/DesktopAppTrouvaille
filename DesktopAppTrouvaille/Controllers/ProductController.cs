@@ -76,6 +76,7 @@ namespace DesktopAppTrouvaille
 
         public async void SaveProduct(Product p, Manufacturer manufacturer)
         {
+            _locked = true;
             _state = State.SendingData;
             // Call API
             try
@@ -135,7 +136,8 @@ namespace DesktopAppTrouvaille
     
         public async void UpdateProduct(Product oldP, Product newP, Manufacturer manufacturer)
         {
-            if(oldP.ProductCategories == null)
+            _locked = true;
+            if (oldP.ProductCategories == null)
             {
                 oldP.ProductCategories = new List<Guid>();
             }

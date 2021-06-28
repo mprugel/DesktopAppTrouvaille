@@ -76,6 +76,7 @@ namespace DesktopAppTrouvaille.Views
             if(Controller.GetError().Contains(Enums.Errors.UserAlreadyTaken))
             {
                 labelError.Text = "E-Mail ist schon vergeben!";
+                labelError.Visible = true;
             }
             
         }

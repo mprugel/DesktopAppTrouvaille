@@ -13,7 +13,7 @@ namespace DesktopAppTrouvaille.Controllers
         private List<Customer> _customers = new List<Customer>();
         private Customer _detailCustomer = new Customer();
         private CustomerSortCriteria _customerSortCriteria;
-        private ICustomerProcessor _processor = new CustomerProcessor();
+        private CustomerProcessor _processor = new CustomerProcessor();
         private MainController _mainController;
 
         private CustomerFilter _filter = new CustomerFilter(false,"");
@@ -71,7 +71,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void UpdateData()
         {
-           
+            _locked = true;
             try
             {
                 _iterator.Count = await _processor.GetCount();
@@ -89,6 +89,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void UpdateCustomer(Customer customer)
         {
+            _locked = true;
             PutCustomerModel putModel = new PutCustomerModel();
             putModel.DeliveryAddress = customer.DeliveryAddress;
             putModel.InvoiceAddress = customer.InvoiceAddress;
@@ -109,6 +110,7 @@ namespace DesktopAppTrouvaille.Controllers
                 else
                 {
                     _state = State.UpdateFailed;
+                    _errorHandler.SetError(_processor.Error);
                 }
             }
             catch
@@ -123,6 +125,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async void DeleteCustomer(Customer customer)
         {
+            _locked = true;
             try
             {
                 if (await _processor.DeleteCustomer(customer))

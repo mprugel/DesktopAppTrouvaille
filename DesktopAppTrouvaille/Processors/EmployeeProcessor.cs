@@ -61,11 +61,18 @@ namespace DesktopAppTrouvaille.Processors
                 {
                     return true;
                 }
-                else
+                else if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
                 {
-                    _error = await response.Content.ReadAsAsync<ErrorViewModel>();
+                    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    ErrorViewModel errorViewModel = new ErrorViewModel();
+                    List<string> errors = new List<string>();
+                    errorViewModel.Errors = errors;
+
+                    errors.Add("Email already taken");
+                    _error = errorViewModel;
                     return false;
                 }
+                return false;
             }
             catch (Exception)
             {

@@ -15,7 +15,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownTo;
         private System.Windows.Forms.NumericUpDown numericUpDownFrom;
-        private CheckBox checkBox2;
+        private CheckBox checkBoxOnlyActive;
         private System.ComponentModel.IContainer components;
         private ProductController _controller;
 
@@ -41,7 +41,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
                 _selectedCategory = cat;
                 categories.Add(cat.GetGuid());
             }
-            _filter = new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value, categories);
+            _filter = new ProductFilterCriteria((int)numericUpDownFrom.Value, (int)numericUpDownTo.Value, categories, checkBoxOnlyActive.Checked);
             return _filter;
         }
 
@@ -64,7 +64,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxOnlyActive = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrom)).BeginInit();
@@ -152,21 +152,21 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.label3.TabIndex = 6;
             this.label3.Text = "Kategorie";
             // 
-            // checkBox2
+            // checkBoxOnlyActive
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(14, 58);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(121, 17);
-            this.checkBox2.TabIndex = 7;
-            this.checkBox2.Text = "Nur aktive Produkte";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxOnlyActive.AutoSize = true;
+            this.checkBoxOnlyActive.Location = new System.Drawing.Point(14, 58);
+            this.checkBoxOnlyActive.Name = "checkBoxOnlyActive";
+            this.checkBoxOnlyActive.Size = new System.Drawing.Size(121, 17);
+            this.checkBoxOnlyActive.TabIndex = 7;
+            this.checkBoxOnlyActive.Text = "Nur aktive Produkte";
+            this.checkBoxOnlyActive.UseVisualStyleBackColor = true;
             // 
             // ProductFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBoxOnlyActive);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.groupBox1);
@@ -177,7 +177,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
             this.Controls.SetChildIndex(this.comboBoxCategory, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.checkBox1, 0);
-            this.Controls.SetChildIndex(this.checkBox2, 0);
+            this.Controls.SetChildIndex(this.checkBoxOnlyActive, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTo)).EndInit();
