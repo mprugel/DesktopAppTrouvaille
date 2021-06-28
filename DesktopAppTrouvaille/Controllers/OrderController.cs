@@ -71,7 +71,9 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void UpdateData()
         {
-          
+            _locked = true;
+           
+            UpdateView();
             try
             {
               
@@ -94,6 +96,8 @@ namespace DesktopAppTrouvaille.Controllers
         public async void UpdateOrder(Order order)
         {
             _locked = true;
+            _state = State.SendingData;
+            UpdateView();
             try
             {
                 if( await _processor.UpdateOrder(order.OrderId, order.OrderState))
@@ -174,6 +178,9 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void Search(string searchText)
         {
+            _locked = true;
+            _state = State.SendingData;
+            UpdateView();
             try
             {
                 _iterator.Reset();

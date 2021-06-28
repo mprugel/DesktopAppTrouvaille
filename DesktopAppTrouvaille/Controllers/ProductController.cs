@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace DesktopAppTrouvaille
-{   
+{
     public class ProductController : Controller
     {
         private ProductProcessor _productProssesor = new ProductProcessor();
@@ -50,6 +50,9 @@ namespace DesktopAppTrouvaille
         }
         public async override void UpdateData()
         {
+            _locked = true;
+            
+            UpdateView();
             try
             {
                 LoadCategories();
@@ -78,6 +81,7 @@ namespace DesktopAppTrouvaille
         {
             _locked = true;
             _state = State.SendingData;
+            UpdateView();
             // Call API
             try
             {

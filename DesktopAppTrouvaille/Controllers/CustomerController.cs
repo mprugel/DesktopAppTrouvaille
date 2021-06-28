@@ -47,6 +47,10 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void Search(string searchText)
         {
+            _locked = true;
+          
+            UpdateView();
+
             _filter.Email = searchText;
             try
             {
@@ -73,6 +77,9 @@ namespace DesktopAppTrouvaille.Controllers
         public async override void UpdateData()
         {
             _locked = true;
+            
+            UpdateView();
+
             try
             {
                 _iterator.Count = await _processor.GetCount();
@@ -91,6 +98,9 @@ namespace DesktopAppTrouvaille.Controllers
         public async void UpdateCustomer(Customer customer)
         {
             _locked = true;
+            _state = State.SendingData;
+            UpdateView();
+
             PutCustomerModel putModel = new PutCustomerModel();
             putModel.DeliveryAddress = customer.DeliveryAddress;
             putModel.InvoiceAddress = customer.InvoiceAddress;
@@ -127,6 +137,8 @@ namespace DesktopAppTrouvaille.Controllers
         public async void DeleteCustomer(Customer customer)
         {
             _locked = true;
+            _state = State.SendingData;
+            UpdateView();
             try
             {
                 if (await _processor.DeleteCustomer(customer))

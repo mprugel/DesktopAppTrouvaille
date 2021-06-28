@@ -50,11 +50,11 @@ namespace DesktopAppTrouvaille.Controllers
 
         protected void UpdateView()
         {
-            _locked = false;
             foreach (IView v in _views)
             {
                 v.UpdateView();
             }
+            _locked = false;
             _errorHandler.Reset();
             _state = State.OK;
         }

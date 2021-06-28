@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using DesktopAppTrouvaille.Models;
 using DesktopAppTrouvaille.Controllers;
 using DesktopAppTrouvaille.Factories;
+using System.Drawing;
 
 namespace DesktopAppTrouvaille.Views
 {
@@ -15,10 +16,22 @@ namespace DesktopAppTrouvaille.Views
       
         public void UpdateStatusLabel()
         {
+            if(Controller.IsLocked())
+            {
+                this.Enabled = false;
+            }
+            else
+            {
+                this.Enabled = true;
+            }
+
+            labelStatus.ForeColor = Color.White;
+
             switch (Controller.state)
             {
                 case State.ConnectionError:
                     labelStatus.Text = "Ein Verbindungsfehler ist aufgetreten!";
+                    labelStatus.ForeColor = Color.Red;
                     break;
               
                 case State.LoadData:
@@ -26,9 +39,11 @@ namespace DesktopAppTrouvaille.Views
                     break;
                 case State.SaveFailed:
                     labelStatus.Text = "Anlegen fehlgeschlagen!";
+                    labelStatus.ForeColor = Color.Red;
                     break;
                 case State.UpdateFailed:
                     labelStatus.Text = "Speichern fehlgeschlagen!";
+                    labelStatus.ForeColor = Color.Red;
                     break;
                 case State.Updated:
                     labelStatus.Text = "Erfolgreich geändert!";

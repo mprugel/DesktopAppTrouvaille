@@ -11,7 +11,7 @@ namespace DesktopAppTrouvaille.Controllers
 
     public class EmployeeController : Controller, IErrorHandler
     {
-        private List<Employee> _employees;
+        private List<Employee> _employees = new List<Employee>();
         private Employee _detailEmployee = new Employee();
         private EmployeeProcessor _processor = new EmployeeProcessor();
        
@@ -49,6 +49,9 @@ namespace DesktopAppTrouvaille.Controllers
         public async override void UpdateData()
         {
             _locked = true;
+           
+            UpdateView();
+
             try
             {
                 _iterator.Count = await _processor.GetCount();
@@ -68,6 +71,8 @@ namespace DesktopAppTrouvaille.Controllers
         public async void SaveNewEmployee(RegisterEmployeeModel employee)
         {
             _locked = true;
+            _state = State.SendingData;
+            UpdateView();
             try
             {
                 if(await _processor.RegisterNewEmployee(employee))
@@ -94,6 +99,9 @@ namespace DesktopAppTrouvaille.Controllers
         public async void UpdateEmployee(Employee employee)
         {
             _locked = true;
+            _state = State.SendingData;
+            UpdateView();
+
             try
             {
                 if (await _processor.UpdateEmployee(employee.GetGuid(),employee))
@@ -117,6 +125,8 @@ namespace DesktopAppTrouvaille.Controllers
         public async void DeleteEmployee(Employee employee)
         {
             _locked = true;
+            _state = State.SendingData;
+            UpdateView();
             try
             {
                 if (await _processor.DeleteEmployee(employee.GetGuid()))
