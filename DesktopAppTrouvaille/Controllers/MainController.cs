@@ -63,7 +63,7 @@ namespace DesktopAppTrouvaille
                 }
                 else
                 {
-                    _state = State.ConnectionError;
+                    _state = State.LoginFailed;
                 }
 
             }
