@@ -30,6 +30,7 @@ namespace DesktopAppTrouvaille
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainMenuUC1 = new DesktopAppTrouvaille.Views.MainView();
             this.SuspendLayout();
             // 
@@ -52,10 +53,11 @@ namespace DesktopAppTrouvaille
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1487, 861);
             this.Controls.Add(this.mainMenuUC1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1500, 850);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Trouvaille Desktop App";
             this.ResumeLayout(false);
             this.PerformLayout();
 
