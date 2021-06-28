@@ -9,6 +9,7 @@ namespace DesktopAppTrouvaille.Controllers
     {
         void Next();
 
+        bool IsLocked();
         void AttachView(IView view);
 
         string GetSearchText();

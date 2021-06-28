@@ -25,6 +25,7 @@ namespace DesktopAppTrouvaille.Controllers
 
         public State state { get { return _state; } }
 
+        protected bool _locked = true;
         // Iterator:
         protected Iterator _iterator = new Iterator();
 
@@ -107,6 +108,11 @@ namespace DesktopAppTrouvaille.Controllers
         public List<Errors> GetError()
         {
             return _errorHandler.GetErrors();
+        }
+
+        public bool IsLocked()
+        {
+            return _locked;
         }
     }
 }

@@ -180,6 +180,29 @@ namespace APIconnector.Processors
             }
 
         }
+        public async Task<bool> DeleteImage(Guid guid)
+        {
+            string url = "Products/" + guid.ToString() + "/image";
+
+            HttpResponseMessage response;
+            try
+            {
+                response = await APIconnection.ApiClient.DeleteAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                throw new GETException();
+            }
+
+        }
 
         public async Task<List<Product>> LoadProducts(int from, int to)
         {

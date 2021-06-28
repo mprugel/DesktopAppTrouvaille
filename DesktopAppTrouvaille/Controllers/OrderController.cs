@@ -74,10 +74,10 @@ namespace DesktopAppTrouvaille.Controllers
           
             try
             {
-                _state = State.LoadData;
+              
                _iterator.Count = await _processor.GetCount();
                 Orders = await _processor.SearchOrders(_iterator.From, _iterator.To, _filterCriteria, _sortCriteria, SortOrder);
-                _state = State.OK;
+              
             }
             catch (GETException)
             {
@@ -91,11 +91,18 @@ namespace DesktopAppTrouvaille.Controllers
            
         }
 
-        public void UpdateOrder(Order order)
+        public async void UpdateOrder(Order order)
         {
             try
             {
-                _processor.UpdateOrder(order.OrderId, order.OrderState);
+                if( await _processor.UpdateOrder(order.OrderId, order.OrderState))
+                {
+                    _state = State.Updated;
+                }
+                else
+                {
+                    _state = State.UpdateFailed;
+                }
                 DetailOrder = order;
             }
             catch (Exception)
@@ -108,11 +115,15 @@ namespace DesktopAppTrouvaille.Controllers
             }
         }
 
-        public void DeleteOrder(Order order)
+        public async void DeleteOrder(Order order)
         {
             try
             {
-                _processor.DeleteOrder(order.OrderId);
+                _state = State.DeleteFailed;
+                if(await _processor.DeleteOrder(order.OrderId))
+                {
+                    _state = State.Deleted;
+                }
             }
             catch (Exception)
             {

@@ -122,9 +122,10 @@ namespace DesktopAppTrouvaille.Views
                 textBoxManufacturer.Text = manufacturer.CatalogId;
                 textBoxManufactureEmail.Text = manufacturer.Email;
             }
-           
-            
+
+
             // Display the Picture in the Picture Box:
+            picList.Clear();
             picList.Add(Prod.Picture);
             pictureController.SetPictures(picList);
             pictureBox1.Image = pictureController.GetCurrentPicture().ToBitmap();

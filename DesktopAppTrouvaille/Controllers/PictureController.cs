@@ -60,16 +60,11 @@ namespace DesktopAppTrouvaille.Controllers
         {
             foreach (Picture pic in pics)
             {
-                if(pic.ImageData != null)
+                if(pic != null && pic.ImageData != null)
                 {
                     _images.Add(pic);
                 }
-                
             }
         }
-
-       
-
-       
     }
 }

@@ -56,12 +56,19 @@ namespace DesktopAppTrouvaille.Views
             // 
             // listView
             // 
+            this.listView.Size = new System.Drawing.Size(427, 696);
             this.listView.Load += new System.EventHandler(this.listView_Load);
+            // 
+            // panelDetailView
+            // 
+            this.panelDetailView.Size = new System.Drawing.Size(0, 696);
             // 
             // ProductView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "ProductView";
+            this.Size = new System.Drawing.Size(1138, 696);
             this.ResumeLayout(false);
             this.PerformLayout();
 

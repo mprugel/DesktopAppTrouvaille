@@ -141,7 +141,9 @@ namespace DesktopAppTrouvaille.Views
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
+                Enabled = false;
                 Controller.UpdateCustomer(GetCustomerFromInputFields());
+
             }
         }
 

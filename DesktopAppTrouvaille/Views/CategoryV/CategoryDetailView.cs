@@ -79,7 +79,8 @@ namespace DesktopAppTrouvaille.Views
         {
             if(CheckInputField())
             {
-                SaveClick();
+                Enabled = false;
+                SaveClick(); 
             }
         }
 

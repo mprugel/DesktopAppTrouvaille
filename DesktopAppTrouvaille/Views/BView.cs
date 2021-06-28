@@ -32,7 +32,7 @@ namespace DesktopAppTrouvaille.Views
                     labelStatus.Text = "Speichern fehlgeschlagen!";
                     break;
                 case State.Updated:
-                    labelStatus.Text = "Erfolgreich gespeichert!";
+                    labelStatus.Text = "Erfolgreich geändert!";
                     break;
                 case State.SendingData:
                     labelStatus.Text = "Sende Daten zum Server...";

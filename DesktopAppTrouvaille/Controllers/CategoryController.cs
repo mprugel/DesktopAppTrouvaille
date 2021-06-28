@@ -22,10 +22,8 @@ namespace DesktopAppTrouvaille.Controllers
         {
             try
             {
-                _state = State.LoadData;
                 _iterator.Count = await  _processor.GetCategoryCount();
                 Categories = await _processor.LoadCategoriesFromTo(_iterator.From, _iterator.To);
-                _state = State.OK;
             }
             catch (GETException)
             {

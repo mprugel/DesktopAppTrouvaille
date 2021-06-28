@@ -52,14 +52,11 @@ namespace DesktopAppTrouvaille
         {
             try
             {
-                _state = State.LoadData;
-
                 LoadCategories();
               
                 _iterator.Count = await _productProssesor.GetProductCount();
                 Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, _searchText, SortOrder, SortCriteria, FilterCriteria);
- 
-                _state = State.OK;
+
             }
             catch (GETException)
             {
@@ -107,7 +104,7 @@ namespace DesktopAppTrouvaille
                 }
                 else
                 {
-                    _state = State.ConnectionError;
+                    _state = State.SaveFailed;
                 }
             }
             catch (GETException)
@@ -163,24 +160,29 @@ namespace DesktopAppTrouvaille
             putModel.ManufacturerEmail = manufacturer.Email;
 
             // Check if Picture has changed:
-            if( (oldP.Picture.ImageData == null && newP.Picture.ImageData != null) || 
+            if( (oldP.Picture == null && newP.Picture.ImageData != null) || 
                 (newP.Picture != null && newP.Picture.ImageData != null &&
                 !oldP.Picture.ImageData.SequenceEqual(newP.Picture.ImageData))
               )
             {
                 putModel.ImageData = newP.Picture.ImageData;
             }
+            else if (oldP.Picture != null && newP.Picture.ImageData == null)
+            {
+                await _productProssesor.DeleteImage(oldP.Picture.PictureId);
+            }
 
             if ( await _productProssesor.UpdateProduct(newP.GetGuid(), putModel))
             {
                 DetailProduct = newP;
-                _state = State.Saved;
+                _state = State.Updated;
+                UpdateData();
             }
             else
             {
-                _state = State.ConnectionError;
+                _state = State.UpdateFailed;
             }
-            UpdateData();
+            
         }
 
         public override IEnumerable<IModel> GetModels()

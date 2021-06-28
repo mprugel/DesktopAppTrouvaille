@@ -71,12 +71,11 @@ namespace DesktopAppTrouvaille.Controllers
 
         public async override void UpdateData()
         {
-            _state = State.LoadData;
+           
             try
             {
                 _iterator.Count = await _processor.GetCount();
                 _customers = await _processor.GetCustomers(_iterator.From, _iterator.To);
-                _state = State.OK;
             }
             catch (Exception)
             {

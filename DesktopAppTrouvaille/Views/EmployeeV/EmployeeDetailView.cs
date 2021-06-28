@@ -15,8 +15,7 @@ namespace DesktopAppTrouvaille.Views.EmployeeV
 
         public EmployeeDetailView()
         {
-            InitializeComponent();
-           
+            InitializeComponent(); 
         }
 
         public EmployeeDetailView(EmployeeController controller)
