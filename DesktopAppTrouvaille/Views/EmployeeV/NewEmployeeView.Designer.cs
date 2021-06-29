@@ -39,8 +39,8 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(526, 12);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSave.Location = new System.Drawing.Point(7052, 23);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Text = "Anlegen";
             // 
             // buttonDelete
@@ -51,9 +51,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 277);
+            this.label4.Location = new System.Drawing.Point(24, 533);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(110, 26);
             this.label4.TabIndex = 8;
             this.label4.Text = "Passwort";
             // 
@@ -61,55 +62,60 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 320);
+            this.label5.Location = new System.Drawing.Point(24, 615);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 13);
+            this.label5.Size = new System.Drawing.Size(245, 26);
             this.label5.TabIndex = 9;
             this.label5.Text = "Passwort wiederholen";
             // 
             // textBoxPasswordReType
             // 
-            this.textBoxPasswordReType.Location = new System.Drawing.Point(151, 317);
+            this.textBoxPasswordReType.Location = new System.Drawing.Point(302, 610);
+            this.textBoxPasswordReType.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPasswordReType.Name = "textBoxPasswordReType";
             this.textBoxPasswordReType.PasswordChar = '*';
-            this.textBoxPasswordReType.Size = new System.Drawing.Size(115, 20);
+            this.textBoxPasswordReType.Size = new System.Drawing.Size(226, 31);
             this.textBoxPasswordReType.TabIndex = 10;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(151, 277);
+            this.textBoxPassword.Location = new System.Drawing.Point(302, 533);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPassword.MaxLength = 50;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(115, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(226, 31);
             this.textBoxPassword.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 386);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 742);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(278, 39);
+            this.label6.Size = new System.Drawing.Size(457, 150);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Hinweis: \r\nPasswort muss mindestens 5 Zeichen lang sein,\r\nmindestens eine Zahl so" +
-    "wie ein Sonderzeichen enthalten ";
+            this.label6.Text = "Passwort muss folgende Kriterien erfüllen:\r\n\r\nMindestens 6 Zeichen lang.\r\nMindest" +
+    "ens eine Zahl.\r\nMindestens ein Sonderzeichen. \r\nKlein- und Großbuchstaben.\r\n";
             // 
             // labelPasswordNotValid
             // 
             this.labelPasswordNotValid.AutoSize = true;
             this.labelPasswordNotValid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswordNotValid.ForeColor = System.Drawing.Color.Red;
-            this.labelPasswordNotValid.Location = new System.Drawing.Point(298, 320);
+            this.labelPasswordNotValid.Location = new System.Drawing.Point(596, 615);
+            this.labelPasswordNotValid.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelPasswordNotValid.Name = "labelPasswordNotValid";
-            this.labelPasswordNotValid.Size = new System.Drawing.Size(111, 13);
+            this.labelPasswordNotValid.Size = new System.Drawing.Size(208, 26);
             this.labelPasswordNotValid.TabIndex = 18;
             this.labelPasswordNotValid.Text = "Passwort ungültig!";
             this.labelPasswordNotValid.Visible = false;
             // 
             // NewEmployeeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelPasswordNotValid);
             this.Controls.Add(this.label6);
@@ -117,8 +123,11 @@
             this.Controls.Add(this.textBoxPasswordReType);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(6000, 0);
             this.Name = "NewEmployeeView";
+            this.Size = new System.Drawing.Size(6000, 1185);
+            this.Controls.SetChildIndex(this.labelEmailNotValid, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.textBoxPasswordReType, 0);

@@ -18,14 +18,6 @@ namespace DesktopAppTrouvaille.Views.FilterV
             _criteria.OrderDateFrom = dateTimePickerFrom.Value;
             _criteria.OrderDateTo = dateTimePickerTo.Value;
 
-            if(Guid.TryParse(textBox1.Text, out _criteria.CustomerGuid))
-            {
-                _criteria.FilerID = true;
-            }
-            else
-            {
-                _criteria.FilerID = false;
-            }
 
             _criteria.OrderState = ((KeyValuePair<OrderState,string>)comboBoxState.SelectedItem).Key;
             Console.WriteLine("Selected State: " + _criteria.OrderState);
