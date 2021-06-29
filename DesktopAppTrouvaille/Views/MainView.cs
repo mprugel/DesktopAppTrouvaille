@@ -45,17 +45,27 @@ namespace DesktopAppTrouvaille.Views
 
         public void ShowProductView()
         {
+            // Disable current Gui:
+            this.Enabled = false;
+
+            // Create new ProductView in new Window:
             ProductDetailView view = new ProductDetailView();
             view.Controller = controller.productController;
             controller.productController.AttachView(view);
-            //_tabView = view;
-            //panelTabView.Controls.Clear();
-            //panelTabView.Controls.Add((UserControl)_tabView);
+            
             Form form = new Form();
             form.MinimumSize = new Size(750, 850);
             form.Controls.Add(view);
            
             form.Show();
+            // Add Eventhandler for closing the form
+            form.FormClosed += formClosedHandler;
+        }
+
+        private void formClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            // Enable GUI when Form is closed:
+            this.Enabled = true;
         }
 
         public void UpdateView() 
