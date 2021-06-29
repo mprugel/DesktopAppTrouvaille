@@ -46,7 +46,7 @@ namespace DesktopAppTrouvaille.Views
             // Set Eventhandler for Selecting Images:
             fileDialog.FileOk += FileSelected;
 
-            fileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;";
+            fileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.PNG;";
            
         }
 
