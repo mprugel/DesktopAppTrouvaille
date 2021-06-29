@@ -108,6 +108,7 @@ namespace DesktopAppTrouvaille.Controllers
                 {
                     _state = State.Updated;
                     _detailEmployee = employee;
+                    _errorHandler.Reset();
                 }
                 else
                 {

@@ -55,7 +55,6 @@ namespace DesktopAppTrouvaille.Controllers
                 v.UpdateView();
             }
             _locked = false;
-            _errorHandler.Reset();
             _state = State.OK;
         }
 

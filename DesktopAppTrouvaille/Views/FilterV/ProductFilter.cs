@@ -28,13 +28,8 @@ namespace DesktopAppTrouvaille.Views.FilterV
             List<Guid> categories = new List<Guid>();
             Category cat = (Category)comboBoxCategory.SelectedItem;
             if(comboBoxCategory.SelectedIndex == 0) 
-            { 
-                /*foreach(Category c in _controller.Categories)
-                {
-                    categories.Add(c.CategoryId);
-                    Console.WriteLine(c.CategoryId.ToString());
-                }
-                */
+            {
+                _selectedCategory = null;
             }
             else
             {

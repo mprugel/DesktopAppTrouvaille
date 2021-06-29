@@ -109,7 +109,7 @@ namespace DesktopAppTrouvaille.Views
             view.Dock = DockStyle.Fill;
            
             _tabView = view;
-            _tabView.UpdateView();
+           
             panelTabView.Controls.Clear();
             panelTabView.Controls.Add((UserControl)_tabView);
             buttonShowProducts.BackColor = _buttonActiveColor;

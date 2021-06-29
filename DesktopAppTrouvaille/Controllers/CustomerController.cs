@@ -116,7 +116,8 @@ namespace DesktopAppTrouvaille.Controllers
                 {
                     _state = State.Updated;
                     _detailCustomer = customer;
-                    UpdateView();
+                    _errorHandler.Reset();
+                    UpdateData();
                 }
                 else
                 {
@@ -130,7 +131,7 @@ namespace DesktopAppTrouvaille.Controllers
             }
             finally
             {
-                UpdateData();
+                UpdateView();
             }
         }
 

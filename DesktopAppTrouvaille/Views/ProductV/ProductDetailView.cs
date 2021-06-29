@@ -41,6 +41,7 @@ namespace DesktopAppTrouvaille.Views
             numericUpDownTax.Validating += numericUpDown_Validating;
             numericUpDownPrice.Validating += numericUpDown_Validating;
             richTextBox1.Validating += richTextBox_Validating;
+            textBoxManufactureEmail.Validating += emailValidating;
 
             // Set Eventhandler for Selecting Images:
             fileDialog.FileOk += FileSelected;
@@ -213,6 +214,34 @@ namespace DesktopAppTrouvaille.Views
             manufacturer.CatalogId = textBoxManufacturer.Text;
             manufacturer.Email = textBoxManufactureEmail.Text;
             return manufacturer;
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void emailValidating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!IsValidEmail(textBox.Text))
+            {
+                e.Cancel = true;
+                textBox.Focus();
+                errorProvider1.SetError(textBox, "E-Mail Adresse ist nicht gültig!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(textBox, "");
+            }
         }
 
         public Product GetProductFromInputs()

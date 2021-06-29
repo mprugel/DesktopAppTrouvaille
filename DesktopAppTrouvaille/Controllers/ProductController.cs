@@ -51,8 +51,8 @@ namespace DesktopAppTrouvaille
         public async override void UpdateData()
         {
             _locked = true;
-            
             UpdateView();
+
             try
             {
                 LoadCategories();
@@ -131,7 +131,10 @@ namespace DesktopAppTrouvaille
 
         public async void DeleteProduct(Product p)
         {
+            _locked = true;
             _state = State.SendingData;
+            UpdateView();
+
             // Call API
             if (await _productProssesor.DeleteProduct(p))
             {
@@ -150,6 +153,8 @@ namespace DesktopAppTrouvaille
         public async void UpdateProduct(Product oldP, Product newP, Manufacturer manufacturer)
         {
             _locked = true;
+            UpdateView();
+
             if (oldP.ProductCategories == null)
             {
                 oldP.ProductCategories = new List<Guid>();
@@ -238,6 +243,9 @@ namespace DesktopAppTrouvaille
 
         public async override void Search(string searchText)
         {
+            _locked = true;
+            UpdateView();
+
             _searchText = searchText;
             try
             {
