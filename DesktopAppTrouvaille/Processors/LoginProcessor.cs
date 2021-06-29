@@ -29,10 +29,11 @@ namespace DesktopAppTrouvaille.Processors
                 {  
                     return await response.Content.ReadAsAsync<LoginResponse>();
                 }
-                else
+                else if(response.StatusCode == System.Net.HttpStatusCode.ServiceUnavailable)
                 {
-                    return new LoginResponse();
+                    throw new GETException();
                 }
+                return new LoginResponse();
             }
             catch (Exception)
             {
