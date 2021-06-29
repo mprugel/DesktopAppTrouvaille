@@ -25,6 +25,9 @@ namespace DesktopAppTrouvaille
 
         private State _state = State.OK;
 
+        private bool _locked = false;
+        public bool IsLocked {get{ return _locked; } }
+
         public MainController(IMainView view)
         {
             _view = view;
@@ -80,12 +83,12 @@ namespace DesktopAppTrouvaille
             _view.UpdateView();
         }
 
-        public void ShowProduct(Product p)
+        public async void ShowProduct(Product p)
         {
             productController = new ProductController();
             _view.ShowProductView();
-           
-            productController.LoadCategories();
+
+            await productController.LoadCategories();
             productController.SelectDetailModel(p);
 
         }

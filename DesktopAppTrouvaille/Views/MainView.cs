@@ -17,6 +17,7 @@ namespace DesktopAppTrouvaille.Views
         private Color _buttonForeColorActive = Color.FromArgb(0, 0, 0);
         private Color _buttonColor;
 
+        private bool _isLocked = false;
         private MainController controller;
         private List<Product> _products = new List<Product>();
 
@@ -45,27 +46,31 @@ namespace DesktopAppTrouvaille.Views
 
         public void ShowProductView()
         {
-            // Disable current Gui:
-            this.Enabled = false;
+           
 
             // Create new ProductView in new Window:
-            ProductDetailView view = new ProductDetailView();
-            view.Controller = controller.productController;
+            ProductDetailView view = new ProductDetailView(controller.productController);
+            
             controller.productController.AttachView(view);
             
             Form form = new Form();
             form.MinimumSize = new Size(750, 850);
             form.Controls.Add(view);
-           
-            form.Show();
-            // Add Eventhandler for closing the form
             form.FormClosed += formClosedHandler;
+            form.Show(); 
+
+            // Disable current Gui:
+            panelTabView.Enabled = false;
+            panelMainMenu.Enabled = false;
+            // Add Eventhandler for closing the form
+           
         }
 
         private void formClosedHandler(object sender, FormClosedEventArgs e)
         {
             // Enable GUI when Form is closed:
-            this.Enabled = true;
+            panelTabView.Enabled = true;
+            panelMainMenu.Enabled = true;
         }
 
         public void UpdateView() 

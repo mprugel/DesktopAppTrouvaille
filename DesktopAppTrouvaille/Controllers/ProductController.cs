@@ -8,6 +8,7 @@ using DesktopAppTrouvaille.Processors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace DesktopAppTrouvaille
 {
@@ -37,15 +38,17 @@ namespace DesktopAppTrouvaille
             return _detailManufacturer;
         }
 
-        public async void  LoadCategories()
+        public async Task<List<Category>> LoadCategories()
         {
             try
             {
-                Categories = await _categoryProcessor.LoadCategories();
+                Categories =  await _categoryProcessor.LoadCategories();
+                return Categories;
             }
             catch (Exception)
             {
                 _state = State.ConnectionError;
+                return new List<Category>();
             }
         }
         public async override void UpdateData()
@@ -55,7 +58,7 @@ namespace DesktopAppTrouvaille
 
             try
             {
-                LoadCategories();
+                await LoadCategories();
               
                 _iterator.Count = await _productProssesor.GetProductCount();
                 Products = await _productProssesor.SearchAndFilter(_iterator.From, _iterator.To, _searchText, SortOrder, SortCriteria, FilterCriteria);
