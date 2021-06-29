@@ -50,6 +50,7 @@ namespace DesktopAppTrouvaille.Views
 
             // Create new ProductView in new Window:
             ProductDetailView view = new ProductDetailView(controller.productController);
+            view.HideSaveButton(false);
             
             controller.productController.AttachView(view);
             
@@ -57,6 +58,7 @@ namespace DesktopAppTrouvaille.Views
             form.MinimumSize = new Size(750, 850);
             form.Controls.Add(view);
             form.FormClosed += formClosedHandler;
+            
             form.Show(); 
 
             // Disable current Gui:

@@ -72,7 +72,7 @@ namespace DesktopAppTrouvaille
             }
             catch(Exception)
             {
-                _state = State.LoginFailed;
+                _state = State.ConnectionError;
             }
             _view.UpdateView();
         }

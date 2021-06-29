@@ -12,10 +12,16 @@ namespace DesktopAppTrouvaille.Views
 {
     public partial class DetailViewBase : UserControl , IView
     {
+
         public DetailViewBase()
         {
             InitializeComponent();
             Enabled = false;
+        }
+
+        public void HideSaveButton(bool visible)
+        {
+            buttonSave.Visible = visible;
         }
 
         public virtual void UpdateView()
