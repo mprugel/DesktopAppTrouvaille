@@ -11,13 +11,12 @@ namespace DesktopAppTrouvaille.Views.FilterV
     {
         public OrderController Controller;
         private OrderCriteria _criteria = new OrderCriteria();
+      
 
         public OrderCriteria GetFilterCriteria()
         {
-            
             _criteria.OrderDateFrom = dateTimePickerFrom.Value;
             _criteria.OrderDateTo = dateTimePickerTo.Value;
-
 
             _criteria.OrderState = ((KeyValuePair<OrderState,string>)comboBoxState.SelectedItem).Key;
             Console.WriteLine("Selected State: " + _criteria.OrderState);
@@ -29,6 +28,8 @@ namespace DesktopAppTrouvaille.Views.FilterV
             comboBoxState.DataSource = new BindingSource(OrderStateDic,null);
             comboBoxState.DisplayMember = "Value";
             comboBoxState.ValueMember = "Key";
+
+            comboBoxState.SelectedValue = Controller.GetFilter().OrderState;
 
             textBox1.Text = Controller.GetFilter().CustomerGuid.ToString();
         }
@@ -47,7 +48,7 @@ namespace DesktopAppTrouvaille.Views.FilterV
 
         private void comboBoxState_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetFilterCriteria();
+           // GetFilterCriteria();
         }
 
         private void checkBoxDate_CheckedChanged(object sender, EventArgs e)

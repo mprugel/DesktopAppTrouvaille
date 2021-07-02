@@ -45,7 +45,7 @@ namespace DesktopAppTrouvaille
             try
             {
                 LoginResponse response = await _loginProcessor.LoginEmployee(user);
-                if (response != null)
+                if (response != null && response.IsSuccess)
                 {
                     APIconnector.APIconnection.SetToken(response.Message);
                     string role = await _loginProcessor.GetRole();
